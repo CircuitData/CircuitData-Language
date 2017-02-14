@@ -7,7 +7,29 @@ Within the root level (openpcbxml) everything is divided into five groups:
 - profile
 - capability
 - custom
-- materials
+
+### Specifications
+Specifications are divided into new subsections
+- layers
+- standards
+- markings
+- dimensions
+- Array (panel)
+
+#### Layers
+Layers are always listed top down for machine readability. There needs to be one conductive layer defined at the very least, so that placement on top or bottom can be determined.
+
+#### Standards
+Listed in any order, these are the required standards to meet.
+
+#### Markings
+Listed in any order, these are the necessary markings.
+
+#### Dimensions
+The physical dimensions of the board
+
+#### Array
+The description of the array/panel
 
 ## Possible elements
 
@@ -19,12 +41,28 @@ Data tag | Format | Description
 *finish* | List | Can be `matte`, `semi-matte`, `glossy` or `any`
 *material* | Material | The material needs to listed in the materials section
 
+##### Example 1
+Where just one top soldermask layer is listed as a specification, and standard LPI is the material
 ```
-<soldermask>
-  <color>green</color>
-  <finish>any/matte/semi-matte/glossy</finish>
-  <material></material>
-</soldermask>
+<specification>
+  <layers>
+    <soldermask>
+      <color>green</color>
+      <finish>any</finish>
+      <material>standard-lpi</material>
+    </soldermask>
+    <conductive>...</conductive>
+  </layers>
+  <materials>
+    <soldermasks>
+       <standard-lpi>
+         <name>Standard LPI</name>
+         <ipc-sm-804-class>T</ipc-sm-804-class>
+       </standard-lpi>
+    </soldermasks>
+  </materials>
+</specification>
+
 ```
 
 
@@ -32,8 +70,6 @@ Data tag | Format | Description
 
 #### Color
 
-
 ## Materials
 
 ### Soldermasks
-  <ipc-sm-804-class>h/t</ipc-sm-804-class>
