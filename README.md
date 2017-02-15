@@ -94,6 +94,7 @@ One top legend layer above a soldermask is listed as a specification, and standa
 ## Materials
 ### Soldermasks
 A list of suggested soldermasks can be found in a separate file but feel free to define ones that are not found in that file. The generic ones includes below. Structure is as follows:
+
 Data tag | Required | Format | Description
 ---------|----------|--------|-------------
 *name* | Yes | String | The name of the Soldermask. Use the official name or some name as close to it as possible
