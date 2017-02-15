@@ -1,6 +1,10 @@
 # openpcbXML
 En open XML standard for communicating information needed for PCB manufacturability
 
+## Data formats
+- List
+- Boolean
+
 ## Structure of the XML
 Within the root level (openpcbxml) everything is divided into five groups:
 - specification
@@ -15,6 +19,7 @@ Specifications are divided into new subsections
 - markings
 - dimensions
 - Array (panel)
+- packaging
 
 #### Layers
 Layers are always listed top down for machine readability. There needs to be one conductive layer defined at the very least, so that placement on top or bottom can be determined.
@@ -71,7 +76,7 @@ Data tag | Format | Description
 *color* | List or Custom | This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
 
 ##### Example 1
-One top legend layer above a soldermask is listed as a specification, and standard LPI is the material
+One top legend layer above a soldermask is listed as a specification.
 ```
 <specification>
   <layers>
@@ -85,7 +90,22 @@ One top legend layer above a soldermask is listed as a specification, and standa
     </soldermask>
     <conductive>...</conductive>
   </layers>
+</specification>
 ```
+
+### Inner Packaging
+This describes how boards are packed together to be shipped. Part if IPC 1601 (4.2.2)
+
+Data tag |  Required |Format | Description
+---------|-----------|-------|-------------
+*type_of_bag* | No | List | Possible values are `a`, `b`, `c`, `d` where `a` = Nylon/Foil/Polyethylene, `b` = TyvekTM/Foil/Polyethylene, `c` = Aluminized Polyester/Polyethylene and `d` = Clear Plastics/Polymers (non-metallic).
+*hic* | No | Boolean | True to include a Humidity Indicator Card (HIC), False to not
+*esd* | No | Boolean | True to indicate that packaging for ESD-sensitive required.
+*silica* | No | Boolean | True to indicate that a silica bag is required
+*desiccant* | No | Boolean | True to indicate that a desiccant material is required
+
+
+
 
 ## Custom elements
 
