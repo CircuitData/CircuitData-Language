@@ -1,5 +1,25 @@
 # openpcbXML
-En open XML standard for communicating information needed for PCB manufacturability
+En open XML standard for communicating information needed for PCB manufacturability.
+
+## Structure of the XML
+Within the root level (openpcbxml) everything is divided into five groups and their subgroups:
+- specification
+  - summary (listed in any order, this sums up technology present)
+  - layers (listed top-down, include at least one conductive layer to determin placement in stackup)
+  - standards (listed in any order, these are the required standards to meet)
+  - markings (listed in any order, these are the necessary markings)
+  - dimensions (the physical dimensions of the board)
+  - array (array (also called panel) specifications)
+  - packaging
+  - materials
+- profile
+  - defaults
+  - enforced
+  - restricted
+- capability
+  -
+- custom
+  - colors
 
 ## Data formats
 - Percentage - Denotes a percentage - all percentages are expressed as percent out of 100- for example 10.4% is written as "10.4" and not "0.104"
@@ -9,89 +29,51 @@ En open XML standard for communicating information needed for PCB manufacturabil
 - Integer - An integer number with no decimal point.  May include negative values - examples include ...-3, -2, -1, 0, 1, 2, 3,...
 - Floating Point - A floating point number, usually expressed in its simplest form with a decimal point as in "1.2", "0.004", etc...  Programs shall endeavor to store as many significant digits as possible to avoid truncating or losing small values.
 
-
-## Structure of the XML
-Within the root level (openpcbxml) everything is divided into five groups and their subgroups:
-- specification
-  - layers (listed top-down, include at least one conductive layer to determin placement in stackup)
-  - standards (listed in any order, these are the required standards to meet)
-  - markings (listed in any order, these are the necessary markings)
-  - dimensions (the physical dimensions of the board)
-  - Array (array (also called panel) specifications)
-  - packaging
-- profile
-- capability
-- custom
+## abbreviations
+Used in the tables below, they carry the following meaning:
+"O": Optional
+"R": Required
 
 ## Possible elements
-The name of the element as it is to be used in the XML is included behind the title within the parenthesis, e.g. "soldermask".
+The name of the element as it is to be used in the XML is included behind the title within the parenthesis, e.g. "soldermask". When a table of possible elements is present, you will find the following headers:
+"Data tag": The name of the elements
+"Format": The format of the element (possible formats listed above)
+"S": When used in a Specification part of the XML (see above for structure and abbreviations)
+"P": When used in a Profile part of the XML (see above for structure and abbreviations)
+"C": When used in a Capability part of the XML (see above for structure and abbreviations)
 
 ### Soldermask ("soldermask")
+Can be listed in the following sections:
+- specification -> summary (single)
+- specification -> layers (multiple)
+- profile -> all sections
+- capability ->
 
-Data tag | Format | Description
----------|--------|-------------
-*color* | List or Custom | This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
-*finish* | List | Can be `matte`, `semi-matte`, `glossy` or `any`
-*material* | Material | The material needs to listed in the materials section
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*color* | List or Custom | O | O | R | This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
+*finish* | List | R | R | R | Can be `matte`, `semi-matte`, `glossy` or `any`
+*material* | Material | O | O | R |  The material needs to listed in the materials section
 
-##### Example 1
-Where just one top soldermask layer is listed as a specification, and standard LPI is the material
-```
-<specification>
-  <layers>
-    <soldermask>
-      <color>green</color>
-      <finish>any</finish>
-      <material>standard-lpi</material>
-    </soldermask>
-    <conductive></conductive>
-  </layers>
-  <materials>
-    <soldermasks>
-       <standard-lpi>
-         <name>Standard LPI</name>
-         <ipc-sm-840-class>T</ipc-sm-840-class>
-       </standard-lpi>
-    </soldermasks>
-  </materials>
-</specification>
-
-```
 ### Legend ("legend")
 
-Data tag | Required | Format | Description
----------|----------|--------|-------------
-*color* | Yes | List or Custom | This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*color* | List or Custom | R | R | R | This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
 
-##### Example 1
-One top legend layer above a soldermask is listed as a specification.
-```
-<specification>
-  <layers>
-    <legend>
-      <color>white</color>
-    </legend>
-    <soldermask>
-      <color>green</color>
-      <finish>any</finish>
-      <material>standard-lpi</material>
-    </soldermask>
-    <conductive>...</conductive>
-  </layers>
-</specification>
-```
 
 ### CoverLay ("coverlay")
-Data tag | Required |Format | Description
----------|----------|-------|-------------
-*total_thickness* | No | Integer | The number of...
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*total_thickness* | Integer | O | O | O | The number of...
 
 
 ### Peelable mask ("peelable_mask")
 
-Data tag | Required |Format | Description
----------|----------|-------|-------------
-*heating_operations* | No | Integer | The number of...
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*heating_operations* | Integer | O | O | O | The number of...
 
 ### Kapton tape ("kapton_tape")
 
@@ -108,19 +90,16 @@ This can only be added as an item without any further specification:
 This can only be added as an item without any further specification:
 `<silver_print></silver_print>`
 
-
 ### Inner Packaging ("inner_packaging")
 This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)
 
-Data tag |  Required |Format | Description
----------|-----------|-------|-------------
-*type_of_bag* | No | List | Possible values are `a`, `b`, `c`, `d` where `a` = Nylon/Foil/Polyethylene, `b` = TyvekTM/Foil/Polyethylene, `c` = Aluminized Polyester/Polyethylene and `d` = Clear Plastics/Polymers (non-metallic).
-*hic* | No | Boolean | True to include a Humidity Indicator Card (HIC), False to not
-*esd* | No | Boolean | True to indicate that packaging for ESD-sensitive required.
-*silica* | No | Boolean | True to indicate that a silica bag is required
-*desiccant* | No | Boolean | True to indicate that a desiccant material is required
-
-
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*type_of_bag* | List | O | O | O | Possible values are `a`, `b`, `c`, `d` where `a` = Nylon/Foil/Polyethylene, `b` = TyvekTM/Foil/Polyethylene, `c` = Aluminized Polyester/Polyethylene and `d` = Clear Plastics/Polymers (non-metallic).
+*hic* | Boolean | O | O | O | True to include a Humidity Indicator Card (HIC), False to not
+*esd* | Boolean | O | O | O | True to indicate that packaging for ESD-sensitive required.
+*silica* | Boolean | O | O | O | True to indicate that a silica bag is required
+*desiccant* | Boolean | O | O | O | True to indicate that a desiccant material is required
 
 
 ## Custom elements
@@ -157,6 +136,11 @@ Data tag | Required | Format | Description
 *manufacturer* | No | String | The name of the manufacturer of the material
 *ipc-4101-sheet* | No | Integer | The reference sheet number of the IPC 4101 Standard.
 *ipc-4103-sheet* | No | Integer | The reference sheet number of the IPC 4103 Standard.
-*min_tg* | No | Integer | The minimum Glass Transition Temperature (Tg) required.
-*min_td* | No | Integer | The minimum required temperature at which a base laminate material experiences an established percentage of weight loss using Thermograv imetric Analysis (TGA)
+*tg_min* | No | Integer | The minimum Glass Transition Temperature (Tg) required.
+*tg_range_from* | No | Integer | The Glass Transition Temperature (Tg) range starts at
+*tg_range_to* | No | Integer | The Glass Transition Temperature (Tg) range ands at
+*td_min* | No | Integer | The minimum required temperature at which a base laminate material experiences an established percentage of weight loss using Thermograv imetric Analysis (TGA)
+*td_range_from* | No | Integer | The Td range starts at
+*td_range_to* | No | Integer | The Td range stops at
+*halogen_free* | No | Boolean | Indicates the material is material free or is required to be.
 *link* | No | String | The link to some url that gives more information or a reference to the product
