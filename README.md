@@ -1,8 +1,9 @@
 # openpcbXML
-En open XML standard for communicating information needed for PCB manufacturability.
+An open XML standard for communicating information needed for PCB manufacturability. Can be used to interchange information on the specification (manufacturing data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier).
 
 ## Structure of the XML
-Within the root level (openpcbxml) everything is divided into five groups and their subgroups:
+Within the root level (openpcbxml) everything is divided into four groups and their subgroups:
+
 - specification
   - summary (listed in any order, this sums up technology present)
   - layers (listed top-down, include at least one conductive layer to determin placement in stackup)
@@ -17,7 +18,7 @@ Within the root level (openpcbxml) everything is divided into five groups and th
   - enforced
   - restricted
 - capability
-  -
+  - materials
 - custom
   - colors
 
@@ -33,6 +34,7 @@ Within the root level (openpcbxml) everything is divided into five groups and th
 Used in the tables below, they carry the following meaning:
 "O": Optional
 "R": Required
+"F": Forbidden
 
 ## Possible elements
 The name of the element as it is to be used in the XML is included behind the title within the parenthesis, e.g. "soldermask". When a table of possible elements is present, you will find the following headers:
@@ -43,23 +45,36 @@ The name of the element as it is to be used in the XML is included behind the ti
 "C": When used in a Capability part of the XML (see above for structure and abbreviations)
 
 ### Soldermask ("soldermask")
+Also called "solder mask".
+
 Can be listed in the following sections:
 - specification -> summary (single)
 - specification -> layers (multiple)
 - profile -> all sections
-- capability ->
+- capability
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
 *color* | List or Custom | O | O | R | This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
-*finish* | List | R | R | R | Can be `matte`, `semi-matte`, `glossy` or `any`
+*finish* | List | R | R | R | Can be `matte`, `semi-matte`, `glossy` or `any`. Required due to the "any" value
 *material* | Material | O | O | R |  The material needs to listed in the materials section
+*top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates soldermask presence/capability at top
+*bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates soldermask presence/capability at bottom
 
 ### Legend ("legend")
+Also called "silk screen" or "silkscreen".
+
+Can be listed in the following sections:
+- specification -> summary (single)
+- specification -> layers (multiple)
+- profile -> all sections
+- capability
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
 *color* | List or Custom | R | R | R | This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
+*top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates legend presence/capability at top
+*bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates legend presence/capability at bottom
 
 
 ### CoverLay ("coverlay")
