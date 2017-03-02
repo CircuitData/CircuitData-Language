@@ -9,6 +9,7 @@
         <conductive_layer>
           <rigid_count>2</rigid_count>
           <external_base_copper_thickness></external_base_copper_thickness>
+          <internal_base_copper_thickness></internal_base_copper_thickness>
         </conductive_layer>
       </summary>
     </layers>

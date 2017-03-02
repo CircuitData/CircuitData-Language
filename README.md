@@ -61,7 +61,7 @@ minimum_spacing_width | Integer | O | O | O | The minimum gap between two con
 minimum_internal_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the internal layers (can not be used in a stackup)
 minimum_external_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the external layers (can not be used in a stackup)
 external_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
-external_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
+internal_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
 copper_foil_type | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
 
 ### Flexible Conductive layer ("conductive_layer")
@@ -80,7 +80,7 @@ minimum_spacing_width | Integer | O | O | O | The minimum gap between two con
 minimum_internal_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the internal layers (can not be used in a stackup)
 minimum_external_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the external layers (can not be used in a stackup)
 external_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
-external_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
+internal_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
 copper_foil_type | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
 
 ### Final Finish ("final_finish")
@@ -94,7 +94,7 @@ Can be listed in the following sections:
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
-*finish* | Custom | O | O | O | The material/method/surface to be used in the finish
+*finish* | Valuelist | O | O | O | The material/method/surface to be used in the finish. Pick from the valuelist "Final finishes"
 *area* | Float | O | O | O | The area that the finish will cover, in square desimeter
 *gold_thickness* | Float | O | O | O | The thickness of the finish in micrometer
 *silver_thickness* | Float | O | O | O | The thickness of the finish in micrometer
@@ -120,7 +120,6 @@ Data tag | Format | S | P | C | Description
 *material* | Material | O | O | R |  The material needs to listed in the materials section
 *top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates soldermask presence/capability at top
 *bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates soldermask presence/capability at bottom
-*state* | List | F | R | F | Only to be used in a profile. Can be either "allow" or "disallow"
 
 ### Legend ("legend")
 Alias: "silk screen" or "silkscreen".
@@ -142,14 +141,20 @@ Data tag | Format | S | P | C | Description
 ### Stiffener ("stiffener")
 Aliases: "Support"
 
-
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*size* | Float | O | O | O | The size of the stiffener should be specified in drawing
+*placement* | Valuelist | O | O | O | Can be either "top" or "bottom", indicating if the stiffener is on top or bottom of the flexible layer
+*thickness* | Float | O | O | O | The thickness of the stiffener
+*material* | Material | O | O | R |  The material needs to listed in the materials section.
 
 ### CoverLay ("coverlay")
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
 *total_thickness* | Integer | O | O | O | The number of...
-*state* | List | F | R | F | Only to be used in a profile. Can be either "allow" or "disallow"
+*top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates coverlay presence/capability at top
+*bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates coverlay presence/capability at bottom
 
 
 ### Peelable mask ("peelable_mask")
@@ -157,22 +162,30 @@ Data tag | Format | S | P | C | Description
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
 *heating_operations* | Integer | O | O | O | The number of...
-*state* | List | F | R | F | Only to be used in a profile. Can be either "allow" or "disallow"
+*top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at top
+*bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at bottom
 
 ### Kapton tape ("kapton_tape")
 
-This can only be added as an item without any further specification:
-`<kapton_tape></kapton_tape>`
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at top
+*bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at bottom
+*accept_equivalent* | Boolean | O | O | O | If alternative to DuPont™ Kapton® HN general-purpose film can be used
 
 ### Conductive Carbon Print ("conductive_carbon_print")
 
-This can only be added as an item without any further specification:
-`<conductive_carbon_print></conductive_carbon_print>`
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates carbon print presence/capability at top
+*bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates carbon print presence/capability at bottom
 
 ### Silver Print ("silver_print")
 
-This can only be added as an item without any further specification:
-`<silver_print></silver_print>`
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates silver print presence/capability at top
+*bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates silver print presence/capability at bottom
 
 ### Inner Packaging ("inner_packaging")
 This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)
@@ -201,18 +214,6 @@ Data tag | Required | Format | Description
 *ipc-sm-840-class* | No | List | Can be either T or H
 *link* | No | String | The link to some url that gives more information or a reference to the product
 
-##### Example
-```
-<materials>
-  <soldermasks>
-     <standard-lpi>
-       <name>Standard LPI</name>
-       <ipc-sm-840-class>T</ipc-sm-840-class>
-     </standard-lpi>
-  </soldermasks>
-</materials>
-```
-
 ### Dielectric / Laminate
 
 Data tag | Required | Format | Description
@@ -229,3 +230,32 @@ Data tag | Required | Format | Description
 *td_range_to* | No | Integer | The Td range stops at
 *halogen_free* | No | Boolean | Indicates the material is material free or is required to be.
 *link* | No | String | The link to some url that gives more information or a reference to the product
+
+### Stiffener
+Data tag | Required | Format | Description
+---------|----------|--------|-------------
+*name* | Yes | String | The name of the stiffener. Use the official name or some name as close to it as possible
+*link* | No | String | The link to some url that gives more information or a reference to the product
+
+## Value Lists
+
+### Final finishes
+
+Name | Description
+-----|------------
+c_bare_copper | AABUS
+isn / immersion_tin | IPC-4554 Immersion Tin
+iag / immersion_silver | IPC-4553 Immersion Silver
+enepig | IPC-4556 ENEPIG
+enig | IPC-4552 Immersion Gold
+osp	| J-STD-003 Organic Solderability Preservative
+ht_osp | J-STD-003 High Temperature OSP
+g | ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered
+GS | J-STD-003 Gold Electroplate on areas to be soldered
+t_fused	| J-STD-003 Electrodeposited Tin-Lead (fused)
+tlu_unfused | J-STD-003 Electrodeposited Tin-Lead Unfused
+dig | J-STD-003 Direct Immersion Gold (Solderable Surface)
+gwb-1_ultrasonic | ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic)
+gwb-2-thermosonic | ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic)
+s_hasl | J-STD-003_J-STD-006 Solder Coating over Bare Copper
+lf_hasl | J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper
