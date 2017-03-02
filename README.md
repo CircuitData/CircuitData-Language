@@ -43,9 +43,69 @@ The name of the element as it is to be used in the XML is included behind the ti
 "S": When used in a Specification part of the XML (see above for structure and abbreviations)
 "P": When used in a Profile part of the XML (see above for structure and abbreviations)
 "C": When used in a Capability part of the XML (see above for structure and abbreviations)
+If the element have alternative names in everyday use, this is referenced as an "Alias" and stated just below the title.
+
+### Rigid Conductive layer ("conductive_layer")
+- specification -> summary (single)
+- specification -> layers (multiple)
+- profile -> all sections
+- capability
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+count | Integer| R/O | F | R | The number of conductive layers. Forbidden to use in the specification -> layers part. As a capability it needs to be a range represented as X-X
+minimum_track_width | Integer | O | O | O | The minimum track width of conductors either on the specific layer (if in specification -> layer) or total
+minimum_internal_track_width | Integer | O/F | O | O | The minimum track width of conductors in internal layers (can not be used in a stackup)
+minimum_external_track_width | Integer | O/F | O | O | The minimum track width of conductors in external layers (can not be used in a stackup)
+minimum_spacing_width | Integer | O | O | O | The minimum gap between two conductors either on the specific layer (if in specification -> layer) or total
+minimum_internal_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the internal layers (can not be used in a stackup)
+minimum_external_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the external layers (can not be used in a stackup)
+external_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
+external_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
+copper_foil_type | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
+
+### Flexible Conductive layer ("conductive_layer")
+- specification -> summary (single)
+- specification -> layers (multiple)
+- profile -> all sections
+- capability
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+count | Integer| R/O | F | R | The number of conductive layers. Forbidden to use in the specification -> layers part. As a capability it needs to be a range represented as X-X
+minimum_track_width | Integer | O | O | O | The minimum track width of conductors either on the specific layer (if in specification -> layer) or total
+minimum_internal_track_width | Integer | O/F | O | O | The minimum track width of conductors in internal layers (can not be used in a stackup)
+minimum_external_track_width | Integer | O/F | O | O | The minimum track width of conductors in external layers (can not be used in a stackup)
+minimum_spacing_width | Integer | O | O | O | The minimum gap between two conductors either on the specific layer (if in specification -> layer) or total
+minimum_internal_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the internal layers (can not be used in a stackup)
+minimum_external_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the external layers (can not be used in a stackup)
+external_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
+external_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
+copper_foil_type | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
+
+### Final Finish ("final_finish")
+Aliases: "Surfacefinish", "Surface finish", "Coating", "finalfinish"
+
+Can be listed in the following sections:
+- specification -> summary (single)
+- specification -> layers (multiple)
+- profile -> all sections
+- capability
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*finish* | Custom | O | O | O | The material/method/surface to be used in the finish
+*area* | Float | O | O | O | The area that the finish will cover, in square desimeter
+*gold_thickness* | Float | O | O | O | The thickness of the finish in micrometer
+*silver_thickness* | Float | O | O | O | The thickness of the finish in micrometer
+*paladium_thickness* | Float | O | O | O | The thickness of the finish in micrometer
+*tin_thickness* | Float | O | O | O | The thickness of the finish in micrometer
+*nickel_thickness* | Float | O | O | O | The thickness of the finish in micrometer
+*lead_free* | Boolean | O | O | O | The method must involve no lead used
+
 
 ### Soldermask ("soldermask")
-Also called "solder mask".
+Aliases: "solder mask".
 
 Can be listed in the following sections:
 - specification -> summary (single)
@@ -60,9 +120,10 @@ Data tag | Format | S | P | C | Description
 *material* | Material | O | O | R |  The material needs to listed in the materials section
 *top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates soldermask presence/capability at top
 *bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates soldermask presence/capability at bottom
+*state* | List | F | R | F | Only to be used in a profile. Can be either "allow" or "disallow"
 
 ### Legend ("legend")
-Also called "silk screen" or "silkscreen".
+Alias: "silk screen" or "silkscreen".
 
 Can be listed in the following sections:
 - specification -> summary (single)
@@ -75,6 +136,12 @@ Data tag | Format | S | P | C | Description
 *color* | List or Custom | R | R | R | This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
 *top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates legend presence/capability at top
 *bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates legend presence/capability at bottom
+*state* | List | F | R | F | Only to be used in a profile. Can be either "allow" or "disallow"
+
+
+### Stiffener ("stiffener")
+Aliases: "Support"
+
 
 
 ### CoverLay ("coverlay")
@@ -82,6 +149,7 @@ Data tag | Format | S | P | C | Description
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
 *total_thickness* | Integer | O | O | O | The number of...
+*state* | List | F | R | F | Only to be used in a profile. Can be either "allow" or "disallow"
 
 
 ### Peelable mask ("peelable_mask")
@@ -89,6 +157,7 @@ Data tag | Format | S | P | C | Description
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
 *heating_operations* | Integer | O | O | O | The number of...
+*state* | List | F | R | F | Only to be used in a profile. Can be either "allow" or "disallow"
 
 ### Kapton tape ("kapton_tape")
 
@@ -128,6 +197,7 @@ A list of suggested soldermasks can be found in a separate file but feel free to
 Data tag | Required | Format | Description
 ---------|----------|--------|-------------
 *name* | Yes | String | The name of the Soldermask. Use the official name or some name as close to it as possible
+*manufacturer* | No | String | The name of the manufacturer
 *ipc-sm-840-class* | No | List | Can be either T or H
 *link* | No | String | The link to some url that gives more information or a reference to the product
 
