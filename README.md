@@ -198,6 +198,41 @@ Data tag | Format | S | P | C | Description
 *silica* | Boolean | O | O | O | True to indicate that a silica bag is required
 *desiccant* | Boolean | O | O | O | True to indicate that a desiccant material is required
 
+### Board ("board")
+The physical description of the board
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*size_x* | Float | O | F | F | The size of the board in the x-asis, measured in millimeters
+*size_y* | Float | O | F | F | The size of the board in the y-asis, measured in millimeters
+*thickness* | Float | O | F | F | The thickness of the board measured in millimeters
+
+### Array ("array")
+Aliases: "Panel", "Panelization", "Panelisation", "customer panel"
+
+The physical description of the array of boards, used in assembly
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*size_x* | Float | O | O | O | The size of the array in the x-asis, measured in millimeters. When used in a Profile or Capability, it must specify a range (x-x) indicating the minimum and maximum size of the array
+*size_y* | Float | O | O | O | The size of the array in the y-asis, measured in millimeters. When used in a Profile or Capability, it must specify a range (x-x) indicating the minimum and maximum size of the array
+*boards_x* | Integer | O | O | O | The thickness of the board measured in millimeters. When used in a Profile or Capability, it must specify a range (x-x) indicating the minimum and maximum number of boards in the X-direction.
+*boards_y* | Integer | O | O | O | The thickness of the board measured in millimeters. When used in a Profile or Capability, it must specify a range (x-x) indicating the minimum and maximum number of boards in the X-direction.
+*border_left* | Float | O | O | O | The size of the left side boarder between the edge and the baord measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
+*border_right* | Float | O | O | O | The size of the left side boarder between the edge and the baord measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
+*border_top* | Float | O | O | O | The size of the left side boarder between the edge and the baord measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
+*border_bottom* | Float | O | O | O | The size of the left side boarder between the edge and the baord measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
+*board_spacing_x* | Float | O | O | O | The size of the space between the boards in the x-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space
+*boards_spacing_y* | Float | O | O | O | The size of the space between the boards in the y-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space
+*fiducials_number* | Integer | O | O | F | The number of fiducials on the array.
+*fiducials_size* | Float | O | O | F | The size of the fiducials measured in millimeters. If used in a Profile, it is the minimum needed size
+*fiducials_shape* | Valuelist | O | O | F | The shape of the fiducials. Can be either "donut", "circle", "plus" or "diamond".
+*breakaway_method* | Valuelist | O | O | O | The method of creation of the breakaways on the array. Possible values are "routing", "scoring" (alises includes "v-cut" and "v-grove") and "jump_scoring". If used in a Capability it can include several values separated with a comma
+*mouse_bites* | Boolean | O | O | O | Indicates if there should be "mouse bites" to allow easy break away of the boards
+*tooling_holes_number* | Integer | O | O | F | The number of tooling holes on the array.
+*tooling_holes_size* | Float | O | O | F | The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size
+
+
 
 ## Custom elements
 
