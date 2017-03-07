@@ -5,19 +5,14 @@ An open XML standard for communicating information needed for PCB manufacturabil
 Within the root level (openpcbxml) everything is divided into four groups and their subgroups:
 
 - specification
-  - summary (listed in any order, this sums up technology present)
-  - layers (listed top-down, include at least one conductive layer to determin placement in stackup)
-  - standards (listed in any order, these are the required standards to meet)
-  - markings (listed in any order, these are the necessary markings)
-  - dimensions (the physical dimensions of the board)
-  - array (array (also called panel) specifications)
-  - packaging
-  - materials
+  - summary (listed in any order)
+  - layers (listed top-down, include at least one conductive layer to determine placement in stack-up)
 - profile
   - defaults
   - enforced
   - restricted
 - capability
+  - summary
   - materials
 - custom
   - colors
@@ -122,7 +117,7 @@ Data tag | Format | S | P | C | Description
 *bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates soldermask presence/capability at bottom
 
 ### Legend ("legend")
-Alias: "silk screen" or "silkscreen".
+Alias: "silk screen" or "silkscreen", "ink", "ident".
 
 Can be listed in the following sections:
 - specification -> summary (single)
@@ -232,6 +227,36 @@ Data tag | Format | S | P | C | Description
 *tooling_holes_number* | Integer | O | O | F | The number of tooling holes on the array.
 *tooling_holes_size* | Float | O | O | F | The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size
 
+### Mechanical Processes ("mechanical")
+Mechanical processes
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*edge_bevelling* | Boolean | O | O | O | Edge bevelling present (if Specification), allowed (in Profile) or possible (in Capability)
+*depth_routing_top* | Boolean | O | O | O | Depth Routing from the top present (if Specification), allowed (in Profile) or possible (in Capability)
+*depth_routing_bottom* | Boolean | O | O | O | Depth Routing from the bottom present (if Specification), allowed (in Profile) or possible (in Capability)
+*counterboring_top* | Boolean | O | O | O | Counterboring from the top present (if Specification), allowed (in Profile) or possible (in Capability)
+*counterboring_bottom* | Boolean | O | O | O | Counterboring from the bottom present (if Specification), allowed (in Profile) or possible (in Capability)
+*countersink_top* | Boolean | O | O | O | Countersink from the top present (if Specification), allowed (in Profile) or possible (in Capability)
+*countersink_bottom* | Boolean | O | O | O | Countersink from the bottom present (if Specification), allowed (in Profile) or possible (in Capability)
+
+### Markings ("markings")
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*date_code* | String | O | O | F | Possible values are "YY" for year, "WW" for week "-" and "LOT" (alias "BATCH"). E.g. "YYWW-LOT" or "LOT-YYWW". If no marking, set "NONE".
+*placement* | Valuelist | O | O | O | Placement of the markings. Possible values are "copper_top", "copper_bottom", "soldermask_top", "soldermask_bottom", "legend_top" or "legend_bottom". When used as a Capability, several can be listed separated by a comma
+*manufacturer_identification* | Boolean | O | O | O | Manufacturer identification present (if Specification), allowed (in Profile) or possible (in Capability)
+*standards* | Valuelist | O | O | O | Possible values are the ones listed in the subelement "Standards and Requirements" but typical will be "ul" and "rohs". Separate by comma.
+
+### Standards and Requirements ("standards")
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*ul* | Boolean | O | O | F | Indicating if UL is required for the board. Can not be used as a capability, as this will be indicated on each material
+*c_ul* | Boolean | O | O | F | Indicating if Canadian UL is required for the board. Can not be used as a capability, as this will be indicated on each material
+*rohs* | Boolean | O | O | O | Indicating if RoHS requirements are to be met (if Specification), required (in Profile) or possible (in Capability)
+*ul94* | Valuelist | O | O | O | Possible values are "None, "v_0", "v_1" or "v_2". If capability, several can be listed separated by a comma.
 
 
 ## Custom elements
@@ -270,6 +295,7 @@ Data tag | Required | Format | Description
 Data tag | Required | Format | Description
 ---------|----------|--------|-------------
 *name* | Yes | String | The name of the stiffener. Use the official name or some name as close to it as possible
+*manufacturer* | No | String | The name of the manufacturer of the material
 *link* | No | String | The link to some url that gives more information or a reference to the product
 
 ## Value Lists
@@ -281,16 +307,16 @@ Name | Description
 c_bare_copper | AABUS
 isn / immersion_tin | IPC-4554 Immersion Tin
 iag / immersion_silver | IPC-4553 Immersion Silver
-enepig | IPC-4556 ENEPIG
-enig | IPC-4552 Immersion Gold
+enepig | IPC-4556 ENEPIG
+enig | IPC-4552 Immersion Gold
 osp	| J-STD-003 Organic Solderability Preservative
 ht_osp | J-STD-003 High Temperature OSP
 g | ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered
-GS | J-STD-003 Gold Electroplate on areas to be soldered
+GS | J-STD-003 Gold Electroplate on areas to be soldered
 t_fused	| J-STD-003 Electrodeposited Tin-Lead (fused)
-tlu_unfused | J-STD-003 Electrodeposited Tin-Lead Unfused
+tlu_unfused | J-STD-003 Electrodeposited Tin-Lead Unfused
 dig | J-STD-003 Direct Immersion Gold (Solderable Surface)
-gwb-1_ultrasonic | ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic)
-gwb-2-thermosonic | ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic)
-s_hasl | J-STD-003_J-STD-006 Solder Coating over Bare Copper
-lf_hasl | J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper
+gwb-1_ultrasonic | ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic)
+gwb-2-thermosonic | ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic)
+s_hasl | J-STD-003_J-STD-006 Solder Coating over Bare Copper
+lf_hasl | J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper
