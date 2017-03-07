@@ -27,18 +27,20 @@ Within the root level (openpcbxml) everything is divided into four groups and th
 
 ## abbreviations
 Used in the tables below, they carry the following meaning:
-"O": Optional
-"R": Required
-"F": Forbidden
+
+- "O": Optional
+- "R": Required
+- "F": Forbidden
 
 ## Possible elements
 The name of the element as it is to be used in the XML is included behind the title within the parenthesis, e.g. "soldermask". When a table of possible elements is present, you will find the following headers:
-"Data tag": The name of the elements
-"Format": The format of the element (possible formats listed above)
-"S": When used in a Specification part of the XML (see above for structure and abbreviations)
-"P": When used in a Profile part of the XML (see above for structure and abbreviations)
-"C": When used in a Capability part of the XML (see above for structure and abbreviations)
-If the element have alternative names in everyday use, this is referenced as an "Alias" and stated just below the title.
+
+- "Data tag": The name of the elements
+- "Format": The format of the element (possible formats listed above)
+- "S": When used in a Specification part of the XML (see above for structure and abbreviations)
+- "P": When used in a Profile part of the XML (see above for structure and abbreviations)
+- "C": When used in a Capability part of the XML (see above for structure and abbreviations)
+- If the element have alternative names in everyday use, this is referenced as an "Alias" and stated just below the title.
 
 ### Rigid Conductive layer ("conductive_layer")
 - specification -> summary (single)
@@ -48,16 +50,16 @@ If the element have alternative names in everyday use, this is referenced as an 
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
-count | Integer| R/O | F | R | The number of conductive layers. Forbidden to use in the specification -> layers part. As a capability it needs to be a range represented as X-X
-minimum_track_width | Integer | O | O | O | The minimum track width of conductors either on the specific layer (if in specification -> layer) or total
-minimum_internal_track_width | Integer | O/F | O | O | The minimum track width of conductors in internal layers (can not be used in a stackup)
-minimum_external_track_width | Integer | O/F | O | O | The minimum track width of conductors in external layers (can not be used in a stackup)
-minimum_spacing_width | Integer | O | O | O | The minimum gap between two conductors either on the specific layer (if in specification -> layer) or total
-minimum_internal_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the internal layers (can not be used in a stackup)
-minimum_external_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the external layers (can not be used in a stackup)
-external_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
-internal_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
-copper_foil_type | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
+*count* | Integer| R/O | F | R | The number of conductive layers. Forbidden to use in the specification -> layers part. As a capability it needs to be a range represented as X-X
+*minimum_track_width* | Integer | O | O | O | The minimum track width of conductors either on the specific layer (if in specification -> layer) or total
+*minimum_internal_track_width* | Integer | O/F | O | O | The minimum track width of conductors in internal layers (can not be used in a stackup)
+*minimum_external_track_width* | Integer | O/F | O | O | The minimum track width of conductors in external layers (can not be used in a stackup)
+*minimum_spacing_width* | Integer | O | O | O | The minimum gap between two conductors either on the specific layer (if in specification -> layer) or total
+*minimum_internal_spacing_width* | Integer | O/F | O | O | The minimum gap between two conductors on the internal layers (can not be used in a stackup)
+*minimum_external_spacing_width* | Integer | O/F | O | O | The minimum gap between two conductors on the external layers (can not be used in a stackup)
+*external_base_copper_thickness* | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
+*internal_base_copper_thickness* | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
+*copper_foil_type* | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
 
 ### Flexible Conductive layer ("conductive_layer")
 - specification -> summary (single)
@@ -67,16 +69,16 @@ copper_foil_type | Valuelist | O | O | O | The roughness of the copper foil. Ca
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
-count | Integer| R/O | F | R | The number of conductive layers. Forbidden to use in the specification -> layers part. As a capability it needs to be a range represented as X-X
-minimum_track_width | Integer | O | O | O | The minimum track width of conductors either on the specific layer (if in specification -> layer) or total
-minimum_internal_track_width | Integer | O/F | O | O | The minimum track width of conductors in internal layers (can not be used in a stackup)
-minimum_external_track_width | Integer | O/F | O | O | The minimum track width of conductors in external layers (can not be used in a stackup)
-minimum_spacing_width | Integer | O | O | O | The minimum gap between two conductors either on the specific layer (if in specification -> layer) or total
-minimum_internal_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the internal layers (can not be used in a stackup)
-minimum_external_spacing_width | Integer | O/F | O | O | The minimum gap between two conductors on the external layers (can not be used in a stackup)
-external_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
-internal_base_copper_thickness | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
-copper_foil_type | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
+*count* | Integer| R/O | F | R | The number of conductive layers. Forbidden to use in the specification -> layers part. As a capability it needs to be a range represented as X-X
+*minimum_track_width* | Integer | O | O | O | The minimum track width of conductors either on the specific layer (if in specification -> layer) or total
+*minimum_internal_track_width* | Integer | O/F | O | O | The minimum track width of conductors in internal layers (can not be used in a stackup)
+*minimum_external_track_width* | Integer | O/F | O | O | The minimum track width of conductors in external layers (can not be used in a stackup)
+*minimum_spacing_width* | Integer | O | O | O | The minimum gap between two conductors either on the specific layer (if in specification -> layer) or total
+*minimum_internal_spacing_width* | Integer | O/F | O | O | The minimum gap between two conductors on the internal layers (can not be used in a stackup)
+*minimum_external_spacing_width* | Integer | O/F | O | O | The minimum gap between two conductors on the external layers (can not be used in a stackup)
+*external_base_copper_thickness* | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
+*internal_base_copper_thickness* | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
+*copper_foil_type* | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
 
 ### Final Finish ("final_finish")
 Aliases: "Surfacefinish", "Surface finish", "Coating", "finalfinish"
@@ -250,13 +252,28 @@ Data tag | Format | S | P | C | Description
 *standards* | Valuelist | O | O | O | Possible values are the ones listed in the subelement "Standards and Requirements" but typical will be "ul" and "rohs". Separate by comma.
 
 ### Standards and Requirements ("standards")
+If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
 *ul* | Boolean | O | O | F | Indicating if UL is required for the board. Can not be used as a capability, as this will be indicated on each material
 *c_ul* | Boolean | O | O | F | Indicating if Canadian UL is required for the board. Can not be used as a capability, as this will be indicated on each material
-*rohs* | Boolean | O | O | O | Indicating if RoHS requirements are to be met (if Specification), required (in Profile) or possible (in Capability)
+*rohs* | Boolean | O | O | O | RoHS
 *ul94* | Valuelist | O | O | O | Possible values are "None, "v_0", "v_1" or "v_2". If capability, several can be listed separated by a comma.
+*esa* | Boolean | O | O | O | European Space Agency Use
+*itar* | Boolean | O | O | O | ITAR
+*defar* | Boolean | O | O | O | DEFAR
+*mil_prf_55110* | Boolean | O | O | O | MIL-PRF-55110
+*mil_prf_50884* | Boolean | O | O | O | MIL-PRF-5884
+*mil_prf_31032* | Boolean | O | O | O | MIL-PRF-31032
+*as9100* | Boolean | O | O | O | AS9100
+*nadcap* | Boolean | O | O | O | NADCAP
+*rw_en45545_2_2013* | Boolean | O | O | O | Railway Europe EN45545-2:2013
+*rw_nf_f_16_101* | Boolean | O | O | O | Railway France NF F 16-101
+*rw_uni_cei_11170_3* | Boolean | O | O | O | Railway Italy UNI CEI 11170-3
+*rw_nfpa_130* | Boolean | O | O | O | Railway USA NFPA 130
+*ipc_6012_class* | Valuelist | O | O | O | Requirements according to IPC 6012 class. Possible values are "1", "2", "3", "3A" (Automotive addendum), "3S" (Space and Military Avionics Addendum) or "3M" (Medical Addendum).
+*ipc_6013_class* Valuelist | O | O | O | Requirements according to IPC 6013 for flexible boards. Possible values are "1", "2", "3" 
 
 
 ## Custom elements
