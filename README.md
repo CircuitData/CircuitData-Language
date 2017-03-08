@@ -273,7 +273,42 @@ Data tag | Format | S | P | C | Description
 *rw_uni_cei_11170_3* | Boolean | O | O | O | Railway Italy UNI CEI 11170-3
 *rw_nfpa_130* | Boolean | O | O | O | Railway USA NFPA 130
 *ipc_6012_class* | Valuelist | O | O | O | Requirements according to IPC 6012 class. Possible values are "1", "2", "3", "3A" (Automotive addendum), "3S" (Space and Military Avionics Addendum) or "3M" (Medical Addendum).
-*ipc_6013_class* Valuelist | O | O | O | Requirements according to IPC 6013 for flexible boards. Possible values are "1", "2", "3" 
+*ipc_6013_class* | Valuelist | O | O | O | Requirements according to IPC 6013 for flexible boards. Possible values are "1", "2", "3".
+*ipc_6015* | Boolean | O | O | O | IPC-6015 Qualification and Performance Specification for Organic Multichip Module (MCM-L) Mounting and Interconnecting Structures
+*ipc_6016* | Boolean | O | O | O | IPC-6016 Qualification and Performance Specification for High Density Interconnect (HDI) Layers or Boards
+*ipc_6017* | Boolean | O | O | O | IPC-6017 Qualification and Performance Specification for PCBs w/ Embedded Passives
+*ipc_6018* | Boolean | O | O | O | IPC-6018 Microwave End Product Board Inspection and Test
+
+
+### Testing ("testing")
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*netlist* | Boolean | O | O | O | 100% Netlist testing according to IPC-D-356
+*allow_generate_netlist* | Boolean | O | O | O | Allow Netlist to be generated from Gerber or other file format if needed
+*hipot* | Boolean | O | O | O | HiPot Test  (Dielectric Withstanding Voltage Test)
+*impedance* | Valuelist | O | O | O | Possible values er "controlled", "calculated" or "follow_stackup"
+
+
+### Country of Origin ("country_of_origin")
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*iso_3166_1_alpha_3* | String | O | O | O | A three letter string representation of the Country of origin according too ISO 3166-1
+*iso_3166_1_alpha_2* | String | O | O | O | A two letter string representation of the Country of origin according too ISO 3166-1
+*nato_member* | Boolean | O | O | O | Indicates if the COO is a NATO member state (or needs to be if used as a profile)
+*eu_member* | Boolean | O | O | O | Indicates if the COO is a European Union member state (or needs to be if used in a profile)
+
+### Conflict resolution
+If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority.
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*order* | Integer | O | O | O | Information provided on order level
+*oem_specification_sheet* | Integer | O | O | O |  Information provided from the OEM in a PDF or other document format
+*assembly_specification_sheet* | Integer | O | O | O | Information provided from the assembly facility in a PDF or other document format
+*drawing* | Integer | O | O | O | Information in a drawing (if present)
+*odb* | Integer | O | O | O | Information in a ODB++ file
+*gerber* | Integer | O | O | O | Information in a Gerber format file
 
 
 ## Custom elements
