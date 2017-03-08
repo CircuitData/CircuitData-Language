@@ -298,8 +298,8 @@ Data tag | Format | S | P | C | Description
 *nato_member* | Boolean | O | O | O | Indicates if the COO is a NATO member state (or needs to be if used as a profile)
 *eu_member* | Boolean | O | O | O | Indicates if the COO is a European Union member state (or needs to be if used in a profile)
 
-### Conflict resolution
-If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority.
+### Conflict resolution ("conflict_resolution")
+If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice.
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
@@ -310,6 +310,17 @@ Data tag | Format | S | P | C | Description
 *odb* | Integer | O | O | O | Information in a ODB++ file
 *gerber* | Integer | O | O | O | Information in a Gerber format file
 
+#### Example
+```
+<conflict_resolution>
+  <order>1</order>
+  <oem_specification_sheet>2</oem_specification_sheet>
+  <assembly_specification_sheet>3</assembly_specification_sheet>
+  <drawing>4</drawing>
+  <odb>5</odb>
+  <gerber>6</gerber>
+</conflict_resolution
+```
 
 ## Custom elements
 
