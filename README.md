@@ -1,5 +1,5 @@
 # openpcbXML
-An open XML standard for communicating information needed for PCB manufacturability. Can be used to interchange information on the specification (manufacturing data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier).
+An open XML standard for communicating information needed for PCB fabrication. Can be used to interchange information on the specification (manufacturing data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
 ## Structure of the XML
 Within the root level (openpcbxml) everything is divided into four groups and their subgroups:
@@ -42,7 +42,7 @@ The name of the element as it is to be used in the XML is included behind the ti
 - "C": When used in a Capability part of the XML (see above for structure and abbreviations)
 - If the element have alternative names in everyday use, this is referenced as an "Alias" and stated just below the title.
 
-### Rigid Conductive layer ("conductive_layer")
+### Rigid Conductive layer ("rigid_conductive_layer")
 - specification -> summary (single)
 - specification -> layers (multiple)
 - profile -> all sections
@@ -61,7 +61,7 @@ Data tag | Format | S | P | C | Description
 *internal_base_copper_thickness* | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
 *copper_foil_type* | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
 
-### Flexible Conductive layer ("conductive_layer")
+### Flexible Conductive layer ("flexible_conductive_layer")
 - specification -> summary (single)
 - specification -> layers (multiple)
 - profile -> all sections
@@ -262,7 +262,7 @@ Data tag | Format | S | P | C | Description
 *ul94* | Valuelist | O | O | O | Possible values are "None, "v_0", "v_1" or "v_2". If capability, several can be listed separated by a comma.
 *esa* | Boolean | O | O | O | European Space Agency Use
 *itar* | Boolean | O | O | O | ITAR
-*defar* | Boolean | O | O | O | DEFAR
+*dfars* | Boolean | O | O | O | DFARS
 *mil_prf_55110* | Boolean | O | O | O | MIL-PRF-55110
 *mil_prf_50884* | Boolean | O | O | O | MIL-PRF-5884
 *mil_prf_31032* | Boolean | O | O | O | MIL-PRF-31032
@@ -273,10 +273,7 @@ Data tag | Format | S | P | C | Description
 *rw_uni_cei_11170_3* | Boolean | O | O | O | Railway Italy UNI CEI 11170-3
 *rw_nfpa_130* | Boolean | O | O | O | Railway USA NFPA 130
 *ipc_6012_class* | Valuelist | O | O | O | Requirements according to IPC 6012 class. Possible values are "1", "2", "3", "3A" (Automotive addendum), "3S" (Space and Military Avionics Addendum) or "3M" (Medical Addendum).
-*ipc_6013_class* | Valuelist | O | O | O | Requirements according to IPC 6013 for flexible boards. Possible values are "1", "2", "3".
-*ipc_6015* | Boolean | O | O | O | IPC-6015 Qualification and Performance Specification for Organic Multichip Module (MCM-L) Mounting and Interconnecting Structures
-*ipc_6016* | Boolean | O | O | O | IPC-6016 Qualification and Performance Specification for High Density Interconnect (HDI) Layers or Boards
-*ipc_6017* | Boolean | O | O | O | IPC-6017 Qualification and Performance Specification for PCBs w/ Embedded Passives
+*ipc_6013_class* | Valuelist | O | O | O | Requirements according to IPC 6013 for flexible or rigid-flex boards. Possible values are "1", "2", "3".
 *ipc_6018* | Boolean | O | O | O | IPC-6018 Microwave End Product Board Inspection and Test
 
 
@@ -330,29 +327,34 @@ Data tag | Format | S | P | C | Description
 ### Soldermasks
 A list of suggested soldermasks can be found in a separate file but feel free to define ones that are not found in that file. The generic ones includes below. Structure is as follows:
 
-Data tag | Required | Format | Description
----------|----------|--------|-------------
-*name* | Yes | String | The name of the Soldermask. Use the official name or some name as close to it as possible
-*manufacturer* | No | String | The name of the manufacturer
-*ipc-sm-840-class* | No | List | Can be either T or H
-*link* | No | String | The link to some url that gives more information or a reference to the product
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*name* | String | O | O | O | The name of the Soldermask. Use the official name or some name as close to it as possible
+*manufacturer* | String | O | O | O | The name of the manufacturer
+*ipc-sm-840-class* | Valuelist | O | O | O |Can be either T or H
+*link* | String | O | O | O | The link to some url that gives more information or a reference to the product
 
 ### Dielectric / Laminate
 
-Data tag | Required | Format | Description
----------|----------|--------|-------------
-*name* | Yes | String | The name of the Laminate. Use the official name or some name as close to it as possible
-*manufacturer* | No | String | The name of the manufacturer of the material
-*ipc-4101-sheet* | No | Integer | The reference sheet number of the IPC 4101 Standard.
-*ipc-4103-sheet* | No | Integer | The reference sheet number of the IPC 4103 Standard.
-*tg_min* | No | Integer | The minimum Glass Transition Temperature (Tg) required.
-*tg_range_from* | No | Integer | The Glass Transition Temperature (Tg) range starts at
-*tg_range_to* | No | Integer | The Glass Transition Temperature (Tg) range ands at
-*td_min* | No | Integer | The minimum required temperature at which a base laminate material experiences an established percentage of weight loss using Thermograv imetric Analysis (TGA)
-*td_range_from* | No | Integer | The Td range starts at
-*td_range_to* | No | Integer | The Td range stops at
-*halogen_free* | No | Boolean | Indicates the material is material free or is required to be.
-*link* | No | String | The link to some url that gives more information or a reference to the product
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*name* | String | O | O | O | The name of the Laminate. Use the official name or some name as close to it as possible
+*manufacturer* | String | O | O | O | The name of the manufacturer of the material
+*ipc-4101-sheet* | Integer | O | O | O | The reference sheet number of the IPC 4101 Standard.
+*ipc-4103-sheet* | Integer | O | O | O |  The reference sheet number of the IPC 4103 Standard.
+*tg_min* | Integer | O | O | O | The minimum Glass Transition Temperature (Tg) required.
+*tg_range_from* | Integer | O | O | O | The Glass Transition Temperature (Tg) range starts at
+*tg_range_to* | Integer | O | O | O | The Glass Transition Temperature (Tg) range ands at
+*td_min* | Integer | O | O | O | The minimum required temperature at which a base laminate material experiences an established percentage of weight loss using Thermograv imetric Analysis (TGA)
+*td_range_from* | Integer | O | O | O | The Td range starts at
+*td_range_to* | Integer | O | O | O | The Td range stops at
+*halogen_free* | Boolean | O | O | O | Indicates the material is material free or is required to be.
+*rw_en45545_2_2013* | Boolean | O | O | O | Railway Europe EN45545-2:2013 compatible
+*rw_nf_f_16_101* | Boolean | O | O | O | Railway France NF F 16-101 compatible
+*rw_uni_cei_11170_3* | Boolean | O | O | O | Railway Italy UNI CEI 11170-3 compatible
+*rw_nfpa_130* | Boolean | O | O | O | Railway USA NFPA 130 compatible
+*ul* | Boolean  | O | O | O | UL compatible
+*link* | String | O | O | O | The link to some url that gives more information or a reference to the product
 
 ### Stiffener
 Data tag | Required | Format | Description
