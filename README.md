@@ -341,6 +341,18 @@ Data tag | Format | S | P | C | Description
 </conflict_resolution
 ```
 
+### Holes ("holes")
+Multiple elements allowed.
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+*number* | Number | O | F | F | The number of holes of these specific settings
+*type* | Valuelist | O | F | F | The type of holes. Possible values are "through", "blind", "buried" or "back_drill"
+*plated* | Boolean | O | F | F | True if the holes are plated
+*size* | Number | O | F | F | The size of the hole in micrometers
+*layer_start* | Number | O | F | F | The layer where the hole starts, counted from the top, where top layer is 1
+*layer_stop* | Number | O | F | F | The layer where the hole stops, counted from the top, where top layer is 1
+
 ## Custom elements
 
 #### Colors
