@@ -5,12 +5,14 @@
   },
   "profile": {
     "PrintedCircuitFabricationData": {
-      "ipc_6010_class": "3",
-      "ipc_6010_compliance_level": "factory_standard",
-      "ipc_6010_copper_plating_thickness_level": "2",
-      "ipc_6010_annular_ring_level": "2",
-      "ipc_6010_conductor_spacing_level": "2",
-      "ipc_6010_conductor_width_level": "2"
+      "standards": {
+        "ipc_6010_class": "3",
+        "ipc_6010_compliance_level": "factory_standard",
+        "ipc_6010_copper_plating_thickness_level": "2",
+        "ipc_6010_annular_ring_level": "2",
+        "ipc_6010_conductor_spacing_level": "2",
+        "ipc_6010_conductor_width_level": "2"
+      }
     }
   }
 }
