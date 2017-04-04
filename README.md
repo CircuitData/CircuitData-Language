@@ -1,5 +1,5 @@
-# openpcbXML
-An open XML standard for communicating information needed for PCB fabrication. Can be used to interchange information on the specification (manufacturing data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
+# OpenTrade_PrintedCircuitFabricationData
+An open standard for communicating information needed for PCB fabrication. Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
 ## Structure of the XML
 Within the root level (openpcbxml) everything is divided into four groups and their subgroups:
@@ -194,6 +194,23 @@ Data tag | Format | S | P | C | Description
 *esd* | Boolean | O | O | O | True to indicate that packaging for ESD-sensitive required.
 *silica* | Boolean | O | O | O | True to indicate that a silica bag is required
 *desiccant* | Boolean | O | O | O | True to indicate that a desiccant material is required
+
+### Via Protection
+The via/hole protection according to IPC 4761
+
+Data tag | Format | S | P | C | Description
+---------|--------|---|---|---|-------------
+type_1 | Boolean | O | O | O | A via with a dry film mask material applied bridging over the via wherein no additional materials are in the hole.
+type_2 | Boolean | O | O | O | A Type I via with a secondary covering of mask material applied over the tented via.
+type_3 | Boolean | O | O | O | A via with material applied allowing partial penetration into the via. The plug material may be applied from one or both sides.
+type_4a | Boolean | O | O | O | A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides.
+type_4b | Boolean | O | O | O | A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides.
+type_5 | Boolean | O | O | O | A via with material applied into the via targeting a full penetration and encapsulation of the hole.
+type_6a | Boolean | O | O | O | A Type V via with  a  secondary  covering  of  material  (liquid  or  dry  film soldermask) applied over the via. The plug material may be applied from one or both sides..
+type_6b | Boolean | O | O | O | A Type V via with  a  secondary  covering  of  material  (liquid  or  dry  film soldermask) applied over the via. The plug material may be applied from one or both sides.
+type_7 | Boolean | O | O | O | A Type V via with  a  secondary metallized coating covering the  via.  The metallization is on both sides.
+
+
 
 ### Board ("board")
 The physical description of the board
