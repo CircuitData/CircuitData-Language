@@ -206,10 +206,9 @@ type_3 | Boolean | O | O | O | A via with material applied allowing partial pene
 type_4a | Boolean | O | O | O | A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides.
 type_4b | Boolean | O | O | O | A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides.
 type_5 | Boolean | O | O | O | A via with material applied into the via targeting a full penetration and encapsulation of the hole.
-type_6a | Boolean | O | O | O | A Type V via with  a  secondary  covering  of  material  (liquid  or  dry  film soldermask) applied over the via. The plug material may be applied from one or both sides..
-type_6b | Boolean | O | O | O | A Type V via with  a  secondary  covering  of  material  (liquid  or  dry  film soldermask) applied over the via. The plug material may be applied from one or both sides.
-type_7 | Boolean | O | O | O | A Type V via with  a  secondary metallized coating covering the  via.  The metallization is on both sides.
-
+type_6a | Boolean | O | O | O | A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides..
+type_6b | Boolean | O | O | O | A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides.
+type_7 | Boolean | O | O | O | A Type V via with a secondary metallized coating covering the via. The metallization is on both sides.
 
 
 ### Board ("board")
@@ -292,6 +291,12 @@ Data tag | Format | S | P | C | Description
 *ipc_6012_class* | Valuelist | O | O | O | Requirements according to IPC 6012 class. Possible values are "1", "2", "3", "3A" (Automotive addendum), "3S" (Space and Military Avionics Addendum) or "3M" (Medical Addendum).
 *ipc_6013_class* | Valuelist | O | O | O | Requirements according to IPC 6013 for flexible or rigid-flex boards. Possible values are "1", "2", "3".
 *ipc_6018* | Boolean | O | O | O | IPC-6018 Microwave End Product Board Inspection and Test
+*ipc_6010_class* | Valuelist | O | O | O | Possible values are "1", "2", "3". According to Table 4-2 /4-3
+*ipc_6010_compliance_level* | Valuelist | O | O | O | Possible values are "full", "factory_standard", "aabus".
+*ipc_6010_copper_plating_thickness_level* | Valuelist | O | O | O | Possible values are 2", "3". Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.
+*ipc_6010_annular_ring_level* | Valuelist | O | O | O | Possible values are 2", "3". Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.
+*ipc_6010_conductor_spacing_level* | Valuelist | O | O | O | Possible values are 2", "3". Used either if ipc_6010_class is set to 2 and you want to add conductor spacing demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.
+*ipc_6010_conductor_width_level* | Valuelist | O | O | O | Possible values are 2", "3". Used either if ipc_6010_class is set to 2 and you want to add conductor width demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.
 
 
 ### Testing ("testing")
