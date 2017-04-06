@@ -1,12 +1,10 @@
-# OpenTrade_PrintedCircuitFabricationData
+# Open Trade Transfer Package: Printed Circuits Fabrication Data
 An open standard for communicating information needed for PCB fabrication. Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
-## Structure of the XML
-Within the root level (openpcbxml) everything is divided into four groups and their subgroups:
+## Based on the Open Trade Transfer Package format
+[Open Trade Trasfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) defines as structure on how the information is to be passed in either JSON or XML format. Printed Circuit data should be placed within an element called "printed_circuits_fabrication_data" and also contain a version. Printed Circuit data can be placed within the following subelements:
 
-- specification
-  - summary (listed in any order)
-  - layers (listed top-down, include at least one conductive layer to determine placement in stack-up)
+- products
 - profile
   - defaults
   - enforced
@@ -14,8 +12,35 @@ Within the root level (openpcbxml) everything is divided into four groups and th
 - capability
   - summary
   - materials
-- custom
-  - colors
+
+You can also place custom elements in the appropriate folder, such as colours and materials.
+
+## Version
+Current version is 0.1. This should stated in every section directly below the "printed_circuits_fabrication_data" element in an element called "version". 0.1 is the first released version, and there is no prior versions.
+
+## Example
+
+```
+{
+  "open_trade_transfer_package": {
+    "version": "0.1"
+  },
+  "information": {
+    "company_name": "Elmatica as",
+    "date": "2017-04-03T08:00CET"
+  },
+  "profile": {
+    "restricted": {
+      "printed_circuits_fabrication_data": {
+        "version": "0.1",
+        "country_of_origin": {
+          "nato_member": false
+        }
+      }
+    }
+  }
+}
+```
 
 ## Data formats
 - Percentage - Denotes a percentage - all percentages are expressed as percent out of 100- for example 10.4% is written as "10.4" and not "0.104"
@@ -200,15 +225,15 @@ The via/hole protection according to IPC 4761
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
-type_1 | Boolean | O | O | O | A via with a dry film mask material applied bridging over the via wherein no additional materials are in the hole.
-type_2 | Boolean | O | O | O | A Type I via with a secondary covering of mask material applied over the tented via.
-type_3 | Boolean | O | O | O | A via with material applied allowing partial penetration into the via. The plug material may be applied from one or both sides.
-type_4a | Boolean | O | O | O | A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides.
-type_4b | Boolean | O | O | O | A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides.
-type_5 | Boolean | O | O | O | A via with material applied into the via targeting a full penetration and encapsulation of the hole.
-type_6a | Boolean | O | O | O | A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides..
-type_6b | Boolean | O | O | O | A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides.
-type_7 | Boolean | O | O | O | A Type V via with a secondary metallized coating covering the via. The metallization is on both sides.
+*type_1* | Boolean | O | O | O | A via with a dry film mask material applied bridging over the via wherein no additional materials are in the hole.
+*type_2* | Boolean | O | O | O | A Type I via with a secondary covering of mask material applied over the tented via.
+*type_3* | Boolean | O | O | O | A via with material applied allowing partial penetration into the via. The plug material may be applied from one or both sides.
+*type_4a* | Boolean | O | O | O | A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides.
+*type_4b* | Boolean | O | O | O | A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides.
+*type_5* | Boolean | O | O | O | A via with material applied into the via targeting a full penetration and encapsulation of the hole.
+*type_6a* | Boolean | O | O | O | A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides..
+*type_6b* | Boolean | O | O | O | A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides.
+*type_7* | Boolean | O | O | O | A Type V via with a secondary metallized coating covering the via. The metallization is on both sides.
 
 
 ### Board ("board")
@@ -307,6 +332,8 @@ Data tag | Format | S | P | C | Description
 *allow_generate_netlist* | Boolean | O | O | O | Allow Netlist to be generated from Gerber or other file format if needed
 *hipot* | Boolean | O | O | O | HiPot Test  (Dielectric Withstanding Voltage Test)
 *impedance* | Valuelist | O | O | O | Possible values er "controlled", "calculated" or "follow_stackup"
+*4_wire* | Boolean | O | O | O | Use 4 wired test
+*ist* | Boolean | O | O | O | Use IST testing
 
 
 ### Country of Origin ("country_of_origin")
@@ -338,7 +365,7 @@ Data tag | Format | S | P | C | Description
   <drawing>4</drawing>
   <odb>5</odb>
   <gerber>6</gerber>
-</conflict_resolution
+</conflict_resolution>
 ```
 
 ### Holes ("holes")
@@ -403,19 +430,19 @@ Data tag | Required | Format | Description
 
 Name | Description
 -----|------------
-c_bare_copper | AABUS
-isn / immersion_tin | IPC-4554 Immersion Tin
-iag / immersion_silver | IPC-4553 Immersion Silver
-enepig | IPC-4556 ENEPIG
-enig | IPC-4552 Immersion Gold
-osp	| J-STD-003 Organic Solderability Preservative
-ht_osp | J-STD-003 High Temperature OSP
-g | ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered
-GS | J-STD-003 Gold Electroplate on areas to be soldered
-t_fused	| J-STD-003 Electrodeposited Tin-Lead (fused)
-tlu_unfused | J-STD-003 Electrodeposited Tin-Lead Unfused
-dig | J-STD-003 Direct Immersion Gold (Solderable Surface)
-gwb-1_ultrasonic | ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic)
-gwb-2-thermosonic | ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic)
-s_hasl | J-STD-003_J-STD-006 Solder Coating over Bare Copper
-lf_hasl | J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper
+*c_bare_copper* | AABUS
+*isn* / immersion_tin | IPC-4554 Immersion Tin
+*iag* / immersion_silver | IPC-4553 Immersion Silver
+*enepig* | IPC-4556 ENEPIG
+*enig* | IPC-4552 Immersion Gold
+*osp*	| J-STD-003 Organic Solderability Preservative
+*ht_osp* | J-STD-003 High Temperature OSP
+*g* | ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered
+*GS* | J-STD-003 Gold Electroplate on areas to be soldered
+*t_fused*	| J-STD-003 Electrodeposited Tin-Lead (fused)
+*tlu_unfused* | J-STD-003 Electrodeposited Tin-Lead Unfused
+*dig* | J-STD-003 Direct Immersion Gold (Solderable Surface)
+*gwb-1_ultrasonic* | ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic)
+*gwb-2-thermosonic* | ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic)
+*s_hasl* | J-STD-003_J-STD-006 Solder Coating over Bare Copper
+*lf_hasl* | J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper

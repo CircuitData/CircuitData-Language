@@ -3,12 +3,17 @@
     "version": "0.1"
   },
   "information": {
-    "company_name": "Elmatica as",
-    "date": "2017-04-03T08:00CET"
+    "company": "Elmatica as",
+    "person": "Andreas Lydersen",
+    "editor_software": "work-in-process 0.01",
+    "created" : "2017-03-15T10:00:00",
+    "updated" : "2017-03-15T10:00:00",
+    "project": "Example project",
+    "version": "1"
   },
   "profile": {
     "defaults": {
-      "PrintedCircuitFabricationData": {
+      "printed_circuits_fabrication_data": {
         "standards": {
           "ul": true,
           "rohs": true,
