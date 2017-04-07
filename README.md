@@ -16,39 +16,31 @@ An open standard for communicating information needed for PCB fabrication. Can b
 You can also place custom elements in the appropriate folder, such as colours and materials.
 
 ## Version
-Current version is 0.1. This should stated in every section directly below the "printed_circuits_fabrication_data" element in an element called "version". 0.1 is the first released version, and there is no prior versions.
+Current version is 0.1. This should stated in every section directly below the "printed_circuits_fabrication_data" element in an element called "version". 0.1 is the first released version, and there are no prior versions.
 
 ## Example
-
+This example shows how to specify how to set a company profile that forbids production of printed circuit boards in countries that are not NATO members. More examples can be found in the examples folder.
 ```
 {
   "open_trade_transfer_package": {
-    "version": "0.1"
-  },
-  "information": {
-    "company_name": "Elmatica as",
-    "date": "2017-04-03T08:00CET"
-  },
-  "profile": {
-    "restricted": {
-      "printed_circuits_fabrication_data": {
-        "version": "0.1",
-        "country_of_origin": {
-          "nato_member": false
+    "version": "0.1",
+    "information": {
+      "company_name": "Elmatica as",
+      "date": "2017-04-03T08:00CET"
+    },
+    "profile": {
+      "restricted": {
+        "printed_circuits_fabrication_data": {
+          "version": "0.1",
+          "country_of_origin": {
+            "nato_member": false
+          }
         }
       }
     }
   }
 }
 ```
-
-## Data formats
-- Percentage - Denotes a percentage - all percentages are expressed as percent out of 100- for example 10.4% is written as "10.4" and not "0.104"
-- List - The data has only a fixed number of values that are selected from the list in the description table for the tag.  These items are case sensitive, and no other values are allowed.
-- Text - The data is free format text.  For multiline entries, line breaks will be preserved where possible and the text may be truncated on import if the text is too long for the importing program to store.  Multiline entries may be split with either a newline (Unix format) or a carriage return – newline combination (DOS format).  Importing programs should accept either.
-- Boolean - May be either TRUE or FALSE, with TRUE and FALSE in capitals.  A default value should be specified for optional fields - the default is used if the value is not present.
-- Integer - An integer number with no decimal point.  May include negative values - examples include ...-3, -2, -1, 0, 1, 2, 3,...
-- Floating Point - A floating point number, usually expressed in its simplest form with a decimal point as in "1.2", "0.004", etc...  Programs shall endeavor to store as many significant digits as possible to avoid truncating or losing small values.
 
 ## abbreviations
 Used in the tables below, they carry the following meaning:
@@ -58,61 +50,52 @@ Used in the tables below, they carry the following meaning:
 - "F": Forbidden
 
 ## Possible elements
-The name of the element as it is to be used in the XML is included behind the title within the parenthesis, e.g. "soldermask". When a table of possible elements is present, you will find the following headers:
+The name of the element as it is to be used in the file is included behind the title within the parenthesis, e.g. "soldermask". When a table of possible elements is present, you will find the following headers:
 
 - "Data tag": The name of the elements
-- "Format": The format of the element (possible formats listed above)
-- "S": When used in a Specification part of the XML (see above for structure and abbreviations)
-- "P": When used in a Profile part of the XML (see above for structure and abbreviations)
-- "C": When used in a Capability part of the XML (see above for structure and abbreviations)
-- If the element have alternative names in everyday use, this is referenced as an "Alias" and stated just below the title.
+- "Format": The format of the element (possible formats listed in the Open Trade Data Package format specification )
+- "P": When used in a Product part of the file (to give a specification) (see above for structure and abbreviations)
+- "PD": When used in a Profile->Defaults part of the file (see above for structure and abbreviations)
+- "PE": When used in a Profile->Enforced part of the file (see above for structure and abbreviations)
+- "PR": When used in a Profile->Restricted part of the file (see above for structure and abbreviations)
+- "C": When used in a Capability part of the file (see above for structure and abbreviations)
+
+If the element have alternative names in everyday use, this is referenced as an "Alias" and stated just below the title.
 
 ### Rigid Conductive layer ("rigid_conductive_layer")
-- specification -> summary (single)
-- specification -> layers (multiple)
-- profile -> all sections
-- capability
+The layers of rigid conductive material (usually copper)
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
-*count* | Integer| R/O | F | R | The number of conductive layers. Forbidden to use in the specification -> layers part. As a capability it needs to be a range represented as X-X
-*minimum_track_width* | Integer | O | O | O | The minimum track width of conductors either on the specific layer (if in specification -> layer) or total
-*minimum_internal_track_width* | Integer | O/F | O | O | The minimum track width of conductors in internal layers (can not be used in a stackup)
-*minimum_external_track_width* | Integer | O/F | O | O | The minimum track width of conductors in external layers (can not be used in a stackup)
-*minimum_spacing_width* | Integer | O | O | O | The minimum gap between two conductors either on the specific layer (if in specification -> layer) or total
-*minimum_internal_spacing_width* | Integer | O/F | O | O | The minimum gap between two conductors on the internal layers (can not be used in a stackup)
-*minimum_external_spacing_width* | Integer | O/F | O | O | The minimum gap between two conductors on the external layers (can not be used in a stackup)
+*count* | Integer| R | F | R | The number of conductive layers. As a capability it needs to be a range represented as X-X
+*minimum_track_width* | Integer | O | O | O | The minimum track width of conductors
+*minimum_internal_track_width* | Integer | O | O | O | The minimum track width of conductors in internal layers
+*minimum_external_track_width* | Integer | O | O | O | The minimum track width of conductors in external layers
+*minimum_spacing_width* | Integer | O | O | O | The minimum gap between two conductors either on the specific layer
+*minimum_internal_spacing_width* | Integer | O | O | O | The minimum gap between two conductors on the internal layers
+*minimum_external_spacing_width* | Integer | O | O | O | The minimum gap between two conductors on the external layers
 *external_base_copper_thickness* | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
 *internal_base_copper_thickness* | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
 *copper_foil_type* | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
 
 ### Flexible Conductive layer ("flexible_conductive_layer")
-- specification -> summary (single)
-- specification -> layers (multiple)
-- profile -> all sections
-- capability
+The layers of flexible conductive material (usually copper)
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
-*count* | Integer| R/O | F | R | The number of conductive layers. Forbidden to use in the specification -> layers part. As a capability it needs to be a range represented as X-X
-*minimum_track_width* | Integer | O | O | O | The minimum track width of conductors either on the specific layer (if in specification -> layer) or total
-*minimum_internal_track_width* | Integer | O/F | O | O | The minimum track width of conductors in internal layers (can not be used in a stackup)
-*minimum_external_track_width* | Integer | O/F | O | O | The minimum track width of conductors in external layers (can not be used in a stackup)
-*minimum_spacing_width* | Integer | O | O | O | The minimum gap between two conductors either on the specific layer (if in specification -> layer) or total
-*minimum_internal_spacing_width* | Integer | O/F | O | O | The minimum gap between two conductors on the internal layers (can not be used in a stackup)
-*minimum_external_spacing_width* | Integer | O/F | O | O | The minimum gap between two conductors on the external layers (can not be used in a stackup)
+*count* | Integer| R | F | R | The number of conductive layers. Forbidden to use in the specification -> layers part. As a capability it needs to be a range represented as X-X
+*minimum_track_width* | Integer | O | O | O | The minimum track width of conductors either on the specific layer
+*minimum_internal_track_width* | Integer | O | O | O | The minimum track width of conductors in internal layers
+*minimum_external_track_width* | Integer | O | O | O | The minimum track width of conductors in external layers
+*minimum_spacing_width* | Integer | O | O | O | The minimum gap between two conductors either on the specific layer
+*minimum_internal_spacing_width* | Integer | O | O | O | The minimum gap between two conductors on the internal layers
+*minimum_external_spacing_width* | Integer | O | O | O | The minimum gap between two conductors on the external layers
 *external_base_copper_thickness* | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
 *internal_base_copper_thickness* | Valuelist | O | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
 *copper_foil_type* | Valuelist | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
 
 ### Final Finish ("final_finish")
-Aliases: "Surfacefinish", "Surface finish", "Coating", "finalfinish"
-
-Can be listed in the following sections:
-- specification -> summary (single)
-- specification -> layers (multiple)
-- profile -> all sections
-- capability
+Aliases: "Surfacefinish", "Surface finish", "Coating", "finalfinish".
 
 Data tag | Format | S | P | C | Description
 ---------|--------|---|---|---|-------------
@@ -157,7 +140,6 @@ Data tag | Format | S | P | C | Description
 *color* | List or Custom | R | R | R | This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
 *top* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates legend presence/capability at top
 *bottom* | Boolean | O | O | O | Available when used in other sections than specification -> layers. Indicates legend presence/capability at bottom
-*state* | List | F | R | F | Only to be used in a profile. Can be either "allow" or "disallow"
 
 
 ### Stiffener ("stiffener")

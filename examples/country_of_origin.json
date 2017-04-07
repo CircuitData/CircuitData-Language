@@ -1,17 +1,17 @@
 {
   "open_trade_transfer_package": {
-    "version": "0.1"
-  },
-  "information": {
-    "company_name": "Elmatica as",
-    "date": "2017-04-03T08:00CET"
-  },
-  "profile": {
-    "restricted": {
-      "printed_circuits_fabrication_data": {
-        "version": "0.1",
-        "country_of_origin": {
-          "nato_member": false
+    "version": "0.1",
+    "information": {
+      "company_name": "Elmatica as",
+      "date": "2017-04-03T08:00CET"
+    },
+    "profile": {
+      "restricted": {
+        "printed_circuits_fabrication_data": {
+          "version": "0.1",
+          "country_of_origin": {
+            "nato_member": false
+          }
         }
       }
     }
