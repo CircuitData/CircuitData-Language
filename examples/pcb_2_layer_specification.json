@@ -1,0 +1,79 @@
+{
+  "open_trade_transfer_package": {
+    "version": "0.1",
+    "information": {
+      "company_name": "Elmatica as",
+      "date": "2017-19-03T08:00CET"
+    },
+    "products": {
+      "ELM0046855": {
+        "printed_circuits_fabrication_data": {
+          "version": "0.1",
+          "rigid_conductive_layer": {
+            "count": 2,
+            "minimum_track_width": 0.15,
+            "minimum_spacing_width": 0.15,
+            "external_base_copper_thickness": 33.4
+          },
+          "final_finish": {
+            "finish": "lf_hasl",
+            "lead_free": true
+          },
+          "dielectric": [
+            {
+              "material": "Generic FR-4 UL approved"
+            }
+          ],
+          "board": {
+            "size_x": 41.735,
+            "size_y": 10.03,
+            "thickness": 1.6,
+          },
+          "array": {
+            "size_x": 144,
+            "size_y": 248,
+            "boards_x": 2,
+            "boards_y": 20,
+            "breakaway_method": "routing"
+          },
+          "standards": {
+            "ul": true,
+            "rohs": true,
+            "ipc_6010_class": "2",
+            "ipc_6010_compliance_level": "factory_standard"
+          },
+          "inner_packaging": {
+            "type_of_bag": "d",
+            "vacuum": false,
+            "hic": true
+          },
+          "holes": [
+            {
+              "number": 21,
+              "type": "through",
+              "plated": false,
+              "size": 300
+            }
+          ],
+          "soldermask": {
+            "color": "green",
+            "finish": "any",
+            "material": "Generic LPI"
+          }
+        }
+      }
+    },
+    "materials": {
+      "Generic FR-4 UL approved": {
+        "name": "FR-4",
+        "ipc-4101-sheet": 121,
+        "tg_min": 140,
+        "ul": true
+      },
+      "Generic LPI": {
+        "name": "LPI",
+        "ipc-sm-840-class": "T"
+      }
+    }
+  }
+}

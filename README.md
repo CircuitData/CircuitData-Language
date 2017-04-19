@@ -109,14 +109,32 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *lead_free* | Boolean | O | O | O | O | O | The method must involve no lead used
 
 
+### Dielectric ("dielectric")
+Aliases: "Laminate"
+
+A list of one of more materials by name and referencing a material listed in the materials section.
+
+#### Example
+
+```
+"dielectric": [
+  {
+    "material": "Generic FR-4 UL approved"
+  }
+],
+...
+"materials": {
+  "Generic FR-4 UL approved": {
+    "name": "FR-4",
+    "ipc-4101-sheet": 121,
+    "tg_min": 140,
+    "ul": true
+  }
+}
+```
+
 ### Soldermask ("soldermask")
 Aliases: "solder mask".
-
-Can be listed in the following sections:
-- specification -> summary (single)
-- specification -> layers (multiple)
-- profile -> all sections
-- capability
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
@@ -128,12 +146,6 @@ Data tag | Format | P | PD | PE | PR | C | Description
 
 ### Legend ("legend")
 Alias: "silk screen" or "silkscreen", "ink", "ident".
-
-Can be listed in the following sections:
-- specification -> summary (single)
-- specification -> layers (multiple)
-- profile -> all sections
-- capability
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
@@ -201,6 +213,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *esd* | Boolean | O | O | O | O | O | True to indicate that packaging for ESD-sensitive required.
 *silica* | Boolean | O | O | O | O | O | True to indicate that a silica bag is required
 *desiccant* | Boolean | O | O | O | O | O | True to indicate that a desiccant material is required
+*vacuum* | Boolean | O | O | O | O | O | True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed.
 
 ### Via Protection
 The via/hole protection according to IPC 4761
