@@ -15,10 +15,11 @@
             "minimum_spacing_width": 0.15,
             "external_base_copper_thickness": 33.4
           },
-          "final_finish": {
-            "finish": "lf_hasl",
-            "lead_free": true
-          },
+          "final_finish": [
+            {
+              "finish": "lf_hasl"
+            }
+          ],
           "dielectric": [
             {
               "material": "Generic FR-4 UL approved"

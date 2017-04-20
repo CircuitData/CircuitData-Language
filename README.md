@@ -67,47 +67,45 @@ The layers of rigid conductive material (usually copper)
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*count* | Integer | R | F | F | O | O | The number of conductive layers. As a Profile->Restricted or Capability it needs to be a Range.
-*minimum_track_width* | Integer | O | F | F | O | O | The minimum track width of conductors
-*minimum_internal_track_width* | Float | O | F | F | O | O | The minimum track width of conductors in internal layers
-*minimum_external_track_width* | Float | O | F | F | O | O | The minimum track width of conductors in external layers
-*minimum_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors either on the specific layer
-*minimum_internal_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors on the internal layers
-*minimum_external_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors on the external layers
-*external_base_copper_thickness* | Valuelist | O | F | F | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
-*internal_base_copper_thickness* | Valuelist | O | F | F | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
-*copper_foil_type* | Valuelist | O | F | F | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
+*count* | Integer | R | F | F | F | O | The number of conductive layers. As a Capability it needs to be a Range.
+*minimum_internal_track_width* | Float | O | F | F | O | O | The minimum nominal width of conductors on internal/unplated layers (minimum track). As a Capability it needs to be a Range.
+*minimum_external_track_width* | Float | O | F | F | O | O | The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here. As a Capability it needs to be a Range.
+*minimum_internal_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors on the internal layers. As a Capability it needs to be a Range.
+*minimum_external_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors on the external layers. If only one minimum gap is present, is should be here. As a Capability it needs to be a Range.
+*external_base_copper_thickness* | List | O | F | F | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1. As a Capability it needs to be a Range.
+*internal_base_copper_thickness* | List | O | F | F | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1. As a Capability it needs to be a Range.
+*copper_foil_roughness* | List | O | O | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile). As a Capability it needs to be a Range.
 
 ### Flexible Conductive layer ("flexible_conductive_layer")
 The layers of flexible conductive material (usually copper)
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*count* | Integer | R | F | F | O | O | The number of conductive layers. Forbidden to use in the specification -> layers part. As a capability it needs to be a range represented as X-X
-*minimum_track_width* | Integer | O | F | F | O | O | The minimum track width of conductors
-*minimum_internal_track_width* | Float | O | F | F | O | O | The minimum track width of conductors in internal layers
-*minimum_external_track_width* | Float | O | F | F | O | O | The minimum track width of conductors in external layers
-*minimum_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors either on the specific layer
-*minimum_internal_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors on the internal layers
-*minimum_external_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors on the external layers
-*external_base_copper_thickness* | Valuelist | O | F | F | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1  
-*internal_base_copper_thickness* | Valuelist | O | F | F | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1
-*copper_foil_type* | Valuelist | O | F | F | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile)
+*count* | Integer | R | F | F | F | O | The number of conductive layers. As a Capability it needs to be a Range.
+*minimum_internal_track_width* | Float | O | F | F | O | O | The minimum nominal width of conductors on internal/unplated layers (minimum track). As a Capability it needs to be a Range.
+*minimum_external_track_width* | Float | O | F | F | O | O | The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here. As a Capability it needs to be a Range.
+*minimum_internal_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors on the internal layers. As a Capability it needs to be a Range.
+*minimum_external_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors on the external layers. If only one minimum gap is present, is should be here. As a Capability it needs to be a Range.
+*external_base_copper_thickness* | List | O | F | F | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1. As a Capability it needs to be a Range.
+*internal_base_copper_thickness* | List | O | F | F | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1. As a Capability it needs to be a Range.
+*copper_foil_roughness* | List | O | O | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile). As a Capability it needs to be a Range.
+*copper_foil_type* | List | O | O | O | O | O | The type of the copper foil. Can be either "ED" (Electro Deposited), "RA" (Rolled Annealed Copper). The default if not stated is "ED". As a Capability it needs to be a Range.
 
 ### Final Finish ("final_finish")
-Aliases: "Surfacefinish", "Surface finish", "Coating", "finalfinish".
+Aliases: "Surfacefinish", "Surface finish", "Coating", "finalfinish", "Solderable finish", "Solderable coating"c
+
+A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP.
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*finish* | Valuelist | O | O | O | O | O | The material/method/surface to be used in the finish. Pick from the valuelist "Final finishes"
-*area* | Float | O | O | O | O | O | The area that the finish will cover, in square desimeter
-*gold_thickness* | Float | O | O | O | O | O |  The thickness of the finish in micrometer
-*silver_thickness* | Float | O | O | O | O | O | The thickness of the finish in micrometer
-*paladium_thickness* | Float | O | O | O | O | O | The thickness of the finish in micrometer
-*tin_thickness* | Float | O | O | O | O | O | The thickness of the finish in micrometer
-*nickel_thickness* | Float | O | O | O | O | O | The thickness of the finish in micrometer
-*lead_free* | Boolean | O | O | O | O | O | The method must involve no lead used
-
+*finish* | List | O | O | O | O | O | The material/method/surface to be used in the finish. Pick from the valuelist "Final finishes". As a Capability it needs to be a Range.
+*area* | Float | O | F | F | F | F | The area that the finish will cover, in square decimeter. As a Capability it needs to be a Range.
+*thickness* | Float | O | O | O | F | O |  The thickness of the finish in micrometer. As a Capability it needs to be a Range.
+*gold_thickness* | Float | O | O | O | F | O |  The thickness of the gold finish in micrometer. As a Capability it needs to be a Range.
+*silver_thickness* | Float | O | O | O | F | O | The thickness of the silver finish in micrometer. As a Capability it needs to be a Range.
+*paladium_thickness* | Float | O | O | O | F | O | The thickness of the paladium finish in micrometer. As a Capability it needs to be a Range.
+*tin_thickness* | Float | O | O | O | F | O | The thickness of the tin finish in micrometer. As a Capability it needs to be a Range.
+*nickel_thickness* | Float | O | O | O | F | O | The thickness of the nickel finish in micrometer. As a Capability it needs to be a Range.
 
 ### Dielectric ("dielectric")
 Aliases: "Laminate"
@@ -332,6 +330,8 @@ Data tag | Format | P | PD | PE | PR | C | Description
 
 
 ### Country of Origin ("country_of_origin")
+Country of Origin is the country where the Printed Circuit Board is manufactured.
+
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *iso_3166_1_alpha_3* | String | O | O | O | O | O | A three letter string representation of the Country of origin according too ISO 3166-1
@@ -375,7 +375,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *layer_start* | Number | O | O | O | O | O | The layer where the hole starts, counted from the top, where top layer is 1
 *layer_stop* | Number | O | O | O | O | O | The layer where the hole stops, counted from the top, where top layer is 1
 *depth* | Float | O | O | O | O | O | The depth of the hole
-*method* | Value | O | O | O | O | O | Can be either "mill" or "drill", where drilling is default
+*method* | Value | O | O | O | O | O | Can be either "routing" or "drilling", where drilling is default
 
 ## Custom elements
 
@@ -442,5 +442,5 @@ Data tag | Description
 *dig* | J-STD-003 Direct Immersion Gold (Solderable Surface)
 *gwb-1_ultrasonic* | ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic)
 *gwb-2-thermosonic* | ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic)
-*s_hasl* | J-STD-003_J-STD-006 Solder Coating over Bare Copper
-*lf_hasl* | J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper
+*s_hasl* | J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL)
+*lf_hasl* | J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL)
