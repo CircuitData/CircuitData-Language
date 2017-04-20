@@ -374,6 +374,8 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *size* | Number | O | O | O | O | O | The size of the hole in micrometers
 *layer_start* | Number | O | O | O | O | O | The layer where the hole starts, counted from the top, where top layer is 1
 *layer_stop* | Number | O | O | O | O | O | The layer where the hole stops, counted from the top, where top layer is 1
+*depth* | Float | O | O | O | O | O | The depth of the hole
+*method* | Value | O | O | O | O | O | Can be either "mill" or "drill", where drilling is default
 
 ## Custom elements
 
