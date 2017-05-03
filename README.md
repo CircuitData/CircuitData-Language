@@ -75,6 +75,8 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *external_base_copper_thickness* | List | O | F | F | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1. As a Capability it needs to be a Range.
 *internal_base_copper_thickness* | List | O | F | F | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1. As a Capability it needs to be a Range.
 *copper_foil_roughness* | List | O | O | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile). As a Capability it needs to be a Range.
+*copper_coverage_average* | Float | O | F | F | F | F | The average copper coverage of the board. Used to calculate weight.
+
 
 ### Flexible Conductive layer ("flexible_conductive_layer")
 The layers of flexible conductive material (usually copper)
@@ -90,6 +92,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *internal_base_copper_thickness* | List | O | F | F | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer. Allowed values are: 5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1. As a Capability it needs to be a Range.
 *copper_foil_roughness* | List | O | O | O | O | O | The roughness of the copper foil. Can be either "S" (Standard), "L" (Low profile) or "V" (Very Low Profile). As a Capability it needs to be a Range.
 *copper_foil_type* | List | O | O | O | O | O | The type of the copper foil. Can be either "ED" (Electro Deposited), "RA" (Rolled Annealed Copper). The default if not stated is "ED". As a Capability it needs to be a Range.
+*copper_coverage_average* | Float | O | F | F | F | F | The average copper coverage of the board. Used to calculate weight.
 
 ### Final Finish ("final_finish")
 Aliases: "Surfacefinish", "Surface finish", "Coating", "finalfinish", "Solderable finish", "Solderable coating"c
@@ -132,15 +135,17 @@ A list of one of more materials by name and referencing a material listed in the
 ```
 
 ### Soldermask ("soldermask")
-Aliases: "solder mask".
+Aliases: "solder mask", "sm", "solder resist", "green mask"
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *color* | List or Custom | O | O | O | O | O | This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
 *finish* | List | O | O | O | O | O | Can be `matte`, `semi-matte`, `glossy` or `any`. Required due to the "any" value
+*min_thickness* | Float | O | O | O | F | O | The minimum thickness of the soldermask
+*max_thickness* | Float | O | O | O | F | O | The maximum thickness of the soldermask
 *material* | Material | O | O | O | O | O | The material needs to listed in the materials section
-*top* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates soldermask presence/capability at top
-*bottom* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates soldermask presence/capability at bottom
+*top* | Boolean | O | O | O | O | O | Indicates soldermask presence/capability at top
+*bottom* | Boolean | O | O | O | O | O | Indicates soldermask presence/capability at bottom
 
 ### Legend ("legend")
 Alias: "silk screen" or "silkscreen", "ink", "ident".
@@ -158,7 +163,7 @@ Aliases: "Support"
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *size* | Float | O | O | O | O | O | The size of the stiffener should be specified in drawing
-*placement* | Valuelist | O | O | O | O | O | Can be either "top" or "bottom", indicating if the stiffener is on top or bottom of the flexible layer
+*placement* | List | O | O | O | O | O | Can be either "top" or "bottom", indicating if the stiffener is on top or bottom of the flexible layer
 *thickness* | Float | O | O | O | O | O | The thickness of the stiffener
 *material* | Material | O | O | O | O | O | The material needs to listed in the materials section.
 
@@ -321,7 +326,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*netlist* | Boolean | O | O | O | O | O | 100% Netlist testing according to IPC-D-356
+*netlist* | Boolean | O | O | O | O | O | 100% Netlist testing according to IPC-D-356, ODB++ or IPC2581
 *allow_generate_netlist* | Boolean | O | O | O | O | O | Allow Netlist to be generated from Gerber or other file format if needed
 *hipot* | Boolean | O | O | O | O | O | HiPot Test  (Dielectric Withstanding Voltage Test)
 *impedance* | Valuelist | O | O | O | O | O | Possible values er "controlled", "calculated" or "follow_stackup"
@@ -348,6 +353,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *oem_specification_sheet* | Integer | O | O | O | O | O | Information provided from the OEM in a PDF or other document format
 *assembly_specification_sheet* | Integer | O | O | O | O | O | Information provided from the assembly facility in a PDF or other document format
 *drawing* | Integer | O | O | O | O | O | Information in a drawing (if present)
+*ipc2581* | Integer | O | O | O | O | O | Information in an IPC-2581 file
 *odb* | Integer | O | O | O | O | O | Information in a ODB++ file
 *gerber* | Integer | O | O | O | O | O | Information in a Gerber format file
 
@@ -358,8 +364,9 @@ Data tag | Format | P | PD | PE | PR | C | Description
   <oem_specification_sheet>2</oem_specification_sheet>
   <assembly_specification_sheet>3</assembly_specification_sheet>
   <drawing>4</drawing>
-  <odb>5</odb>
-  <gerber>6</gerber>
+  <ipc2581>5</ipc2581>
+  <odb>6</odb>
+  <gerber>7</gerber>
 </conflict_resolution>
 ```
 
@@ -377,12 +384,53 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *depth* | Float | O | O | O | O | O | The depth of the hole
 *method* | Value | O | O | O | O | O | Can be either "routing" or "drilling", where drilling is default
 
+### Allowed Modifications ("allowed_modifications")
+Changes/fabrication decisions that are allowed to make to the files provided.
+
+Data tag | Format | P | PD | PE | PR | C | Description
+---------|--------|---|----|----|----|---|--------------
+*dead_pad_removal* | Boolean | O | O | O | O | F | Non Functioning Pad removal
+*add_copper_balancing* | Boolean | O | O | O | F | O | Adding copper balancing pattern
+*add_copper_balancing_on_array* | Boolean | O | O | O | O | F | Adding copper balancing pattern on array/panel frame
+*add_tear_drops* | Boolean | O | O | O | O | F | Adding Tear Drops
+
+### Additional Requirements ("additional_requirements")
+This section is for all requirements that still has not beenadapted to the standard. It allowes you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom elements->additional section. Multiple elements allowed - to be added as a list.
+
+#### Example
+
+```
+{
+  "open_trade_transfer_package": {
+    "version": "0.1"
+    },
+    "products": {
+      "testproduct": {
+        "printed_circuits_fabrication_data": {
+          "version": "0.1",
+          "additional_requirements": ["embedded_coin_soldered", "material_inlay", "multiple_net_via"]
+        }
+      }
+    },
+    "custom": {
+      "additional": {
+        "embedded_coin_soldered": "Soldered on embedded coin",
+        "material_inlay": "Different material locally on some part of board",
+        "multiple_net_via": "Multiple Net Via"
+        }
+      }
+    }
+  }
+}
+
+```
+
 ## Custom elements
 
-#### Colors
+### Colors
 
-## Materials
-### Soldermasks
+### Materials
+#### Soldermasks
 A list of suggested soldermasks can be found in a separate file but feel free to define ones that are not found in that file. The generic ones includes below. Structure is as follows:
 
 Data tag | Format | P | PD | PE | PR | C | Description
@@ -392,7 +440,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *ipc-sm-840-class* | Valuelist | O | O | O | O | O | Can be either T or H
 *link* | String | O | O | O | O | O | The link to some url that gives more information or a reference to the product
 
-### Dielectric / Laminate
+#### Dielectric / Laminate
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
@@ -412,15 +460,19 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *rw_uni_cei_11170_3* | Boolean | O | O | O | O | O | Railway Italy UNI CEI 11170-3 compatible
 *rw_nfpa_130* | Boolean | O | O | O | O | O | Railway USA NFPA 130 compatible
 *ul* | Boolean | O | O | O | O | O | UL compatible
-*link* | String | O | O | O | O | O | The link to some url that gives more information or a reference to the product
+*link* | String | O | F | F | F | F | The link to some url that gives more information or a reference to the product
 
-### Stiffener
+#### Stiffener
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *name* | String | O | O | O | O | O | The name of the stiffener. Use the official name or some name as close to it as possible
 *manufacturer* | String | O | O | O | O | O | The name of the manufacturer of the material
 *link* | String | O | O | O | O | O | The link to some url that gives more information or a reference to the product
+
+### Additional
+
+This defines the additional requirements defined in the elements above. It consists solely of a name and a description of your choice. See the example above.
 
 ## Value Lists
 
@@ -430,17 +482,17 @@ Data tag | Description
 ---------|------------
 *c_bare_copper* | AABUS
 *isn* / *immersion_tin* | IPC-4554 Immersion Tin
-*iag* / *immersion_silver* | IPC-4553 Immersion Silver
+*iag* / *immersion_silver* | IPC-4553 Immersion Silver
 *enepig* | IPC-4556 ENEPIG
 *enig* | IPC-4552 Immersion Gold
-*osp*	| J-STD-003 Organic Solderability Preservative
+*osp*	| J-STD-003 Organic Solderability Preservative (OSP)
 *ht_osp* | J-STD-003 High Temperature OSP
-*g* | ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered
-*GS* | J-STD-003 Gold Electroplate on areas to be soldered
+*g* | ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered (hard gold)
+*GS* | J-STD-003 Gold Electroplate on areas to be soldered (flash gold)
 *t_fused*	| J-STD-003 Electrodeposited Tin-Lead (fused)
 *tlu_unfused* | J-STD-003 Electrodeposited Tin-Lead Unfused
 *dig* | J-STD-003 Direct Immersion Gold (Solderable Surface)
-*gwb-1_ultrasonic* | ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic)
-*gwb-2-thermosonic* | ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic)
+*gwb-1_ultrasonic* | ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic - for gold wire bonding) (soft gold)
+*gwb-2_thermosonic* | ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic - for aluminum wire bonding)
 *s_hasl* | J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL)
 *lf_hasl* | J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL)

@@ -64,16 +64,18 @@
         }
       }
     },
-    "materials": {
-      "Generic FR-4 UL approved": {
-        "name": "FR-4",
-        "ipc-4101-sheet": 121,
-        "tg_min": 140,
-        "ul": true
-      },
-      "Generic LPI": {
-        "name": "LPI",
-        "ipc-sm-840-class": "T"
+    "custom": {
+      "materials": {
+        "Generic FR-4 UL approved": {
+          "name": "FR-4",
+          "ipc-4101-sheet": 121,
+          "tg_min": 140,
+          "ul": true
+        },
+        "Generic LPI": {
+          "name": "LPI",
+          "ipc-sm-840-class": "T"
+        }
       }
     }
   }
