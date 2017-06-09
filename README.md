@@ -162,9 +162,9 @@ Aliases: "Support"
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*size* | Float | O | O | O | O | O | The size of the stiffener should be specified in drawing
-*placement* | List | O | O | O | O | O | Can be either "top" or "bottom", indicating if the stiffener is on top or bottom of the flexible layer
-*thickness* | Float | O | O | O | O | O | The thickness of the stiffener
+*size* | Float | O | O | O | F | O | The size of the stiffener should be specified in drawing
+*placement* | List | O | O | O | F | O | Can be either "top" or "bottom", indicating if the stiffener is on top or bottom of the flexible layer
+*thickness* | Float | O | O | O | F | O | The thickness of the stiffener
 *material* | Material | O | O | O | O | O | The material needs to listed in the materials section.
 
 ### CoverLay ("coverlay")
@@ -172,39 +172,39 @@ Data tag | Format | P | PD | PE | PR | C | Description
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *total_thickness* | Integer | O | O | O | O | O | The number of...
-*top* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates coverlay presence/capability at top
-*bottom* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates coverlay presence/capability at bottom
+*top* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates coverlay presence/capability at top
+*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates coverlay presence/capability at bottom
 
 
 ### Peelable mask ("peelable_mask")
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*heating_operations* | Integer | O | O | O | O | O | The number of...
-*top* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at top
+*heating_operations* | Integer | O | O | O | F | O | The number of...
+*top* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at top
 *bottom* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at bottom
 
 ### Kapton tape ("kapton_tape")
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*top* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at top
-*bottom* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at bottom
+*top* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at top
+*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at bottom
 *accept_equivalent* | Boolean | O | O | O | O | O | If alternative to DuPont™ Kapton® HN general-purpose film can be used
 
 ### Conductive Carbon Print ("conductive_carbon_print")
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*top* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates carbon print presence/capability at top
-*bottom* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates carbon print presence/capability at bottom
+*top* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates carbon print presence/capability at top
+*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates carbon print presence/capability at bottom
 
 ### Silver Print ("silver_print")
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*top* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates silver print presence/capability at top
-*bottom* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates silver print presence/capability at bottom
+*top* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates silver print presence/capability at top
+*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates silver print presence/capability at bottom
 
 ### Inner Packaging ("inner_packaging")
 This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)
@@ -252,21 +252,21 @@ Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *size_x* | Float | O | O | O | O | O | The size of the array in the x-asis, measured in millimeters. When used in a Profile or Capability, it must specify a range (x-x) indicating the minimum and maximum size of the array
 *size_y* | Float | O | O | O | O | O | The size of the array in the y-asis, measured in millimeters. When used in a Profile or Capability, it must specify a range (x-x) indicating the minimum and maximum size of the array
-*boards_x* | Integer | O | O | O | O | O | The thickness of the board measured in millimeters. When used in a Profile or Capability, it must specify a range (x-x) indicating the minimum and maximum number of boards in the X-direction.
-*boards_y* | Integer | O | O | O | O | O | The thickness of the board measured in millimeters. When used in a Profile or Capability, it must specify a range (x-x) indicating the minimum and maximum number of boards in the X-direction.
+*boards_x* | Integer | R | O | O | O | O | The thickness of the board measured in millimeters. When used in a Profile or Capability, it must specify a range (x-x) indicating the minimum and maximum number of boards in the X-direction.
+*boards_y* | Integer | R | O | O | O | O | The thickness of the board measured in millimeters. When used in a Profile or Capability, it must specify a range (x-x) indicating the minimum and maximum number of boards in the X-direction.
 *border_left* | Float | O | O | O | O | O | The size of the left side boarder between the edge and the baord measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
 *border_right* | Float | O | O | O | O | O | The size of the left side boarder between the edge and the baord measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
 *border_top* | Float | O | O | O | O | O | The size of the left side boarder between the edge and the baord measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
 *border_bottom* | Float | O | O | O | O | O | The size of the left side boarder between the edge and the baord measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
 *board_spacing_x* | Float | O | O | O | O | O | The size of the space between the boards in the x-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space
 *boards_spacing_y* | Float | O | O | O | O | O | The size of the space between the boards in the y-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space
-*fiducials_number* | Integer | O | O | O | O | O | The number of fiducials on the array.
+*fiducials_number* | Integer | O | O | O | F | O | The number of fiducials on the array.
 *fiducials_size* | Float | O | O | O | O | O | The size of the fiducials measured in millimeters. If used in a Profile, it is the minimum needed size
 *fiducials_shape* | Valuelist | O | O | O | O | O | The shape of the fiducials. Can be either "donut", "circle", "plus" or "diamond".
-*breakaway_method* | Valuelist | O | O | O | O | O | The method of creation of the breakaways on the array. Possible values are "routing", "scoring" (alises includes "v-cut" and "v-grove") and "jump_scoring". If used in a Capability it can include several values separated with a comma
+*breakaway_method* | Valuelist | R | O | O | O | O | The method of creation of the breakaways on the array. Possible values are "routing", "scoring" (alises includes "v-cut" and "v-grove") and "jump_scoring". If used in a Capability it can include several values separated with a comma
 *mouse_bites* | Boolean | O | O | O | O | O | Indicates if there should be "mouse bites" to allow easy break away of the boards
-*tooling_holes_number* | Integer | O | O | O | O | O | The number of tooling holes on the array.
-*tooling_holes_size* | Float | O | O | O | O | O | The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size
+*tooling_holes_number* | Integer | R| O | O | O | O | The number of tooling holes on the array.
+*tooling_holes_size* | Float | R | O | O | O | O | The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size
 
 ### Mechanical Processes ("mechanical")
 Mechanical processes
@@ -288,7 +288,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *date_code* | String | O | O | O | O | O | ossible values are "YY" for year, "WW" for week "-" and "LOT" (alias "BATCH"). E.g. "YYWW-LOT" or "LOT-YYWW". If no marking, set "NONE".
 *placement* | Valuelist | O | O | O | O | O | Placement of the markings. Possible values are "copper_top", "copper_bottom", "soldermask_top", "soldermask_bottom", "legend_top" or "legend_bottom". When used as a Capability, several can be listed separated by a comma
 *manufacturer_identification* | Boolean | O | O | O | O | O | Manufacturer identification present (if Specification), allowed (in Profile) or possible (in Capability)
-*standards* | Valuelist | O | O | O | O | O | Possible values are the ones listed in the subelement "Standards and Requirements" but typical will be "ul" and "rohs". Separate by comma.
+*standards* | Valuelist | R | O | O | O | O | Possible values are the ones listed in the subelement "Standards and Requirements" but typical will be "ul" and "rohs". Separate by comma.
 
 ### Standards and Requirements ("standards")
 If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)
@@ -395,7 +395,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *add_tear_drops* | Boolean | O | O | O | O | F | Adding Tear Drops
 
 ### Additional Requirements ("additional_requirements")
-This section is for all requirements that still has not beenadapted to the standard. It allowes you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom elements->additional section. Multiple elements allowed - to be added as a list.
+This section is for all requirements that still has not been adapted to the standard. It allows you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom elements->additional section. Multiple elements allowed - to be added as a list.
 
 #### Example
 
