@@ -383,6 +383,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *layer_stop* | Number | O | O | O | O | O | The layer where the hole stops, counted from the top, where top layer is 1
 *depth* | Float | O | O | O | O | O | The depth of the hole
 *method* | Value | O | O | O | O | O | Can be either "routing" or "drilling", where drilling is default
+*minimum_designed_annular_ring* | Float | O | O | O | O | O | The minimum designed annular ring
 
 ### Allowed Modifications ("allowed_modifications")
 Changes/fabrication decisions that are allowed to make to the files provided.
