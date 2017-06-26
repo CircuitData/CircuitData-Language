@@ -62,12 +62,25 @@ The name of the element as it is to be used in the file is included behind the t
 
 If the element have alternative names in everyday use, this is referenced as an "Alias" and stated just below the title.
 
+### Stackup ("stackup")
+Aliases: "stack-up", "buildup", "build-up"
+Specififying if the stackup of the board, wether it is free (supplier to choose), specified in a separate file or specified in this file. Can also include the stackup itself.
+
+Data tag | Format | P | PD | PE | PR | C | Description
+---------|--------|---|----|----|----|---|--------------
+*specification_level* | List | R | O | O | O | O | The stack up of this board. Can either be "free", "separate_file" or "specified". "Free" means that the fabricator can choose the stackup that matches the rest of the requirements. "Separate_file" means that a file is supplied with the package that will contain the actual stackup. "Specified" is means that there needs to be a description of the stackup included - see below.
+*file_name* | String | O | F | F | F | O | The name of the file including the stackup, only to be used if the "specification_level" is "separate_file".
+*specified* | Array | O | F | F | F | F | The container for the elements that is part of the stackup. See the example files for use.
+
+
 ### Rigid Conductive layer ("rigid_conductive_layer")
 The layers of rigid conductive material (usually copper)
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *count* | Integer | R | F | F | F | O | The number of conductive layers. As a Capability it needs to be a Range.
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
 *minimum_internal_track_width* | Float | O | F | F | O | O | The minimum nominal width of conductors on internal/unplated layers (minimum track). As a Capability it needs to be a Range.
 *minimum_external_track_width* | Float | O | F | F | O | O | The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here. As a Capability it needs to be a Range.
 *minimum_internal_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors on the internal layers. As a Capability it needs to be a Range.
@@ -84,6 +97,8 @@ The layers of flexible conductive material (usually copper)
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *count* | Integer | R | F | F | F | O | The number of conductive layers. As a Capability it needs to be a Range.
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
 *minimum_internal_track_width* | Float | O | F | F | O | O | The minimum nominal width of conductors on internal/unplated layers (minimum track). As a Capability it needs to be a Range.
 *minimum_external_track_width* | Float | O | F | F | O | O | The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here. As a Capability it needs to be a Range.
 *minimum_internal_spacing_width* | Float | O | F | F | O | O | The minimum gap between two conductors on the internal layers. As a Capability it needs to be a Range.
@@ -102,6 +117,8 @@ A list of final finishes, can be more than one. E.g. selective finish ENIG and O
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *finish* | List | O | O | O | O | O | The material/method/surface to be used in the finish. Pick from the valuelist "Final finishes". As a Capability it needs to be a Range.
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
 *area* | Float | O | F | F | F | F | The area that the finish will cover, in square decimeter. As a Capability it needs to be a Range.
 *thickness* | Float | O | O | O | F | O |  The thickness of the finish in micrometer. As a Capability it needs to be a Range.
 *gold_thickness* | Float | O | O | O | F | O |  The thickness of the gold finish in micrometer. As a Capability it needs to be a Range.
@@ -141,6 +158,8 @@ Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *color* | List or Custom | O | O | O | O | O | This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
 *finish* | List | O | O | O | O | O | Can be `matte`, `semi-matte`, `glossy` or `any`. Required due to the "any" value
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
 *min_thickness* | Float | O | O | O | F | O | The minimum thickness of the soldermask
 *max_thickness* | Float | O | O | O | F | O | The maximum thickness of the soldermask
 *material* | Material | O | O | O | O | O | The material needs to listed in the materials section
@@ -153,8 +172,10 @@ Alias: "silk screen" or "silkscreen", "ink", "ident".
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *color* | List or Custom | O | O | O | O | O | This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
-*top* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates legend presence/capability at top
-*bottom* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates legend presence/capability at bottom
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
+*top* | Boolean | O | O | O | O | O | Available when used in other sections than . Indicates legend presence/capability at top
+*bottom* | Boolean | O | O | O | O | O | Available when used in other sections than stackup -> specified. Indicates legend presence/capability at bottom
 
 
 ### Stiffener ("stiffener")
@@ -163,6 +184,8 @@ Aliases: "Support"
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *size* | Float | O | O | O | F | O | The size of the stiffener should be specified in drawing
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
 *placement* | List | O | O | O | F | O | Can be either "top" or "bottom", indicating if the stiffener is on top or bottom of the flexible layer
 *thickness* | Float | O | O | O | F | O | The thickness of the stiffener
 *material* | Material | O | O | O | O | O | The material needs to listed in the materials section.
@@ -172,8 +195,10 @@ Data tag | Format | P | PD | PE | PR | C | Description
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *total_thickness* | Integer | O | O | O | O | O | The number of...
-*top* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates coverlay presence/capability at top
-*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates coverlay presence/capability at bottom
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
+*top* | Boolean | O | O | O | F | O | Available when used in other sections than stackup -> specified. Indicates coverlay presence/capability at top
+*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than stackup -> specified. Indicates coverlay presence/capability at bottom
 
 
 ### Peelable mask ("peelable_mask")
@@ -181,30 +206,38 @@ Data tag | Format | P | PD | PE | PR | C | Description
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *heating_operations* | Integer | O | O | O | F | O | The number of...
-*top* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at top
-*bottom* | Boolean | O | O | O | O | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at bottom
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
+*top* | Boolean | O | O | O | F | O | Available when used in other sections than stackup -> specified. Indicates peelable mask presence/capability at top
+*bottom* | Boolean | O | O | O | O | O | Available when used in other sections than stackup -> specified. Indicates peelable mask presence/capability at bottom
 
 ### Kapton tape ("kapton_tape")
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*top* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at top
-*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates peelable mask presence/capability at bottom
+*top* | Boolean | O | O | O | F | O | Available when used in other sections than stackup -> specified. Indicates peelable mask presence/capability at top
+*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than stackup -> specified. Indicates peelable mask presence/capability at bottom
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
 *accept_equivalent* | Boolean | O | O | O | O | O | If alternative to DuPont™ Kapton® HN general-purpose film can be used
 
 ### Conductive Carbon Print ("conductive_carbon_print")
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*top* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates carbon print presence/capability at top
-*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates carbon print presence/capability at bottom
+*top* | Boolean | O | O | O | F | O | Available when used in other sections than stackup -> specified. Indicates carbon print presence/capability at top
+*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than stackup -> specified. Indicates carbon print presence/capability at bottom
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
 
 ### Silver Print ("silver_print")
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*top* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates silver print presence/capability at top
-*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than specification -> layers. Indicates silver print presence/capability at bottom
+*top* | Boolean | O | O | O | F | O | Available when used in other sections than stackup -> specified. Indicates silver print presence/capability at top
+*bottom* | Boolean | O | O | O | F | O | Available when used in other sections than stackup -> specified. Indicates silver print presence/capability at bottom
+*layer_name* | R | F | F | F | F | The name of the layer, only to be used as part of a specified stackup
+*layer_order*  | R | F | F | F | F | The order of the layer from the top, starting with 1, only to be used as part of a specified stackup
 
 ### Inner Packaging ("inner_packaging")
 This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)
@@ -383,7 +416,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *layer_stop* | Number | O | O | O | O | O | The layer where the hole stops, counted from the top, where top layer is 1
 *depth* | Float | O | O | O | O | O | The depth of the hole
 *method* | Value | O | O | O | O | O | Can be either "routing" or "drilling", where drilling is default
-*minimum_designed_annular_ring* | Float | O | O | O | O | O | The minimum designed annular ring
+*minimum_designed_annular_ring* | Float | O | O | O | O | O | The minimum designed annular ring in micrometers
 
 ### Allowed Modifications ("allowed_modifications")
 Changes/fabrication decisions that are allowed to make to the files provided.

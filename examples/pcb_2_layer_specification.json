@@ -9,7 +9,12 @@
       "ELM0046855": {
         "printed_circuits_fabrication_data": {
           "version": "0.1",
+          "stackup": {
+            "specification_level": "free",
+          },
           "rigid_conductive_layer": {
+            "layer_name": "top",
+            "layer_order": "1",
             "count": 2,
             "minimum_track_width": 0.15,
             "minimum_spacing_width": 0.15,
