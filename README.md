@@ -253,7 +253,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *desiccant* | Boolean | O | O | O | O | O | True to indicate that a desiccant material is required
 *vacuum* | Boolean | O | O | O | O | O | True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed.
 
-### Via Protection
+### Via Protection ("via_protection")
 The via/hole protection according to IPC 4761
 
 Data tag | Format | P | PD | PE | PR | C | Description
@@ -465,6 +465,12 @@ This section is for all requirements that still has not been adapted to the stan
 ## Custom elements
 
 ### Colors
+Colors can be defined by hex, rgb, cmyk or name
+
+Data tag | Format | P | PD | PE | PR | C | Description
+---------|--------|---|----|----|----|---|--------------
+*type* | List | R | O | O | O | O | The type of color. Can be "hex", "rgb", "cmyk" or "name"
+*value* | String | O | O | O | O | O | If type is hex, the value needs to be a "#" + 6 hexadecimals (e.g. "#FFFFFF"). for "rgb" the format is "rgb(0, 255, 255)", for "cmyk"  the format is "cmyk(100%, 0%, 0%, 0%)". The name is just a string.
 
 ### Materials
 #### Soldermasks
