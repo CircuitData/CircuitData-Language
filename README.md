@@ -69,7 +69,7 @@ Specififying if the stackup of the board, wether it is free (supplier to choose)
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *specification_level* | List | R | O | O | O | O | The stack up of this board. Can either be "free", "separate_file" or "specified". "Free" means that the fabricator can choose the stackup that matches the rest of the requirements. "Separate_file" means that a file is supplied with the package that will contain the actual stackup. "Specified" is means that there needs to be a description of the stackup included - see below.
-*file_name* | String | O | F | F | F | O | The name of the file including the stackup, only to be used if the "specification_level" is "separate_file".
+*file_name* | String | O | F | F | F | O | The name of the file including the stackup, only to be used if the "specification_level" is "separate_file". Can be an URI
 *specified* | Array | O | F | F | F | F | The container for the elements that is part of the stackup. See the example files for use.
 
 
@@ -144,7 +144,7 @@ A list of one of more materials by name and referencing a material listed in the
 "materials": {
   "Generic FR-4 UL approved": {
     "name": "FR-4",
-    "ipc-4101-sheet": 121,
+    "ipc_4101_sheet": 121,
     "tg_min": 140,
     "ul": true
   }
@@ -481,8 +481,8 @@ Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *name* | String | O | O | O | O | O | The name of the Laminate. Use the official name or some name as close to it as possible
 *manufacturer* | String | O | O | O | O | O | The name of the manufacturer of the material
-*ipc-4101-sheet* | Integer | O | O | O | O | O | The reference sheet number of the IPC 4101 Standard.
-*ipc-4103-sheet* | Integer | O | O | O | O | O | The reference sheet number of the IPC 4103 Standard.
+*ipc_4101_sheet* | Integer | O | O | O | O | O | The reference sheet number of the IPC 4101 Standard.
+*ipc_4103_sheet* | Integer | O | O | O | O | O | The reference sheet number of the IPC 4103 Standard.
 *tg_min* | Integer | O | O | O | O | O | The minimum Glass Transition Temperature (Tg) required.
 *tg_range_from* | Integer | O | O | O | O | O | The Glass Transition Temperature (Tg) range starts at
 *tg_range_to* | Integer | O | O | O | O | O | The Glass Transition Temperature (Tg) range ands at
