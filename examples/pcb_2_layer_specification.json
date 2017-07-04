@@ -59,11 +59,11 @@
               "size": 300
             }
           ],
-          "soldermask": {
+          "soldermask": [{
             "color": "green",
             "finish": "any",
             "material": "Generic LPI"
-          }
+          }]
         }
       }
     },

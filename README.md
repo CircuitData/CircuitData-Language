@@ -154,6 +154,8 @@ A list of one of more materials by name and referencing a material listed in the
 ### Soldermask ("soldermask")
 Aliases: "solder mask", "sm", "solder resist", "green mask"
 
+A list of final soldermasks, can be more than one
+
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *color* | List or Custom | O | O | O | O | O | This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done with RGB or HEX in the `<custom><colors>` section.
