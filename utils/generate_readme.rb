@@ -124,7 +124,16 @@ data_hash["sections"]["elements"].keys.each do |element|
   newcontent += "This element is a list and can contain several items\n" if data_hash["sections"]["elements"][element]["type"] == "list"
   newcontent += "\nData tag | Format | P | PD | PE | PR | C | Description\n---------|--------|---|----|----|----|---|--------------\n"
   data_hash["sections"]["elements"][element]["tags"].each do |tag|
-    newcontent += "*#{tag["tag"]}* | #{tag["format"]} |" + get_abbr(tag) + " #{tag["description"]}\n"
+    $description = tag["description"]
+    if tag["format"] == "list"
+      $description += ". Possible values are (#{tag["values"]["format"]}): "
+      tag["values"]["values"].each do |value|
+        $description += "\"#{value["value"]}\""
+        value["description"] == "" ? $description += ", " : $description += " (#{value["description"]}), "
+      end
+      $description = $description.chomp(", ")
+    end
+    newcontent += "*#{tag["tag"]}* | #{tag["format"]} |" + get_abbr(tag) + " " + $description + "\n"
   end
 end
 

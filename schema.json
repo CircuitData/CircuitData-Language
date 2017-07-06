@@ -4281,6 +4281,10 @@
                 {
                   "value": "drilling",
                   "description": ""
+                },
+                {
+                  "value": "laser",
+                  "description": ""
                 }
               ]
             },
@@ -4712,7 +4716,7 @@
               }
             },
             {
-              "tag": "ipc_41013_sheet",
+              "tag": "ipc_4103_sheet",
               "format": "integer",
               "description": "The reference sheet number of the IPC 4103 Standard.",
               "in_profile_default": {
