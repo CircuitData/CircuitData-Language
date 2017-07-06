@@ -16,7 +16,7 @@ An open standard for communicating information needed for PCB fabrication. Can b
 You can also place custom elements in the appropriate folder, such as colors and materials.
 
 ## Version
-Current version is 0.5. This should stated in every section directly below the "printed_circuits_fabrication_data" element in an element called "version".
+Current version is 0.6. This should stated in every section directly below the "printed_circuits_fabrication_data" element in an element called "version".
 
 ## Example
 This example shows how to specify how to set a company profile that forbids production of printed circuit boards in countries that are not NATO members. More examples can be found in the examples folder.
