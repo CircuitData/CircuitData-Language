@@ -142,6 +142,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *material* | string | O | O | O | O | O | The name of a material that appears in the materials section
 *top* | boolean | O | O | O | O | O | Indicates soldermask presence/capability at top
 *bottom* | boolean | O | O | O | O | O | Indicates soldermask presence/capability at bottom
+*allow_touchups* | boolean | O | O | O | O | O | The manufacturer is allowed to do touchups on the soldermask if true
 
 ### Legend ("legend")
 Aliases: "silk screen", "silkscreen", "ink", "ident"
@@ -171,6 +172,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *total_thickness* | float | O | O | O | O | O | The total thickness of the coverlay
 *top* | boolean | O | O | O | O | O | Indicates coverlay presence/capability at top
 *bottom* | boolean | O | O | O | O | O | Indicates coverlay presence/capability at bottom
+*material* | string | O | O | O | O | O | The name of a material that appears in the materials -> soldermask section
 
 ### Peelable mask ("peelable_mask")
 
@@ -210,7 +212,6 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *type_of_bag* | list | O | O | O | O | O | The material of the bag to be used<br>Possible values are (string):<br>"a" (Nylon/Foil/Polyethylene)<br>"b" (TyvekTM/Foil/Polyethylene)<br>"c" (Aluminized Polyester/Polyethylene)<br>"d" (Plastics/Polymers (non-metallic))<br>
 *hic* | boolean | O | O | O | O | O | True to include a Humidity Indicator Card (HIC), False to not
 *esd* | boolean | O | O | O | O | O | True to indicate that packaging for ESD-sensitive required.
-*silica* | boolean | O | O | O | O | O | True to indicate that a silica bag is required.
 *desiccant* | boolean | O | O | O | O | O | True to indicate that a desiccant material is required.
 *vacuum* | boolean | O | O | O | O | O | True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed.
 
@@ -275,6 +276,32 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *counterboring_bottom* | boolean | O | O | O | O | O | Counterboring from the bottom present.
 *countersink_top* | boolean | O | O | O | O | O | Countersink from the top present.
 *countersink_bottom* | boolean | O | O | O | O | O | Countersink from the bottom present.
+*punching* | boolean | O | O | O | O | O | Punching process required.
+*plated_edges* | boolean | O | O | O | O | O | Plated Edges process required.
+*plated_slots* | boolean | O | O | O | O | O | Plated Slots process required.
+*plated_castellated_holes* | boolean | O | O | O | O | O | Plated Castellated Holes process required.
+*coin_attachment* | boolean | O | O | O | O | O | Coin Attachment process required.
+
+### Selective plated pads ("selective_plated_pads")
+Aliases: "selective hard gold"
+Selective plated pads
+
+Data tag | Format | P | PD | PE | PR | C | Description
+---------|--------|---|----|----|----|---|--------------
+*present* | boolean | O | O | O | O | O | Selective plated pads present.
+*layers* | string | O | F | F | F | O | The layers included in the connectors, counter from 1 (top layer).
+
+### Hard Gold Edge Connectors ("hard_gold_edge_connectors")
+Aliases: "gold fingers"
+Edge connectors made with hard gold
+
+Data tag | Format | P | PD | PE | PR | C | Description
+---------|--------|---|----|----|----|---|--------------
+*present* | boolean | O | O | O | O | O | Hard gold edge connectors present.
+*thickness* | list | O | O | O | O | O | The thickness of the connectors<br>Possible values are (string):<br>"0.76" (According to IPC Class 2)<br>"1.27" (According to IPC Class 3)<br>"other" (To be specified in the thicknes_other tag)<br>
+*thicknes_other* | float | O | O | O | F | O | Thickness if it is not "0.76" or "1.27".
+*area* | float | O | F | F | F | O | Area covered by the edge connectors in square desimeter.
+*layers* | string | O | F | F | F | O | The layers included in the connectors, counter from 1 (top layer).
 
 ### Markings ("markings")
 Physical markings on the board
@@ -284,7 +311,11 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *date_code* | string | O | O | O | F | O | Possible values are "YY" for year, "WW" for week "-" and "LOT" (alias "BATCH"). E.g. "YYWW-LOT" or "LOT-YYWW". If no marking, set "NONE".
 *placement* | list | O | O | O | O | O | Placement of the markings.<br>Possible values are (string):<br>"copper_top"<br>"copper_bottom"<br>"soldermask_top"<br>"soldermask_bottom"<br>"legend_top"<br>"legend_bottom"<br>
 *manufacturer_identification* | boolean | O | O | O | O | O | Manufacturer identification present.
-*standards* | string | O | O | O | O | O | Possible values are the ones listed in the subelement "Standards and Requirements" but typical will be "ul" and "rohs". Separate by comma.
+*standards* | string | O | O | O | O | O | Possible values are the ones listed in the subelement "standards" but typical will be "ul" and "rohs". Separate by comma.
+*serial_number* | boolean | O | O | O | O | O | Serial number should be added in the markings.
+*serial_number_format* | string | O | O | O | F | O | Format of the serial number expressed as a "regular expression" but needs to have x amount of digits in it.
+*serial_number_start* | integer | O | O | O | F | O | The number to start the serial number from. Will have to replace the digits from the "serial_number_format" above.
+*serial_number_increase_by* | integer | O | O | O | F | O | The increase in number from "serial_number_start" with each product.
 
 ### Standards and Requirements ("standards")
 If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)
@@ -360,12 +391,17 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *number* | integer | O | F | F | F | O | The number of holes total or in this process.
 *type* | list | O | F | F | F | O | The type of holes.<br>Possible values are (string):<br>"through"<br>"blind"<br>"buried"<br>"back_drill"<br>
 *plated* | boolean | O | O | O | O | O | True if the holes are plated.
-*size* | float | O | F | F | F | O | The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list.
+*size* | float | O | F | F | F | O | The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list or as a capability.
 *layer_start* | integer | O | F | F | F | O | The layer where the hole starts, counted from the top, where top layer is 1.
 *layer_stop* | integer | O | F | F | F | O | The layer where the hole stops, counted from the top, where top layer is 1.
 *depth* | float | O | F | F | F | O | The depth of the hole in micrometer.
 *method* | list | O | F | F | F | O | Can be either "routing" or "drilling", where drilling is default<br>Possible values are (string):<br>"routing"<br>"drilling"<br>"laser"<br>
-*minimum_designed_annular_ring* | float | O | F | F | F | O |  The minimum designed annular ring in micrometers.
+*minimum_designed_annular_ring* | float | O | F | F | F | O | The minimum designed annular ring in micrometers.
+*press_fit* | boolean | O | F | F | F | O | Press Fit holes.
+*copper_filled* | boolean | O | F | F | F | O | Copper filled holes.
+*staggered* | boolean | O | F | F | F | O | Staggered holes.
+*stacked* | boolean | O | F | F | F | O | Stacked holes.
+*alivh* | boolean | O | F | F | F | O | ALIVH holes.
 
 ### Allowed Modifications ("allowed_modifications")
 Changes/fabrication decisions that are allowed to make to the files provided.
@@ -416,6 +452,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *manufacturer* | string | O | O | O | O | O | The name of the manufacturer
 *ipc_4101_sheet* | integer | O | O | O | O | O | The reference sheet number of the IPC 4101 Standard.
 *ipc_4103_sheet* | integer | O | O | O | O | O | The reference sheet number of the IPC 4103 Standard.
+*ipc_4204_sheet* | integer | O | O | O | O | O | The reference sheet number of the IPC 4204 Standard.
 *tg_min* | integer | O | O | O | O | O | The minimum Glass Transition Temperature (Tg) required.
 *tg_range_from* | integer | O | O | O | O | O | The Glass Transition Temperature (Tg) range starts at.
 *tg_range_to* | integer | O | O | O | O | O | The Glass Transition Temperature (Tg) range ands at.
@@ -429,6 +466,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *rw_nfpa_130* | boolean | O | O | O | O | O | Railway USA NFPA 130 compatible.
 *ul* | boolean | O | O | O | O | O | UL compatible.
 *link* | string | O | O | O | O | O | The link to some url that gives more information or a reference to the product.
+*accept_equivalent* | boolean | O | O | O | O | O | Equivalent material to the one specified is OK to use as a replacement if true.
 
 #### Stiffeners
 The materials to be used as stiffener

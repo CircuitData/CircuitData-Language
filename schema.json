@@ -1312,6 +1312,26 @@
             "in_capability": {
               "state": "optional"
             }
+          },
+          {
+            "tag": "allow_touchups",
+            "format": "boolean",
+            "description": "The manufacturer is allowed to do touchups on the soldermask if true",
+            "in_profile_default": {
+              "state": "optional"
+            },
+            "in_profile_enforced": {
+              "state": "optional"
+            },
+            "in_profile_restricted": {
+              "state": "optional"
+            },
+            "in_product": {
+              "state": "optional"
+            },
+            "in_capability": {
+              "state": "forbidden"
+            }
           }
         ]
       },
@@ -1574,6 +1594,31 @@
             },
             "in_capability": {
               "state": "optional"
+            }
+          },
+          {
+            "tag": "material",
+            "format": "string",
+            "description": "The name of a material that appears in the materials -> soldermask section",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "multiple"
+            },
+            "in_profile_restricted": {
+              "state": "optional",
+              "values": "multiple"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "multiple"
             }
           }
         ]
@@ -1891,26 +1936,6 @@
             "tag": "esd",
             "format": "boolean",
             "description": "True to indicate that packaging for ESD-sensitive required.",
-            "in_profile_default": {
-              "state": "optional"
-            },
-            "in_profile_enforced": {
-              "state": "optional"
-            },
-            "in_profile_restricted": {
-              "state": "optional"
-            },
-            "in_product": {
-              "state": "optional"
-            },
-            "in_capability": {
-              "state": "optional"
-            }
-          },
-          {
-            "tag": "silica",
-            "format": "boolean",
-            "description": "True to indicate that a silica bag is required.",
             "in_profile_default": {
               "state": "optional"
             },
@@ -2855,6 +2880,288 @@
             "in_capability": {
               "state": "optional"
             }
+          },
+          {
+            "tag": "punching",
+            "format": "boolean",
+            "description": "Punching process required.",
+            "in_profile_default": {
+              "state": "optional"
+            },
+            "in_profile_enforced": {
+              "state": "optional"
+            },
+            "in_profile_restricted": {
+              "state": "optional"
+            },
+            "in_product": {
+              "state": "optional"
+            },
+            "in_capability": {
+              "state": "optional"
+            }
+          },
+          {
+            "tag": "plated_edges",
+            "format": "boolean",
+            "description": "Plated Edges process required.",
+            "in_profile_default": {
+              "state": "optional"
+            },
+            "in_profile_enforced": {
+              "state": "optional"
+            },
+            "in_profile_restricted": {
+              "state": "optional"
+            },
+            "in_product": {
+              "state": "optional"
+            },
+            "in_capability": {
+              "state": "optional"
+            }
+          },
+          {
+            "tag": "plated_slots",
+            "format": "boolean",
+            "description": "Plated Slots process required.",
+            "in_profile_default": {
+              "state": "optional"
+            },
+            "in_profile_enforced": {
+              "state": "optional"
+            },
+            "in_profile_restricted": {
+              "state": "optional"
+            },
+            "in_product": {
+              "state": "optional"
+            },
+            "in_capability": {
+              "state": "optional"
+            }
+          },
+          {
+            "tag": "plated_castellated_holes",
+            "format": "boolean",
+            "description": "Plated Castellated Holes process required.",
+            "in_profile_default": {
+              "state": "optional"
+            },
+            "in_profile_enforced": {
+              "state": "optional"
+            },
+            "in_profile_restricted": {
+              "state": "optional"
+            },
+            "in_product": {
+              "state": "optional"
+            },
+            "in_capability": {
+              "state": "optional"
+            }
+          },
+          {
+            "tag": "coin_attachment",
+            "format": "boolean",
+            "description": "Coin Attachment process required.",
+            "in_profile_default": {
+              "state": "optional"
+            },
+            "in_profile_enforced": {
+              "state": "optional"
+            },
+            "in_profile_restricted": {
+              "state": "optional"
+            },
+            "in_product": {
+              "state": "optional"
+            },
+            "in_capability": {
+              "state": "optional"
+            }
+          }
+        ]
+      },
+      "selective_plated_pads": {
+        "aliases": "selective hard gold",
+        "name": "Selective plated pads",
+        "description": "Selective plated pads",
+        "type": "object",
+        "tags": [{
+            "tag": "present",
+            "format": "boolean",
+            "description": "Selective plated pads present.",
+            "in_profile_default": {
+              "state": "optional"
+            },
+            "in_profile_enforced": {
+              "state": "optional"
+            },
+            "in_profile_restricted": {
+              "state": "optional"
+            },
+            "in_product": {
+              "state": "optional"
+            },
+            "in_capability": {
+              "state": "optional"
+            }
+          },
+          {
+            "tag": "layers",
+            "format": "string",
+            "description": "The layers included in the connectors, counter from 1 (top layer).",
+            "in_profile_default": {
+              "state": "forbidden"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "forbidden"
+            }
+          }
+        ]
+      },
+      "hard_gold_edge_connectors": {
+        "aliases": "gold fingers",
+        "name": "Hard Gold Edge Connectors",
+        "description": "Edge connectors made with hard gold",
+        "type": "object",
+        "tags": [{
+            "tag": "present",
+            "format": "boolean",
+            "description": "Hard gold edge connectors present.",
+            "in_profile_default": {
+              "state": "optional"
+            },
+            "in_profile_enforced": {
+              "state": "optional"
+            },
+            "in_profile_restricted": {
+              "state": "optional"
+            },
+            "in_product": {
+              "state": "optional"
+            },
+            "in_capability": {
+              "state": "optional"
+            }
+          },
+          {
+            "tag": "thickness",
+            "format": "list",
+            "description": "The thickness of the connectors",
+            "values": {
+              "format": "string",
+              "values": [{
+                  "value": "0.76",
+                  "description": "According to IPC Class 2"
+                },
+                {
+                  "value": "1.27",
+                  "description": "According to IPC Class 3"
+                },
+                {
+                  "value": "other",
+                  "description": "To be specified in the thicknes_other tag"
+                }
+              ]
+            },
+            "in_profile_default": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_restricted": {
+              "state": "optional",
+              "values": "multiple"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "range"
+            }
+          },
+          {
+            "tag": "thicknes_other",
+            "format": "float",
+            "description": "Thickness if it is not \"0.76\" or \"1.27\".",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "range"
+            }
+          },
+          {
+            "tag": "area",
+            "format": "float",
+            "description": "Area covered by the edge connectors in square desimeter.",
+            "in_profile_default": {
+              "state": "forbidden"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "forbidden"
+            }
+          },
+          {
+            "tag": "layers",
+            "format": "string",
+            "description": "The layers included in the connectors, counter from 1 (top layer).",
+            "in_profile_default": {
+              "state": "forbidden"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "forbidden"
+            }
           }
         ]
       },
@@ -2963,7 +3270,7 @@
           {
             "tag": "standards",
             "format": "string",
-            "description": "Possible values are the ones listed in the subelement \"Standards and Requirements\" but typical will be \"ul\" and \"rohs\". Separate by comma.",
+            "description": "Possible values are the ones listed in the subelement \"standards\" but typical will be \"ul\" and \"rohs\". Separate by comma.",
             "in_profile_default": {
               "state": "optional",
               "values": "multiple"
@@ -2983,6 +3290,95 @@
             "in_capability": {
               "state": "optional",
               "values": "multiple"
+            }
+          },
+          {
+            "tag": "serial_number",
+            "format": "boolean",
+            "description": "Serial number should be added in the markings.",
+            "in_profile_default": {
+              "state": "optional"
+            },
+            "in_profile_enforced": {
+              "state": "optional"
+            },
+            "in_profile_restricted": {
+              "state": "optional"
+            },
+            "in_product": {
+              "state": "optional"
+            },
+            "in_capability": {
+              "state": "optional"
+            }
+          },
+          {
+            "tag": "serial_number_format",
+            "format": "string",
+            "description": "Format of the serial number expressed as a \"regular expression\" but needs to have x amount of digits in it.",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "forbidden"
+            }
+          },
+          {
+            "tag": "serial_number_start",
+            "format": "integer",
+            "description": "The number to start the serial number from. Will have to replace the digits from the \"serial_number_format\" above.",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "forbidden"
+            }
+          },
+          {
+            "tag": "serial_number_increase_by",
+            "format": "integer",
+            "description": "The increase in number from \"serial_number_start\" with each product.",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "forbidden"
             }
           }
         ]
@@ -4183,7 +4579,7 @@
           {
             "tag": "size",
             "format": "float",
-            "description": "The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list.",
+            "description": "The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list or as a capability.",
             "in_profile_default": {
               "state": "forbidden"
             },
@@ -4309,7 +4705,117 @@
           {
             "tag": "minimum_designed_annular_ring",
             "format": "float",
-            "description": " The minimum designed annular ring in micrometers.",
+            "description": "The minimum designed annular ring in micrometers.",
+            "in_profile_default": {
+              "state": "forbidden"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "single"
+            }
+          },
+          {
+            "tag": "press_fit",
+            "format": "boolean",
+            "description": "Press Fit holes.",
+            "in_profile_default": {
+              "state": "forbidden"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "single"
+            }
+          },
+          {
+            "tag": "copper_filled",
+            "format": "boolean",
+            "description": "Copper filled holes.",
+            "in_profile_default": {
+              "state": "forbidden"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "single"
+            }
+          },
+          {
+            "tag": "staggered",
+            "format": "boolean",
+            "description": "Staggered holes.",
+            "in_profile_default": {
+              "state": "forbidden"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "single"
+            }
+          },
+          {
+            "tag": "stacked",
+            "format": "boolean",
+            "description": "Stacked holes.",
+            "in_profile_default": {
+              "state": "forbidden"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "single"
+            }
+          },
+          {
+            "tag": "alivh",
+            "format": "boolean",
+            "description": "ALIVH holes.",
             "in_profile_default": {
               "state": "forbidden"
             },
@@ -4741,6 +5247,31 @@
               }
             },
             {
+              "tag": "ipc_4204_sheet",
+              "format": "integer",
+              "description": "The reference sheet number of the IPC 4204 Standard.",
+              "in_profile_default": {
+                "state": "optional",
+                "values": "single"
+              },
+              "in_profile_enforced": {
+                "state": "optional",
+                "values": "single"
+              },
+              "in_profile_restricted": {
+                "state": "optional",
+                "values": "single"
+              },
+              "in_product": {
+                "state": "optional",
+                "values": "single"
+              },
+              "in_capability": {
+                "state": "optional",
+                "values": "single"
+              }
+            },
+            {
               "tag": "tg_min",
               "format": "integer",
               "description": "The minimum Glass Transition Temperature (Tg) required.",
@@ -5033,6 +5564,30 @@
               "in_capability": {
                 "state": "optional",
                 "values": "single"
+              }
+            },
+            {
+              "tag": "accept_equivalent",
+              "format": "boolean",
+              "description": "Equivalent material to the one specified is OK to use as a replacement if true.",
+              "in_profile_default": {
+                "state": "optional",
+                "values": "single"
+              },
+              "in_profile_enforced": {
+                "state": "optional",
+                "values": "single"
+              },
+              "in_profile_restricted": {
+                "state": "optional",
+                "values": "single"
+              },
+              "in_product": {
+                "state": "optional",
+                "values": "single"
+              },
+              "in_capability": {
+                "state": "forbidden"
               }
             }
           ]
