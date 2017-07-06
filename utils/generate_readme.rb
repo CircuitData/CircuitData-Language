@@ -126,10 +126,10 @@ data_hash["sections"]["elements"].keys.each do |element|
   data_hash["sections"]["elements"][element]["tags"].each do |tag|
     $description = tag["description"]
     if tag["format"] == "list"
-      $description += ". Possible values are (#{tag["values"]["format"]}):<br>"
+      $description += "<br>Possible values are (#{tag["values"]["format"]}):<br>"
       tag["values"]["values"].each do |value|
         $description += "\"#{value["value"]}\""
-        value["description"] == "<br>" ? $description += ", " : $description += " (#{value["description"]})<br>"
+        value["description"] == "" ? $description += "<br>" : $description += " (#{value["description"]})<br>"
       end
     end
     newcontent += "*#{tag["tag"]}* | #{tag["format"]} |" + get_abbr(tag) + " " + $description + "\n"

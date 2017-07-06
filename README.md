@@ -68,7 +68,7 @@ The stackup of the board: Free stackup (supplier to choose), specified in a sepa
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*specification_level* | list | O | F | F | F | O | The stack up of this board. Possible values are (string):<br>"free" (The manufacturer can choose the stackup that matches the rest of the requirements)<br>"separate_file" (A file is supplied with the package that will contain the actual stackup.)<br>"specified" (The actual stackup is under the stackup->specified tag)<br>
+*specification_level* | list | O | F | F | F | O | The stack up of this board<br>Possible values are (string):<br>"free" (The manufacturer can choose the stackup that matches the rest of the requirements)<br>"separate_file" (A file is supplied with the package that will contain the actual stackup.)<br>"specified" (The actual stackup is under the stackup->specified tag)<br>
 *file_name* | string | O | O | O | F | O | The URI of the file that specifies the stackup. Either as a path witin a project compressed file (ZIP) or as a link
 *specified* | object | O | F | F | F | O | The container where the elements describing the stackup should be placed. All elements under object must contain the "layer_order" tags to set the order of the layer. They should also contain the "layer_name" tag to set the descriptive name of the layer
 
@@ -82,9 +82,9 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *minimum_external_track_width* | float | O | F | F | O | O | The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here.
 *minimum_internal_spacing_width* | float | O | F | F | O | O | The minimum gap between two conductors on the internal layers.
 *minimum_external_spacing_width* | float | O | F | F | O | O | The minimum gap between two conductors on the external layers. If only one minimum gap is present, is should be here.
-*external_base_copper_thickness* | list | O | F | F | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer.. Possible values are (float):<br>"5.1" ()<br>"8.5" ()<br>"12" ()<br>"17.1" ()<br>"25.7" ()<br>"34.3" ()<br>"68.6" ()<br>"102.9" ()<br>"137.2" ()<br>"171.5" ()<br>"205.7" ()<br>"240" ()<br>"342.9" ()<br>"480.1" ()<br>
-*internal_base_copper_thickness* | list | O | F | F | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer.. Possible values are (float):<br>"5.1" ()<br>"8.5" ()<br>"12" ()<br>"17.1" ()<br>"25.7" ()<br>"34.3" ()<br>"68.6" ()<br>"102.9" ()<br>"137.2" ()<br>"171.5" ()<br>"205.7" ()<br>"240" ()<br>"342.9" ()<br>"480.1" ()<br>
-*copper_foil_roughness* | list | O | O | O | O | O | The roughness of the copper foil.. Possible values are (string):<br>"S" (Standard profile)<br>"L" (Low profile)<br>"V" (Very low profile)<br>
+*external_base_copper_thickness* | list | O | F | F | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer.<br>Possible values are (float):<br>"5.1"<br>"8.5"<br>"12"<br>"17.1"<br>"25.7"<br>"34.3"<br>"68.6"<br>"102.9"<br>"137.2"<br>"171.5"<br>"205.7"<br>"240"<br>"342.9"<br>"480.1"<br>
+*internal_base_copper_thickness* | list | O | F | F | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer.<br>Possible values are (float):<br>"5.1"<br>"8.5"<br>"12"<br>"17.1"<br>"25.7"<br>"34.3"<br>"68.6"<br>"102.9"<br>"137.2"<br>"171.5"<br>"205.7"<br>"240"<br>"342.9"<br>"480.1"<br>
+*copper_foil_roughness* | list | O | O | O | O | O | The roughness of the copper foil.<br>Possible values are (string):<br>"S" (Standard profile)<br>"L" (Low profile)<br>"V" (Very low profile)<br>
 *copper_coverage_average* | float | O | F | F | F | O | The average copper coverage of the board. UoM is percentage
 
 ### Flexible Conductive layer ("flexible_conductive_layer")
@@ -97,10 +97,10 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *minimum_external_track_width* | float | O | F | F | O | O | The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here.
 *minimum_internal_spacing_width* | float | O | F | F | O | O | The minimum gap between two conductors on the internal layers.
 *minimum_external_spacing_width* | float | O | F | F | O | O | The minimum gap between two conductors on the external layers. If only one minimum gap is present, is should be here.
-*external_base_copper_thickness* | list | O | F | F | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer.. Possible values are (float):<br>"5.1" ()<br>"8.5" ()<br>"12" ()<br>"17.1" ()<br>"25.7" ()<br>"34.3" ()<br>"68.6" ()<br>"102.9" ()<br>"137.2" ()<br>"171.5" ()<br>"205.7" ()<br>"240" ()<br>"342.9" ()<br>"480.1" ()<br>
-*internal_base_copper_thickness* | list | O | F | F | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer.. Possible values are (float):<br>"5.1" ()<br>"8.5" ()<br>"12" ()<br>"17.1" ()<br>"25.7" ()<br>"34.3" ()<br>"68.6" ()<br>"102.9" ()<br>"137.2" ()<br>"171.5" ()<br>"205.7" ()<br>"240" ()<br>"342.9" ()<br>"480.1" ()<br>
-*copper_foil_roughness* | list | O | O | O | O | O | The roughness of the copper foil.. Possible values are (string):<br>"S" (Standard profile)<br>"L" (Low profile)<br>"V" (Very low profile)<br>
-*copper_foil_type* | list | O | O | O | O | O | The The type of the copper foil. Possible values are (string):<br>"ED" (Electro Deposited)<br>"RA" (Rolled Annealed Copper)<br>"ED" (Default)<br>
+*external_base_copper_thickness* | list | O | F | F | O | O | Finished base copper thickness following IPC Class on the up to two external layers in micrometer.<br>Possible values are (float):<br>"5.1"<br>"8.5"<br>"12"<br>"17.1"<br>"25.7"<br>"34.3"<br>"68.6"<br>"102.9"<br>"137.2"<br>"171.5"<br>"205.7"<br>"240"<br>"342.9"<br>"480.1"<br>
+*internal_base_copper_thickness* | list | O | F | F | O | O | Finished base copper thickness following IPC Class on the internal layers in micrometer.<br>Possible values are (float):<br>"5.1"<br>"8.5"<br>"12"<br>"17.1"<br>"25.7"<br>"34.3"<br>"68.6"<br>"102.9"<br>"137.2"<br>"171.5"<br>"205.7"<br>"240"<br>"342.9"<br>"480.1"<br>
+*copper_foil_roughness* | list | O | O | O | O | O | The roughness of the copper foil.<br>Possible values are (string):<br>"S" (Standard profile)<br>"L" (Low profile)<br>"V" (Very low profile)<br>
+*copper_foil_type* | list | O | O | O | O | O | The The type of the copper foil<br>Possible values are (string):<br>"ED" (Electro Deposited)<br>"RA" (Rolled Annealed Copper)<br>"ED" (Default)<br>
 *copper_coverage_average* | float | O | F | F | F | O | The average copper coverage of the board. UoM is percentage
 
 ### Final Finish ("final_finish")
@@ -110,7 +110,7 @@ This element is a list and can contain several items
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*finish* | list | O | O | O | O | O | The material/method/surface to be used in the finish.. Possible values are (string):<br>"c_bare_copper" (AABUS)<br>"isn" (IPC-4554 Immersion Tin)<br>"iag" (IPC-4553 Immersion Silver)<br>"enepig" (IPC-4552 Immersion Gold)<br>"osp" (J-STD-003 Organic Solderability Preservative)<br>"ht_osp" (J-STD-003 High Temperature OSP)<br>"g" (ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered)<br>"GS" (J-STD-003 Gold Electroplate on areas to be soldered)<br>"t_fused" (J-STD-003 Electrodeposited Tin-Lead (fused))<br>"tlu_unfused" (J-STD-003 Electrodeposited Tin-Lead Unfused)<br>"dig" (J-STD-003 Direct Immersion Gold (Solderable Surface))<br>"gwb-1_ultrasonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic))<br>"gwb-2-thermosonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic))<br>"s_hasl" (J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL))<br>"lf_hasl" (J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL))<br>
+*finish* | list | O | O | O | O | O | The material/method/surface to be used in the finish.<br>Possible values are (string):<br>"c_bare_copper" (AABUS)<br>"isn" (IPC-4554 Immersion Tin)<br>"iag" (IPC-4553 Immersion Silver)<br>"enepig" (IPC-4552 Immersion Gold)<br>"osp" (J-STD-003 Organic Solderability Preservative)<br>"ht_osp" (J-STD-003 High Temperature OSP)<br>"g" (ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered)<br>"GS" (J-STD-003 Gold Electroplate on areas to be soldered)<br>"t_fused" (J-STD-003 Electrodeposited Tin-Lead (fused))<br>"tlu_unfused" (J-STD-003 Electrodeposited Tin-Lead Unfused)<br>"dig" (J-STD-003 Direct Immersion Gold (Solderable Surface))<br>"gwb-1_ultrasonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic))<br>"gwb-2-thermosonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic))<br>"s_hasl" (J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL))<br>"lf_hasl" (J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL))<br>
 *area* | float | O | F | F | F | O | The area that the finish will cover, in square decimeter.
 *thickness* | float | O | O | O | F | O | The thickness of the finish in micrometer.
 *gold_thickness* | float | O | O | O | F | O | The thickness of the gold finish in micrometer.
@@ -136,7 +136,7 @@ This element is a list and can contain several items
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *color* | string | O | O | O | O | O | This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done custom -> colors section.
-*finish* | list | O | O | O | O | O | The finish of the soldermask.. Possible values are (string):<br>"mate" (Finish)<br>"semi-mate" (Finish)<br>"glossy" (Finish)<br>"any" (Finish)<br>
+*finish* | list | O | O | O | O | O | The finish of the soldermask.<br>Possible values are (string):<br>"mate" (Finish)<br>"semi-mate" (Finish)<br>"glossy" (Finish)<br>"any" (Finish)<br>
 *min_thickness* | float | O | O | O | F | O | The minimum thickness of the soldermask.
 *max_thickness* | float | O | O | O | F | O | The maximum thickness of the soldermask.
 *material* | string | O | O | O | O | O | The name of a material that appears in the materials section
@@ -160,7 +160,7 @@ Stiffener in flexible boards
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *size* | float | O | O | O | O | O | The size of the stiffener should be specified in drawing
-*placement* | list | O | O | O | O | O | Indicating if the stiffener is on top or bottom of the flexible layer.. Possible values are (string):<br>"top" (The stiffener is on top of the flexible layer(s))<br>"bottom" (The stiffener is below the flexible layer(s))<br>
+*placement* | list | O | O | O | O | O | Indicating if the stiffener is on top or bottom of the flexible layer.<br>Possible values are (string):<br>"top" (The stiffener is on top of the flexible layer(s))<br>"bottom" (The stiffener is below the flexible layer(s))<br>
 *thickness* | float | O | O | O | F | O | The thickness of the stiffener
 *material* | string | O | O | O | O | O | The name of a material that appears in the materials section
 
@@ -176,7 +176,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*heating_operations* | integer | O | O | O | O | O |
+*heating_operations* | integer | O | O | O | O | O | 
 *top* | boolean | O | O | O | O | O | Indicates peelable mask presence/capability at top
 *bottom* | boolean | O | O | O | O | O | Indicates peelable mask presence/capability at bottom
 
@@ -207,7 +207,7 @@ This describes how boards are packed together to be shipped. Part of IPC 1601 (4
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*type_of_bag* | list | O | O | O | O | O | The material of the bag to be used. Possible values are (string):<br>"a" (Nylon/Foil/Polyethylene)<br>"b" (TyvekTM/Foil/Polyethylene)<br>"c" (Aluminized Polyester/Polyethylene)<br>"d" (Plastics/Polymers (non-metallic))<br>
+*type_of_bag* | list | O | O | O | O | O | The material of the bag to be used<br>Possible values are (string):<br>"a" (Nylon/Foil/Polyethylene)<br>"b" (TyvekTM/Foil/Polyethylene)<br>"c" (Aluminized Polyester/Polyethylene)<br>"d" (Plastics/Polymers (non-metallic))<br>
 *hic* | boolean | O | O | O | O | O | True to include a Humidity Indicator Card (HIC), False to not
 *esd* | boolean | O | O | O | O | O | True to indicate that packaging for ESD-sensitive required.
 *silica* | boolean | O | O | O | O | O | True to indicate that a silica bag is required.
@@ -257,8 +257,8 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *board_spacing_y* | float | O | O | O | O | O | The size of the space between the boards in the y-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space
 *fiducials_number* | integer | O | O | O | F | O | The number of fiducials on the array.
 *fiducials_size* | float | O | O | O | O | O | The size of the fiducials measured in millimeters. If used in a Profile, it is the minimum needed size
-*fiducials_shape* | list | O | O | O | O | O | The shape of the fiducials.. Possible values are (string):<br>"donut" ()<br>"circle" ()<br>"plus" ()<br>"diamond" ()<br>
-*breakaway_method* | list | O | O | O | O | O | The method of creation of the breakaways on the array. Possible values are (string):<br>"routing" ()<br>"routing" (alises includes "v-cut" and "v-grove")<br>"jump_scoring" ()<br>
+*fiducials_shape* | list | O | O | O | O | O | The shape of the fiducials.<br>Possible values are (string):<br>"donut"<br>"circle"<br>"plus"<br>"diamond"<br>
+*breakaway_method* | list | O | O | O | O | O | The method of creation of the breakaways on the array<br>Possible values are (string):<br>"routing"<br>"routing" (alises includes "v-cut" and "v-grove")<br>"jump_scoring"<br>
 *mouse_bites* | boolean | O | O | O | O | O | Indicates if there should be "mouse bites" to allow easy break away of the boards
 *tooling_holes_number* | integer | O | O | O | O | O | The number of tooling holes on the array.
 *tooling_holes_size* | float | O | O | O | O | O | The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size.
@@ -282,7 +282,7 @@ Physical markings on the board
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *date_code* | string | O | O | O | F | O | Possible values are "YY" for year, "WW" for week "-" and "LOT" (alias "BATCH"). E.g. "YYWW-LOT" or "LOT-YYWW". If no marking, set "NONE".
-*placement* | list | O | O | O | O | O | Placement of the markings.. Possible values are (string):<br>"copper_top" ()<br>"copper_bottom" ()<br>"soldermask_top" ()<br>"soldermask_bottom" ()<br>"legend_top" ()<br>"legend_bottom" ()<br>
+*placement* | list | O | O | O | O | O | Placement of the markings.<br>Possible values are (string):<br>"copper_top"<br>"copper_bottom"<br>"soldermask_top"<br>"soldermask_bottom"<br>"legend_top"<br>"legend_bottom"<br>
 *manufacturer_identification* | boolean | O | O | O | O | O | Manufacturer identification present.
 *standards* | string | O | O | O | O | O | Possible values are the ones listed in the subelement "Standards and Requirements" but typical will be "ul" and "rohs". Separate by comma.
 
@@ -294,7 +294,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *ul* | boolean | O | O | O | O | O | Indicating if UL is required for the board. Can not be used as a capability, as this will be indicated on each material.
 *c_ul* | boolean | O | O | O | O | O | Indicating if Canadian UL is required for the board. Can not be used as a capability, as this will be indicated on each material.
 *rohs* | boolean | O | O | O | O | O | RoHS.
-*ul94* | list | O | O | O | O | O | Counterboring from the top present.. Possible values are (string):<br>"v_0" ()<br>"v_1" ()<br>"v_2" ()<br>
+*ul94* | list | O | O | O | O | O | Counterboring from the top present.<br>Possible values are (string):<br>"v_0"<br>"v_1"<br>"v_2"<br>
 *esa* | boolean | O | O | O | O | O | European Space Agency Use.
 *itar* | boolean | O | O | O | O | O | US ITAR.
 *dfars* | boolean | O | O | O | O | O | US DFARS.
@@ -307,14 +307,14 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *rw_nf_f_16_101* | boolean | O | O | O | O | O | Railway France NF F 16-101.
 *rw_uni_cei_11170_3* | boolean | O | O | O | O | O | Railway Italy UNI CEI 11170-3.
 *rw_nfpa_130* | boolean | O | O | O | O | O | Railway USA NFPA 130.
-*ipc_6010_class* | list | O | O | O | O | O | According to Table 4-2 /4-3.. Possible values are (string):<br>"1" ()<br>"2" ()<br>"3" ()<br>
-*ipc_6010_compliance_level* | list | O | O | O | O | O | . Possible values are (string):<br>"full" ()<br>"factory_standard" ()<br>"aabus" (As Agreed Between User and Supplier)<br>
-*ipc_6010_copper_plating_thickness_level* | list | O | O | O | O | O | Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.. Possible values are (string):<br>"2" ()<br>"3" ()<br>
-*ipc_6010_annular_ring_level* | list | O | O | O | O | O | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.. Possible values are (string):<br>"2" ()<br>"3" ()<br>
-*ipc_6010_conductor_spacing_level* | list | O | O | O | O | O | Used either if ipc_6010_class is set to 2 and you want to add conductor spacing demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.. Possible values are (string):<br>"2" ()<br>"3" ()<br>
-*ipc_6010_conductor_width_level* | list | O | O | O | O | O | Used either if ipc_6010_class is set to 2 and you want to add conductor width demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.. Possible values are (string):<br>"2" ()<br>"3" ()<br>
-*ipc_6012_class* | list | O | O | O | O | O | Requirements according to IPC 6012 class.. Possible values are (string):<br>"1" ()<br>"2" ()<br>"3" ()<br>"3A" (Automotive addendum)<br>"3S" (Space and Military Avionics Addendum)<br>"3M" (Medical Addendum)<br>
-*ipc_6013_class* | list | O | O | O | O | O | Requirements according to IPC 6013 for flexible or rigid-flex boards.. Possible values are (string):<br>"1" ()<br>"2" ()<br>"3" ()<br>
+*ipc_6010_class* | list | O | O | O | O | O | According to Table 4-2 /4-3.<br>Possible values are (string):<br>"1"<br>"2"<br>"3"<br>
+*ipc_6010_compliance_level* | list | O | O | O | O | O | <br>Possible values are (string):<br>"full"<br>"factory_standard"<br>"aabus" (As Agreed Between User and Supplier)<br>
+*ipc_6010_copper_plating_thickness_level* | list | O | O | O | O | O | Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.<br>Possible values are (string):<br>"2"<br>"3"<br>
+*ipc_6010_annular_ring_level* | list | O | O | O | O | O | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.<br>Possible values are (string):<br>"2"<br>"3"<br>
+*ipc_6010_conductor_spacing_level* | list | O | O | O | O | O | Used either if ipc_6010_class is set to 2 and you want to add conductor spacing demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.<br>Possible values are (string):<br>"2"<br>"3"<br>
+*ipc_6010_conductor_width_level* | list | O | O | O | O | O | Used either if ipc_6010_class is set to 2 and you want to add conductor width demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.<br>Possible values are (string):<br>"2"<br>"3"<br>
+*ipc_6012_class* | list | O | O | O | O | O | Requirements according to IPC 6012 class.<br>Possible values are (string):<br>"1"<br>"2"<br>"3"<br>"3A" (Automotive addendum)<br>"3S" (Space and Military Avionics Addendum)<br>"3M" (Medical Addendum)<br>
+*ipc_6013_class* | list | O | O | O | O | O | Requirements according to IPC 6013 for flexible or rigid-flex boards.<br>Possible values are (string):<br>"1"<br>"2"<br>"3"<br>
 *ipc_6018* | boolean | O | O | O | O | O | IPC-6018 Microwave End Product Board Inspection and Test.
 
 ### Testing ("testing")
@@ -326,7 +326,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *hipot* | boolean | O | O | O | O | O |  HiPot Test (Dielectric Withstanding Voltage Test).
 *4_wire* | boolean | O | O | O | O | O | Use 4 wired test
 *ist* | boolean | O | O | O | O | O | Use IST testing.
-*impedance* | list | O | O | O | O | O | . Possible values are (string):<br>"controlled" ()<br>"calculated" ()<br>"follow_stackup" ()<br>
+*impedance* | list | O | O | O | O | O | <br>Possible values are (string):<br>"controlled"<br>"calculated"<br>"follow_stackup"<br>
 
 ### Country of Origin ("country_of_origin")
 Country of Origin is the country where the Printed Circuit Board is manufactured.
@@ -358,13 +358,13 @@ This element is a list and can contain several items
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *number* | integer | O | F | F | F | O | The number of holes total or in this process.
-*type* | list | O | F | F | F | O | The type of holes.. Possible values are (string):<br>"through" ()<br>"blind" ()<br>"buried" ()<br>"back_drill" ()<br>
+*type* | list | O | F | F | F | O | The type of holes.<br>Possible values are (string):<br>"through"<br>"blind"<br>"buried"<br>"back_drill"<br>
 *plated* | boolean | O | O | O | O | O | True if the holes are plated.
 *size* | float | O | F | F | F | O | The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list.
 *layer_start* | integer | O | F | F | F | O | The layer where the hole starts, counted from the top, where top layer is 1.
 *layer_stop* | integer | O | F | F | F | O | The layer where the hole stops, counted from the top, where top layer is 1.
 *depth* | float | O | F | F | F | O | The depth of the hole in micrometer.
-*method* | list | O | F | F | F | O | Can be either "routing" or "drilling", where drilling is default. Possible values are (string):<br>"routing" ()<br>"drilling" ()<br>"laser" ()<br>
+*method* | list | O | F | F | F | O | Can be either "routing" or "drilling", where drilling is default<br>Possible values are (string):<br>"routing"<br>"drilling"<br>"laser"<br>
 *minimum_designed_annular_ring* | float | O | F | F | F | O |  The minimum designed annular ring in micrometers.
 
 ### Allowed Modifications ("allowed_modifications")
