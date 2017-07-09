@@ -1162,11 +1162,11 @@
             "values": {
               "format": "string",
               "values": [{
-                  "value": "mate",
+                  "value": "matte",
                   "description": "Finish"
                 },
                 {
-                  "value": "semi-mate",
+                  "value": "semi-matte",
                   "description": "Finish"
                 },
                 {
