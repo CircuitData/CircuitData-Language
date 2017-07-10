@@ -1,0 +1,107 @@
+{
+  "open_trade_transfer_package": {
+    "version": "0.6",
+    "information": {
+      "company_name": "Elmatica as",
+      "date": "2017-07-07T10:41"
+    },
+    "products": {
+      "RIGID_6L_MICROVIAS_BURIEDVIAS_COUNTERSUNKEN_HOLES": {
+        "printed_circuits_fabrication_data": {
+          "version": "0.1",
+          "stackup": {
+            "specification_level": "free"
+          },
+          "rigid_conductive_layer": {
+            "count": 6,
+            "minimum_external_track_width": 0.158,
+            "minimum_external_spacing_width": 0.13,
+            "external_base_copper_thickness": 17.1,
+            "internal_base_copper_thickness": 34.3,
+            "copper_coverage_average": 22.91
+          },
+          "testing": {
+            "impedance": "controlled"
+          },
+          "final_finish": [{
+            "finish": "none"
+          }],
+          "board": {
+            "size_x": 52.984,
+            "size_y": 107.75,
+            "thickness": 1.2
+          },
+          "array": {
+            "size_x": 127.968,
+            "size_y": 237.5,
+            "boards_total": 4,
+            "breakaway_method": "routing"
+          },
+          "dielectric": [{
+            "material": "85N by Arlon"
+          }],
+          "standards": {
+            "ipc_6010_class": "2",
+            "ipc_6012_class": "3",
+            "ul": true
+          },
+          "markings": {
+            "standards": ["ul"],
+            "date_code": "YYWW-LOT"
+          },
+          "inner_packaging": {
+            "esd": true,
+            "vacuum": false,
+            "hic": true,
+            "desiccant": true
+          },
+          "via_protection": {
+            "type_7": true
+          },
+          "holes": [{
+            "number": 902,
+            "type": "through",
+            "method": "drilling",
+            "size": 0.74,
+            "minimum_designed_annular_ring": 0.098
+          }, {
+            "type": "blind",
+            "method": "drilling",
+            "size": 0.2,
+            "layer_start": "2",
+            "layer_stop": "1"
+          }, {
+            "type": "blind",
+            "method": "drilling",
+            "size": 0.2,
+            "layer_start": "6",
+            "layer_stop": "5"
+          }, {
+            "type": "buried",
+            "method": "drilling",
+            "size": 0.3,
+            "layer_start": "5",
+            "layer_stop": "2"
+          }],
+          "soldermask": [],
+          "mechanical": {
+            "countersink_top": true,
+            "countersink_bottom": true
+          }
+        }
+      }
+    },
+    "custom": {
+      "materials": {
+        "soldermasks": {},
+        "dielectrics": {
+          "85N by Arlon": {
+            "name": "85N",
+            "manufacturer": "Arlon"
+          }
+        },
+        "stiffeners": {}
+      }
+    }
+  }
+}
