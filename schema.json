@@ -3451,20 +3451,31 @@
           {
             "tag": "ul94",
             "format": "list",
-            "description": "Counterboring from the top present.",
+            "description": "UL 94 - Standard for Safety of Flammability of Plastic Materials for Parts in Devices and Appliances testing",
             "values": {
               "format": "string",
               "values": [{
+                  "value": "hb",
+                  "description": "HB - Slow burning on a horizontal specimen; burning rate < 76 mm/min for thickness < 3 mm or burning stops before 100 mm"
+                },{
                   "value": "v_0",
-                  "description": ""
+                  "description": "V-0 - Burning stops within 30 seconds on a vertical specimen; drips of flaming particles are allowed."
                 },
                 {
                   "value": "v_1",
-                  "description": ""
+                  "description": "V-1 - Burning stops within 30 seconds on a vertical specimen; drips of particles allowed as long as they are not inflamed."
                 },
                 {
                   "value": "v_2",
-                  "description": ""
+                  "description": "V-2 - Burning stops within 30 seconds on a vertical specimen; drips of flaming particles are allowed."
+                },
+                {
+                  "value": "5vb",
+                  "description": "5VB - Burning stops within 60 seconds on a vertical specimen; no drips allowed; plaque specimens may develop a hole."
+                },
+                {
+                  "value": "5va",
+                  "description": "5VA - Burning stops within 60 seconds on a vertical specimen; no drips allowed; plaque specimens may not develop a hole."
                 }
               ]
             },
