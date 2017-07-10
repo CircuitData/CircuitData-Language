@@ -136,7 +136,7 @@ This element is a list and can contain several items
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
 *color* | string | O | O | O | O | O | This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done custom -> colors section.
-*finish* | list | O | O | O | O | O | The finish of the soldermask.<br>Possible values are (string):<br>"mate" (Finish)<br>"semi-mate" (Finish)<br>"glossy" (Finish)<br>"any" (Finish)<br>
+*finish* | list | O | O | O | O | O | The finish of the soldermask.<br>Possible values are (string):<br>"matte" (Finish)<br>"semi-matte" (Finish)<br>"glossy" (Finish)<br>"any" (Finish)<br>
 *min_thickness* | float | O | O | O | F | O | The minimum thickness of the soldermask.
 *max_thickness* | float | O | O | O | F | O | The maximum thickness of the soldermask.
 *material* | string | O | O | O | O | O | The name of a material that appears in the materials section
@@ -325,7 +325,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *ul* | boolean | O | O | O | O | O | Indicating if UL is required for the board. Can not be used as a capability, as this will be indicated on each material.
 *c_ul* | boolean | O | O | O | O | O | Indicating if Canadian UL is required for the board. Can not be used as a capability, as this will be indicated on each material.
 *rohs* | boolean | O | O | O | O | O | RoHS.
-*ul94* | list | O | O | O | O | O | Counterboring from the top present.<br>Possible values are (string):<br>"v_0"<br>"v_1"<br>"v_2"<br>
+*ul94* | list | O | O | O | O | O | UL 94 - Standard for Safety of Flammability of Plastic Materials for Parts in Devices and Appliances testing<br>Possible values are (string):<br>"hb" (HB - Slow burning on a horizontal specimen; burning rate < 76 mm/min for thickness < 3 mm or burning stops before 100 mm)<br>"v_0" (V-0 - Burning stops within 30 seconds on a vertical specimen; drips of flaming particles are allowed.)<br>"v_1" (V-1 - Burning stops within 30 seconds on a vertical specimen; drips of particles allowed as long as they are not inflamed.)<br>"v_2" (V-2 - Burning stops within 30 seconds on a vertical specimen; drips of flaming particles are allowed.)<br>"5vb" (5VB - Burning stops within 60 seconds on a vertical specimen; no drips allowed; plaque specimens may develop a hole.)<br>"5va" (5VA - Burning stops within 60 seconds on a vertical specimen; no drips allowed; plaque specimens may not develop a hole.)<br>
 *esa* | boolean | O | O | O | O | O | European Space Agency Use.
 *itar* | boolean | O | O | O | O | O | US ITAR.
 *dfars* | boolean | O | O | O | O | O | US DFARS.
