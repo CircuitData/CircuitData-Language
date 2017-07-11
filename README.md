@@ -5,11 +5,11 @@ An open standard for communicating information needed for PCB fabrication. Can b
 [Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) defines a structure on how the information is to be passed in either JSON or XML format. Printed Circuit data should be placed within an element called "printed_circuits_fabrication_data" and also contain a version. Printed Circuit data can be placed within the following subelements:
 
 - products
-- profile
+- profiles
   - defaults
   - enforced
   - restricted
-- capability
+- capabilities
   - summary
   - materials
 
@@ -28,7 +28,7 @@ This example shows how to specify how to set a company profile that forbids prod
       "company_name": "Elmatica as",
       "date": "2017-04-03T08:00CET"
     },
-    "profile": {
+    "profiles": {
       "restricted": {
         "printed_circuits_fabrication_data": {
           "version": "0.1",
@@ -54,11 +54,11 @@ The name of the element as it is to be used in the file is included behind the t
 
 - "Data tag": The name of the elements
 - "Format": The format of the element (possible formats listed in the Open Trade Data Package format specification )
-- "P": When used in a Product part of the file (to give a specification) (see above for structure and abbreviations)
-- "PD": When used in a Profile->Defaults part of the file (see above for structure and abbreviations)
-- "PE": When used in a Profile->Enforced part of the file (see above for structure and abbreviations)
-- "PR": When used in a Profile->Restricted part of the file (see above for structure and abbreviations)
-- "C": When used in a Capability part of the file (see above for structure and abbreviations)
+- "P": When used in a Products part of the file (to give a specification) (see above for structure and abbreviations)
+- "PD": When used in a Profiles->Defaults part of the file (see above for structure and abbreviations)
+- "PE": When used in a Profiles->Enforced part of the file (see above for structure and abbreviations)
+- "PR": When used in a Profiles->Restricted part of the file (see above for structure and abbreviations)
+- "C": When used in a Capabilities part of the file (see above for structure and abbreviations)
 
 If the element have alternative names in everyday use, this is referenced as an "Alias" and stated just below the title.
 
