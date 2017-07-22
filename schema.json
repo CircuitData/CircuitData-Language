@@ -903,6 +903,10 @@
                 {
                   "value": "lf_hasl",
                   "description": "J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL)"
+                },
+                {
+                  "value": "none",
+                  "description": "No final finish should be used"
                 }
               ]
             },
@@ -1097,7 +1101,7 @@
       "dielectric": {
         "aliases": "Laminate",
         "name": "Dielectric",
-        "description": "A list of one of more materials by name and referencing a material listed in the materials section",
+        "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key.",
         "type": "list",
         "tags": [{
           "tag": "name",
@@ -2634,7 +2638,7 @@
                   "description": ""
                 },
                 {
-                  "value": "routing",
+                  "value": "scoring",
                   "description": "alises includes \"v-cut\" and \"v-grove\""
                 },
                 {
@@ -3269,8 +3273,8 @@
           },
           {
             "tag": "standards",
-            "format": "string",
-            "description": "Possible values are the ones listed in the subelement \"standards\" but typical will be \"ul\" and \"rohs\". Separate by comma.",
+            "format": "array",
+            "description": "Possible values are the ones listed in the subelement \"standards\" but typical will be \"ul\" and \"rohs\"",
             "in_profile_default": {
               "state": "optional",
               "values": "multiple"

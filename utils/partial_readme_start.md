@@ -1,4 +1,4 @@
-# Open Trade Transfer Package: Printed Circuits Fabrication Data
+# OTTP: CircuitData
 An open standard for communicating information needed for PCB fabrication. Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
 ## Based on the Open Trade Transfer Package format

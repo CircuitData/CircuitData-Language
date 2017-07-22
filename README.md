@@ -1,4 +1,4 @@
-# Open Trade Transfer Package: Printed Circuits Fabrication Data
+# OTTP: CircuitData
 An open standard for communicating information needed for PCB fabrication. Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
 ## Based on the Open Trade Transfer Package format
@@ -110,7 +110,7 @@ This element is a list and can contain several items
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*finish* | list | O | O | O | O | O | The material/method/surface to be used in the finish.<br>Possible values are (string):<br>"c_bare_copper" (AABUS)<br>"isn" (IPC-4554 Immersion Tin)<br>"iag" (IPC-4553 Immersion Silver)<br>"enepig" (IPC-4552 Immersion Gold)<br>"osp" (J-STD-003 Organic Solderability Preservative)<br>"ht_osp" (J-STD-003 High Temperature OSP)<br>"g" (ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered)<br>"GS" (J-STD-003 Gold Electroplate on areas to be soldered)<br>"t_fused" (J-STD-003 Electrodeposited Tin-Lead (fused))<br>"tlu_unfused" (J-STD-003 Electrodeposited Tin-Lead Unfused)<br>"dig" (J-STD-003 Direct Immersion Gold (Solderable Surface))<br>"gwb-1_ultrasonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic))<br>"gwb-2-thermosonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic))<br>"s_hasl" (J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL))<br>"lf_hasl" (J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL))<br>
+*finish* | list | O | O | O | O | O | The material/method/surface to be used in the finish.<br>Possible values are (string):<br>"c_bare_copper" (AABUS)<br>"isn" (IPC-4554 Immersion Tin)<br>"iag" (IPC-4553 Immersion Silver)<br>"enepig" (IPC-4552 Immersion Gold)<br>"osp" (J-STD-003 Organic Solderability Preservative)<br>"ht_osp" (J-STD-003 High Temperature OSP)<br>"g" (ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered)<br>"GS" (J-STD-003 Gold Electroplate on areas to be soldered)<br>"t_fused" (J-STD-003 Electrodeposited Tin-Lead (fused))<br>"tlu_unfused" (J-STD-003 Electrodeposited Tin-Lead Unfused)<br>"dig" (J-STD-003 Direct Immersion Gold (Solderable Surface))<br>"gwb-1_ultrasonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic))<br>"gwb-2-thermosonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic))<br>"s_hasl" (J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL))<br>"lf_hasl" (J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL))<br>"none" (No final finish should be used)<br>
 *area* | float | O | F | F | F | O | The area that the finish will cover, in square decimeter.
 *thickness* | float | O | O | O | F | O | The thickness of the finish in micrometer.
 *gold_thickness* | float | O | O | O | F | O | The thickness of the gold finish in micrometer.
@@ -121,7 +121,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 
 ### Dielectric ("dielectric")
 Aliases: "Laminate"
-A list of one of more materials by name and referencing a material listed in the materials section
+A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key.
 This element is a list and can contain several items
 
 Data tag | Format | P | PD | PE | PR | C | Description
@@ -259,7 +259,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *fiducials_number* | integer | O | O | O | F | O | The number of fiducials on the array.
 *fiducials_size* | float | O | O | O | O | O | The size of the fiducials measured in millimeters. If used in a Profile, it is the minimum needed size
 *fiducials_shape* | list | O | O | O | O | O | The shape of the fiducials.<br>Possible values are (string):<br>"donut"<br>"circle"<br>"plus"<br>"diamond"<br>
-*breakaway_method* | list | O | O | O | O | O | The method of creation of the breakaways on the array<br>Possible values are (string):<br>"routing"<br>"routing" (alises includes "v-cut" and "v-grove")<br>"jump_scoring"<br>
+*breakaway_method* | list | O | O | O | O | O | The method of creation of the breakaways on the array<br>Possible values are (string):<br>"routing"<br>"scoring" (alises includes "v-cut" and "v-grove")<br>"jump_scoring"<br>
 *mouse_bites* | boolean | O | O | O | O | O | Indicates if there should be "mouse bites" to allow easy break away of the boards
 *tooling_holes_number* | integer | O | O | O | O | O | The number of tooling holes on the array.
 *tooling_holes_size* | float | O | O | O | O | O | The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size.
@@ -311,7 +311,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *date_code* | string | O | O | O | F | O | Possible values are "YY" for year, "WW" for week "-" and "LOT" (alias "BATCH"). E.g. "YYWW-LOT" or "LOT-YYWW". If no marking, set "NONE".
 *placement* | list | O | O | O | O | O | Placement of the markings.<br>Possible values are (string):<br>"copper_top"<br>"copper_bottom"<br>"soldermask_top"<br>"soldermask_bottom"<br>"legend_top"<br>"legend_bottom"<br>
 *manufacturer_identification* | boolean | O | O | O | O | O | Manufacturer identification present.
-*standards* | string | O | O | O | O | O | Possible values are the ones listed in the subelement "standards" but typical will be "ul" and "rohs". Separate by comma.
+*standards* | array | O | O | O | O | O | Possible values are the ones listed in the subelement "standards" but typical will be "ul" and "rohs"
 *serial_number* | boolean | O | O | O | O | O | Serial number should be added in the markings.
 *serial_number_format* | string | O | O | O | F | O | Format of the serial number expressed as a "regular expression" but needs to have x amount of digits in it.
 *serial_number_start* | integer | O | O | O | F | O | The number to start the serial number from. Will have to replace the digits from the "serial_number_format" above.
