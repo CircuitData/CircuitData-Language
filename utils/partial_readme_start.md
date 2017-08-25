@@ -42,6 +42,33 @@ This example shows how to specify how to set a company profile that forbids prod
 }
 ```
 
+## JSON schema
+JSON schema is available in the versions folder. To link to it, please use the raw link. The schema allows you to validate your OTTP file syntax. An example of how this is done in Ruby with the [json-schema GEM](https://github.com/ruby-json-schema/json-schema) below:
+
+```
+ottp = '{
+  "open_trade_transfer_package": {
+    "version": "1.0",
+    "information": {
+      "company": "Elmatica as",
+      "created": "2017-04-03T08:00:00Z"
+    },
+    "profiles": {
+      "restricted": {
+        "generic": {
+          "version": "1.0",
+          "country_of_origin": {
+            "nato_member": false
+          }
+        }
+      }
+    }
+  }
+}'
+
+puts JSON::Validator.validate!('https://raw.githubusercontent.com/elmatica/Open-Trade_Printed_Circuits_Fabrication_Data/master/v1/ottp_circuitdata_schema.json', ottp)
+```
+
 ## abbreviations
 Used in the tables below, they carry the following meaning:
 

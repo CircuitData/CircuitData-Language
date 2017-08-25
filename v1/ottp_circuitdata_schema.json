@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "id": "https://raw.githubusercontent.com/elmatica/Open-Trade_Printed_Circuits_Fabrication_Data/master/v1/ottp_circuitdata_schema.json",
+  "additionalProperties": false,
+  "required": ["open_trade_transfer_package"],
+  "properties": {
+    "open_trade_transfer_package": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {"type": "string"},
+        "information": { "$ref": "ottp_circuitdata_schema.json#/definitions/information" },
+        "products": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "generic": {
+              "type": "object",
+              "properties": {},
+              "id": "generic",
+              "description": "this should validate any element under generic to be valid"
+            }
+          },
+          "patternProperties": {
+            "^(?!generic$).*": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["printed_circuits_fabrication_data"],
+              "properties": {
+                "printed_circuits_fabrication_data": {"$ref": "ottp_circuitdata_schema.json#/definitions/elements"}
+              },
+              "description": "This part should take care of all the products. Note that products can have any names"
+            }
+          }
+        },
+        "profiles": { "$ref": "ottp_circuitdata_schema.json#/definitions/profile" },
+        "capabilities": { "$ref": "ottp_circuitdata_schema.json#/definitions/capability" },
+        "custom": { "$ref": "ottp_circuitdata_schema.json#/definitions/custom" }
+      }
+    }
+  }
+}

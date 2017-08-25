@@ -107,7 +107,7 @@ File.open("partial_readme_start.md", "r") do |f|
   end
 end
 
-jf = File.read('../schema.json')
+jf = File.read('unofficial_schema.json')
 data_hash = JSON.parse(jf)
 newcontent.sub! "Current version is 0.1.", "Current version is #{data_hash["version"].to_s}."
 data_hash["sections"]["elements"].keys.each do |element|
