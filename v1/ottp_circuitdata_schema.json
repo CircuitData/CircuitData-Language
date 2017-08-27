@@ -10,7 +10,7 @@
       "additionalProperties": false,
       "properties": {
         "version": {"type": "string"},
-        "information": { "$ref": "ottp_circuitdata_schema.json#/definitions/information" },
+        "information": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/information" },
         "products": {
           "type": "object",
           "additionalProperties": false,
@@ -28,15 +28,15 @@
               "additionalProperties": false,
               "required": ["printed_circuits_fabrication_data"],
               "properties": {
-                "printed_circuits_fabrication_data": {"$ref": "ottp_circuitdata_schema.json#/definitions/elements"}
+                "printed_circuits_fabrication_data": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements"}
               },
               "description": "This part should take care of all the products. Note that products can have any names"
             }
           }
         },
-        "profiles": { "$ref": "ottp_circuitdata_schema.json#/definitions/profile" },
-        "capabilities": { "$ref": "ottp_circuitdata_schema.json#/definitions/capability" },
-        "custom": { "$ref": "ottp_circuitdata_schema.json#/definitions/custom" }
+        "profiles": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/profile" },
+        "capabilities": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/capability" },
+        "custom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom" }
       }
     }
   }
