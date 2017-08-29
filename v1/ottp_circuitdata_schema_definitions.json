@@ -1310,7 +1310,7 @@
           "additionalProperties": false,
           "properties": {
             "soldermasks": {
-              "type": "object",
+              "type": "array",
               "additionalProperties": false,
               "properties": {
                 "name": {
@@ -1340,7 +1340,7 @@
               "description": "Materials used as soldermask"
             },
             "dielectrics": {
-              "type": "object",
+              "type": "array",
               "additionalProperties": false,
               "properties": {
                 "name": {
@@ -1444,7 +1444,7 @@
               "description": "Materials used as dielectrics/laminates"
             },
             "stiffeners": {
-              "type": "object",
+              "type": "array",
               "additionalProperties": false,
               "properties": {
                 "name": {
