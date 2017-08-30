@@ -54,9 +54,45 @@
                           "description": "The URI of the file that specifies the stackup. Either as a path witin a project compressed file (ZIP) or as a link"
                         },
                         "specified": {
-                          "type": "string",
+                          "type": "object",
                           "uom": null,
-                          "description": "The container where the elements describing the stackup should be placed. All elements under object must contain the \"layer_order\" tags to set the order of the layer. They should also contain the \"layer_name\" tag to set the descriptive name of the layer"
+                          "description": "The container where the elements describing the stackup should be placed. All elements under object must contain the \"layer_order\" tags to set the order of the layer. They should also contain the \"layer_name\" tag to set the descriptive name of the layer",
+                          "properties": {
+                            "rigid_conductive_layer": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": ["layer_order", "layer_name"],
+                              "properties": {
+                                "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
+                                "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
+                                "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
+                                "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
+                                "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
+                                "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
+                                "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
+                                "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" },
+                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                              }
+                            },
+                            "flexible_conductive_layer": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": ["layer_order", "layer_name"],
+                              "properties": {
+                                "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
+                                "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
+                                "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
+                                "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
+                                "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
+                                "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
+                                "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
+                                "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" },
+                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                              }
+                            }
+                          }
                         }
                       },
                       "aliases": "stack-up, buildup, build-up",
@@ -67,9 +103,32 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                         "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/rigid_conductive_layer/minimum_internal_track_width" }
-                       }
-                     }
+                        "count": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count" },
+                        "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
+                        "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
+                        "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
+                        "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
+                        "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
+                        "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
+                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
+                        "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
+                      }
+                    },
+                    "flexible_conductive_layer": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "count": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count" },
+                        "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
+                        "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
+                        "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
+                        "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
+                        "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
+                        "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
+                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
+                        "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
+                      }
+                    }
                   }
                 }
               },
@@ -91,9 +150,20 @@
                   "required": ["version"],
                   "properties": {
                     "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
-                    "anyOf": [
-                      { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements" }
-                    ]
+                    "rigid_conductive_layer": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                      }
+                    },
+                    "flexible_conductive_layer": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                      }
+                    }
                   }
                 }
               }
@@ -108,9 +178,32 @@
                   "required": ["version"],
                   "properties": {
                     "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
-                    "anyOf": [
-                      { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements" }
-                    ]
+                    "rigid_conductive_layer": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
+                        "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
+                        "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
+                        "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
+                        "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
+                        "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
+                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                      }
+                    },
+                    "flexible_conductive_layer": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
+                        "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
+                        "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
+                        "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
+                        "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
+                        "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
+                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                      }
+                    }
                   }
                 }
               }
@@ -125,9 +218,20 @@
                   "required": ["version"],
                   "properties": {
                     "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
-                    "anyOf": [
-                      { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements" }
-                    ]
+                    "rigid_conductive_layer": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                      }
+                    },
+                    "flexible_conductive_layer": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                      }
+                    }
                   }
                 }
               }
@@ -146,9 +250,36 @@
               "required": ["version"],
               "properties": {
                 "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
-                "anyOf": [
-                  { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements" }
-                ]
+                "rigid_conductive_layer": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count" },
+                    "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
+                    "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
+                    "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
+                    "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
+                    "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
+                    "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
+                    "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
+                    "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
+                  }
+                },
+                "flexible_conductive_layer": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count" },
+                    "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
+                    "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
+                    "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
+                    "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
+                    "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
+                    "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
+                    "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
+                    "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
+                  }
+                }
               }
             }
           },

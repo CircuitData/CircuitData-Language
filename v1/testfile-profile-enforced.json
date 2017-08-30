@@ -9,7 +9,13 @@
     "profiles": {
       "enforced": {
         "printed_circuits_fabrication_data": {
-          "version": "0.6"
+          "version": "0.6",
+          "rigid_conductive_layer": {
+            "copper_foil_roughness": "L"
+          },
+          "flexible_conductive_layer": {
+            "copper_foil_roughness": "L"
+          }
         }
       }
     }

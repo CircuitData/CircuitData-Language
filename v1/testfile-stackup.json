@@ -12,7 +12,17 @@
           "version": "0.6",
           "stackup": {
             "specification_level": "specified",
-            "file_name": "test.json"
+            "file_name": "test.json",
+            "specified": {
+              "rigid_conductive_layer": {
+                "minimum_external_track_width": 0.14,
+                "minimum_external_spacing_width": 0.14,
+                "external_base_copper_thickness": 17.1,
+                "copper_coverage_average": 12.55,
+                "layer_order": 1,
+                "layer_name": "test"
+              }
+            }
           }
         }
       }

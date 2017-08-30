@@ -9,7 +9,12 @@
     "profiles": {
       "restricted": {
         "printed_circuits_fabrication_data": {
-          "version": "0.6"
+          "version": "0.6",
+          "rigid_conductive_layer": {
+            "minimum_external_track_width": 0.14,
+            "minimum_external_spacing_width": 0.14,
+            "external_base_copper_thickness": 17.1
+          }
         }
       }
     }
