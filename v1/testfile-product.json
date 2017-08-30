@@ -73,6 +73,10 @@
           "silver_print": {
             "top": false,
             "bottom": true
+          },
+          "array": {
+            "size_y": 4.2,
+            "weight": 4
           }
         }
       }

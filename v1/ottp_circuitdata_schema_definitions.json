@@ -411,9 +411,123 @@
         "bottom": {
           "type": "boolean",
           "uom": null,
-          "description": "Indicates silver print presence/capability at bottom"  
+          "description": "Indicates silver print presence/capability at bottom"
         }
-      }                  
+      },
+      "array": {
+        "size_x": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the array in the x-asis, measured in millimeters"
+        },
+        "size_y": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the array in the y-asis, measured in millimeters"
+        },
+        "boards_x": {
+          "type": "integer",
+          "uom": null,
+          "description": "Number of boards in the panel in the x-direction."
+        },
+        "boards_y": {
+          "type": "integer",
+          "uom": null,
+          "description": "Number of boards in the panel in the y-direction."
+        },
+        "boards_total": {
+          "type": "integer",
+          "uom": ["mm"],
+          "description": "Number total number of boards in the panel. This is not the preferred method of stating the number, \"boards_x\" and \"boards_y\" should be used."
+        },
+        "border_left": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the left side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+        },
+        "border_right": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the right side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+        },
+        "border_top": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the top side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+        },
+        "border_bottom": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the bottom side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+        },
+        "board_spacing_x": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the space between the boards in the x-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space"
+        },
+        "board_spacing_y": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the space between the boards in the y-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space"
+        },
+        "fiducials_number": {
+          "type": "integer",
+          "uom": null,
+          "description": "The number of fiducials on the array."
+        },
+        "fiducials_size": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the fiducials measured in millimeters. If used in a Profile, it is the minimum needed size"
+        },
+        "fiducials_shape": {
+          "type": "string",
+          "enum": ["donut", "circle", "plus", "diamond"],
+          "uom": null,
+          "description": "The shape of the fiducials."
+        },
+        "breakaway_method": {
+          "type": "string",
+          "enum": ["routing", "scoring", "v-cut", "v-grove", "jump_scoring"],
+          "uom": null,
+          "description": "The method of creation of the breakaways on the array"
+        },
+        "mouse_bites": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates if there should be \"mouse bites\" to allow easy break away of the boards"
+        },
+        "tooling_holes_number": {
+          "type": "integer",
+          "uom": null,
+          "description": "The number of tooling holes on the array."
+        },
+        "tooling_holes_size": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size."
+        },
+        "x_outs_allowed": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Manufacturer can deliver arrays with defect boards as long as these are clearly marked as defect (X'ed out)."
+        },
+        "x_outs_max_percentage_on_array": {
+          "type": "integer",
+          "uom": ["percentage"],
+          "description": "The maximum number of defective and clearly marked as such boards that are allowed on on panel, stated in percentage"
+        },
+        "transplant_board_allowed": {
+          "type": "boolean",
+          "uom": null,
+          "description": "The maximum number of defective and clearly marked as such boards that are allowed on on panel, stated in percentage."
+        },
+        "weight": {
+          "type": "number",
+          "uom": ["g"],
+          "description": "The weight of the array measured in grams."
+        }
+      }
     }
   }
 }

@@ -12,7 +12,9 @@
           "type": "string",
           "pattern": "^1.0$"
         },
-        "information": { "$ref": "https://raw.githubusercontent.com/elmatica/Open-Trade-Transfer-Package/master/v1/ottp_schema_definitions.json#/definitions/information" },
+        "information": {
+          "$ref": "https://raw.githubusercontent.com/elmatica/Open-Trade-Transfer-Package/master/v1/ottp_schema_definitions.json#/definitions/information"
+        },
         "products": {
           "type": "object",
           "additionalProperties": false,
@@ -35,7 +37,9 @@
                   "additionalProperties": false,
                   "required": ["version"],
                   "properties": {
-                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                    "version": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version"
+                    },
                     "stackup": {
                       "type": "object",
                       "additionalProperties": false,
@@ -63,16 +67,36 @@
                               "additionalProperties": false,
                               "required": ["layer_order", "layer_name"],
                               "properties": {
-                                "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
-                                "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
-                                "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
-                                "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
-                                "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
-                                "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
-                                "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
-                                "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" },
-                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                                "minimum_internal_track_width": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width"
+                                },
+                                "minimum_external_track_width": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width"
+                                },
+                                "minimum_internal_spacing_width": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width"
+                                },
+                                "minimum_external_spacing_width": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width"
+                                },
+                                "external_base_copper_thickness": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness"
+                                },
+                                "internal_base_copper_thickness": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness"
+                                },
+                                "copper_foil_roughness": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                                },
+                                "copper_coverage_average": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average"
+                                },
+                                "layer_order": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                },
+                                "layer_name": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                }
                               }
                             },
                             "flexible_conductive_layer": {
@@ -80,16 +104,36 @@
                               "additionalProperties": false,
                               "required": ["layer_order", "layer_name"],
                               "properties": {
-                                "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
-                                "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
-                                "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
-                                "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
-                                "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
-                                "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
-                                "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
-                                "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" },
-                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                                "minimum_internal_track_width": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width"
+                                },
+                                "minimum_external_track_width": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width"
+                                },
+                                "minimum_internal_spacing_width": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width"
+                                },
+                                "minimum_external_spacing_width": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width"
+                                },
+                                "external_base_copper_thickness": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness"
+                                },
+                                "internal_base_copper_thickness": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness"
+                                },
+                                "copper_foil_roughness": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                                },
+                                "copper_coverage_average": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average"
+                                },
+                                "layer_order": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                },
+                                "layer_name": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                }
                               }
                             },
                             "final_finish": {
@@ -99,22 +143,54 @@
                                 "additionalProperties": false,
                                 "required": ["layer_order", "layer_name"],
                                 "properties": {
-                                  "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
-                                  "area": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/area" },
-                                  "thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number" },
-                                  "thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                                  "gold_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                                  "gold_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                                  "silver_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                                  "silver_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                                  "paladium_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                                  "paladium_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                                  "tin_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                                  "tin_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                                  "nickel_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                                  "nickel_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                                  "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                  "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                                  "finish": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish"
+                                  },
+                                  "area": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/area"
+                                  },
+                                  "thickness_min": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"
+                                  },
+                                  "thickness_max": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                                  },
+                                  "gold_thickness_min": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                                  },
+                                  "gold_thickness_max": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                                  },
+                                  "silver_thickness_min": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                                  },
+                                  "silver_thickness_max": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                                  },
+                                  "paladium_thickness_min": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                                  },
+                                  "paladium_thickness_max": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                                  },
+                                  "tin_thickness_min": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                                  },
+                                  "tin_thickness_max": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                                  },
+                                  "nickel_thickness_min": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                                  },
+                                  "nickel_thickness_max": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                                  },
+                                  "layer_order": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                  },
+                                  "layer_name": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                  }
                                 },
                                 "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
                                 "name": "Final Finish",
@@ -131,8 +207,12 @@
                                   "name": {
                                     "type": "string"
                                   },
-                                  "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                  "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                                  "layer_order": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                  },
+                                  "layer_name": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                  }
                                 },
                                 "aliases": "Laminate",
                                 "name": "Dielectric",
@@ -146,14 +226,30 @@
                                 "additionalProperties": false,
                                 "required": ["layer_order", "layer_name"],
                                 "properties": {
-                                  "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
-                                  "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
-                                  "min_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness" },
-                                  "max_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness" },
-                                  "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
-                                  "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" },
-                                  "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                  "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                                  "color": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color"
+                                  },
+                                  "finish": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish"
+                                  },
+                                  "min_thickness": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness"
+                                  },
+                                  "max_thickness": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness"
+                                  },
+                                  "material": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material"
+                                  },
+                                  "allow_touchups": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups"
+                                  },
+                                  "layer_order": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                  },
+                                  "layer_name": {
+                                    "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                  }
                                 },
                                 "aliases": "solder mask, sm, solder resist, green mask",
                                 "name": "Soldermask",
@@ -165,11 +261,21 @@
                               "additionalProperties": false,
                               "required": ["layer_order", "layer_name"],
                               "properties": {
-                                "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
-                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
-                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" },
-                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                                "color": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color"
+                                },
+                                "top": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top"
+                                },
+                                "bottom": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom"
+                                },
+                                "layer_order": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                },
+                                "layer_name": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                }
                               },
                               "aliases": "silk screen, silkscreen, ink, ident",
                               "name": "Legend",
@@ -180,91 +286,151 @@
                               "additionalProperties": false,
                               "required": ["layer_order", "layer_name"],
                               "properties": {
-                                "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
-                                "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
-                                "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
-                                "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" },
-                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                                "size": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size"
+                                },
+                                "placement": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement"
+                                },
+                                "thickness": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness"
+                                },
+                                "material": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material"
+                                },
+                                "layer_order": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                },
+                                "layer_name": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                }
                               },
-                            "aliases": "support",
-                            "name": "Stiffener",
-                            "description": "Stiffener in flexible boards"
+                              "aliases": "support",
+                              "name": "Stiffener",
+                              "description": "Stiffener in flexible boards"
                             },
                             "coverlay": {
                               "type": "object",
                               "additionalProperties": false,
                               "required": ["layer_order", "layer_name"],
                               "properties": {
-                                "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
-                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
-                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
-                                "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" },
-                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                                "total_thickness": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness"
+                                },
+                                "top": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top"
+                                },
+                                "bottom": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom"
+                                },
+                                "material": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material"
+                                },
+                                "layer_order": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                },
+                                "layer_name": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                }
                               },
-                             "aliases": "",
-                             "name": "CoverLay",
-                             "description": ""
+                              "aliases": "",
+                              "name": "CoverLay",
+                              "description": ""
                             },
                             "peelable_mask": {
                               "type": "object",
                               "additionalProperties": false,
                               "required": ["layer_order", "layer_name"],
                               "properties": {
-                                "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
-                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
-                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" },
-                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
-                               },
-                             "aliases": "",
-                             "name": "Peelable mask",
-                             "description": ""
+                                "heating_operations": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations"
+                                },
+                                "top": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top"
+                                },
+                                "bottom": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom"
+                                },
+                                "layer_order": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                },
+                                "layer_name": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                }
+                              },
+                              "aliases": "",
+                              "name": "Peelable mask",
+                              "description": ""
                             },
                             "kapton_tape": {
                               "type": "object",
                               "additionalProperties": false,
                               "required": ["layer_order", "layer_name"],
                               "properties": {
-                                "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
-                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
-                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" },
-                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
-                               },
-                             "aliases": "",
-                             "name": "Kapton tape",
-                             "description": ""
+                                "accept_equivalent": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent"
+                                },
+                                "top": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top"
+                                },
+                                "bottom": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom"
+                                },
+                                "layer_order": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                },
+                                "layer_name": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                }
+                              },
+                              "aliases": "",
+                              "name": "Kapton tape",
+                              "description": ""
                             },
                             "conductive_carbon_print": {
                               "type": "object",
                               "additionalProperties": false,
                               "required": ["layer_order", "layer_name"],
                               "properties": {
-                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
-                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" },
-                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
-                               },
-                             "aliases": "",
-                             "name": "Conductive carbon print",
-                             "description": ""
+                                "top": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top"
+                                },
+                                "bottom": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom"
+                                },
+                                "layer_order": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                },
+                                "layer_name": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                }
+                              },
+                              "aliases": "",
+                              "name": "Conductive carbon print",
+                              "description": ""
                             },
                             "silver_print": {
                               "type": "object",
                               "additionalProperties": false,
                               "required": ["layer_order", "layer_name"],
                               "properties": {
-                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
-                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" },
-                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
-                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
-                               },
-                             "aliases": "",
-                             "name": "Silver print tape",
-                             "description": ""
-                            }                   
+                                "top": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top"
+                                },
+                                "bottom": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom"
+                                },
+                                "layer_order": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order"
+                                },
+                                "layer_name": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
+                                }
+                              },
+                              "aliases": "",
+                              "name": "Silver print tape",
+                              "description": ""
+                            }
                           }
                         }
                       },
@@ -276,30 +442,66 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "count": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count" },
-                        "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
-                        "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
-                        "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
-                        "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
-                        "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
-                        "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
-                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
-                        "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
+                        "count": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count"
+                        },
+                        "minimum_internal_track_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width"
+                        },
+                        "minimum_external_track_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width"
+                        },
+                        "minimum_internal_spacing_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width"
+                        },
+                        "minimum_external_spacing_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width"
+                        },
+                        "external_base_copper_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness"
+                        },
+                        "internal_base_copper_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness"
+                        },
+                        "copper_foil_roughness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        },
+                        "copper_coverage_average": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average"
+                        }
                       }
                     },
                     "flexible_conductive_layer": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "count": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count" },
-                        "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
-                        "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
-                        "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
-                        "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
-                        "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
-                        "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
-                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
-                        "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
+                        "count": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count"
+                        },
+                        "minimum_internal_track_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width"
+                        },
+                        "minimum_external_track_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width"
+                        },
+                        "minimum_internal_spacing_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width"
+                        },
+                        "minimum_external_spacing_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width"
+                        },
+                        "external_base_copper_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness"
+                        },
+                        "internal_base_copper_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness"
+                        },
+                        "copper_foil_roughness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        },
+                        "copper_coverage_average": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average"
+                        }
                       }
                     },
                     "final_finish": {
@@ -308,20 +510,48 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
-                          "area": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/area" },
-                          "thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                          "thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "gold_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                          "gold_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "silver_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                          "silver_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "paladium_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "paladium_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "tin_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "tin_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "nickel_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "nickel_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" }
+                          "finish": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish"
+                          },
+                          "area": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/area"
+                          },
+                          "thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                          },
+                          "thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "gold_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                          },
+                          "gold_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "silver_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                          },
+                          "silver_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "paladium_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "paladium_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "tin_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "tin_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "nickel_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "nickel_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          }
                         },
                         "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
                         "name": "Final Finish",
@@ -350,14 +580,30 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                          "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
-                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
-                          "min_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness" },
-                          "max_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness" },
-                          "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
-                          "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top" },
-                          "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom" },
-                          "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" }
+                          "color": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color"
+                          },
+                          "finish": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish"
+                          },
+                          "min_thickness": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness"
+                          },
+                          "max_thickness": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness"
+                          },
+                          "material": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material"
+                          },
+                          "top": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top"
+                          },
+                          "bottom": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom"
+                          },
+                          "allow_touchups": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups"
+                          }
                         },
                         "aliases": "solder mask, sm, solder resist, green mask",
                         "name": "Soldermask",
@@ -368,9 +614,15 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                        "color": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom"
+                        }
                       },
                       "aliases": "silk screen, silkscreen, ink, ident",
                       "name": "Legend",
@@ -380,74 +632,138 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
-                        "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
-                        "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
-                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
+                        "size": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size"
+                        },
+                        "placement": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement"
+                        },
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness"
+                        },
+                        "material": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material"
+                        }
                       },
-                    "aliases": "support",
-                    "name": "Stiffener",
-                    "description": "Stiffener in flexible boards"
+                      "aliases": "support",
+                      "name": "Stiffener",
+                      "description": "Stiffener in flexible boards"
                     },
                     "coverlay": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
-                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                        "total_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom"
+                        },
+                        "material": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material"
+                        }
                       },
-                     "aliases": "",
-                     "name": "CoverLay",
-                     "description": ""
+                      "aliases": "",
+                      "name": "CoverLay",
+                      "description": ""
                     },
                     "peelable_mask": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" }
+                        "heating_operations": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom"
+                        }
                       },
-                     "aliases": "",
-                     "name": "Peelable mask",
-                     "description": ""
+                      "aliases": "",
+                      "name": "Peelable mask",
+                      "description": ""
                     },
                     "kapton_tape": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Kapton tape",
-                     "description": ""
+                        "accept_equivalent": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Kapton tape",
+                      "description": ""
                     },
                     "conductive_carbon_print": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Conductive carbon print",
-                     "description": ""
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Conductive carbon print",
+                      "description": ""
                     },
                     "silver_print": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Silver print tape",
-                     "description": ""
-                    }                   
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Silver print tape",
+                      "description": ""
+                    },
+                    "array": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "size_x": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/size_x" },
+                        "size_y": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/size_y" },
+                        "boards_x": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/boards_x" },
+                        "boards_y": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/boards_y" },
+                        "boards_total": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/boards_total" },
+                        "border_left": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_left" },
+                        "border_right": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_right" },
+                        "border_top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_top" },
+                        "border_bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_bottom" },
+                        "board_spacing_x": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/board_spacing_x" },
+                        "board_spacing_y": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/board_spacing_y" },
+                        "fiducials_number": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_number" },
+                        "fiducials_size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_size" },
+                        "fiducials_shape": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_shape" },
+                        "breakaway_method": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/breakaway_method" },
+                        "mouse_bites": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/mouse_bites" },
+                        "tooling_holes_number": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/tooling_holes_number" },
+                        "tooling_holes_size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/tooling_holes_size" },
+                        "x_outs_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_allowed" },
+                        "x_outs_max_percentage_on_array": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_max_percentage_on_array" },
+                        "transplant_board_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/transplant_board_allowed" },
+                        "weight": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/weight" }
+                      }
+                    }
                   }
                 }
               },
@@ -468,19 +784,25 @@
                   "additionalProperties": false,
                   "required": ["version"],
                   "properties": {
-                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                    "version": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version"
+                    },
                     "rigid_conductive_layer": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                        "copper_foil_roughness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        }
                       }
                     },
                     "flexible_conductive_layer": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                        "copper_foil_roughness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        }
                       }
                     },
                     "final_finish": {
@@ -489,19 +811,45 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
-                          "thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                          "thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "gold_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                          "gold_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "silver_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                          "silver_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "paladium_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "paladium_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "tin_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "tin_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "nickel_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "nickel_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" }
+                          "finish": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish"
+                          },
+                          "thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                          },
+                          "thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "gold_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                          },
+                          "gold_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "silver_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                          },
+                          "silver_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "paladium_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "paladium_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "tin_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "tin_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "nickel_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "nickel_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          }
 
                         },
                         "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
@@ -531,14 +879,30 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                          "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
-                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
-                          "min_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness" },
-                          "max_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness" },
-                          "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
-                          "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top" },
-                          "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom" },
-                          "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" }
+                          "color": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color"
+                          },
+                          "finish": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish"
+                          },
+                          "min_thickness": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness"
+                          },
+                          "max_thickness": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness"
+                          },
+                          "material": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material"
+                          },
+                          "top": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top"
+                          },
+                          "bottom": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom"
+                          },
+                          "allow_touchups": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups"
+                          }
                         },
                         "aliases": "solder mask, sm, solder resist, green mask",
                         "name": "Soldermask",
@@ -549,9 +913,15 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                        "color": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom"
+                        }
                       },
                       "aliases": "silk screen, silkscreen, ink, ident",
                       "name": "Legend",
@@ -561,73 +931,131 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
-                        "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
-                        "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
-                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
+                        "size": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size"
+                        },
+                        "placement": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement"
+                        },
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness"
+                        },
+                        "material": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material"
+                        }
                       },
-                    "aliases": "support",
-                    "name": "Stiffener",
-                    "description": "Stiffener in flexible boards"
+                      "aliases": "support",
+                      "name": "Stiffener",
+                      "description": "Stiffener in flexible boards"
                     },
                     "coverlay": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
-                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                        "total_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom"
+                        },
+                        "material": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material"
+                        }
                       },
-                     "aliases": "",
-                     "name": "CoverLay",
-                     "description": ""
+                      "aliases": "",
+                      "name": "CoverLay",
+                      "description": ""
                     },
                     "peelable_mask": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" }
+                        "heating_operations": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom"
+                        }
                       },
-                     "aliases": "",
-                     "name": "Peelable mask",
-                     "description": ""
+                      "aliases": "",
+                      "name": "Peelable mask",
+                      "description": ""
                     },
                     "kapton_tape": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Kapton tape",
-                     "description": ""
+                        "accept_equivalent": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Kapton tape",
+                      "description": ""
                     },
                     "conductive_carbon_print": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Conductive carbon print",
-                     "description": ""
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Conductive carbon print",
+                      "description": ""
                     },
                     "silver_print": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Silver print tape",
-                     "description": ""
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Silver print tape",
+                      "description": ""
+                    },
+                    "array": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "border_left": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_left" },
+                        "border_right": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_right" },
+                        "border_top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_top" },
+                        "border_bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_bottom" },
+                        "board_spacing_x": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/board_spacing_x" },
+                        "board_spacing_y": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/board_spacing_y" },
+                        "fiducials_number": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_number" },
+                        "fiducials_size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_size" },
+                        "fiducials_shape": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_shape" },
+                        "breakaway_method": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/breakaway_method" },
+                        "mouse_bites": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/mouse_bites" },
+                        "tooling_holes_number": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/tooling_holes_number" },
+                        "tooling_holes_size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/tooling_holes_size" },
+                        "x_outs_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_allowed" },
+                        "x_outs_max_percentage_on_array": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_max_percentage_on_array" },
+                        "transplant_board_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/transplant_board_allowed" }
+                      }
                     }
                   }
                 }
@@ -642,31 +1070,61 @@
                   "additionalProperties": false,
                   "required": ["version"],
                   "properties": {
-                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                    "version": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version"
+                    },
                     "rigid_conductive_layer": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
-                        "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
-                        "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
-                        "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
-                        "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
-                        "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
-                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                        "minimum_internal_track_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width"
+                        },
+                        "minimum_external_track_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width"
+                        },
+                        "minimum_internal_spacing_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width"
+                        },
+                        "minimum_external_spacing_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width"
+                        },
+                        "external_base_copper_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness"
+                        },
+                        "internal_base_copper_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness"
+                        },
+                        "copper_foil_roughness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        }
                       }
                     },
                     "flexible_conductive_layer": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
-                        "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
-                        "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
-                        "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
-                        "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
-                        "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
-                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                        "minimum_internal_track_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width"
+                        },
+                        "minimum_external_track_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width"
+                        },
+                        "minimum_internal_spacing_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width"
+                        },
+                        "minimum_external_spacing_width": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width"
+                        },
+                        "external_base_copper_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness"
+                        },
+                        "internal_base_copper_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness"
+                        },
+                        "copper_foil_roughness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        }
                       }
                     },
                     "final_finish": {
@@ -675,7 +1133,9 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" }
+                          "finish": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish"
+                          }
                         },
                         "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
                         "name": "Final Finish",
@@ -704,12 +1164,24 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                          "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
-                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
-                          "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
-                          "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top" },
-                          "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom" },
-                          "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" }
+                          "color": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color"
+                          },
+                          "finish": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish"
+                          },
+                          "material": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material"
+                          },
+                          "top": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top"
+                          },
+                          "bottom": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom"
+                          },
+                          "allow_touchups": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups"
+                          }
                         },
                         "aliases": "solder mask, sm, solder resist, green mask",
                         "name": "Soldermask",
@@ -720,9 +1192,15 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                        "color": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom"
+                        }
                       },
                       "aliases": "silk screen, silkscreen, ink, ident",
                       "name": "Legend",
@@ -732,72 +1210,132 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
-                        "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
-                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
+                        "size": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size"
+                        },
+                        "placement": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement"
+                        },
+                        "material": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material"
+                        }
                       },
-                    "aliases": "support",
-                    "name": "Stiffener",
-                    "description": "Stiffener in flexible boards"
+                      "aliases": "support",
+                      "name": "Stiffener",
+                      "description": "Stiffener in flexible boards"
                     },
                     "coverlay": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
-                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                        "total_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom"
+                        },
+                        "material": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material"
+                        }
                       },
-                     "aliases": "",
-                     "name": "CoverLay",
-                     "description": ""
+                      "aliases": "",
+                      "name": "CoverLay",
+                      "description": ""
                     },
                     "peelable_mask": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" }
+                        "heating_operations": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom"
+                        }
                       },
-                     "aliases": "",
-                     "name": "Peelable mask",
-                     "description": ""
+                      "aliases": "",
+                      "name": "Peelable mask",
+                      "description": ""
                     },
                     "kapton_tape": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Kapton tape",
-                     "description": ""
+                        "accept_equivalent": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Kapton tape",
+                      "description": ""
                     },
                     "conductive_carbon_print": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Conductive carbon print",
-                     "description": ""
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Conductive carbon print",
+                      "description": ""
                     },
                     "silver_print": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Silver print tape",
-                     "description": ""
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Silver print tape",
+                      "description": ""
+                    },
+                    "array": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "size_x": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/size_x" },
+                        "size_y": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/size_y" },
+                        "boards_x": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/boards_x" },
+                        "boards_y": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/boards_y" },
+                        "boards_total": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/boards_total" },
+                        "border_left": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_left" },
+                        "border_right": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_right" },
+                        "border_top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_top" },
+                        "border_bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_bottom" },
+                        "board_spacing_x": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/board_spacing_x" },
+                        "board_spacing_y": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/board_spacing_y" },
+                        "fiducials_size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_size" },
+                        "fiducials_shape": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_shape" },
+                        "breakaway_method": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/breakaway_method" },
+                        "mouse_bites": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/mouse_bites" },
+                        "tooling_holes_number": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/tooling_holes_number" },
+                        "tooling_holes_size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/tooling_holes_size" },
+                        "x_outs_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_allowed" },
+                        "x_outs_max_percentage_on_array": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_max_percentage_on_array" },
+                        "transplant_board_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/transplant_board_allowed" }
+                      }
                     }
                   }
                 }
@@ -812,19 +1350,25 @@
                   "additionalProperties": false,
                   "required": ["version"],
                   "properties": {
-                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                    "version": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version"
+                    },
                     "rigid_conductive_layer": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                        "copper_foil_roughness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        }
                       }
                     },
                     "flexible_conductive_layer": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                        "copper_foil_roughness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        }
                       }
                     },
                     "final_finish": {
@@ -833,19 +1377,45 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
-                          "thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                          "thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "gold_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                          "gold_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "silver_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                          "silver_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "paladium_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "paladium_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "tin_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "tin_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "nickel_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                          "nickel_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" }
+                          "finish": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish"
+                          },
+                          "thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                          },
+                          "thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "gold_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                          },
+                          "gold_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "silver_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                          },
+                          "silver_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "paladium_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "paladium_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "tin_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "tin_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "nickel_thickness_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          },
+                          "nickel_thickness_max": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                          }
 
                         },
                         "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
@@ -875,14 +1445,30 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                          "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
-                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
-                          "min_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness" },
-                          "max_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness" },
-                          "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
-                          "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top" },
-                          "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom" },
-                          "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" }
+                          "color": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color"
+                          },
+                          "finish": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish"
+                          },
+                          "min_thickness": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness"
+                          },
+                          "max_thickness": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness"
+                          },
+                          "material": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material"
+                          },
+                          "top": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top"
+                          },
+                          "bottom": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom"
+                          },
+                          "allow_touchups": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups"
+                          }
                         },
                         "aliases": "solder mask, sm, solder resist, green mask",
                         "name": "Soldermask",
@@ -893,9 +1479,15 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                        "color": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom"
+                        }
                       },
                       "aliases": "silk screen, silkscreen, ink, ident",
                       "name": "Legend",
@@ -905,73 +1497,130 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
-                        "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
-                        "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
-                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
+                        "size": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size"
+                        },
+                        "placement": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement"
+                        },
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness"
+                        },
+                        "material": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material"
+                        }
                       },
-                    "aliases": "support",
-                    "name": "Stiffener",
-                    "description": "Stiffener in flexible boards"
+                      "aliases": "support",
+                      "name": "Stiffener",
+                      "description": "Stiffener in flexible boards"
                     },
                     "coverlay": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
-                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                        "total_thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom"
+                        },
+                        "material": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material"
+                        }
                       },
-                     "aliases": "",
-                     "name": "CoverLay",
-                     "description": ""
+                      "aliases": "",
+                      "name": "CoverLay",
+                      "description": ""
                     },
                     "peelable_mask": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" }
+                        "heating_operations": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom"
+                        }
                       },
-                     "aliases": "",
-                     "name": "Peelable mask",
-                     "description": ""
+                      "aliases": "",
+                      "name": "Peelable mask",
+                      "description": ""
                     },
                     "kapton_tape": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Kapton tape",
-                     "description": ""
+                        "accept_equivalent": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent"
+                        },
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Kapton tape",
+                      "description": ""
                     },
                     "conductive_carbon_print": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Conductive carbon print",
-                     "description": ""
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Conductive carbon print",
+                      "description": ""
                     },
                     "silver_print": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
-                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" }
-                       },
-                     "aliases": "",
-                     "name": "Silver print tape",
-                     "description": ""
+                        "top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top"
+                        },
+                        "bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Silver print tape",
+                      "description": ""
+                    },
+                    "array": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "border_right": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_right" },
+                        "border_top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_top" },
+                        "border_bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/border_bottom" },
+                        "board_spacing_x": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/board_spacing_x" },
+                        "board_spacing_y": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/board_spacing_y" },
+                        "fiducials_number": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_number" },
+                        "fiducials_size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_size" },
+                        "fiducials_shape": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/fiducials_shape" },
+                        "breakaway_method": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/breakaway_method" },
+                        "mouse_bites": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/mouse_bites" },
+                        "tooling_holes_number": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/tooling_holes_number" },
+                        "tooling_holes_size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/tooling_holes_size" },
+                        "x_outs_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_allowed" },
+                        "x_outs_max_percentage_on_array": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_max_percentage_on_array" },
+                        "transplant_board_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/transplant_board_allowed" }
+                      }
                     }
                   }
                 }
@@ -989,35 +1638,73 @@
               "additionalProperties": false,
               "required": ["version"],
               "properties": {
-                "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                "version": {
+                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version"
+                },
                 "rigid_conductive_layer": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "count": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count" },
-                    "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
-                    "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
-                    "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
-                    "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
-                    "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
-                    "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
-                    "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
-                    "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
+                    "count": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count"
+                    },
+                    "minimum_internal_track_width": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width"
+                    },
+                    "minimum_external_track_width": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width"
+                    },
+                    "minimum_internal_spacing_width": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width"
+                    },
+                    "minimum_external_spacing_width": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width"
+                    },
+                    "external_base_copper_thickness": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness"
+                    },
+                    "internal_base_copper_thickness": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness"
+                    },
+                    "copper_foil_roughness": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                    },
+                    "copper_coverage_average": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average"
+                    }
                   }
                 },
                 "flexible_conductive_layer": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "count": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count" },
-                    "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width" },
-                    "minimum_external_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width" },
-                    "minimum_internal_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width" },
-                    "minimum_external_spacing_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width" },
-                    "external_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness" },
-                    "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
-                    "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
-                    "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
+                    "count": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/count"
+                    },
+                    "minimum_internal_track_width": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width"
+                    },
+                    "minimum_external_track_width": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_track_width"
+                    },
+                    "minimum_internal_spacing_width": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_spacing_width"
+                    },
+                    "minimum_external_spacing_width": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_external_spacing_width"
+                    },
+                    "external_base_copper_thickness": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/external_base_copper_thickness"
+                    },
+                    "internal_base_copper_thickness": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness"
+                    },
+                    "copper_foil_roughness": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                    },
+                    "copper_coverage_average": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average"
+                    }
                   }
                 },
                 "final_finish": {
@@ -1026,19 +1713,45 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                      "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
-                      "thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                      "thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                      "gold_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                      "gold_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                      "silver_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
-                      "silver_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                      "paladium_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                      "paladium_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                      "tin_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                      "tin_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                      "nickel_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                      "nickel_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" }
+                      "finish": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish"
+                      },
+                      "thickness_min": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                      },
+                      "thickness_max": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                      },
+                      "gold_thickness_min": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                      },
+                      "gold_thickness_max": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                      },
+                      "silver_thickness_min": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron"
+                      },
+                      "silver_thickness_max": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                      },
+                      "paladium_thickness_min": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                      },
+                      "paladium_thickness_max": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                      },
+                      "tin_thickness_min": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                      },
+                      "tin_thickness_max": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                      },
+                      "nickel_thickness_min": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                      },
+                      "nickel_thickness_max": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
+                      }
 
                     },
                     "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
@@ -1052,14 +1765,30 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                      "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
-                      "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
-                      "min_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness" },
-                      "max_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness" },
-                      "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
-                      "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top" },
-                      "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom" },
-                      "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" }
+                      "color": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color"
+                      },
+                      "finish": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish"
+                      },
+                      "min_thickness": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness"
+                      },
+                      "max_thickness": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness"
+                      },
+                      "material": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material"
+                      },
+                      "top": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top"
+                      },
+                      "bottom": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom"
+                      },
+                      "allow_touchups": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups"
+                      }
                     },
                     "aliases": "solder mask, sm, solder resist, green mask",
                     "name": "Soldermask",
@@ -1070,9 +1799,15 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
-                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
-                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                    "color": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color"
+                    },
+                    "top": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top"
+                    },
+                    "bottom": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom"
+                    }
                   },
                   "aliases": "silk screen, silkscreen, ink, ident",
                   "name": "Legend",
@@ -1082,79 +1817,115 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
-                    "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
-                    "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
-                    "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
+                    "size": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size"
+                    },
+                    "placement": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement"
+                    },
+                    "thickness": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness"
+                    },
+                    "material": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material"
+                    }
                   },
-                "aliases": "support",
-                "name": "Stiffener",
-                "description": "Stiffener in flexible boards"
+                  "aliases": "support",
+                  "name": "Stiffener",
+                  "description": "Stiffener in flexible boards"
                 },
                 "coverlay": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
-                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
-                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
-                    "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                    "total_thickness": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness"
+                    },
+                    "top": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top"
+                    },
+                    "bottom": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom"
+                    },
+                    "material": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material"
+                    }
                   },
-                 "aliases": "",
-                 "name": "CoverLay",
-                 "description": ""
+                  "aliases": "",
+                  "name": "CoverLay",
+                  "description": ""
                 },
                 "peelable_mask": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
-                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
-                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" }
+                    "heating_operations": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations"
+                    },
+                    "top": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top"
+                    },
+                    "bottom": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom"
+                    }
                   },
-                 "aliases": "",
-                 "name": "Peelable mask",
-                 "description": ""
+                  "aliases": "",
+                  "name": "Peelable mask",
+                  "description": ""
                 },
                 "kapton_tape": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
-                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
-                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" }
-                   },
-                 "aliases": "",
-                 "name": "Kapton tape",
-                 "description": ""
+                    "accept_equivalent": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent"
+                    },
+                    "top": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top"
+                    },
+                    "bottom": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom"
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Kapton tape",
+                  "description": ""
                 },
                 "conductive_carbon_print": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
-                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" }
-                   },
-                 "aliases": "",
-                 "name": "Conductive carbon print",
-                 "description": ""
+                    "top": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top"
+                    },
+                    "bottom": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom"
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Conductive carbon print",
+                  "description": ""
                 },
                 "silver_print": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
-                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" }
-                   },
-                 "aliases": "",
-                 "name": "Silver print tape",
-                 "description": ""
+                    "top": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top"
+                    },
+                    "bottom": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom"
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Silver print tape",
+                  "description": ""
                 }
               }
             }
           },
           "description": "This part should take care of all the products. Note that products can have any names"
-         },
+        },
         "custom": {
           "type": "object",
           "additionalProperties": false,
@@ -1193,7 +1964,9 @@
                   "additionalProperties": false,
                   "required": ["version"],
                   "properties": {
-                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                    "version": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version"
+                    },
                     "soldermasks": {
                       "type": "array",
                       "items": {
@@ -1226,7 +1999,9 @@
                   "additionalProperties": false,
                   "required": ["version"],
                   "properties": {
-                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" }
+                    "version": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version"
+                    }
                   }
                 }
               }
