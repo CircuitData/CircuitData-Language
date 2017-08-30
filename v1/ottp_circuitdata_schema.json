@@ -63,7 +63,13 @@
                       "name": "Stackup",
                       "description": "The stackup of the board: Free stackup (supplier to choose), specified in a separate file or specified in this file. Can also include the stackup itself."
                     },
-                    "rigid_conductive_layer": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/rigid_conductive_layer" }
+                    "rigid_conductive_layer": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                         "minimum_internal_track_width": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/rigid_conductive_layer/minimum_internal_track_width" }
+                       }
+                     }
                   }
                 }
               },
