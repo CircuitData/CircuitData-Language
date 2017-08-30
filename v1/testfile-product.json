@@ -55,6 +55,11 @@
             "heating_operations": 12,
             "top": false,
             "bottom": true
+          },
+          "kapton_tape": {
+            "accept_equivalent": false,
+            "top": false,
+            "bottom": true
           }
         }
       }

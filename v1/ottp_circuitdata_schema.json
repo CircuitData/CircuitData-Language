@@ -203,6 +203,21 @@
                              "aliases": "",
                              "name": "Peelable mask",
                              "description": ""
+                            },
+                            "kapton_tape": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": ["layer_order", "layer_name"],
+                              "properties": {
+                                "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
+                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
+                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" },
+                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                               },
+                             "aliases": "",
+                             "name": "Kapton tape",
+                             "description": ""
                             }                   
                           }
                         }
@@ -336,6 +351,18 @@
                      "aliases": "",
                      "name": "Peelable mask",
                      "description": ""
+                    },
+                    "kapton_tape": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Kapton tape",
+                     "description": ""
                     }                   
                   }
                 }
@@ -467,6 +494,18 @@
                      "aliases": "",
                      "name": "Peelable mask",
                      "description": ""
+                    },
+                    "kapton_tape": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Kapton tape",
+                     "description": ""
                     }
                   }
                 }
@@ -586,6 +625,18 @@
                       },
                      "aliases": "",
                      "name": "Peelable mask",
+                     "description": ""
+                    },
+                    "kapton_tape": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Kapton tape",
                      "description": ""
                     }
                   }
@@ -710,6 +761,18 @@
                       },
                      "aliases": "",
                      "name": "Peelable mask",
+                     "description": ""
+                    },
+                    "kapton_tape": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Kapton tape",
                      "description": ""
                     }
                   }
@@ -853,6 +916,18 @@
                   },
                  "aliases": "",
                  "name": "Peelable mask",
+                 "description": ""
+                },
+                "kapton_tape": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "accept_equivalent": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/accept_equivalent" },
+                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/top" },
+                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/kapton_tape/bottom" }
+                   },
+                 "aliases": "",
+                 "name": "Kapton tape",
                  "description": ""
                 }
               }

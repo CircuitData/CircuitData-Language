@@ -372,6 +372,23 @@
           "uom": null,
           "description": "Indicates peelable mask presence/capability at bottom"
         }
+      },
+      "kapton_tape": {
+        "accept_equivalent": {
+          "type": "boolean",
+          "uom": null,
+          "description": "If alternative to DuPont™ Kapton® HN general-purpose film can be used"
+        },
+        "top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates kapton tape presence/capability at top"
+        },
+        "bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates kapton tape presence/capability at top"
+        }
       }            
     }
   }
