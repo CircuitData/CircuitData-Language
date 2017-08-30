@@ -49,6 +49,17 @@
             "placement": "top",
             "thickness": 11,
             "material": "name"
+          },
+          "coverlay": {
+            "total_thickness": 12,
+            "top": false,
+            "bottom": true,
+            "material": "name"
+          },
+          "peelable_mask": {
+            "heating_operations": 12,
+            "top": false,
+            "bottom": true
           }
         }
       }

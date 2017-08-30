@@ -31,7 +31,22 @@
                   "layer_order": 1,
                   "layer_name": "test"
                 }
-              ]
+              ],
+              "coverlay": {
+                "total_thickness": 12,
+                "top": true,
+                "bottom": false,
+                "material": "test material",
+                "layer_order": 1,
+                "layer_name": "test"
+              },
+              "peelable_mask": {
+                "heating_operations": 12,
+                "top": true,
+                "bottom": false,
+                "layer_order": 1,
+                "layer_name": "test"
+              }
             }
           }
         }

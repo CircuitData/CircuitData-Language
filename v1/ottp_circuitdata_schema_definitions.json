@@ -333,7 +333,46 @@
           "uom": null,
           "description": "The name of a material that appears in the materials section"
         }
-      }
+      },
+      "coverlay": {
+        "total_thickness": {
+          "type": "number",
+          "uom": null,
+          "description": "The total thickness of the coverlay"
+        },
+        "top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates coverlay presence/capability at top"
+        },
+        "bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates coverlay presence/capability at bottom"
+        },
+        "material": {
+          "type": "string",
+          "uom": null,
+          "description": "The name of a material that appears in the materials -> soldermask section"
+        }
+      },
+      "peelable_mask": {
+        "heating_operations": {
+          "type": "integer",
+          "uom": null,
+          "description": ""
+        },
+        "top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates peelable mask presence/capability at top"
+        },
+        "bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates peelable mask presence/capability at bottom"
+        }
+      }            
     }
   }
 }

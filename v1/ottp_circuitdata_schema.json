@@ -174,7 +174,54 @@
                               "aliases": "silk screen, silkscreen, ink, ident",
                               "name": "Legend",
                               "description": "The legend to be used on the board"
-                            }
+                            },
+                            "stiffener": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": ["layer_order", "layer_name"],
+                              "properties": {
+                                "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
+                                "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
+                                "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
+                                "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" },
+                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                              },
+                            "aliases": "support",
+                            "name": "Stiffener",
+                            "description": "Stiffener in flexible boards"
+                            },
+                            "coverlay": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": ["layer_order", "layer_name"],
+                              "properties": {
+                                "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                                "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" },
+                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                              },
+                             "aliases": "",
+                             "name": "CoverLay",
+                             "description": ""
+                            },
+                            "peelable_mask": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": ["layer_order", "layer_name"],
+                              "properties": {
+                                "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
+                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
+                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" },
+                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                               },
+                             "aliases": "",
+                             "name": "Peelable mask",
+                             "description": ""
+                            }                   
                           }
                         }
                       },
@@ -298,7 +345,32 @@
                     "aliases": "support",
                     "name": "Stiffener",
                     "description": "Stiffener in flexible boards"
-                    }
+                    },
+                    "coverlay": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                      },
+                     "aliases": "",
+                     "name": "CoverLay",
+                     "description": ""
+                    },
+                    "peelable_mask": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" }
+                      },
+                     "aliases": "",
+                     "name": "Peelable mask",
+                     "description": ""
+                    }                   
                   }
                 }
               },
@@ -420,6 +492,31 @@
                     "aliases": "support",
                     "name": "Stiffener",
                     "description": "Stiffener in flexible boards"
+                    },
+                    "coverlay": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                      },
+                     "aliases": "",
+                     "name": "CoverLay",
+                     "description": ""
+                    },
+                    "peelable_mask": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" }
+                      },
+                     "aliases": "",
+                     "name": "Peelable mask",
+                     "description": ""
                     }
                   }
                 }
@@ -526,12 +623,36 @@
                       "properties": {
                         "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
                         "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
-                        "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
                         "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
                       },
                     "aliases": "support",
                     "name": "Stiffener",
                     "description": "Stiffener in flexible boards"
+                    },
+                    "coverlay": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                      },
+                     "aliases": "",
+                     "name": "CoverLay",
+                     "description": ""
+                    },
+                    "peelable_mask": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" }
+                      },
+                     "aliases": "",
+                     "name": "Peelable mask",
+                     "description": ""
                     }
                   }
                 }
@@ -647,6 +768,31 @@
                     "aliases": "support",
                     "name": "Stiffener",
                     "description": "Stiffener in flexible boards"
+                    },
+                    "coverlay": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                      },
+                     "aliases": "",
+                     "name": "CoverLay",
+                     "description": ""
+                    },
+                    "peelable_mask": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" }
+                      },
+                     "aliases": "",
+                     "name": "Peelable mask",
+                     "description": ""
                     }
                   }
                 }
@@ -765,6 +911,31 @@
                 "aliases": "support",
                 "name": "Stiffener",
                 "description": "Stiffener in flexible boards"
+                },
+                "coverlay": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                    "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                  },
+                 "aliases": "",
+                 "name": "CoverLay",
+                 "description": ""
+                },
+                "peelable_mask": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "heating_operations": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/heating_operations" },
+                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/top" },
+                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/peelable_mask/bottom" }
+                  },
+                 "aliases": "",
+                 "name": "Peelable mask",
+                 "description": ""
                 }
               }
             }
