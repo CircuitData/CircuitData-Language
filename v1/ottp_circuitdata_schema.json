@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "id": "https://raw.githubusercontent.com/elmatica/Open-Trade_Printed_Circuits_Fabrication_Data/master/v1/ottp_circuitdata_schema.json",
   "additionalProperties": false,
   "required": ["open_trade_transfer_package"],
   "properties": {

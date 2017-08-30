@@ -7,6 +7,14 @@
       "updated": "2017-08-28T09:49:37+02:00"
     },
     "products": {
-    }
+      "testproduct": {
+      }
+    },
+    "profiles": {
+      "defaults": {},
+      "enforced": {},
+      "restrcited": {}
+    },
+    "capabilites": {}
   }
 }
