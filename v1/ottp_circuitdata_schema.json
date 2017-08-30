@@ -205,6 +205,19 @@
                     "aliases": "support",
                     "name": "Stiffener",
                     "description": "Stiffener in flexible boards"
+                    },
+                    "coverlay": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                      },
+                     "aliases": "",
+                     "name": "CoverLay",
+                     "description": ""
                     }                   
                   }
                 }
@@ -284,6 +297,19 @@
                     "aliases": "support",
                     "name": "Stiffener",
                     "description": "Stiffener in flexible boards"
+                    },
+                    "coverlay": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                      },
+                     "aliases": "",
+                     "name": "CoverLay",
+                     "description": ""
                     }
                   }
                 }
@@ -356,12 +382,24 @@
                       "properties": {
                         "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
                         "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
-                        "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
                         "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
                       },
                     "aliases": "support",
                     "name": "Stiffener",
                     "description": "Stiffener in flexible boards"
+                    },
+                    "coverlay": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                      },
+                     "aliases": "",
+                     "name": "CoverLay",
+                     "description": ""
                     }
                   }
                 }
@@ -434,6 +472,19 @@
                     "aliases": "support",
                     "name": "Stiffener",
                     "description": "Stiffener in flexible boards"
+                    },
+                    "coverlay": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                      },
+                     "aliases": "",
+                     "name": "CoverLay",
+                     "description": ""
                     }
                   }
                 }
@@ -525,6 +576,19 @@
                 "aliases": "support",
                 "name": "Stiffener",
                 "description": "Stiffener in flexible boards"
+                },
+                "coverlay": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "total_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/total_thickness" },
+                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/top" },
+                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/bottom" },
+                    "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material" }
+                  },
+                 "aliases": "",
+                 "name": "CoverLay",
+                 "description": ""
                 }
               }
             }
