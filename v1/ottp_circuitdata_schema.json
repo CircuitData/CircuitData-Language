@@ -689,7 +689,84 @@
           },
           "description": "This part should take care of all the products. Note that products can have any names"
          },
-        "custom": {  }
+        "custom": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "colors": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "type", "value"],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": ["hex", "rgb", "cmyk", "name"],
+                    "uom": null,
+                    "description": "How the color is declared"
+                  },
+                  "value": {
+                    "type": "string",
+                    "uom": null,
+                    "description": "If type is hex, the value needs to be a \"#\" + 6 hexadecimals (e.g. \"#FFFFFF\"). for \"rgb\" the format is \"rgb(0, 255, 255)\", for \"cmyk\" the format is \"cmyk(100%, 0%, 0%, 0%)\". The name is just a string."
+                  }
+                }
+              }
+            },
+            "materials": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["printed_circuits_fabrication_data"],
+              "properties": {
+                "printed_circuits_fabrication_data": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["version"],
+                  "properties": {
+                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                    "soldermasks": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/soldermasks"
+                      }
+                    },
+                    "dielectrics": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics"
+                      }
+                    },
+                    "stiffeners": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/stiffeners"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "additional_requirements": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["printed_circuits_fabrication_data"],
+              "properties": {
+                "printed_circuits_fabrication_data": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["version"],
+                  "properties": {
+                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

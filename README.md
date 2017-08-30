@@ -137,14 +137,20 @@ This element is a list and can contain several items
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*finish* | list | O | O | O | O | O | The material/method/surface to be used in the finish.<br>Possible values are (string):<br>"c_bare_copper" (AABUS)<br>"isn" (IPC-4554 Immersion Tin)<br>"iag" (IPC-4553 Immersion Silver)<br>"enepig" (IPC-4552 Immersion Gold)<br>"osp" (J-STD-003 Organic Solderability Preservative)<br>"ht_osp" (J-STD-003 High Temperature OSP)<br>"g" (ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered)<br>"GS" (J-STD-003 Gold Electroplate on areas to be soldered)<br>"t_fused" (J-STD-003 Electrodeposited Tin-Lead (fused))<br>"tlu_unfused" (J-STD-003 Electrodeposited Tin-Lead Unfused)<br>"dig" (J-STD-003 Direct Immersion Gold (Solderable Surface))<br>"gwb-1_ultrasonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic))<br>"gwb-2-thermosonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic))<br>"s_hasl" (J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL))<br>"lf_hasl" (J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL))<br>"none" (No final finish should be used)<br>
+*finish* | list | O | O | O | O | O | The material/method/surface to be used in the finish.<br>Possible values are (string):<br>"c_bare_copper" (AABUS)<br>"isn" (IPC-4554 Immersion Tin)<br>"iag" (IPC-4553 Immersion Silver)<br>"enig" (IPC-4552 Immersion Gold)<br>"enepig" (IPC-4556 ENEPIG)<br>"osp" (J-STD-003 Organic Solderability Preservative)<br>"ht_osp" (J-STD-003 High Temperature OSP)<br>"g" (ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered)<br>"GS" (J-STD-003 Gold Electroplate on areas to be soldered)<br>"t_fused" (J-STD-003 Electrodeposited Tin-Lead (fused))<br>"tlu_unfused" (J-STD-003 Electrodeposited Tin-Lead Unfused)<br>"dig" (J-STD-003 Direct Immersion Gold (Solderable Surface))<br>"gwb-1_ultrasonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic))<br>"gwb-2-thermosonic" (ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic))<br>"s_hasl" (J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL))<br>"b1_lfhasl" (J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL))<br>"none" (No final finish should be used)<br>
 *area* | float | O | F | F | F | O | The area that the finish will cover, in square decimeter.
-*thickness* | float | O | O | O | F | O | The thickness of the finish in micrometer.
-*gold_thickness* | float | O | O | O | F | O | The thickness of the gold finish in micrometer.
-*silver_thickness* | float | O | O | O | F | O | The thickness of silver the finish in micrometer.
-*paladium_thickness* | float | O | O | O | F | O | The thickness of the paladium finish in micrometer.
-*tin_thickness* | float | O | O | O | F | O | The thickness of the tin finish in micrometer.
-*nickel_thickness* | float | O | O | O | F | O | The thickness of the nickel finish in micrometer.
+*thickness_min* | float | O | O | O | F | O | The minimum thickness of the finish in micrometer.
+*thickness_max* | float | O | O | O | F | O | The maximum thickness of the finish in micrometer.
+*gold_thickness_min* | float | O | O | O | F | O | The minimum thickness of the gold finish in micrometer.
+*gold_thickness_max* | float | O | O | O | F | O | The maximim thickness of the gold finish in micrometer.
+*silver_thickness_min* | float | O | O | O | F | O | The minimum thickness of silver the finish in micrometer.
+*silver_thickness_max* | float | O | O | O | F | O | The maximum thickness of silver the finish in micrometer.
+*paladium_thickness_min* | float | O | O | O | F | O | The minimum thickness of the paladium finish in micrometer.
+*paladium_thickness_max* | float | O | O | O | F | O | The maximim thickness of the paladium finish in micrometer.
+*tin_thickness_min* | float | O | O | O | F | O | The minimum thickness of the tin finish in micrometer.
+*tin_thickness_max* | float | O | O | O | F | O | The maximum thickness of the tin finish in micrometer.
+*nickel_thickness_min* | float | O | O | O | F | O | The minimum thickness of the nickel finish in micrometer.
+*nickel_thickness_max* | float | O | O | O | F | O | The maximum thickness of the nickel finish in micrometer.
 
 ### Dielectric ("dielectric")
 Aliases: "Laminate"
@@ -205,7 +211,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*heating_operations* | integer | O | O | O | O | O |
+*heating_operations* | integer | O | O | O | O | O | 
 *top* | boolean | O | O | O | O | O | Indicates peelable mask presence/capability at top
 *bottom* | boolean | O | O | O | O | O | Indicates peelable mask presence/capability at bottom
 
@@ -290,6 +296,9 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *mouse_bites* | boolean | O | O | O | O | O | Indicates if there should be "mouse bites" to allow easy break away of the boards
 *tooling_holes_number* | integer | O | O | O | O | O | The number of tooling holes on the array.
 *tooling_holes_size* | float | O | O | O | O | O | The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size.
+*x_outs_allowed* | boolean | O | O | O | O | O | Manufacturer can deliver arrays with defect boards as long as these are clearly marked as defect (X'ed out).
+*x_outs_max_percentage_on_array* | integer | O | O | O | O | O | The maximum number of defective and clearly marked as such boards that are allowed on on panel, stated in percentage
+*transplant_board_allowed* | boolean | O | O | O | O | O | The maximum number of defective and clearly marked as such boards that are allowed on on panel, stated in percentage
 
 ### Mechanical Processes ("mechanical")
 Mechanical processes in the manufacturing
@@ -455,13 +464,14 @@ Colors can be defined by hex, rgb, cmyk or name. Name of the color present here 
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
+*name* | string | O | O | O | O | O | name of the color
 *type* | list | O | F | F | F | O | How the color is declared
 *value* | string | O | F | F | F | O | If type is hex, the value needs to be a "#" + 6 hexadecimals (e.g. "#FFFFFF"). for "rgb" the format is "rgb(0, 255, 255)", for "cmyk" the format is "cmyk(100%, 0%, 0%, 0%)". The name is just a string.
 
 
 ### Materials
 #### Soldermasks
-Materials used as soldermask
+Materials used as soldermask. Must be placed within a "printed_circuits_fabrication_data" element that also contains a version
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
@@ -471,7 +481,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *link* | string | O | O | O | O | O | The link to some url that gives more information or a reference to the product.
 
 #### Dielectrics
-Materials used as dielectrics/laminates
+Materials used as dielectrics/laminates. Must be placed within a "printed_circuits_fabrication_data" element that also contains a version
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
@@ -496,7 +506,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *accept_equivalent* | boolean | O | O | O | O | O | Equivalent material to the one specified is OK to use as a replacement if true.
 
 #### Stiffeners
-The materials to be used as stiffener
+The materials to be used as stiffener. Must be placed within a "printed_circuits_fabrication_data" element that also contains a version
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
