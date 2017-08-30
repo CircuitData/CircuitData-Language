@@ -121,6 +121,24 @@
                                 "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                               }
                             },
+                            "dielectric": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": ["name", "layer_order", "layer_name"],
+                                "properties": {
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                  "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                                },
+                                "aliases": "Laminate",
+                                "name": "Dielectric",
+                                "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key. This element is a list and can contain several items"
+                              }
+                            },
                             "soldermask": {
                               "type": "array",
                               "items": {
@@ -282,6 +300,22 @@
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                       }
                     },
+                    "dielectric": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": ["name"],
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "aliases": "Laminate",
+                        "name": "Dielectric",
+                        "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key. This element is a list and can contain several items"
+                      }
+                    },
                     "soldermask": {
                       "type": "array",
                       "items": {
@@ -425,6 +459,22 @@
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                       }
                     },
+                    "dielectric": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": ["name"],
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "aliases": "Laminate",
+                        "name": "Dielectric",
+                        "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key. This element is a list and can contain several items"
+                      }
+                    },
                     "soldermask": {
                       "type": "array",
                       "items": {
@@ -560,6 +610,22 @@
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                       }
                     },
+                    "dielectric": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": ["name"],
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "aliases": "Laminate",
+                        "name": "Dielectric",
+                        "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key. This element is a list and can contain several items"
+                      }
+                    },
                     "soldermask": {
                       "type": "array",
                       "items": {
@@ -691,6 +757,22 @@
                         "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
                         "name": "Final Finish",
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                      }
+                    },
+                    "dielectric": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": ["name"],
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "aliases": "Laminate",
+                        "name": "Dielectric",
+                        "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key. This element is a list and can contain several items"
                       }
                     },
                     "soldermask": {

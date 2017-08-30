@@ -29,6 +29,11 @@
             "bottom": false,
             "color": "white"
           },
+          "dielectric": [
+            {
+              "name": "FR-4 Lead Free"
+            }
+          ],
           "soldermask": [
             {
               "top": true,
