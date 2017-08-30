@@ -21,6 +21,11 @@
                 "copper_coverage_average": 12.55,
                 "layer_order": 1,
                 "layer_name": "test"
+              },
+              "legend": {
+                "top": true,
+                "bottom": false,
+                "color": "white"
               }
             }
           }

@@ -111,6 +111,15 @@
                                 "name": "Final Finish",
                                 "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                               }
+                            },
+                            "legend": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                              }
                             }
                           }
                         }
@@ -168,6 +177,15 @@
                         "name": "Final Finish",
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                       }
+                    },
+                    "legend": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                      }
                     }
                   }
                 }
@@ -222,6 +240,15 @@
                         "name": "Final Finish",
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                       }
+                    },
+                    "legend": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                      }
                     }
                   }
                 }
@@ -275,6 +302,15 @@
                         "name": "Final Finish",
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                       }
+                    },
+                    "legend": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                      }
                     }
                   }
                 }
@@ -321,6 +357,15 @@
                         "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
                         "name": "Final Finish",
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                      }
+                    },
+                    "legend": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
                       }
                     }
                   }
@@ -387,6 +432,15 @@
                     "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
                     "name": "Final Finish",
                     "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                  }
+                },
+                "legend": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
                   }
                 }
               }

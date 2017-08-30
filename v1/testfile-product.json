@@ -21,8 +21,12 @@
             {
               "finish": "b1_lfhasl"
             }
-          ]
-
+          ],
+          "legend": {
+            "top": true,
+            "bottom": false,
+            "color": "white"
+          }
         }
       }
     }
