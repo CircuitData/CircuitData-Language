@@ -65,6 +65,14 @@
             "accept_equivalent": false,
             "top": false,
             "bottom": true
+          },
+          "conductive_carbon_print": {
+            "top": false,
+            "bottom": true
+          },
+          "silver_print": {
+            "top": false,
+            "bottom": true
           }
         }
       }

@@ -236,6 +236,34 @@
                              "aliases": "",
                              "name": "Kapton tape",
                              "description": ""
+                            },
+                            "conductive_carbon_print": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": ["layer_order", "layer_name"],
+                              "properties": {
+                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
+                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" },
+                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                               },
+                             "aliases": "",
+                             "name": "Conductive carbon print",
+                             "description": ""
+                            },
+                            "silver_print": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": ["layer_order", "layer_name"],
+                              "properties": {
+                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
+                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" },
+                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                               },
+                             "aliases": "",
+                             "name": "Silver print tape",
+                             "description": ""
                             }                   
                           }
                         }
@@ -397,6 +425,28 @@
                      "aliases": "",
                      "name": "Kapton tape",
                      "description": ""
+                    },
+                    "conductive_carbon_print": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Conductive carbon print",
+                     "description": ""
+                    },
+                    "silver_print": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Silver print tape",
+                     "description": ""
                     }                   
                   }
                 }
@@ -556,6 +606,28 @@
                      "aliases": "",
                      "name": "Kapton tape",
                      "description": ""
+                    },
+                    "conductive_carbon_print": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Conductive carbon print",
+                     "description": ""
+                    },
+                    "silver_print": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Silver print tape",
+                     "description": ""
                     }
                   }
                 }
@@ -703,6 +775,28 @@
                        },
                      "aliases": "",
                      "name": "Kapton tape",
+                     "description": ""
+                    },
+                    "conductive_carbon_print": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Conductive carbon print",
+                     "description": ""
+                    },
+                    "silver_print": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Silver print tape",
                      "description": ""
                     }
                   }
@@ -855,6 +949,28 @@
                        },
                      "aliases": "",
                      "name": "Kapton tape",
+                     "description": ""
+                    },
+                    "conductive_carbon_print": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Conductive carbon print",
+                     "description": ""
+                    },
+                    "silver_print": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" }
+                       },
+                     "aliases": "",
+                     "name": "Silver print tape",
                      "description": ""
                     }
                   }
@@ -1010,6 +1126,28 @@
                    },
                  "aliases": "",
                  "name": "Kapton tape",
+                 "description": ""
+                },
+                "conductive_carbon_print": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/top" },
+                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_carbon_print/bottom" }
+                   },
+                 "aliases": "",
+                 "name": "Conductive carbon print",
+                 "description": ""
+                },
+                "silver_print": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/top" },
+                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/silver_print/bottom" }
+                   },
+                 "aliases": "",
+                 "name": "Silver print tape",
                  "description": ""
                 }
               }

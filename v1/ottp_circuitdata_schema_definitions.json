@@ -389,7 +389,31 @@
           "uom": null,
           "description": "Indicates kapton tape presence/capability at top"
         }
-      }            
+      },
+      "conductive_carbon_print": {
+        "top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates Conductive Carbon Print presence/capability at top"
+        },
+        "bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates Conductive Carbon Print presence/capability at bottom"
+        }
+      },
+      "silver_print": {
+        "top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates silver print presence/capability at top"
+        },
+        "bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates silver print presence/capability at bottom"  
+        }
+      }                  
     }
   }
 }
