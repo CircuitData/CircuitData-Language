@@ -119,7 +119,10 @@
                                 "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
                                 "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
                                 "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
-                              }
+                              },
+                              "aliases": "silk screen, silkscreen, ink, ident",
+                              "name": "Legend",
+                              "description": "The legend to be used on the board"
                             }
                           }
                         }
@@ -185,8 +188,24 @@
                         "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
                         "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
                         "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
-                      }
-                    }
+                      },
+                      "aliases": "silk screen, silkscreen, ink, ident",
+                      "name": "Legend",
+                      "description": "The legend to be used on the board"
+                    },
+                    "stiffener": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
+                        "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
+                        "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
+                      },
+                    "aliases": "support",
+                    "name": "Stiffener",
+                    "description": "Stiffener in flexible boards"
+                    }                   
                   }
                 }
               },
@@ -248,7 +267,23 @@
                         "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
                         "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
                         "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
-                      }
+                      },
+                      "aliases": "silk screen, silkscreen, ink, ident",
+                      "name": "Legend",
+                      "description": "The legend to be used on the board"
+                    },
+                    "stiffener": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
+                        "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
+                        "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
+                      },
+                    "aliases": "support",
+                    "name": "Stiffener",
+                    "description": "Stiffener in flexible boards"
                     }
                   }
                 }
@@ -310,7 +345,23 @@
                         "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
                         "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
                         "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
-                      }
+                      },
+                      "aliases": "silk screen, silkscreen, ink, ident",
+                      "name": "Legend",
+                      "description": "The legend to be used on the board"
+                    },
+                    "stiffener": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
+                        "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
+                        "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
+                      },
+                    "aliases": "support",
+                    "name": "Stiffener",
+                    "description": "Stiffener in flexible boards"
                     }
                   }
                 }
@@ -366,7 +417,23 @@
                         "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
                         "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
                         "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
-                      }
+                      },
+                      "aliases": "silk screen, silkscreen, ink, ident",
+                      "name": "Legend",
+                      "description": "The legend to be used on the board"
+                    },
+                    "stiffener": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
+                        "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
+                        "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
+                        "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
+                      },
+                    "aliases": "support",
+                    "name": "Stiffener",
+                    "description": "Stiffener in flexible boards"
                     }
                   }
                 }
@@ -441,7 +508,23 @@
                     "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
                     "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
                     "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
-                  }
+                  },
+                  "aliases": "silk screen, silkscreen, ink, ident",
+                  "name": "Legend",
+                  "description": "The legend to be used on the board"
+                },
+                "stiffener": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "size": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/size" },
+                    "placement": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/placement" },
+                    "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/thickness" },
+                    "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material" }
+                  },
+                "aliases": "support",
+                "name": "Stiffener",
+                "description": "Stiffener in flexible boards"
                 }
               }
             }

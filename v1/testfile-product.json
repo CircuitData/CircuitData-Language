@@ -26,6 +26,12 @@
             "top": true,
             "bottom": false,
             "color": "white"
+          },
+          "stiffener": {
+            "size": 12,
+            "placement": "top",
+            "thickness": 11,
+            "material": "name"
           }
         }
       }
