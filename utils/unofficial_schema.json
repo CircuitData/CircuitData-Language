@@ -957,9 +957,9 @@
             }
           },
           {
-            "tag": "thickness",
+            "tag": "thickness_min",
             "format": "float",
-            "description": "The thickness of the finish in micrometer.",
+            "description": "The minimum thickness of the finish in micrometer.",
             "in_profile_default": {
               "state": "optional",
               "values": "range"
@@ -981,9 +981,9 @@
             }
           },
           {
-            "tag": "gold_thickness",
+            "tag": "thickness_max",
             "format": "float",
-            "description": "The thickness of the gold finish in micrometer.",
+            "description": "The maximum thickness of the finish in micrometer.",
             "in_profile_default": {
               "state": "optional",
               "values": "range"
@@ -1005,9 +1005,9 @@
             }
           },
           {
-            "tag": "silver_thickness",
+            "tag": "gold_thickness_min",
             "format": "float",
-            "description": "The thickness of silver the finish in micrometer.",
+            "description": "The minimum thickness of the gold finish in micrometer.",
             "in_profile_default": {
               "state": "optional",
               "values": "range"
@@ -1029,9 +1029,9 @@
             }
           },
           {
-            "tag": "paladium_thickness",
+            "tag": "gold_thickness_max",
             "format": "float",
-            "description": "The thickness of the paladium finish in micrometer.",
+            "description": "The maximim thickness of the gold finish in micrometer.",
             "in_profile_default": {
               "state": "optional",
               "values": "range"
@@ -1053,9 +1053,9 @@
             }
           },
           {
-            "tag": "tin_thickness",
+            "tag": "silver_thickness_min",
             "format": "float",
-            "description": "The thickness of the tin finish in micrometer.",
+            "description": "The minimum thickness of silver the finish in micrometer.",
             "in_profile_default": {
               "state": "optional",
               "values": "range"
@@ -1077,9 +1077,153 @@
             }
           },
           {
-            "tag": "nickel_thickness",
+            "tag": "silver_thickness_max",
             "format": "float",
-            "description": "The thickness of the nickel finish in micrometer.",
+            "description": "The maximum thickness of silver the finish in micrometer.",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "range"
+            }
+          },
+          {
+            "tag": "paladium_thickness_min",
+            "format": "float",
+            "description": "The minimum thickness of the paladium finish in micrometer.",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "range"
+            }
+          },
+          {
+            "tag": "paladium_thickness_max",
+            "format": "float",
+            "description": "The maximim thickness of the paladium finish in micrometer.",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "range"
+            }
+          },
+          {
+            "tag": "tin_thickness_min",
+            "format": "float",
+            "description": "The minimum thickness of the tin finish in micrometer.",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "range"
+            }
+          },
+          {
+            "tag": "tin_thickness_max",
+            "format": "float",
+            "description": "The maximum thickness of the tin finish in micrometer.",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "range"
+            }
+          },
+          {
+            "tag": "nickel_thickness_min",
+            "format": "float",
+            "description": "The minimum thickness of the nickel finish in micrometer.",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "range"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "range"
+            }
+          },
+          {
+            "tag": "nickel_thickness_max",
+            "format": "float",
+            "description": "The maximum thickness of the nickel finish in micrometer.",
             "in_profile_default": {
               "state": "optional",
               "values": "range"
@@ -2740,6 +2884,81 @@
             "in_capability": {
               "state": "optional",
               "values": "range"
+            }
+          },
+          {
+            "tag": "x_outs_allowed",
+            "format": "boolean",
+            "description": "Manufacturer can deliver arrays with defect boards as long as these are clearly marked as defect (X'ed out).",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_restricted": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "single"
+            }
+          },
+          {
+            "tag": "x_outs_max_percentage_on_array",
+            "format": "integer",
+            "description": "The maximum number of defective and clearly marked as such boards that are allowed on on panel, stated in percentage",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_restricted": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "forbidden",
+              "values": "single"
+            }
+          },
+          {
+            "tag": "transplant_board_allowed",
+            "format": "boolean",
+            "description": "The maximum number of defective and clearly marked as such boards that are allowed on on panel, stated in percentage",
+            "in_profile_default": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_profile_restricted": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional",
+              "values": "single"
             }
           }
         ]

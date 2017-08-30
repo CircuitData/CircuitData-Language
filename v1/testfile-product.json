@@ -19,7 +19,9 @@
           },
           "final_finish": [
             {
-              "finish": "b1_lfhasl"
+              "finish": "b1_lfhasl",
+              "thickness_min": 1,
+              "thickness_max": 40
             }
           ],
           "legend": {

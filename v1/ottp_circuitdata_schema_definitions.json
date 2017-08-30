@@ -12,6 +12,18 @@
         "type": "string"
       }
     },
+    "generics": {
+      "thickness_min_micron": {
+        "type": "number",
+        "uom": ["um"],
+        "description": "The minimum thickness in micrometer."
+      },
+      "thickness_max_micron": {
+        "type": "number",
+        "uom": ["um"],
+        "description": "The maximum thickness in micrometer."
+      }
+    },
     "elements": {
       "conductive_layer": {
         "count": {
@@ -73,36 +85,6 @@
           "type": "number",
           "uom": ["dm2"],
           "description": "The area that the finish will cover, in square decimeter."
-        },
-        "thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The thickness of the finish in micrometer."
-        },
-        "gold_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The thickness of the gold finish in micrometer."
-        },
-        "silver_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The thickness of silver the finish in micrometer."
-        },
-        "paladium_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The thickness of the paladium finish in micrometer."
-        },
-        "tin_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The thickness of the tin finish in micrometer."
-        },
-        "nickel_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The thickness of the nickel finish in micrometer."
         }
       },
       "legend": {
