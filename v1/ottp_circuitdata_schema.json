@@ -8,8 +8,11 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "version": {"type": "string"},
-        "information": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/information" },
+        "version": {
+          "type": "string",
+          "pattern": "^1.0$"
+        },
+        "information": { "$ref": "https://raw.githubusercontent.com/elmatica/Open-Trade-Transfer-Package/master/v1/ottp_schema_definitions.json#/definitions/information" },
         "products": {
           "type": "object",
           "additionalProperties": false,
@@ -33,9 +36,9 @@
             }
           }
         },
-        "profiles": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/profile" },
-        "capabilities": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/capability" },
-        "custom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom" }
+        "profiles": {  },
+        "capabilities": {  },
+        "custom": {  }
       }
     }
   }

@@ -8,6 +8,7 @@
     },
     "products": {
       "testproduct": {
+        "printed_circuits_fabrication_data": { }
       }
     },
     "profiles": {
@@ -15,6 +16,6 @@
       "enforced": {},
       "restrcited": {}
     },
-    "capabilites": {}
+    "capabilities": {}
   }
 }
