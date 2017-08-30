@@ -21,7 +21,17 @@
                 "copper_coverage_average": 12.55,
                 "layer_order": 1,
                 "layer_name": "test"
-              }
+              },
+              "soldermask": [
+                {
+                  "finish": "any",
+                  "color": "green",
+                  "material": "Standard LPI",
+                  "allow_touchups": true,
+                  "layer_order": 1,
+                  "layer_name": "test"
+                }
+              ]
             }
           }
         }

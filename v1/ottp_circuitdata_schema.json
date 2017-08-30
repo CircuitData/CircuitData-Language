@@ -97,10 +97,11 @@
                               "items": {
                                 "type": "object",
                                 "additionalProperties": false,
+                                "required": ["layer_order", "layer_name"],
                                 "properties": {
                                   "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
                                   "area": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/area" },
-                                  "thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
+                                  "thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number" },
                                   "thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
                                   "gold_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_min_micron" },
                                   "gold_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
@@ -111,20 +112,46 @@
                                   "tin_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
                                   "tin_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
                                   "nickel_thickness_min": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
-                                  "nickel_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" }
+                                  "nickel_thickness_max": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron" },
+                                  "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                  "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
                                 },
                                 "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
                                 "name": "Final Finish",
                                 "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                               }
                             },
+                            "soldermask": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": ["layer_order", "layer_name"],
+                                "properties": {
+                                  "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
+                                  "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
+                                  "min_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness" },
+                                  "max_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness" },
+                                  "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
+                                  "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" },
+                                  "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                  "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
+                                },
+                                "aliases": "solder mask, sm, solder resist, green mask",
+                                "name": "Soldermask",
+                                "description": "A list of final soldermasks, can be more than one"
+                              }
+                            },
                             "legend": {
                               "type": "object",
                               "additionalProperties": false,
+                              "required": ["layer_order", "layer_name"],
                               "properties": {
                                 "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
                                 "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
-                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" },
+                                "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
+                                "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
                               },
                               "aliases": "silk screen, silkscreen, ink, ident",
                               "name": "Legend",
@@ -193,6 +220,26 @@
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                       }
                     },
+                    "soldermask": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
+                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
+                          "min_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness" },
+                          "max_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness" },
+                          "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
+                          "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top" },
+                          "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom" },
+                          "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" }
+                        },
+                        "aliases": "solder mask, sm, solder resist, green mask",
+                        "name": "Soldermask",
+                        "description": "A list of final soldermasks, can be more than one"
+                      }
+                    },
                     "legend": {
                       "type": "object",
                       "additionalProperties": false,
@@ -217,7 +264,7 @@
                     "aliases": "support",
                     "name": "Stiffener",
                     "description": "Stiffener in flexible boards"
-                    }                   
+                    }
                   }
                 }
               },
@@ -277,6 +324,26 @@
                         "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
                         "name": "Final Finish",
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                      }
+                    },
+                    "soldermask": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
+                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
+                          "min_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness" },
+                          "max_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness" },
+                          "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
+                          "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top" },
+                          "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom" },
+                          "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" }
+                        },
+                        "aliases": "solder mask, sm, solder resist, green mask",
+                        "name": "Soldermask",
+                        "description": "A list of final soldermasks, can be more than one"
                       }
                     },
                     "legend": {
@@ -357,6 +424,24 @@
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                       }
                     },
+                    "soldermask": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
+                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
+                          "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
+                          "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top" },
+                          "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom" },
+                          "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" }
+                        },
+                        "aliases": "solder mask, sm, solder resist, green mask",
+                        "name": "Soldermask",
+                        "description": "A list of final soldermasks, can be more than one"
+                      }
+                    },
                     "legend": {
                       "type": "object",
                       "additionalProperties": false,
@@ -434,6 +519,26 @@
                         "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
                         "name": "Final Finish",
                         "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                      }
+                    },
+                    "soldermask": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
+                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
+                          "min_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness" },
+                          "max_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness" },
+                          "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
+                          "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top" },
+                          "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom" },
+                          "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" }
+                        },
+                        "aliases": "solder mask, sm, solder resist, green mask",
+                        "name": "Soldermask",
+                        "description": "A list of final soldermasks, can be more than one"
                       }
                     },
                     "legend": {
@@ -532,6 +637,26 @@
                     "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
                     "name": "Final Finish",
                     "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                  }
+                },
+                "soldermask": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/color" },
+                      "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/finish" },
+                      "min_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/min_thickness" },
+                      "max_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/max_thickness" },
+                      "material": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/material" },
+                      "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/top" },
+                      "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/bottom" },
+                      "allow_touchups": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups" }
+                    },
+                    "aliases": "solder mask, sm, solder resist, green mask",
+                    "name": "Soldermask",
+                    "description": "A list of final soldermasks, can be more than one"
                   }
                 },
                 "legend": {
