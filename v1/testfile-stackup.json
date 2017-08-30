@@ -11,7 +11,7 @@
         "printed_circuits_fabrication_data": {
           "version": "0.6",
           "stackup": {
-            "specification_leve": "specified",
+            "specification_level": "specified",
             "file_name": "test.json",
             "specified": {
               "rigid_conductive_layer": {
@@ -19,6 +19,31 @@
                 "minimum_external_spacing_width": 0.14,
                 "external_base_copper_thickness": 17.1,
                 "copper_coverage_average": 12.55,
+                "layer_order": 1,
+                "layer_name": "test"
+              },
+              "soldermask": [
+                {
+                  "finish": "any",
+                  "color": "green",
+                  "material": "Standard LPI",
+                  "allow_touchups": true,
+                  "layer_order": 1,
+                  "layer_name": "test"
+                }
+              ],
+              "coverlay": {
+                "total_thickness": 12,
+                "top": true,
+                "bottom": false,
+                "material": "test material",
+                "layer_order": 1,
+                "layer_name": "test"
+              },
+              "peelable_mask": {
+                "heating_operations": 12,
+                "top": true,
+                "bottom": false,
                 "layer_order": 1,
                 "layer_name": "test"
               }

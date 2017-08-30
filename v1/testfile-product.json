@@ -19,7 +19,9 @@
           },
           "final_finish": [
             {
-              "finish": "b1_lfhasl"
+              "finish": "b1_lfhasl",
+              "thickness_min": 1,
+              "thickness_max": 40
             }
           ],
           "legend": {
@@ -27,6 +29,16 @@
             "bottom": false,
             "color": "white"
           },
+          "soldermask": [
+            {
+              "top": true,
+              "bottom": true,
+              "finish": "any",
+              "color": "green",
+              "material": "Standard LPI",
+              "allow_touchups": true
+            }
+          ],
           "stiffener": {
             "size": 12,
             "placement": "top",
@@ -38,6 +50,11 @@
             "top": false,
             "bottom": true,
             "material": "name"
+          },
+          "peelable_mask": {
+            "heating_operations": 12,
+            "top": false,
+            "bottom": true
           }
         }
       }

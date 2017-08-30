@@ -12,6 +12,18 @@
         "type": "string"
       }
     },
+    "generics": {
+      "thickness_min_micron": {
+        "type": "number",
+        "uom": ["um"],
+        "description": "The minimum thickness in micrometer."
+      },
+      "thickness_max_micron": {
+        "type": "number",
+        "uom": ["um"],
+        "description": "The maximum thickness in micrometer."
+      }
+    },
     "elements": {
       "conductive_layer": {
         "count": {
@@ -73,36 +85,49 @@
           "type": "number",
           "uom": ["dm2"],
           "description": "The area that the finish will cover, in square decimeter."
+        }
+      },
+      "soldermask": {
+        "color": {
+          "type": "string",
+          "uom": null,
+          "description": "This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done custom -> colors section."
         },
-        "thickness": {
+        "finish": {
+          "type": "string",
+          "enum": ["matte", "semi-matte", "glossy", "any"],
+          "uom": null,
+          "description": "The finish of the soldermask."
+        },
+        "min_thickness": {
           "type": "number",
           "uom": ["um"],
-          "description": "The thickness of the finish in micrometer."
+          "description": "The minimum thickness of the soldermask."
         },
-        "gold_thickness": {
+        "max_thickness": {
           "type": "number",
           "uom": ["um"],
-          "description": "The thickness of the gold finish in micrometer."
+          "description": "The maximum thickness of the soldermask."
         },
-        "silver_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The thickness of silver the finish in micrometer."
+        "material": {
+          "type": "string",
+          "uom": null,
+          "description": "The name of a material that appears in the materials section"
         },
-        "paladium_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The thickness of the paladium finish in micrometer."
+        "top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates soldermask presence/capability at top"
         },
-        "tin_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The thickness of the tin finish in micrometer."
+        "bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates soldermask presence/capability at bottom"
         },
-        "nickel_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The thickness of the nickel finish in micrometer."
+        "allow_touchups": {
+          "type": "boolean",
+          "uom": null,
+          "description": "The manufacturer is allowed to do touchups on the soldermask if true"
         }
       },
       "legend": {
@@ -166,7 +191,24 @@
           "uom": null,
           "description": "The name of a material that appears in the materials -> soldermask section"
         }
-      }      
+      },
+      "peelable_mask": {
+        "heating_operations": {
+          "type": "integer",
+          "uom": null,
+          "description": ""
+        },
+        "top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates peelable mask presence/capability at top"
+        },
+        "bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates peelable mask presence/capability at bottom"
+        }
+      }            
     }
   }
 }
