@@ -103,7 +103,30 @@
           "uom": null,
           "description": "Indicates legend presence/capability at bottom"
         }
-      }
+      },
+      "stiffener": {
+        "size": {
+          "type": "number",
+          "uom": ["um"],
+          "description": "The size of the stiffener should be specified in drawing"
+        },
+        "placement": {
+          "type": "string",
+          "enum": ["top", "bottom"],
+          "uom": null,
+          "description": "Indicating if the stiffener is on top or bottom of the flexible layer."
+        },
+        "thickness": {
+          "type": "number",
+          "uom": ["um"],
+          "description": "The thickness of the stiffener"
+        },
+        "material": {
+          "type": "string",
+          "uom": null,
+          "description": "The name of a material that appears in the materials section"
+        }
+      }      
     }
   }
 }
