@@ -5195,7 +5195,29 @@
         "name": "any_name",
         "description": "Colors can be defined by hex, rgb, cmyk or name. Name of the color present here can be references in the other elements",
         "type": "object",
-        "tags": [{
+        "tags": [
+          {
+            "tag": "name",
+            "format": "string",
+            "description": "name of the color",
+            "in_profile_default": {
+              "state": "optional"
+            },
+            "in_profile_enforced": {
+              "state": "optional"
+            },
+            "in_profile_restricted": {
+              "state": "optional"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "optional"
+            }
+          },
+          {
             "tag": "type",
             "format": "list",
             "description": "How the color is declared",
@@ -5263,7 +5285,7 @@
         "soldermasks": {
           "aliases": "",
           "name": "Soldermasks",
-          "description": "Materials used as soldermask",
+          "description": "Materials used as soldermask. Must be placed within a \"printed_circuits_fabrication_data\" element that also contains a version",
           "type": "object",
           "tags": [{
               "tag": "name",
@@ -5382,7 +5404,7 @@
         "dielectrics": {
           "aliases": "",
           "name": "Dielectrics",
-          "description": "Materials used as dielectrics/laminates",
+          "description": "Materials used as dielectrics/laminates. Must be placed within a \"printed_circuits_fabrication_data\" element that also contains a version",
           "type": "object",
           "tags": [{
               "tag": "name",
@@ -5833,7 +5855,7 @@
         "stiffener": {
           "aliases": "",
           "name": "Stiffener",
-          "description": "The materials to be used as stiffener",
+          "description": "The materials to be used as stiffener. Must be placed within a \"printed_circuits_fabrication_data\" element that also contains a version",
           "type": "object",
           "tags": [{
               "tag": "name",

@@ -58,6 +58,28 @@
           }
         }
       }
+    },
+    "custom": {
+      "materials": {
+        "printed_circuits_fabrication_data": {
+          "version": "0.6",
+          "soldermasks": [
+            {
+              "name": "Standard LPI"
+            }
+          ],
+          "dielectrics": [
+            {
+              "name": "FR-4",
+              "ul": true
+            }
+          ],
+          "stiffeners": [
+
+          ]
+        }
+      }
     }
+
   }
 }
