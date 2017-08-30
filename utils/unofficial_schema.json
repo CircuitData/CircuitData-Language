@@ -857,8 +857,12 @@
                   "description": "IPC-4553 Immersion Silver"
                 },
                 {
-                  "value": "enepig",
+                  "value": "enig",
                   "description": "IPC-4552 Immersion Gold"
+                },
+                {
+                  "value": "enepig",
+                  "description": "IPC-4556 ENEPIG"
                 },
                 {
                   "value": "osp",
@@ -901,7 +905,7 @@
                   "description": "J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL)"
                 },
                 {
-                  "value": "lf_hasl",
+                  "value": "b1_lfhasl",
                   "description": "J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL)"
                 },
                 {

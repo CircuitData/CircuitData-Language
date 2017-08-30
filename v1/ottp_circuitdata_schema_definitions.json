@@ -61,6 +61,49 @@
           "uom": ["%"],
           "description": "The average copper coverage of the board. UoM is percentage"
         }
+      },
+      "final_finish": {
+        "finish": {
+          "type": "string",
+          "enum": ["none", "c_bare_copper", "isn", "iag", "enig", "enepig", "osp", "ht_osp", "g", "GS", "t_fused", "tlu_unfused", "dig", "gwb-1_ultrasonic", "gwb-2-thermosonic", "s_hasl", "b1_lfhasl"],
+          "uom": null,
+          "description": "The material/method/surface to be used in the finish."
+        },
+        "area": {
+          "type": "number",
+          "uom": ["dm2"],
+          "description": "The area that the finish will cover, in square decimeter."
+        },
+        "thickness": {
+          "type": "number",
+          "uom": ["um"],
+          "description": "The thickness of the finish in micrometer."
+        },
+        "gold_thickness": {
+          "type": "number",
+          "uom": ["um"],
+          "description": "The thickness of the gold finish in micrometer."
+        },
+        "silver_thickness": {
+          "type": "number",
+          "uom": ["um"],
+          "description": "The thickness of silver the finish in micrometer."
+        },
+        "paladium_thickness": {
+          "type": "number",
+          "uom": ["um"],
+          "description": "The thickness of the paladium finish in micrometer."
+        },
+        "tin_thickness": {
+          "type": "number",
+          "uom": ["um"],
+          "description": "The thickness of the tin finish in micrometer."
+        },
+        "nickel_thickness": {
+          "type": "number",
+          "uom": ["um"],
+          "description": "The thickness of the nickel finish in micrometer."
+        }
       }
     }
   }

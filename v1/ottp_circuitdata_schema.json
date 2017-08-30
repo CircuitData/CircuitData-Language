@@ -91,6 +91,26 @@
                                 "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
                                 "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
                               }
+                            },
+                            "final_finish": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
+                                  "area": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/area" },
+                                  "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/thickness" },
+                                  "gold_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/gold_thickness" },
+                                  "silver_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/silver_thickness" },
+                                  "paladium_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/paladium_thickness" },
+                                  "tin_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/tin_thickness" },
+                                  "nickel_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/nickel_thickness" }
+                                },
+                                "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
+                                "name": "Final Finish",
+                                "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                              }
                             }
                           }
                         }
@@ -128,6 +148,26 @@
                         "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
                         "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
                       }
+                    },
+                    "final_finish": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
+                          "area": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/area" },
+                          "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/thickness" },
+                          "gold_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/gold_thickness" },
+                          "silver_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/silver_thickness" },
+                          "paladium_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/paladium_thickness" },
+                          "tin_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/tin_thickness" },
+                          "nickel_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/nickel_thickness" }
+                        },
+                        "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
+                        "name": "Final Finish",
+                        "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                      }
                     }
                   }
                 }
@@ -162,6 +202,25 @@
                       "additionalProperties": false,
                       "properties": {
                         "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                      }
+                    },
+                    "final_finish": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
+                          "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/thickness" },
+                          "gold_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/gold_thickness" },
+                          "silver_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/silver_thickness" },
+                          "paladium_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/paladium_thickness" },
+                          "tin_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/tin_thickness" },
+                          "nickel_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/nickel_thickness" }
+                        },
+                        "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
+                        "name": "Final Finish",
+                        "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                       }
                     }
                   }
@@ -203,6 +262,19 @@
                         "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
                         "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
                       }
+                    },
+                    "final_finish": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" }
+                        },
+                        "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
+                        "name": "Final Finish",
+                        "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                      }
                     }
                   }
                 }
@@ -231,11 +303,29 @@
                       "properties": {
                         "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
                       }
+                    },
+                    "final_finish": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
+                          "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/thickness" },
+                          "gold_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/gold_thickness" },
+                          "silver_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/silver_thickness" },
+                          "paladium_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/paladium_thickness" },
+                          "tin_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/tin_thickness" },
+                          "nickel_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/nickel_thickness" }
+                        },
+                        "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
+                        "name": "Final Finish",
+                        "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                      }
                     }
                   }
                 }
               }
-
             }
           }
         },
@@ -278,6 +368,25 @@
                     "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
                     "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
                     "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
+                  }
+                },
+                "final_finish": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "finish": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/finish" },
+                      "thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/thickness" },
+                      "gold_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/gold_thickness" },
+                      "silver_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/silver_thickness" },
+                      "paladium_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/paladium_thickness" },
+                      "tin_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/tin_thickness" },
+                      "nickel_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/final_finish/nickel_thickness" }
+                    },
+                    "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
+                    "name": "Final Finish",
+                    "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
                   }
                 }
               }

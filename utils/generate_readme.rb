@@ -77,7 +77,7 @@ def get_abbr(tag)
 
   # Capability
   cp = ""
-  if tag.has_key? "in_product"
+  if tag.has_key? "in_capability"
     case tag["in_product"]["state"]
     when "optional"
       cp = " O |"
