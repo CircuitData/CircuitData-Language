@@ -1,0 +1,1531 @@
+{
+  "definitions": {
+    "information": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "company": {
+          "type": "string",
+          "description": "The company who owns the information in the file"
+        },
+        "person": {
+          "type": "string",
+          "description": "The person responsible for the information in the file"
+        },
+        "editor_software": {
+          "type": "string",
+          "description": "The software that has generated the file"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of the creation of the file, in type YYYY-MM-DDTHH:MM:SS"
+        },
+        "updated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of the last update of the file, in format YYYY-MM-DDTHH:MM:SS"
+        },
+        "project": {
+          "type": "string",
+          "description": "The name of the project included in the file"
+        },
+        "version": {
+          "type": "number",
+          "description": "The name of the project included in the file"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "elements": {
+      "information": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "company": {
+            "type": "string",
+            "description": "The company who owns the information in the file"
+          },
+          "person": {
+            "type": "string",
+            "description": "The person responsible for the information in the file"
+          },
+          "editor_software": {
+            "type": "string",
+            "description": "The software that has generated the file"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp of the creation of the file, in type YYYY-MM-DDTHH:MM:SS"
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp of the last update of the file, in format YYYY-MM-DDTHH:MM:SS"
+          },
+          "project": {
+            "type": "string",
+            "description": "The name of the project included in the file"
+          },
+          "version": {
+            "type": "number",
+            "description": "The name of the project included in the file"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "elements": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "type": "string",
+            "uom": null,
+            "description": "Current version is 0.6"
+          },
+          "stackup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "specification_level": {
+                "type": "string",
+                "enum": ["free", "separate_file", "specified"],
+                "uom": null,
+                "description": "The stack up of this board"
+              },
+              "file_name": {
+                "type": "string",
+                "uom": null,
+                "description": "The URI of the file that specifies the stackup. Either as a path witin a project compressed file (ZIP) or as a link"
+              },
+              "specified": {
+                "type": "string",
+                "uom": null,
+                "description": "The container where the elements describing the stackup should be placed. All elements under object must contain the \"layer_order\" tags to set the order of the layer. They should also contain the \"layer_name\" tag to set the descriptive name of the layer"
+              }
+            },
+            "aliases": "stack-up, buildup, build-up",
+            "name": "Stackup",
+            "description": "The stackup of the board: Free stackup (supplier to choose), specified in a separate file or specified in this file. Can also include the stackup itself."
+          },
+          "rigid_conductive_layer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "count": {
+                "type": "integer",
+                "uom": null,
+                "description": "The number of conductive layers."
+              },
+              "minimum_internal_track_width": {
+                "type": "number",
+                "uom": ["um"],
+                "description": "The minimum nominal width of conductors on internal/unplated layers (minimum track)."
+              },
+              "minimum_external_track_width": {
+                "type": "number",
+                "uom": ["um"],
+                "description": "The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here."
+              },
+              "minimum_internal_spacing_width": {
+                "type": "number",
+                "uom": ["um"],
+                "description": "The minimum gap between two conductors on the internal layers."
+              },
+              "minimum_external_spacing_width": {
+                "type": "number",
+                "description": "The minimum gap between two conductors on the external layers. If only one minimum gap is present, is should be here."
+              },
+              "external_base_copper_thickness": {
+                "type": "number",
+                "enum": [5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1],
+                "uom": ["um"],
+                "description": "Finished base copper thickness following IPC Class on the up to two external layers in micrometer."
+              },
+              "internal_base_copper_thickness": {
+                "type": "number",
+                "enum": [5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1],
+                "uom": ["um"],
+                "description": "Finished base copper thickness following IPC Class on the internal layers in micrometer."
+              },
+              "copper_foil_roughness": {
+                "type": "string",
+                "enum": ["S", "L", "V"],
+                "uom": ["um"],
+                "description": "The roughness of the copper foil."
+              },
+              "copper_coverage_average": {
+                "type": "number",
+                "uom": ["%"],
+                "description": "The average copper coverage of the board. UoM is percentage"
+              }
+            },
+            "aliases": "",
+            "name": "Rigid Conductive layer",
+            "description": "The layers of rigid conductive material (usually copper)"
+          },
+          "flexible_conductive_layer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "count": {
+                "type": "integer",
+                "uom": null,
+                "description": "The number of conductive layers."
+              },
+              "minimum_internal_track_width": {
+                "type": "number",
+                "uom": ["um"],
+                "description": "The minimum nominal width of conductors on internal/unplated layers (minimum track)."
+              },
+              "minimum_external_track_width": {
+                "type": "number",
+                "uom": ["um"],
+                "description": "The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here."
+              },
+              "minimum_internal_spacing_width": {
+                "type": "number",
+                "uom": ["um"],
+                "description": "The minimum gap between two conductors on the internal layers."
+              },
+              "minimum_external_spacing_width": {
+                "type": "number",
+                "uom": ["um"],
+                "description": "The minimum gap between two conductors on the external layers. If only one minimum gap is present, is should be here."
+              },
+              "external_base_copper_thickness": {
+                "type": "number",
+                "enum": [5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1],
+                "uom": ["um"],
+                "description": "Finished base copper thickness following IPC Class on the up to two external layers in micrometer."
+              },
+              "internal_base_copper_thickness": {
+                "type": "number",
+                "enum": [5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1],
+                "uom": ["um"],
+                "description": "Finished base copper thickness following IPC Class on the internal layers in micrometer."
+              },
+              "copper_foil_roughness": {
+                "type": "string",
+                "enum": ["S", "L", "V"],
+                "uom": null,
+                "description": "The roughness of the copper foil."
+              },
+              "copper_foil_type": {
+                "type": "string",
+                "enum": ["ED", "RA", "ED"],
+                "uom": null,
+                "description": "The The type of the copper foil"
+              },
+              "copper_coverage_average": {
+                "type": "number",
+                "uom": ["%"],
+                "description": "The average copper coverage of the board. UoM is percentage"
+              }
+            },
+            "aliases": "",
+            "name": "Flexible Conductive layer",
+            "description": "The layers of flexible conductive material (usually copper)"
+          },
+          "final_finish": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "finish": {
+                  "type": "string",
+                  "enum": ["none", "c_bare_copper", "isn", "iag", "enepig", "osp", "ht_osp", "g", "GS", "t_fused", "tlu_unfused", "dig", "gwb-1_ultrasonic", "gwb-2-thermosonic", "s_hasl", "lf_hasl"],
+                  "uom": null,
+                  "description": "The material/method/surface to be used in the finish.",
+                  "area": {
+                    "type": "number",
+                    "uom": ["dm2"],
+                    "description": "The area that the finish will cover, in square decimeter."
+                  },
+                  "thickness": {
+                    "type": "number",
+                    "uom": ["um"],
+                    "description": "The thickness of the finish in micrometer."
+                  },
+                  "gold_thickness": {
+                    "type": "number",
+                    "uom": ["um"],
+                    "description": "The thickness of the gold finish in micrometer."
+                  },
+                  "silver_thickness": {
+                    "type": "number",
+                    "uom": ["um"],
+                    "description": "The thickness of silver the finish in micrometer."
+                  },
+                  "paladium_thickness": {
+                    "type": "number",
+                    "uom": ["um"],
+                    "description": "The thickness of the paladium finish in micrometer."
+                  },
+                  "tin_thickness": {
+                    "type": "number",
+                    "uom": ["um"],
+                    "description": "The thickness of the tin finish in micrometer."
+                  },
+                  "nickel_thickness": {
+                    "type": "number",
+                    "uom": ["um"],
+                    "description": "The thickness of the nickel finish in micrometer."
+                  }
+                },
+                "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
+                "name": "Final Finish",
+                "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+              }
+            }
+          },
+          "dielectric": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "uom": null,
+                  "description": "The name of a material that appears in the materials section"
+                }
+              }
+            },
+            "aliases": "Laminate",
+            "name": "Dielectric",
+            "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key. This element is a list and can contain several items"
+          },
+          "soldermask": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "color": {
+                  "type": "string",
+                  "uom": null,
+                  "description": "This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done custom -> colors section."
+                },
+                "finish": {
+                  "type": "string",
+                  "enum": ["matte", "semi-matte", "glossy", "any"],
+                  "uom": null,
+                  "description": "The finish of the soldermask."
+                },
+                "min_thickness": {
+                  "type": "number",
+                  "uom": ["um"],
+                  "description": "The minimum thickness of the soldermask."
+                },
+                "max_thickness": {
+                  "type": "number",
+                  "uom": ["um"],
+                  "description": "The maximum thickness of the soldermask."
+                },
+                "material": {
+                  "type": "string",
+                  "uom": null,
+                  "description": "The name of a material that appears in the materials section"
+                },
+                "top": {
+                  "type": "boolean",
+                  "uom": null,
+                  "description": "Indicates soldermask presence/capability at top"
+                },
+                "bottom": {
+                  "type": "boolean",
+                  "uom": null,
+                  "description": "Indicates soldermask presence/capability at bottom"
+                },
+                "allow_touchups": {
+                  "type": "boolean",
+                  "uom": null,
+                  "description": "The manufacturer is allowed to do touchups on the soldermask if true"
+                }
+              },
+              "aliases": "solder mask, sm, solder resist, green mask",
+              "name": "Soldermask",
+              "description": "A list of final soldermasks, can be more than one"
+            }
+          },
+          "legend": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "color": {
+                "type": "string",
+                "uom": null,
+                "description": "This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done custom -> colors section."
+              },
+              "top": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates legend presence/capability at top"
+              },
+              "bottom": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates legend presence/capability at bottom"
+              }
+            },
+            "aliases": "silk screen, silkscreen, ink, ident",
+            "name": "Legend",
+            "description": "The legend to be used on the board"
+          },
+          "stiffener": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "size": {
+                "type": "number",
+                "uom": ["um"],
+                "description": "The size of the stiffener should be specified in drawing"
+              },
+              "placement": {
+                "type": "string",
+                "enum": ["top", "bottom"],
+                "uom": null,
+                "description": "Indicating if the stiffener is on top or bottom of the flexible layer."
+              },
+              "thickness": {
+                "type": "number",
+                "uom": ["um"],
+                "description": "The thickness of the stiffener"
+              },
+              "material": {
+                "type": "string",
+                "uom": null,
+                "description": "The name of a material that appears in the materials section"
+              }
+            },
+            "aliases": "support",
+            "name": "Stiffener",
+            "description": "Stiffener in flexible boards"
+          },
+          "coverlay": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "total_thickness": {
+                "type": "number",
+                "uom": null,
+                "description": "The total thickness of the coverlay"
+              },
+              "top": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates coverlay presence/capability at top"
+              },
+              "bottom": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates coverlay presence/capability at bottom"
+              },
+              "material": {
+                "type": "string",
+                "uom": null,
+                "description": "The name of a material that appears in the materials -> soldermask section"
+              }
+            },
+            "aliases": "",
+            "name": "CoverLay",
+            "description": ""
+          },
+          "peelable_mask": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "heating_operations": {
+                "type": "integer",
+                "uom": null,
+                "description": ""
+              },
+              "top": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates peelable mask presence/capability at top"
+              },
+              "bottom": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates peelable mask presence/capability at bottom"
+              }
+            },
+            "aliases": "",
+            "name": "Peelable mask",
+            "description": ""
+          },
+          "kapton_tape": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "accept_equivalent": {
+                "type": "boolean",
+                "uom": null,
+                "description": "If alternative to DuPont™ Kapton® HN general-purpose film can be used"
+              },
+              "top": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates peelable mask presence/capability at top"
+              },
+              "bottom": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates peelable mask presence/capability at bottom"
+              }
+            },
+            "aliases": "",
+            "name": "Kapton tape",
+            "description": ""
+          },
+          "conductive_carbon_print": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "top": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates Conductive Carbon Print presence/capability at top"
+              },
+              "bottom": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates Conductive Carbon Print presence/capability at bottom"
+              }
+            },
+            "aliases": "",
+            "name": "Conductive Carbon Print",
+            "description": ""
+          },
+          "silver_print": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "top": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates silver print presence/capability at top"
+              },
+              "bottom": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates silver print presence/capability at bottom"
+              }
+            },
+            "aliases": "",
+            "name": "Silver Print",
+            "description": ""
+          },
+          "inner_packaging": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type_of_bag": {
+                "type": "string",
+                "enum": ["a", "b", "c", "d"],
+                "uom": null,
+                "description": "The material of the bag to be used"
+              },
+              "hic": {
+                "type": "boolean",
+                "uom": null,
+                "description": "True to include a Humidity Indicator Card (HIC), False to not"
+              },
+              "esd": {
+                "type": "boolean",
+                "uom": null,
+                "description": "True to indicate that packaging for ESD-sensitive required."
+              },
+              "desiccant": {
+                "type": "boolean",
+                "uom": null,
+                "description": "True to indicate that a desiccant material is required."
+              },
+              "vacuum": {
+                "type": "boolean",
+                "uom": null,
+                "description": "True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed."
+              }
+            },
+            "aliases": "",
+            "name": "Inner Packaging",
+            "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
+          },
+          "via_protection": {
+            "type": "object",
+            "properties": {
+              "type_1": {
+                "type": "boolean",
+                "uom": null,
+                "description": "A via with a dry film mask material applied bridging over the via wherein no additional materials are in the hole."
+              },
+              "type_2": {
+                "type": "boolean",
+                "uom": null,
+                "description": "A Type I via with a secondary covering of mask material applied over the tented via."
+              },
+              "type_3": {
+                "type": "boolean",
+                "uom": null,
+                "description": "A via with material applied allowing partial penetration into the via. The plug material may be applied from one or both sides."
+              },
+              "type_4a": {
+                "type": "boolean",
+                "uom": null,
+                "description": "A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides."
+              },
+              "type_4b": {
+                "type": "boolean",
+                "uom": null,
+                "description": "A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides."
+              },
+              "type_5": {
+                "type": "boolean",
+                "uom": null,
+                "description": "A via with material applied into the via targeting a full penetration and encapsulation of the hole."
+              },
+              "type_6a": {
+                "type": "boolean",
+                "uom": null,
+                "description": "A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides."
+              },
+              "type_6b": {
+                "type": "boolean",
+                "uom": null,
+                "description": "A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides."
+              },
+              "type_7": {
+                "type": "boolean",
+                "uom": null,
+                "description": "A Type V via with a secondary metallized coating covering the via. The metallization is on both sides."
+              }
+            },
+            "aliases": "",
+            "name": "Via Protection",
+            "description": "The via/hole protection according to IPC 4761"
+          },
+          "board": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "size_x": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the board in the x-asis, measured in millimeters"
+              },
+              "size_y": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the board in the y-asis, measured in millimeters"
+              },
+              "thickness": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The thickness of the board measured in millimeters"
+              }
+            },
+            "aliases": "",
+            "name": "Board",
+            "description": "The physical description of the board"
+          },
+          "array": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "size_x": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the array in the x-asis, measured in millimeters"
+              },
+              "size_y": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the array in the y-asis, measured in millimeters"
+              },
+              "boards_x": {
+                "type": "integer",
+                "uom": null,
+                "description": "Number of boards in the panel in the x-direction."
+              },
+              "boards_y": {
+                "type": "integer",
+                "uom": null,
+                "description": "Number of boards in the panel in the y-direction."
+              },
+              "boards_total": {
+                "type": "integer",
+                "uom": ["mm"],
+                "description": "Number total number of boards in the panel. This is not the preferred method of stating the number, \"boards_x\" and \"boards_y\" should be used."
+              },
+              "border_left": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the left side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+              },
+              "border_right": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the right side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+              },
+              "border_top": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the top side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+              },
+              "border_bottom": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the bottom side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+              },
+              "board_spacing_x": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the space between the boards in the x-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space"
+              },
+              "board_spacing_y": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the space between the boards in the y-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space"
+              },
+              "fiducials_number": {
+                "type": "integer",
+                "uom": null,
+                "description": "The number of fiducials on the array."
+              },
+              "fiducials_size": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the fiducials measured in millimeters. If used in a Profile, it is the minimum needed size"
+              },
+              "fiducials_shape": {
+                "type": "string",
+                "enum": ["donut", "circle", "plus", "diamond"],
+                "uom": null,
+                "description": "The shape of the fiducials."
+              },
+              "breakaway_method": {
+                "type": "string",
+                "enum": ["routing", "scoring", "v-cut", "v-grove", "jump_scoring"],
+                "uom": null,
+                "description": "The method of creation of the breakaways on the array"
+              },
+              "mouse_bites": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates if there should be \"mouse bites\" to allow easy break away of the boards"
+              },
+              "tooling_holes_number": {
+                "type": "integer",
+                "uom": null,
+                "description": "The number of tooling holes on the array."
+              },
+              "tooling_holes_size": {
+                "type": "number",
+                "uom": ["mm"],
+                "description": "The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size."
+              }
+            },
+            "aliases": "Panel, Panelization, Panelisation, customer panel",
+            "name": "Array",
+            "description": "The physical description of the array of boards, used in assembly"
+          },
+          "mechanical": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "edge_bevelling": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Edge bevelling present."
+              },
+              "depth_routing_top": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Depth Routing from the top present"
+              },
+              "depth_routing_bottom": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Depth Routing from the bottom present."
+              },
+              "counterboring_top": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Counterboring from the top present."
+              },
+              "counterboring_bottom": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Counterboring from the bottom present."
+              },
+              "countersink_top": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Countersink from the top present."
+              },
+              "countersink_bottom": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Countersink from the bottom present."
+              },
+              "punching": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Punching process required."
+              },
+              "plated_edges": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Plated Edges process required."
+              },
+              "plated_slots": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Plated Slots process required."
+              },
+              "plated_castellated_holes": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Plated Castellated Holes process required."
+              },
+              "coin_attachment": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Coin Attachment process required."
+              }
+            },
+            "aliases": "",
+            "name": "Mechanical Processes",
+            "description": "Mechanical processes in the manufacturing"
+          },
+          "selective_plated_pads": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "present": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Selective plated pads present."
+              },
+              "layers": {
+                "type": "string",
+                "uom": null,
+                "description": "The layers included in the connectors, counter from 1 (top layer)."
+              }
+            },
+            "aliases": "selective hard gold",
+            "name": "Selective plated pads",
+            "description": "Selective plated pads"
+          },
+          "hard_gold_edge_connectors": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "present": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Hard gold edge connectors present."
+              },
+              "thickness": {
+                "type": "string",
+                "enum": ["0.76", "1.27", "other"],
+                "uom": null,
+                "description": "The thickness of the connectors"
+              },
+              "thicknes_other": {
+                "type": "number",
+                "uom": null,
+                "description": "Thickness if it is not \"0.76\" or \"1.27\"."
+              },
+              "area": {
+                "type": "number",
+                "uom": null,
+                "description": "Area covered by the edge connectors in square desimeter."
+              },
+              "layers": {
+                "type": "string",
+                "uom": null,
+                "description": "The layers included in the connectors, counter from 1 (top layer)."
+              }
+            },
+            "aliases": "gold fingers",
+            "name": "Hard Gold Edge Connectors",
+            "description": "Edge connectors made with hard gold"
+          },
+          "markings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "date_code": {
+                "type": "string",
+                "uom": null,
+                "description": "Possible values are \"YY\" for year, \"WW\" for week \"-\" and \"LOT\" (alias \"BATCH\"). E.g. \"YYWW-LOT\" or \"LOT-YYWW\". If no marking, set \"NONE\"."
+              },
+              "placement": {
+                "type": "string",
+                "enum": ["copper_top", "copper_bottom", "soldermask_top", "soldermask_bottom", "legend_top", "legend_bottom"],
+                "uom": null,
+                "description": "Placement of the markings."
+              },
+              "manufacturer_identification": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Manufacturer identification present."
+              },
+              "standards": {
+                "type": "array",
+                "uom": null,
+                "description": "Possible values are the ones listed in the subelement \"standards\" but typical will be \"ul\" and \"rohs\". Separate by comma."
+              },
+              "serial_number": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Serial number should be added in the markings."
+              },
+              "serial_number_format": {
+                "type": "string",
+                "uom": null,
+                "description": "Format of the serial number expressed as a \"regular expression\" but needs to have x amount of digits in it."
+              },
+              "serial_number_start": {
+                "type": "integer",
+                "uom": null,
+                "description": "The number to start the serial number from. Will have to replace the digits from the \"serial_number_format\" above."
+              },
+              "serial_number_increase_by": {
+                "type": "integer",
+                "uom": null,
+                "description": "The increase in number from \"serial_number_start\" with each product."
+              }
+            },
+            "aliases": "",
+            "name": "Markings",
+            "description": "Physical markings on the board"
+          },
+          "standards": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "ul": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicating if UL is required for the board. Can not be used as a capability, as this will be indicated on each material."
+              },
+              "c_ul": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicating if Canadian UL is required for the board. Can not be used as a capability, as this will be indicated on each material."
+              },
+              "rohs": {
+                "type": "boolean",
+                "uom": null,
+                "description": "RoHS."
+              },
+              "ul94": {
+                "type": "string",
+                "enum": ["hb", "v_0", "v_1", "v_2", "5vb", "5va"],
+                "uom": null,
+                "description": "UL 94 - Standard for Safety of Flammability of Plastic Materials for Parts in Devices and Appliances testing"
+              },
+              "esa": {
+                "type": "boolean",
+                "uom": null,
+                "description": "European Space Agency Use."
+              },
+              "itar": {
+                "type": "boolean",
+                "uom": null,
+                "description": "US ITAR."
+              },
+              "dfars": {
+                "type": "boolean",
+                "uom": null,
+                "description": "US DFARS."
+              },
+              "mil_prf_55110": {
+                "type": "boolean",
+                "uom": null,
+                "description": "MIL-PRF-55110."
+              },
+              "mil_prf_50884": {
+                "type": "boolean",
+                "uom": null,
+                "description": "MIL-PRF-5884."
+              },
+              "mil_prf_31032": {
+                "type": "boolean",
+                "uom": null,
+                "description": "MIL-PRF-31032."
+              },
+              "as9100": {
+                "type": "boolean",
+                "uom": null,
+                "description": "AS9100."
+              },
+              "nadcap": {
+                "type": "boolean",
+                "uom": null,
+                "description": "NADCAP."
+              },
+              "rw_en45545_2_2013": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Railway Europe EN45545-2:2013."
+              },
+              "rw_nf_f_16_101": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Railway France NF F 16-101."
+              },
+              "rw_uni_cei_11170_3": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Railway Italy UNI CEI 11170-3."
+              },
+              "rw_nfpa_130": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Railway USA NFPA 130."
+              },
+              "ipc_6010_class": {
+                "type": "string",
+                "enum": ["1", "2", "3"],
+                "uom": null,
+                "description": "According to Table 4-2 /4-3."
+              },
+              "ipc_6010_compliance_level": {
+                "type": "string",
+                "enum": ["full", "factory_standard", "aabus"],
+                "uom": null,
+                "description": ""
+              },
+              "ipc_6010_copper_plating_thickness_level": {
+                "type": "string",
+                "enum": ["2", "3"],
+                "uom": null,
+                "description": "Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+              },
+              "ipc_6010_annular_ring_level": {
+                "type": "string",
+                "enum": ["2", "3"],
+                "uom": null,
+                "description": "Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+              },
+              "ipc_6010_conductor_spacing_level": {
+                "type": "string",
+                "enum": ["2", "3"],
+                "uom": null,
+                "description": "Used either if ipc_6010_class is set to 2 and you want to add conductor spacing demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+              },
+              "ipc_6010_conductor_width_level": {
+                "type": "string",
+                "enum": ["2", "3"],
+                "uom": null,
+                "description": "Used either if ipc_6010_class is set to 2 and you want to add conductor width demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+              },
+              "ipc_6012_class": {
+                "type": "string",
+                "enum": ["1", "2", "3", "3A", "3S", "3M"],
+                "uom": null,
+                "description": "Requirements according to IPC 6012 class."
+              },
+              "ipc_6013_class": {
+                "type": "string",
+                "enum": ["1", "2", "3"],
+                "uom": null,
+                "description": "Requirements according to IPC 6013 for flexible or rigid-flex boards."
+              },
+              "ipc_6018":{
+                "type": "boolean",
+                "uom": null,
+                "description": "IPC-6018 Microwave End Product Board Inspection and Test."
+              }
+            },
+            "aliases": "",
+            "name": "Standards and Requirements",
+            "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+          },
+          "testing": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "netlist": {
+                "type": "boolean",
+                "uom": null,
+                "description": "100% Netlist testing according to IPC-D-356, ODB++ or IPC2581."
+              },
+              "allow_generate_netlist": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Allow Netlist to be generated from Gerber or other file format if needed."
+              },
+              "hipot": {
+                "type": "boolean",
+                "uom": null,
+                "description": " HiPot Test (Dielectric Withstanding Voltage Test)."
+              },
+              "4_wire": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Use 4 wired test"
+              },
+              "ist": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Use IST testing."
+              },
+              "impedance": {
+                "type": "string",
+                "enum": ["controlled", "calculated", "follow_stackup"],
+                "uom": null,
+                "description": ""
+              }
+            },
+            "aliases": "",
+            "name": "Testing",
+            "description": ""
+          },
+          "country_of_origin": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "iso_3166_1_alpha_3": {
+                "type": "string",
+                "uom": null,
+                "description": "A three letter string representation of the Country of origin according too ISO 3166-1."
+              },
+              "iso_3166_1_alpha_2": {
+                "type": "string",
+                "uom": null,
+                "description": "A two letter string representation of the Country of origin according too ISO 3166-1."
+              },
+              "nato_member": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates if the COO is a NATO member state"
+              },
+              "eu_member": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Indicates if the COO is a European Union member state."
+              }
+            },
+            "aliases": "",
+            "name": "Country of Origin",
+            "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
+          },
+          "conflict_resolution": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "order": {
+                "type": "integer",
+                "uom": null,
+                "description": "Information provided on order level"
+              },
+              "oem_specification_sheet": {
+                "type": "integer",
+                "uom": null,
+                "description": "Information provided from the OEM in a PDF or other document format"
+              },
+              "assembly_specification_sheet": {
+                "type": "integer",
+                "uom": null,
+                "description": "Information provided from the assembly facility in a PDF or other document format"
+              },
+              "drawing": {
+                "type": "integer",
+                "uom": null,
+                "description": "Information in a drawing (if present)"
+              },
+              "ipc2581": {
+                "type": "integer",
+                "uom": null,
+                "description": "Information in an IPC-2581 file"
+              },
+              "odb": {
+                "type": "integer",
+                "uom": null,
+                "description": " Information in a ODB++ file."
+              },
+              "gerber": {
+                "type": "integer",
+                "uom": null,
+                "description": "Information in a Gerber format file"
+              }
+            },
+            "aliases": "",
+            "name": "Conflict resolution",
+            "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
+          },
+          "holes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "number": {
+                  "type": "integer",
+                  "uom": null,
+                  "description": "The number of holes total or in this process."
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["through", "blind", "buried", "back_drill"],
+                  "uom": null,
+                  "description": "The type of holes."
+                },
+                "plated": {
+                  "type": "boolean",
+                  "uom": null,
+                  "description": "True if the holes are plated."
+                },
+                "size": {
+                  "type": "number",
+                  "uom": ["um"],
+                  "description": "The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list or as a capability."
+                },
+                "layer_start": {
+                  "type": "integer",
+                  "uom": null,
+                  "description": "The layer where the hole starts, counted from the top, where top layer is 1."
+                },
+                "layer_stop": {
+                  "type": "integer",
+                  "uom": null,
+                  "description": "The layer where the hole stops, counted from the top, where top layer is 1."
+                },
+                "depth": {
+                  "type": "number",
+                  "uom": ["um"],
+                  "description": "The depth of the hole in micrometer."
+                },
+                "method": {
+                  "type": "string",
+                  "enum": ["routing", "drilling", "laser"],
+                  "uom": null,
+                  "description": "Can be either \"routing\" or \"drilling\", where drilling is default"
+                },
+                "minimum_designed_annular_ring": {
+                  "type": "number",
+                  "uom": null,
+                  "description": "The minimum designed annular ring in micrometers."
+                },
+                "press_fit": {
+                  "type": "boolean",
+                  "uom": null,
+                  "description": "Press Fit holes."
+                },
+                "copper_filled": {
+                  "type": "boolean",
+                  "uom": null,
+                  "description": "Copper filled holes."
+                },
+                "staggered": {
+                  "type": "boolean",
+                  "uom": null,
+                  "description": "Staggered holes."
+                },
+                "stacked": {
+                  "type": "boolean",
+                  "uom": null,
+                  "description": "Stacked holes."
+                },
+                "alivh": {
+                  "type": "boolean",
+                  "uom": null,
+                  "description": "ALIVH holes."
+                }
+              }
+            },
+            "aliases": "",
+            "name": "Holes",
+            "description": "One for each holes process, or at least one that sums up the minimum requirements"
+          },
+          "allowed_modifications": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "dead_pad_removal": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Non Functioning Pad removal."
+              },
+              "add_copper_balancing": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Adding copper balancing pattern"
+              },
+              "add_copper_balancing_on_array": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Adding copper balancing pattern on array/panel frame."
+              },
+              "add_tear_drops": {
+                "type": "boolean",
+                "uom": null,
+                "description": "Adding Tear Drops."
+              }
+            },
+            "aliases": "",
+            "name": "Allowed Modifications",
+            "description": "Changes/fabrication decisions that are allowed to make to the files provided."
+          },
+          "additional_requirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "any_name": {
+                "type": "string",
+                "uom": null,
+                "description": "Must have a similar element in the custom -> additional"
+              },
+              "aliases": "",
+              "name": "Additional Requirements",
+              "description": "This section is for all requirements that still has not been adapted to the standard or needs to be stated as a comment. It allows you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom -> additional section. Multiple elements allowed - to be added as a list."
+            }
+          }
+        }
+      },
+      "profile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "defaults": {
+            "type": "object",
+            "properties": {}
+          },
+          "enforced": {
+            "type": "object",
+            "properties": {}
+          },
+          "restricted": {
+            "type": "object",
+            "properties": {}
+          },
+          "generic": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      },
+      "capability": {
+        "type": "object",
+        "properties": {}
+      },
+      "custom": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "colors": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["hex", "rgb", "cmyk", "name"],
+                "uom": null,
+                "description": "How the color is declared"
+              },
+              "value": {
+                "type": "string",
+                "uom": null,
+                "description": "If type is hex, the value needs to be a \"#\" + 6 hexadecimals (e.g. \"#FFFFFF\"). for \"rgb\" the format is \"rgb(0, 255, 255)\", for \"cmyk\" the format is \"cmyk(100%, 0%, 0%, 0%)\". The name is just a string."
+              }
+            },
+            "aliases": "",
+            "name": "any_name",
+            "description": "Colors can be defined by hex, rgb, cmyk or name. Name of the color present here can be references in the other elements"
+          },
+          "materials": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "soldermasks": {
+                "type": "array",
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "uom": null,
+                    "description": "The name of the Soldermask. Use the official name or some name as close to it as possible"
+                  },
+                  "manufacturer": {
+                    "type": "string",
+                    "uom": null,
+                    "description": "The name of the manufacturer"
+                  },
+                  "ipc-sm-840-class": {
+                    "type": "list",
+                    "enum": ["T", "H"],
+                    "uom": null,
+                    "description": "Soldermask to meet IPC SM 840 Class."
+                  },
+                  "link": {
+                    "type": "string",
+                    "uom": null,
+                    "description": "The link to some url that gives more information or a reference to the product."
+                  }
+                },
+                "aliases": "",
+                "name": "Soldermasks",
+                "description": "Materials used as soldermask"
+              },
+              "dielectrics": {
+                "type": "array",
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "uom": null,
+                    "description": "The name of the Laminate. Use the official name or some name as close to it as possible."
+                  },
+                  "manufacturer": {
+                    "type": "string",
+                    "uom": null,
+                    "description": "The name of the manufacturer"
+                  },
+                  "ipc_4101_sheet": {
+                    "type": "integer",
+                    "uom": null,
+                    "description": "The reference sheet number of the IPC 4101 Standard."
+                  },
+                  "ipc_4103_sheet": {
+                    "type": "integer",
+                    "uom": null,
+                    "description": "The reference sheet number of the IPC 4103 Standard."
+                  },
+                  "ipc_4204_sheet": {
+                    "type": "integer",
+                    "uom": null,
+                    "description": "The reference sheet number of the IPC 4204 Standard."
+                  },
+                  "tg_min": {
+                    "type": "integer",
+                    "uom": null,
+                    "description": "The minimum Glass Transition Temperature (Tg) required."
+                  },
+                  "tg_range_from": {
+                    "type": "integer",
+                    "uom": null,
+                    "description": "The Glass Transition Temperature (Tg) range starts at."
+                  },
+                  "tg_range_to": {
+                    "type": "integer",
+                    "uom": null,
+                    "description": "The Glass Transition Temperature (Tg) range ands at."
+                  },
+                  "td_min": {
+                    "type": "integer",
+                    "uom": null,
+                    "description": "The minimum required temperature at which a base laminate material experiences an established percentage of weight loss using Thermograv imetric Analysis (TGA)."
+                  },
+                  "td_range_from": {
+                    "type": "integer",
+                    "uom": null,
+                    "description": "The Td range starts at."
+                  },
+                  "td_range_to": {
+                    "type": "integer",
+                    "uom": null,
+                    "description": "The Td range stops at."
+                  },
+                  "halogen_free": {
+                    "type": "boolean",
+                    "uom": null,
+                    "description": "Indicates the material is material free or is required to be"
+                  },
+                  "rw_en45545_2_2013": {
+                    "type": "boolean",
+                    "uom": null,
+                    "description": "Railway Europe EN45545-2:2013 compatible"
+                  },
+                  "rw_nf_f_16_101": {
+                    "type": "boolean",
+                    "uom": null,
+                    "description": "Railway France NF F 16-101 compatible"
+                  },
+                  "rw_uni_cei_11170_3": {
+                    "type": "boolean",
+                    "uom": null,
+                    "description": "Railway Italy UNI CEI 11170-3 compatible."
+                  },
+                  "rw_nfpa_130": {
+                    "type": "boolean",
+                    "uom": null,
+                    "description": "Railway USA NFPA 130 compatible."
+                  },
+                  "ul": {
+                    "type": "boolean",
+                    "uom": null,
+                    "description": "UL compatible."
+                  },
+                  "link": {
+                    "type": "string",
+                    "uom": null,
+                    "description": "The link to some url that gives more information or a reference to the product."
+                  },
+                  "accept_equivalent": {
+                    "type": "boolean",
+                    "uom": null,
+                    "description": "Equivalent material to the one specified is OK to use as a replacement if true."
+                  }
+                },
+                "aliases": "",
+                "name": "Dielectrics",
+                "description": "Materials used as dielectrics/laminates"
+              },
+              "stiffeners": {
+                "type": "array",
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "uom": null,
+                    "description": "The name of the Soldermask. Use the official name or some name as close to it as possible"
+                  },
+                  "manufacturer": {
+                    "type": "string",
+                    "uom": null,
+                    "description": "The name of the manufacturer"
+                  },
+                  "link": {
+                    "type": "string",
+                    "uom": null,
+                    "description": "The link to some url that gives more information or a reference to the product."
+                  }
+                },
+                "aliases": "",
+                "name": "Stiffener",
+                "uom": null,
+                "description": "The materials to be used as stiffener"
+              }
+            }
+          },
+          "additional": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string",
+                "uom": null,
+                "description": "The description of the additional requirement or comment"
+              }
+            },
+            "aliases": "",
+            "name": "any_name",
+            "description": "Must have a similar element in specification -> additional_requirements"
+          }
+        }
+      }
+    }
+  }
+}
