@@ -4889,7 +4889,7 @@
           {
             "tag": "tool_diameter",
             "format": "boolean",
-            "description": "If false, size indicated the hole diameter, if true the size indicates the tool diameter",
+            "description": "If false, size indicates the hole diameter, if true the size indicates the tool diameter",
             "in_profile_default": {
               "state": "forbidden"
             },
