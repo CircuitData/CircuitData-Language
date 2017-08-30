@@ -91,6 +91,15 @@
                                 "layer_order": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_order" },
                                 "layer_name": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name" }
                               }
+                            },
+                            "legend": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                                "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                                "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                              }
                             }
                           }
                         }
@@ -128,6 +137,15 @@
                         "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
                         "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
                       }
+                    },
+                    "legend": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                      }
                     }
                   }
                 }
@@ -162,6 +180,15 @@
                       "additionalProperties": false,
                       "properties": {
                         "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                      }
+                    },
+                    "legend": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
                       }
                     }
                   }
@@ -203,6 +230,15 @@
                         "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
                         "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
                       }
+                    },
+                    "legend": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
+                      }
                     }
                   }
                 }
@@ -230,6 +266,15 @@
                       "additionalProperties": false,
                       "properties": {
                         "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" }
+                      }
+                    },
+                    "legend": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                        "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                        "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
                       }
                     }
                   }
@@ -278,6 +323,15 @@
                     "internal_base_copper_thickness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/internal_base_copper_thickness" },
                     "copper_foil_roughness": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness" },
                     "copper_coverage_average": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average" }
+                  }
+                },
+                "legend": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "color": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/color" },
+                    "top": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/top" },
+                    "bottom": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/legend/bottom" }
                   }
                 }
               }

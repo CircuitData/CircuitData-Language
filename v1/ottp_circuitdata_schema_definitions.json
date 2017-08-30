@@ -61,6 +61,23 @@
           "uom": ["%"],
           "description": "The average copper coverage of the board. UoM is percentage"
         }
+      },
+      "legend": {
+        "color": {
+          "type": "string",
+          "uom": null,
+          "description": "This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done custom -> colors section."
+          },
+        "top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates legend presence/capability at top"
+        },
+        "bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates legend presence/capability at bottom"
+        }
       }
     }
   }

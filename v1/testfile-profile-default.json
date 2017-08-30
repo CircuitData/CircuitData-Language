@@ -15,6 +15,11 @@
           },
           "flexible_conductive_layer": {
             "copper_foil_roughness": "L"
+          },
+          "legend": {
+            "top": true,
+            "bottom": false,
+            "color": "white"
           }
         }
       }

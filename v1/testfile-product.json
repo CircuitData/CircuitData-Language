@@ -16,8 +16,12 @@
             "minimum_external_spacing_width": 0.14,
             "external_base_copper_thickness": 17.1,
             "copper_coverage_average": 12.55
+          },
+          "legend": {
+            "top": true,
+            "bottom": false,
+            "color": "white"
           }
-
         }
       }
     }
