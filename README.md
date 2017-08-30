@@ -271,6 +271,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *size_x* | float | O | F | F | O | O | The size of the board in the x-asis, measured in millimeters
 *size_y* | float | O | F | F | O | O | The size of the board in the y-asis, measured in millimeters
 *thickness* | float | O | O | O | O | O | The thickness of the board measured in millimeters
+*weight* | float | O | F | F | F | O | The weight of the board measured in grams
 
 ### Array ("array")
 Aliases: "Panel", "Panelization", "Panelisation", "customer panel"
@@ -299,6 +300,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *x_outs_allowed* | boolean | O | O | O | O | O | Manufacturer can deliver arrays with defect boards as long as these are clearly marked as defect (X'ed out).
 *x_outs_max_percentage_on_array* | integer | O | O | O | O | O | The maximum number of defective and clearly marked as such boards that are allowed on on panel, stated in percentage
 *transplant_board_allowed* | boolean | O | O | O | O | O | The maximum number of defective and clearly marked as such boards that are allowed on on panel, stated in percentage
+*weight* | float | O | F | F | F | O | The weight of the array measured in grams
 
 ### Mechanical Processes ("mechanical")
 Mechanical processes in the manufacturing
@@ -428,6 +430,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *type* | list | O | F | F | F | O | The type of holes.<br>Possible values are (string):<br>"through"<br>"blind"<br>"buried"<br>"back_drill"<br>
 *plated* | boolean | O | O | O | O | O | True if the holes are plated.
 *size* | float | O | F | F | F | O | The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list or as a capability.
+*tool_diameter* | boolean | O | F | F | F | O | If false, size indicated the hole diameter, if true the size indicates the tool diameter
 *layer_start* | integer | O | F | F | F | O | The layer where the hole starts, counted from the top, where top layer is 1.
 *layer_stop* | integer | O | F | F | F | O | The layer where the hole stops, counted from the top, where top layer is 1.
 *depth* | float | O | F | F | F | O | The depth of the hole in micrometer.

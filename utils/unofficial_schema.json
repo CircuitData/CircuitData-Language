@@ -2408,6 +2408,31 @@
               "state": "optional",
               "values": "range"
             }
+          },
+          {
+            "tag": "weight",
+            "format": "float",
+            "description": "The weight of the board measured in grams",
+            "in_profile_default": {
+              "state": "forbidden",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden",
+              "values": "range"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden",
+              "values": "range"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "forbidden",
+              "values": "range"
+            }
           }
         ]
       },
@@ -2959,6 +2984,31 @@
             "in_capability": {
               "state": "optional",
               "values": "single"
+            }
+          },
+          {
+            "tag": "weight",
+            "format": "float",
+            "description": "The weight of the array measured in grams",
+            "in_profile_default": {
+              "state": "forbidden",
+              "values": "single"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden",
+              "values": "range"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden",
+              "values": "range"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "forbidden",
+              "values": "range"
             }
           }
         ]
@@ -4833,6 +4883,28 @@
             },
             "in_capability": {
               "state": "optional",
+              "values": "single"
+            }
+          },
+          {
+            "tag": "tool_diameter",
+            "format": "boolean",
+            "description": "If false, size indicated the hole diameter, if true the size indicates the tool diameter",
+            "in_profile_default": {
+              "state": "forbidden"
+            },
+            "in_profile_enforced": {
+              "state": "forbidden"
+            },
+            "in_profile_restricted": {
+              "state": "forbidden"
+            },
+            "in_product": {
+              "state": "optional",
+              "values": "single"
+            },
+            "in_capability": {
+              "state": "forbidden",
               "values": "single"
             }
           },
