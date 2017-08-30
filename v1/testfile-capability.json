@@ -6,13 +6,10 @@
       "created": "2017-08-28T09:49:37+02:00",
       "updated": "2017-08-28T09:49:37+02:00"
     },
-    "products": {
-    },
-    "profiles": {
-      "defaults": {},
-      "enforced": {},
-      "restrcited": {}
-    },
-    "capabilities": {}
+    "capabilities": {
+      "printed_circuits_fabrication_data": {
+        "version": "0.6"
+      }
+    }
   }
 }

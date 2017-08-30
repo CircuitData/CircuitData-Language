@@ -1,5 +1,66 @@
 {
   "definitions": {
-    "elements": {}
+    "version": {
+      "type": "string",
+      "pattern": "^0.6$"
+    },
+    "elements": {
+      "rigid_conductive_layer": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "count": {
+            "type": "integer",
+            "uom": null,
+            "description": "The number of conductive layers."
+          },
+          "minimum_internal_track_width": {
+            "type": "number",
+            "uom": ["um"],
+            "description": "The minimum nominal width of conductors on internal/unplated layers (minimum track)."
+          },
+          "minimum_external_track_width": {
+            "type": "number",
+            "uom": ["um"],
+            "description": "The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here."
+          },
+          "minimum_internal_spacing_width": {
+            "type": "number",
+            "uom": ["um"],
+            "description": "The minimum gap between two conductors on the internal layers."
+          },
+          "minimum_external_spacing_width": {
+            "type": "number",
+            "description": "The minimum gap between two conductors on the external layers. If only one minimum gap is present, is should be here."
+          },
+          "external_base_copper_thickness": {
+            "type": "number",
+            "enum": [5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1],
+            "uom": ["um"],
+            "description": "Finished base copper thickness following IPC Class on the up to two external layers in micrometer."
+          },
+          "internal_base_copper_thickness": {
+            "type": "number",
+            "enum": [5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1],
+            "uom": ["um"],
+            "description": "Finished base copper thickness following IPC Class on the internal layers in micrometer."
+          },
+          "copper_foil_roughness": {
+            "type": "string",
+            "enum": ["S", "L", "V"],
+            "uom": ["um"],
+            "description": "The roughness of the copper foil."
+          },
+          "copper_coverage_average": {
+            "type": "number",
+            "uom": ["%"],
+            "description": "The average copper coverage of the board. UoM is percentage"
+          }
+        },
+        "aliases": "",
+        "name": "Rigid Conductive layer",
+        "description": "The layers of rigid conductive material (usually copper)"
+      }
+    }
   }
 }

@@ -8,14 +8,14 @@
     },
     "products": {
       "testproduct": {
-        "printed_circuits_fabrication_data": { }
+        "printed_circuits_fabrication_data": {
+          "version": "0.6",
+          "stackup": {
+            "specification_level": "specified",
+            "file_name": "test.json"
+          }
+        }
       }
-    },
-    "profiles": {
-      "defaults": {},
-      "enforced": {},
-      "restrcited": {}
-    },
-    "capabilities": {}
+    }
   }
 }

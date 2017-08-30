@@ -30,14 +30,124 @@
               "additionalProperties": false,
               "required": ["printed_circuits_fabrication_data"],
               "properties": {
-                "printed_circuits_fabrication_data": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements"}
+                "printed_circuits_fabrication_data": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["version"],
+                  "properties": {
+                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                    "stackup": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": ["specification_level"],
+                      "properties": {
+                        "specification_level": {
+                          "type": "string",
+                          "enum": ["free", "separate_file", "specified"],
+                          "uom": null,
+                          "description": "The stack up of this board"
+                        },
+                        "file_name": {
+                          "type": "string",
+                          "format": "uri",
+                          "uom": null,
+                          "description": "The URI of the file that specifies the stackup. Either as a path witin a project compressed file (ZIP) or as a link"
+                        },
+                        "specified": {
+                          "type": "string",
+                          "uom": null,
+                          "description": "The container where the elements describing the stackup should be placed. All elements under object must contain the \"layer_order\" tags to set the order of the layer. They should also contain the \"layer_name\" tag to set the descriptive name of the layer"
+                        }
+                      },
+                      "aliases": "stack-up, buildup, build-up",
+                      "name": "Stackup",
+                      "description": "The stackup of the board: Free stackup (supplier to choose), specified in a separate file or specified in this file. Can also include the stackup itself."
+                    },
+                    "rigid_conductive_layer": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/rigid_conductive_layer" }
+                  }
+                }
               },
               "description": "This part should take care of all the products. Note that products can have any names"
             }
           }
         },
-        "profiles": {  },
-        "capabilities": {  },
+        "profiles": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "defaults": {
+              "type": "object",
+              "required": ["printed_circuits_fabrication_data"],
+              "properties": {
+                "printed_circuits_fabrication_data": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["version"],
+                  "properties": {
+                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                    "anyOf": [
+                      { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements" }
+                    ]
+                  }
+                }
+              }
+            },
+            "restricted": {
+              "type": "object",
+              "required": ["printed_circuits_fabrication_data"],
+              "properties": {
+                "printed_circuits_fabrication_data": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["version"],
+                  "properties": {
+                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                    "anyOf": [
+                      { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements" }
+                    ]
+                  }
+                }
+              }
+            },
+            "enforced": {
+              "type": "object",
+              "required": ["printed_circuits_fabrication_data"],
+              "properties": {
+                "printed_circuits_fabrication_data": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["version"],
+                  "properties": {
+                    "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                    "anyOf": [
+                      { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements" }
+                    ]
+                  }
+                }
+              }
+
+            }
+          }
+        },
+        "capabilities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["printed_circuits_fabrication_data"],
+          "properties": {
+            "printed_circuits_fabrication_data": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["version"],
+              "properties": {
+                "version": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/version" },
+                "anyOf": [
+                  { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements" }
+                ]
+              }
+            }
+          },
+          "description": "This part should take care of all the products. Note that products can have any names"
+         },
         "custom": {  }
       }
     }
