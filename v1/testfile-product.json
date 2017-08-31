@@ -95,6 +95,12 @@
           "selective_plated_pads": {
             "present": true,
             "layers": "false"
+          },
+          "hard_gold_edge_connectors": {
+            "present": true,
+            "layers": "false",
+            "thickness": "1.27",
+            "area": 2
           }
         }
       }

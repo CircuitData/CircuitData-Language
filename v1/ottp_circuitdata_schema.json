@@ -901,6 +901,30 @@
                       "aliases": "selective hard gold",
                       "name": "Selective plated pads",
                       "description": "Selective plated pads"
+                    },
+                    "hard_gold_edge_connectors": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "present": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/present"
+                        },
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness"
+                        }, 
+                        "thickness_other": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness_other"
+                        }, 
+                        "area": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/area"
+                        },
+                        "layers": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/layers"
+                        }
+                      },
+                      "aliases": "gold fingers",
+                      "name": "Hard Gold Edge Connectors",
+                      "description": "Edge connectors made with hard gold"
                     }
                   }
                 }
@@ -1323,6 +1347,24 @@
                       "aliases": "selective hard gold",
                       "name": "Selective plated pads",
                       "description": "Selective plated pads"
+                    },
+                    "hard_gold_edge_connectors": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "present": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/present"
+                        },
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness"
+                        }, 
+                        "thickness_other": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness_other"
+                        }
+                      },
+                      "aliases": "gold fingers",
+                      "name": "Hard Gold Edge Connectors",
+                      "description": "Edge connectors made with hard gold"
                     }
                   }
                 }
@@ -1738,6 +1780,21 @@
                       "aliases": "selective hard gold",
                       "name": "Selective plated pads",
                       "description": "Selective plated pads"
+                    },
+                    "hard_gold_edge_connectors": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "present": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/present"
+                        },
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness"
+                        }
+                      },
+                      "aliases": "gold fingers",
+                      "name": "Hard Gold Edge Connectors",
+                      "description": "Edge connectors made with hard gold"
                     }
                   }
                 }
@@ -2152,6 +2209,24 @@
                       "aliases": "selective hard gold",
                       "name": "Selective plated pads",
                       "description": "Selective plated pads"
+                    },
+                    "hard_gold_edge_connectors": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "present": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/present"
+                        },
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness"
+                        }, 
+                        "thickness_other": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness_other"
+                        }
+                      },
+                      "aliases": "gold fingers",
+                      "name": "Hard Gold Edge Connectors",
+                      "description": "Edge connectors made with hard gold"
                     }
                   }
                 }
@@ -2589,6 +2664,30 @@
                   "aliases": "selective hard gold",
                   "name": "Selective plated pads",
                   "description": "Selective plated pads"
+                },
+                "hard_gold_edge_connectors": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "present": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/present"
+                    },
+                    "thickness": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness"
+                    }, 
+                    "thickness_other": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness_other"
+                    }, 
+                    "area": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/area"
+                    },
+                    "layers": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/layers"
+                    }
+                  },
+                  "aliases": "gold fingers",
+                  "name": "Hard Gold Edge Connectors",
+                  "description": "Edge connectors made with hard gold"
                 }
               }
             }

@@ -21,6 +21,10 @@
           },
           "array": {
             "mouse_bites": true
+          },
+          "hard_gold_edge_connectors": {
+            "present": true,
+            "thickness": "1.27"
           }
         }
       }
