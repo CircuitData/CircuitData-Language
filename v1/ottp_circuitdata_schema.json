@@ -958,6 +958,90 @@
                       "aliases": "",
                       "name": "Markings",
                       "description": "Physical markings on the board"
+                    },
+                    "standards": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "ul": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ul"
+                        },
+                        "c_ul": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/c_ul"
+                        },
+                        "rohs": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rohs"
+                        },
+                        "ul94": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ul94"
+                        },
+                        "esa": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/esa"
+                        },
+                        "itar": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/itar"
+                        },
+                        "dfars": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/dfars"
+                        },
+                        "mil_prf_55110": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_55110"
+                        },
+                        "mil_prf_50884": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_50884"
+                        },
+                        "mil_prf_31032": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_31032"
+                        },
+                        "as9100": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/as9100"
+                        },
+                        "nadcap": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/nadcap"
+                        },
+                        "rw_en45545_2_2013": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/rw_en45545_2_2013"
+                        },
+                        "rw_nf_f_16_101": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nf_f_16_101"
+                        },
+                        "rw_uni_cei_11170_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_uni_cei_11170_3"
+                        },
+                        "rw_nfpa_130": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nfpa_130"
+                        },
+                        "ipc_6010_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_class"
+                        },
+                        "ipc_6010_compliance_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_compliance_level"
+                        },
+                        "pc_6010_copper_plating_thickness_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/pc_6010_copper_plating_thickness_level"
+                        },
+                        "ipc_6010_annular_ring_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_annular_ring_level"
+                        },
+                        "ipc_6010_conductor_spacing_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_conductor_spacing_level"
+                        },
+                        "ipc_6010_conductor_width_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_conductor_width_level"
+                        },
+                        "ipc_6012_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6012_class"
+                        },
+                        "ipc_6013_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6013_class"
+                        },
+                        "ipc_6018": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6018"
+                        }
+                      },
+                     "aliases": "",
+                     "name": "Standards and Requirements",
+                     "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
                     }
                   }
                 }
@@ -1431,6 +1515,90 @@
                       "aliases": "",
                       "name": "Markings",
                       "description": "Physical markings on the board"
+                    },
+                    "standards": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "ul": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ul"
+                        },
+                        "c_ul": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/c_ul"
+                        },
+                        "rohs": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rohs"
+                        },
+                        "ul94": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ul94"
+                        },
+                        "esa": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/esa"
+                        },
+                        "itar": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/itar"
+                        },
+                        "dfars": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/dfars"
+                        },
+                        "mil_prf_55110": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_55110"
+                        },
+                        "mil_prf_50884": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_50884"
+                        },
+                        "mil_prf_31032": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_31032"
+                        },
+                        "as9100": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/as9100"
+                        },
+                        "nadcap": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/nadcap"
+                        },
+                        "rw_en45545_2_2013": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/rw_en45545_2_2013"
+                        },
+                        "rw_nf_f_16_101": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nf_f_16_101"
+                        },
+                        "rw_uni_cei_11170_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_uni_cei_11170_3"
+                        },
+                        "rw_nfpa_130": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nfpa_130"
+                        },
+                        "ipc_6010_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_class"
+                        },
+                        "ipc_6010_compliance_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_compliance_level"
+                        },
+                        "pc_6010_copper_plating_thickness_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/pc_6010_copper_plating_thickness_level"
+                        },
+                        "ipc_6010_annular_ring_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_annular_ring_level"
+                        },
+                        "ipc_6010_conductor_spacing_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_conductor_spacing_level"
+                        },
+                        "ipc_6010_conductor_width_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_conductor_width_level"
+                        },
+                        "ipc_6012_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6012_class"
+                        },
+                        "ipc_6013_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6013_class"
+                        },
+                        "ipc_6018": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6018"
+                        }
+                      },
+                     "aliases": "",
+                     "name": "Standards and Requirements",
+                     "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
                     }
                   }
                 }
@@ -1882,6 +2050,90 @@
                       "aliases": "",
                       "name": "Markings",
                       "description": "Physical markings on the board"
+                    },
+                    "standards": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "ul": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ul"
+                        },
+                        "c_ul": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/c_ul"
+                        },
+                        "rohs": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rohs"
+                        },
+                        "ul94": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ul94"
+                        },
+                        "esa": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/esa"
+                        },
+                        "itar": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/itar"
+                        },
+                        "dfars": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/dfars"
+                        },
+                        "mil_prf_55110": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_55110"
+                        },
+                        "mil_prf_50884": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_50884"
+                        },
+                        "mil_prf_31032": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_31032"
+                        },
+                        "as9100": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/as9100"
+                        },
+                        "nadcap": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/nadcap"
+                        },
+                        "rw_en45545_2_2013": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/rw_en45545_2_2013"
+                        },
+                        "rw_nf_f_16_101": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nf_f_16_101"
+                        },
+                        "rw_uni_cei_11170_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_uni_cei_11170_3"
+                        },
+                        "rw_nfpa_130": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nfpa_130"
+                        },
+                        "ipc_6010_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_class"
+                        },
+                        "ipc_6010_compliance_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_compliance_level"
+                        },
+                        "pc_6010_copper_plating_thickness_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/pc_6010_copper_plating_thickness_level"
+                        },
+                        "ipc_6010_annular_ring_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_annular_ring_level"
+                        },
+                        "ipc_6010_conductor_spacing_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_conductor_spacing_level"
+                        },
+                        "ipc_6010_conductor_width_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_conductor_width_level"
+                        },
+                        "ipc_6012_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6012_class"
+                        },
+                        "ipc_6013_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6013_class"
+                        },
+                        "ipc_6018": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6018"
+                        }
+                      },
+                     "aliases": "",
+                     "name": "Standards and Requirements",
+                     "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
                     }
                   }
                 }
@@ -2347,6 +2599,90 @@
                       "aliases": "",
                       "name": "Markings",
                       "description": "Physical markings on the board"
+                    },
+                    "standards": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "ul": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ul"
+                        },
+                        "c_ul": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/c_ul"
+                        },
+                        "rohs": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rohs"
+                        },
+                        "ul94": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ul94"
+                        },
+                        "esa": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/esa"
+                        },
+                        "itar": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/itar"
+                        },
+                        "dfars": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/dfars"
+                        },
+                        "mil_prf_55110": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_55110"
+                        },
+                        "mil_prf_50884": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_50884"
+                        },
+                        "mil_prf_31032": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_31032"
+                        },
+                        "as9100": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/as9100"
+                        },
+                        "nadcap": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/nadcap"
+                        },
+                        "rw_en45545_2_2013": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/rw_en45545_2_2013"
+                        },
+                        "rw_nf_f_16_101": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nf_f_16_101"
+                        },
+                        "rw_uni_cei_11170_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_uni_cei_11170_3"
+                        },
+                        "rw_nfpa_130": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nfpa_130"
+                        },
+                        "ipc_6010_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_class"
+                        },
+                        "ipc_6010_compliance_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_compliance_level"
+                        },
+                        "pc_6010_copper_plating_thickness_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/pc_6010_copper_plating_thickness_level"
+                        },
+                        "ipc_6010_annular_ring_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_annular_ring_level"
+                        },
+                        "ipc_6010_conductor_spacing_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_conductor_spacing_level"
+                        },
+                        "ipc_6010_conductor_width_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_conductor_width_level"
+                        },
+                        "ipc_6012_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6012_class"
+                        },
+                        "ipc_6013_class": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6013_class"
+                        },
+                        "ipc_6018": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6018"
+                        }
+                      },
+                     "aliases": "",
+                     "name": "Standards and Requirements",
+                     "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
                     }
                   }
                 }
@@ -2841,6 +3177,90 @@
                   "aliases": "",
                   "name": "Markings",
                   "description": "Physical markings on the board"
+                },
+                "standards": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "ul": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ul"
+                    },
+                    "c_ul": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/c_ul"
+                    },
+                    "rohs": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rohs"
+                    },
+                    "ul94": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ul94"
+                    },
+                    "esa": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/esa"
+                    },
+                    "itar": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/itar"
+                    },
+                    "dfars": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/dfars"
+                    },
+                    "mil_prf_55110": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_55110"
+                    },
+                    "mil_prf_50884": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_50884"
+                    },
+                    "mil_prf_31032": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/mil_prf_31032"
+                    },
+                    "as9100": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/as9100"
+                    },
+                    "nadcap": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/nadcap"
+                    },
+                    "rw_en45545_2_2013": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/rw_en45545_2_2013"
+                    },
+                    "rw_nf_f_16_101": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nf_f_16_101"
+                    },
+                    "rw_uni_cei_11170_3": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_uni_cei_11170_3"
+                    },
+                    "rw_nfpa_130": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nfpa_130"
+                    },
+                    "ipc_6010_class": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_class"
+                    },
+                    "ipc_6010_compliance_level": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_compliance_level"
+                    },
+                    "pc_6010_copper_plating_thickness_level": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/pc_6010_copper_plating_thickness_level"
+                    },
+                    "ipc_6010_annular_ring_level": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_annular_ring_level"
+                    },
+                    "ipc_6010_conductor_spacing_level": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_conductor_spacing_level"
+                    },
+                    "ipc_6010_conductor_width_level": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_conductor_width_level"
+                    },
+                    "ipc_6012_class": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6012_class"
+                    },
+                    "ipc_6013_class": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6013_class"
+                    },
+                    "ipc_6018": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6018"
+                    }
+                  },
+                 "aliases": "",
+                 "name": "Standards and Requirements",
+                 "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
                 }
               }
             }

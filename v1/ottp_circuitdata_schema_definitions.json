@@ -792,6 +792,142 @@
           "uom": null,
           "description": "The increase in number from \"serial_number_start\" with each product."
         }
+      },
+      "standards": {
+        "ul": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicating if UL is required for the board. Can not be used as a capability, as this will be indicated on each material."
+        },
+        "c_ul": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicating if Canadian UL is required for the board. Can not be used as a capability, as this will be indicated on each material."
+        },
+        "rohs": {
+          "type": "boolean",
+          "uom": null,
+          "description": "RoHS."
+        },
+        "ul94": {
+          "type": "string",
+          "enum": ["hb", "v_0", "v_1", "v_2", "5vb", "5va"],
+          "uom": null,
+          "description": "UL 94 - Standard for Safety of Flammability of Plastic Materials for Parts in Devices and Appliances testing"
+        },
+        "esa": {
+          "type": "boolean",
+          "uom": null,
+          "description": "European Space Agency Use."
+        },
+        "itar": {
+          "type": "boolean",
+          "uom": null,
+          "description": "US ITAR."
+        },
+        "dfars": {
+          "type": "boolean",
+          "uom": null,
+          "description": "US DFARS."
+        },
+        "mil_prf_55110": {
+          "type": "boolean",
+          "uom": null,
+          "description": "MIL-PRF-55110."
+        },
+        "mil_prf_50884": {
+          "type": "boolean",
+          "uom": null,
+          "description": "MIL-PRF-5884."
+        },
+        "mil_prf_31032": {
+          "type": "boolean",
+          "uom": null,
+          "description": "MIL-PRF-31032."
+        },
+        "as9100": {
+          "type": "boolean",
+          "uom": null,
+          "description": "AS9100."
+        },
+        "nadcap": {
+          "type": "boolean",
+          "uom": null,
+          "description": "NADCAP."
+        },
+        "rw_en45545_2_2013": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Railway Europe EN45545-2:2013."
+        },
+        "rw_nf_f_16_101": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Railway France NF F 16-101."
+        },
+        "rw_uni_cei_11170_3": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Railway Italy UNI CEI 11170-3."
+        },
+        "rw_nfpa_130": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Railway USA NFPA 130."
+        },
+        "ipc_6010_class": {
+          "type": "string",
+          "enum": ["1", "2", "3"],
+          "uom": null,
+          "description": "According to Table 4-2 /4-3."
+        },
+        "ipc_6010_compliance_level": {
+          "type": "string",
+          "enum": ["full", "factory_standard", "aabus"],
+          "uom": null,
+          "description": ""
+        },
+        "ipc_6010_copper_plating_thickness_level": {
+          "type": "string",
+          "enum": ["2", "3"],
+          "uom": null,
+          "description": "Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+        },
+        "ipc_6010_annular_ring_level": {
+          "type": "string",
+          "enum": ["2", "3"],
+          "uom": null,
+          "description": "Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+        },
+        "ipc_6010_conductor_spacing_level": {
+          "type": "string",
+          "enum": ["2", "3"],
+          "uom": null,
+          "description": "Used either if ipc_6010_class is set to 2 and you want to add conductor spacing demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+        },
+        "ipc_6010_conductor_width_level": {
+          "type": "string",
+          "enum": ["2", "3"],
+          "uom": null,
+          "description": "Used either if ipc_6010_class is set to 2 and you want to add conductor width demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+        },
+        "ipc_6012_class": {
+          "type": "string",
+          "enum": ["1", "2", "3", "3A", "3S", "3M"],
+          "uom": null,
+          "description": "Requirements according to IPC 6012 class."
+        },
+        "ipc_6013_class": {
+          "type": "string",
+          "enum": ["1", "2", "3"],
+          "uom": null,
+          "description": "Requirements according to IPC 6013 for flexible or rigid-flex boards."
+        },
+        "ipc_6018":{
+          "type": "boolean",
+          "uom": null,
+          "description": "IPC-6018 Microwave End Product Board Inspection and Test."
+        }
       }
     }
   }
