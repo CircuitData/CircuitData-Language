@@ -1059,6 +1059,30 @@
                       "name": "Silver print tape",
                       "description": ""
                     },
+                    "inner_packaging": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type_of_bag": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/type_of_bag"
+                        },
+                        "hic": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/hic"
+                        },
+                        "esd": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/esd"
+                        },
+                        "desiccant": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/desiccant"
+                        },
+                        "vacuum": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/vacuum"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Inner Packaging",
+                      "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
+                    },
                     "array": {
                       "type": "object",
                       "additionalProperties": false,
@@ -1334,6 +1358,30 @@
                       "aliases": "",
                       "name": "Silver print tape",
                       "description": ""
+                    },
+                    "inner_packaging": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type_of_bag": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/type_of_bag"
+                        },
+                        "hic": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/hic"
+                        },
+                        "esd": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/esd"
+                        },
+                        "desiccant": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/desiccant"
+                        },
+                        "vacuum": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/vacuum"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Inner Packaging",
+                      "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
                     },
                     "array": {
                       "type": "object",
@@ -1624,6 +1672,30 @@
                       "aliases": "",
                       "name": "Silver print tape",
                       "description": ""
+                    },
+                    "inner_packaging": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type_of_bag": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/type_of_bag"
+                        },
+                        "hic": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/hic"
+                        },
+                        "esd": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/esd"
+                        },
+                        "desiccant": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/desiccant"
+                        },
+                        "vacuum": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/vacuum"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Inner Packaging",
+                      "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
                     },
                     "array": {
                       "type": "object",
@@ -1944,6 +2016,30 @@
                   "aliases": "",
                   "name": "Silver print tape",
                   "description": ""
+                },
+                "inner_packaging": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "type_of_bag": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/type_of_bag"
+                    },
+                    "hic": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/hic"
+                    },
+                    "esd": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/esd"
+                    },
+                    "desiccant": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/desiccant"
+                    },
+                    "vacuum": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/vacuum"
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Inner Packaging",
+                  "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
                 }
               }
             }
