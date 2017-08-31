@@ -77,6 +77,12 @@
           "array": {
             "size_y": 4.2,
             "weight": 4
+          },
+          "inner_packaging": {
+            "type_of_bag": "d",
+            "hic": false,
+            "esd": false,
+            "vacuum": true
           }
         }
       }

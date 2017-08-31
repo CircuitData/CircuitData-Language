@@ -527,6 +527,34 @@
           "uom": ["g"],
           "description": "The weight of the array measured in grams."
         }
+      },
+      "inner_packaging": {
+        "type_of_bag": {
+          "type": "string",
+          "enum": ["a", "b", "c", "d"],
+          "uom": null,
+          "description": "The material of the bag to be used"
+        },
+        "hic": {
+          "type": "boolean",
+          "uom": null,
+          "description": "True to include a Humidity Indicator Card (HIC), False to not"
+        },
+        "esd": {
+          "type": "boolean",
+          "uom": null,
+          "description": "True to indicate that packaging for ESD-sensitive required."
+        },
+        "desiccant": {
+          "type": "boolean",
+          "uom": null,
+          "description": "True to indicate that a desiccant material is required."
+        },
+        "vacuum": {
+          "type": "boolean",
+          "uom": null,
+          "description": "True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed."
+        }
       }
     }
   }
