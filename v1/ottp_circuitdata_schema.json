@@ -760,6 +760,60 @@
                       "name": "Inner Packaging",
                       "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
                     },
+                    "via_protection": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type_1": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_1"
+                        },
+                        "type_2": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_2"
+                        },
+                        "type_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_3"
+                        },
+                        "type_4a": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_4a"
+                        },
+                        "type_4b": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_4b"
+                        },
+                        "type_5": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_5"
+                        },
+                        "type_6a": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_6a"
+                        },
+                        "type_6b": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_6b"
+                        },
+                        "type_7": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_7"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Via Protection",
+                      "description": "The via/hole protection according to IPC 4761"
+                    },
+                    "board": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "size_x": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/size_x"
+                        },
+                        "size_y": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/size_y"
+                        },
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/thickness"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Board",
+                      "description": "The physical description of the board"
+                    },
                     "array": {
                       "type": "object",
                       "additionalProperties": false,
@@ -1082,6 +1136,54 @@
                       "aliases": "",
                       "name": "Inner Packaging",
                       "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
+                    },      
+                    "via_protection": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type_1": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_1"
+                        },
+                        "type_2": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_2"
+                        },
+                        "type_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_3"
+                        },
+                        "type_4a": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_4a"
+                        },
+                        "type_4b": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_4b"
+                        },
+                        "type_5": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_5"
+                        },
+                        "type_6a": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_6a"
+                        },
+                        "type_6b": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_6b"
+                        },
+                        "type_7": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_7"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Via Protection",
+                      "description": "The via/hole protection according to IPC 4761"
+                    },
+                    "board": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/thickness"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Board",
+                      "description": "The physical description of the board"
                     },
                     "array": {
                       "type": "object",
@@ -1382,6 +1484,60 @@
                       "aliases": "",
                       "name": "Inner Packaging",
                       "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
+                    },
+                    "via_protection": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type_1": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_1"
+                        },
+                        "type_2": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_2"
+                        },
+                        "type_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_3"
+                        },
+                        "type_4a": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_4a"
+                        },
+                        "type_4b": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_4b"
+                        },
+                        "type_5": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_5"
+                        },
+                        "type_6a": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_6a"
+                        },
+                        "type_6b": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_6b"
+                        },
+                        "type_7": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_7"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Via Protection",
+                      "description": "The via/hole protection according to IPC 4761"
+                    },
+                    "board": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "size_x": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/size_x"
+                        },
+                        "size_y": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/size_y"
+                        },
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/thickness"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Board",
+                      "description": "The physical description of the board"
                     },
                     "array": {
                       "type": "object",
@@ -1696,6 +1852,54 @@
                       "aliases": "",
                       "name": "Inner Packaging",
                       "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
+                    },
+                    "via_protection": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "type_1": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_1"
+                        },
+                        "type_2": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_2"
+                        },
+                        "type_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_3"
+                        },
+                        "type_4a": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_4a"
+                        },
+                        "type_4b": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_4b"
+                        },
+                        "type_5": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_5"
+                        },
+                        "type_6a": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_6a"
+                        },
+                        "type_6b": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_6b"
+                        },
+                        "type_7": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_7"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Via Protection",
+                      "description": "The via/hole protection according to IPC 4761"
+                    },
+                    "board": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "thickness": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/thickness"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Board",
+                      "description": "The physical description of the board"
                     },
                     "array": {
                       "type": "object",
@@ -2040,6 +2244,60 @@
                   "aliases": "",
                   "name": "Inner Packaging",
                   "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
+                },
+                "via_protection": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "type_1": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_1"
+                    },
+                    "type_2": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_2"
+                    },
+                    "type_3": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_3"
+                    },
+                    "type_4a": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_4a"
+                    },
+                    "type_4b": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_4b"
+                    },
+                    "type_5": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_5"
+                    },
+                    "type_6a": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_6a"
+                    },
+                    "type_6b": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_6b"
+                    },
+                    "type_7": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_7"
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Via Protection",
+                  "description": "The via/hole protection according to IPC 4761"
+                },
+                "board": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "size_x": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/size_x"
+                    },
+                    "size_y": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/size_y"
+                    },
+                    "thickness": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/thickness"
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Board",
+                  "description": "The physical description of the board"
                 }
               }
             }

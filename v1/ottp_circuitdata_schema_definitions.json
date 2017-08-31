@@ -414,6 +414,98 @@
           "description": "Indicates silver print presence/capability at bottom"
         }
       },
+      "inner_packaging": {
+        "type_of_bag": {
+          "type": "string",
+          "enum": ["a", "b", "c", "d"],
+          "uom": null,
+          "description": "The material of the bag to be used"
+        },
+        "hic": {
+          "type": "boolean",
+          "uom": null,
+          "description": "True to include a Humidity Indicator Card (HIC), False to not"
+        },
+        "esd": {
+          "type": "boolean",
+          "uom": null,
+          "description": "True to indicate that packaging for ESD-sensitive required."
+        },
+        "desiccant": {
+          "type": "boolean",
+          "uom": null,
+          "description": "True to indicate that a desiccant material is required."
+        },
+        "vacuum": {
+          "type": "boolean",
+          "uom": null,
+          "description": "True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed."
+        }
+      },
+      "via_protection": {
+        "type_1": {
+          "type": "boolean",
+          "uom": null,
+          "description": "A via with a dry film mask material applied bridging over the via wherein no additional materials are in the hole."
+        },
+        "type_2": {
+          "type": "boolean",
+          "uom": null,
+          "description": "A Type I via with a secondary covering of mask material applied over the tented via."
+        },
+        "type_3": {
+          "type": "boolean",
+          "uom": null,
+          "description": "A via with material applied allowing partial penetration into the via. The plug material may be applied from one or both sides."
+        },
+        "type_4a": {
+          "type": "boolean",
+          "uom": null,
+          "description": "A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides."
+        },
+        "type_4b": {
+          "type": "boolean",
+          "uom": null,
+          "description": "A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides."
+        },
+        "type_5": {
+          "type": "boolean",
+          "uom": null,
+          "description": "A via with material applied into the via targeting a full penetration and encapsulation of the hole."
+        },
+        "type_6a": {
+          "type": "boolean",
+          "uom": null,
+          "description": "A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides."
+        },
+        "type_6b": {
+          "type": "boolean",
+          "uom": null,
+          "description": "A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides."
+        },
+        "type_7": {
+          "type": "boolean",
+          "uom": null,
+          "description": "A Type V via with a secondary metallized coating covering the via. The metallization is on both sides."
+        }
+      },
+      "board": {
+        "size_x": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the board in the x-asis, measured in millimeters"
+        },
+        "size_y": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The size of the board in the y-asis, measured in millimeters"
+        },
+        "thickness": {
+          "type": "number",
+          "uom": ["mm"],
+          "description": "The thickness of the board measured in millimeters"
+        }
+      },
       "array": {
         "size_x": {
           "type": "number",

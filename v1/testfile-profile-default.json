@@ -16,6 +16,9 @@
           "flexible_conductive_layer": {
             "copper_foil_roughness": "L"
           },
+          "board": {
+            "thickness": 1.2
+          },
           "array": {
             "mouse_bites": true
           }

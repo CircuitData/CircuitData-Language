@@ -74,6 +74,11 @@
             "top": false,
             "bottom": true
           },
+          "board": {
+            "size_x": 14.8,
+            "size_y": 3,
+            "thickness": 1.2
+          },
           "array": {
             "size_y": 4.2,
             "weight": 4

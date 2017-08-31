@@ -19,6 +19,11 @@
             "top": true,
             "bottom": false,
             "color": "white"
+          },
+          "board": {
+            "size_x": 14.8,
+            "size_y": 3,
+            "thickness": 1.2
           }
         }
       }
