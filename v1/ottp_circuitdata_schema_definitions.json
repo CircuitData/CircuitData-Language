@@ -186,6 +186,10 @@
         "type": "number",
         "uom": ["um"],
         "description": "The maximum thickness in micrometer."
+      },
+      "range": {
+        "type": "string",
+        "pattern": "^(\\d*|\\d*.\\d*)\\.\\.\\.(\\d*|\\d*.\\d*)$"
       }
     },
     "elements": {

@@ -1077,6 +1077,7 @@
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
+                        "count": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range" },
                         "minimum_internal_track_width": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/minimum_internal_track_width"
                         },
