@@ -100,7 +100,15 @@
             "present": true,
             "layers": "false",
             "thickness": "1.27",
+            "thickness_other": 1,
             "area": 2
+          },
+          "markings": {
+            "date_code": "DD-MM-YY",
+            "standards": ["UL","RoHS"],
+            "serial_number": true,
+            "serial_number_format": "1",
+            "serial_number_start": 2
           }
         }
       }

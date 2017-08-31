@@ -925,6 +925,39 @@
                       "aliases": "gold fingers",
                       "name": "Hard Gold Edge Connectors",
                       "description": "Edge connectors made with hard gold"
+                    },
+                    "markings": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "date_code": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/date_code"
+                        },
+                        "placement": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/placement"
+                        }, 
+                        "manufacturer_identification": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/manufacturer_identification"
+                        }, 
+                        "standards": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/standards"
+                        },
+                        "serial_number": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number"
+                        },
+                        "serial_number_format": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_format"
+                        },
+                        "serial_number_start": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_start"
+                        },
+                        "serial_number_increase_by": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_increase_by"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Markings",
+                      "description": "Physical markings on the board"
                     }
                   }
                 }
@@ -1365,6 +1398,39 @@
                       "aliases": "gold fingers",
                       "name": "Hard Gold Edge Connectors",
                       "description": "Edge connectors made with hard gold"
+                    },
+                    "markings": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "date_code": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/date_code"
+                        },
+                        "placement": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/placement"
+                        }, 
+                        "manufacturer_identification": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/manufacturer_identification"
+                        }, 
+                        "standards": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/standards"
+                        },
+                        "serial_number": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number"
+                        },
+                        "serial_number_format": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_format"
+                        },
+                        "serial_number_start": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_start"
+                        },
+                        "serial_number_increase_by": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_increase_by"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Markings",
+                      "description": "Physical markings on the board"
                     }
                   }
                 }
@@ -1795,6 +1861,27 @@
                       "aliases": "gold fingers",
                       "name": "Hard Gold Edge Connectors",
                       "description": "Edge connectors made with hard gold"
+                    },
+                    "markings": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "placement": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/placement"
+                        }, 
+                        "manufacturer_identification": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/manufacturer_identification"
+                        }, 
+                        "standards": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/standards"
+                        },
+                        "serial_number": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Markings",
+                      "description": "Physical markings on the board"
                     }
                   }
                 }
@@ -2227,6 +2314,39 @@
                       "aliases": "gold fingers",
                       "name": "Hard Gold Edge Connectors",
                       "description": "Edge connectors made with hard gold"
+                    },
+                    "markings": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "date_code": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/date_code"
+                        },
+                        "placement": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/placement"
+                        }, 
+                        "manufacturer_identification": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/manufacturer_identification"
+                        }, 
+                        "standards": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/standards"
+                        },
+                        "serial_number": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number"
+                        },
+                        "serial_number_format": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_format"
+                        },
+                        "serial_number_start": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_start"
+                        },
+                        "serial_number_increase_by": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_increase_by"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Markings",
+                      "description": "Physical markings on the board"
                     }
                   }
                 }
@@ -2688,6 +2808,39 @@
                   "aliases": "gold fingers",
                   "name": "Hard Gold Edge Connectors",
                   "description": "Edge connectors made with hard gold"
+                },
+                "markings": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "date_code": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/date_code"
+                    },
+                    "placement": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/placement"
+                    }, 
+                    "manufacturer_identification": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/manufacturer_identification"
+                    }, 
+                    "standards": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/standards"
+                    },
+                    "serial_number": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number"
+                    },
+                    "serial_number_format": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_format"
+                    },
+                    "serial_number_start": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_start"
+                    },
+                    "serial_number_increase_by": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_increase_by"
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Markings",
+                  "description": "Physical markings on the board"
                 }
               }
             }
