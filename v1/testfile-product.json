@@ -91,6 +91,10 @@
           },
           "mechanical": {
             "plated_edges": true
+          },
+          "selective_plated_pads": {
+            "present": true,
+            "layers": "false"
           }
         }
       }

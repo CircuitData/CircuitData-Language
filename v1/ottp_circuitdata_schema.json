@@ -886,6 +886,21 @@
                       "aliases": "",
                       "name": "Mechanical processes",
                       "description": "Mechanical processes in the manufacturing"
+                    },
+                    "selective_plated_pads": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "present": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/selective_plated_pads/present"
+                        },
+                        "layers": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/selective_plated_pads/layers"
+                        }
+                      },
+                      "aliases": "selective hard gold",
+                      "name": "Selective plated pads",
+                      "description": "Selective plated pads"
                     }
                   }
                 }
@@ -1296,6 +1311,18 @@
                       "aliases": "",
                       "name": "Mechanical processes",
                       "description": "Mechanical processes in the manufacturing"
+                    },
+                    "selective_plated_pads": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "present": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/selective_plated_pads/present"
+                        }
+                      },
+                      "aliases": "selective hard gold",
+                      "name": "Selective plated pads",
+                      "description": "Selective plated pads"
                     }
                   }
                 }
@@ -1699,6 +1726,18 @@
                       "aliases": "",
                       "name": "Mechanical processes",
                       "description": "Mechanical processes in the manufacturing"
+                    },
+                    "selective_plated_pads": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "present": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/selective_plated_pads/present"
+                        }
+                      },
+                      "aliases": "selective hard gold",
+                      "name": "Selective plated pads",
+                      "description": "Selective plated pads"
                     }
                   }
                 }
@@ -2101,6 +2140,18 @@
                       "aliases": "",
                       "name": "Mechanical processes",
                       "description": "Mechanical processes in the manufacturing"
+                    },
+                    "selective_plated_pads": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "present": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/selective_plated_pads/present"
+                        }
+                      },
+                      "aliases": "selective hard gold",
+                      "name": "Selective plated pads",
+                      "description": "Selective plated pads"
                     }
                   }
                 }
@@ -2523,6 +2574,21 @@
                   "aliases": "",
                   "name": "Mechanical processes",
                   "description": "Mechanical processes in the manufacturing"
+                },
+                "selective_plated_pads": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "present": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/selective_plated_pads/present"
+                    },
+                    "layers": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/layers"
+                    }
+                  },
+                  "aliases": "selective hard gold",
+                  "name": "Selective plated pads",
+                  "description": "Selective plated pads"
                 }
               }
             }
