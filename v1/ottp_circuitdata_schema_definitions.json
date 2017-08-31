@@ -647,6 +647,68 @@
           "uom": null,
           "description": "True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed."
         }
+      },
+      "mechanical": {
+        "edge_bevelling": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Edge bevelling present."
+        },
+        "depth_routing_top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Depth Routing from the top present"
+        },
+        "depth_routing_bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Depth Routing from the bottom present."
+        },
+        "counterboring_top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Counterboring from the top present."
+        },
+        "counterboring_bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Counterboring from the bottom present."
+        },
+        "countersink_top": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Countersink from the top present."
+        },
+        "countersink_bottom": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Countersink from the bottom present."
+        },
+        "punching": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Punching process required."
+        },
+        "plated_edges": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Plated Edges process required."
+        },
+        "plated_slots": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Plated Slots process required."
+        },
+        "plated_castellated_holes": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Plated Castellated Holes process required."
+        },
+        "coin_attachment": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Coin Attachment process required."
+        }
       }
     }
   }

@@ -841,6 +841,51 @@
                         "transplant_board_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/transplant_board_allowed" },
                         "weight": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/weight" }
                       }
+                    },
+                    "mechanical": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "edge_bevelling": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/edge_bevelling"
+                        },
+                        "depth_routing_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_top"
+                        },
+                        "depth_routing_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_bottom"
+                        },
+                        "counterboring_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ecounterboring_top"
+                        },
+                        "counterboring_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_bottom"
+                        },
+                        "countersink_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/countersink_top"
+                        },
+                        "countersink_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/countersink_bottom"
+                        },
+                        "punching": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/punching"
+                        },
+                        "plated_edges": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_edges"
+                        },
+                        "plated_slots": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_slots"
+                        },
+                        "plated_castellated_holes": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_castellated_holes"
+                        },
+                        "coin_attachment": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/coin_attachment"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Mechanical processes",
+                      "description": "Mechanical processes in the manufacturing"
                     }
                   }
                 }
@@ -1206,6 +1251,51 @@
                         "x_outs_max_percentage_on_array": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_max_percentage_on_array" },
                         "transplant_board_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/transplant_board_allowed" }
                       }
+                    },
+                    "mechanical": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "edge_bevelling": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/edge_bevelling"
+                        },
+                        "depth_routing_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_top"
+                        },
+                        "depth_routing_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_bottom"
+                        },
+                        "counterboring_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ecounterboring_top"
+                        },
+                        "counterboring_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_bottom"
+                        },
+                        "countersink_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/countersink_top"
+                        },
+                        "countersink_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/countersink_bottom"
+                        },
+                        "punching": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/punching"
+                        },
+                        "plated_edges": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_edges"
+                        },
+                        "plated_slots": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_slots"
+                        },
+                        "plated_castellated_holes": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_castellated_holes"
+                        },
+                        "coin_attachment": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/coin_attachment"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Mechanical processes",
+                      "description": "Mechanical processes in the manufacturing"
                     }
                   }
                 }
@@ -1564,6 +1654,51 @@
                         "x_outs_max_percentage_on_array": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_max_percentage_on_array" },
                         "transplant_board_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/transplant_board_allowed" }
                       }
+                    },
+                    "mechanical": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "edge_bevelling": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/edge_bevelling"
+                        },
+                        "depth_routing_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_top"
+                        },
+                        "depth_routing_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_bottom"
+                        },
+                        "counterboring_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ecounterboring_top"
+                        },
+                        "counterboring_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_bottom"
+                        },
+                        "countersink_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/countersink_top"
+                        },
+                        "countersink_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/countersink_bottom"
+                        },
+                        "punching": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/punching"
+                        },
+                        "plated_edges": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_edges"
+                        },
+                        "plated_slots": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_slots"
+                        },
+                        "plated_castellated_holes": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_castellated_holes"
+                        },
+                        "coin_attachment": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/coin_attachment"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Mechanical processes",
+                      "description": "Mechanical processes in the manufacturing"
                     }
                   }
                 }
@@ -1921,6 +2056,51 @@
                         "x_outs_max_percentage_on_array": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/x_outs_max_percentage_on_array" },
                         "transplant_board_allowed": { "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/array/transplant_board_allowed" }
                       }
+                    },
+                    "mechanical": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "edge_bevelling": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/edge_bevelling"
+                        },
+                        "depth_routing_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_top"
+                        },
+                        "depth_routing_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_bottom"
+                        },
+                        "counterboring_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ecounterboring_top"
+                        },
+                        "counterboring_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_bottom"
+                        },
+                        "countersink_top": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/countersink_top"
+                        },
+                        "countersink_bottom": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/countersink_bottom"
+                        },
+                        "punching": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/punching"
+                        },
+                        "plated_edges": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_edges"
+                        },
+                        "plated_slots": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_slots"
+                        },
+                        "plated_castellated_holes": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_castellated_holes"
+                        },
+                        "coin_attachment": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/coin_attachment"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Mechanical processes",
+                      "description": "Mechanical processes in the manufacturing"
                     }
                   }
                 }
@@ -2298,6 +2478,51 @@
                   "aliases": "",
                   "name": "Board",
                   "description": "The physical description of the board"
+                },
+                "mechanical": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "edge_bevelling": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/edge_bevelling"
+                    },
+                    "depth_routing_top": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_top"
+                    },
+                    "depth_routing_bottom": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_bottom"
+                    },
+                    "counterboring_top": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ecounterboring_top"
+                    },
+                    "counterboring_bottom": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_bottom"
+                    },
+                    "countersink_top": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/countersink_top"
+                    },
+                    "countersink_bottom": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/countersink_bottom"
+                    },
+                    "punching": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/punching"
+                    },
+                    "plated_edges": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_edges"
+                    },
+                    "plated_slots": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_slots"
+                    },
+                    "plated_castellated_holes": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/plated_castellated_holes"
+                    },
+                    "coin_attachment": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/coin_attachment"
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Mechanical processes",
+                  "description": "Mechanical processes in the manufacturing"
                 }
               }
             }

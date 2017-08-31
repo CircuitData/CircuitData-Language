@@ -88,6 +88,9 @@
             "hic": false,
             "esd": false,
             "vacuum": true
+          },
+          "mechanical": {
+            "plated_edges": true
           }
         }
       }
