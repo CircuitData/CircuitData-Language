@@ -1126,6 +1126,13 @@
           "uom": null,
           "description": "Adding Tear Drops."
         }
+      },
+      "additional_requirements": {
+        "any_name": {
+          "type": "string",
+          "uom": null,
+          "description": "Must have a similar element in the custom -> additional"
+        }
       }
     }
   }
