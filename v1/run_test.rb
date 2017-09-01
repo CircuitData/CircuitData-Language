@@ -1,5 +1,11 @@
 require "json-schema"
 
+if RUBY_VERSION.to_f < 2.3
+  puts "Must have at least version 2.3.0 of Ruby to run this"
+  exit
+end
+
+
 $jsonschema = 'ottp_circuitdata_schema.json'
 
 def crosschecker( productfile, checksfile, validate_origins=true )
