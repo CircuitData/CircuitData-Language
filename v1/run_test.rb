@@ -32,23 +32,23 @@ end
 
 # Test the Profile required
 puts "Test the Profile enforced"
-#pe = JSON::Validator.fully_validate('ottp_circuitdata_schema.json', 'testfile-profile-enforced.json')
-#if pe.count > 0
-#  puts "ERRORS DETECTED:"
-#  pe.each do |error|
-#    puts "-- #{error}"
-#  end
-#end
+pe = JSON::Validator.fully_validate('ottp_circuitdata_schema.json', 'testfile-profile-enforced.json')
+if pe.count > 0
+  puts "ERRORS DETECTED:"
+  pe.each do |error|
+    puts "-- #{error}"
+  end
+end
 
 # Test the Profile restricted
 puts "Test the Profile restricted"
-#pr = JSON::Validator.fully_validate('ottp_circuitdata_schema.json', 'testfile-profile-restricted.json')
-#f pr.count > 0
-#  puts "ERRORS DETECTED:"
-#  pr.each do |error|
-#    puts "-- #{error}"
-#  end
-#end
+pr = JSON::Validator.fully_validate('ottp_circuitdata_schema.json', 'testfile-profile-restricted.json')
+if pr.count > 0
+  puts "ERRORS DETECTED:"
+  pr.each do |error|
+    puts "-- #{error}"
+  end
+end
 
 # Test the Capabilities
 puts "Test the Capabilities"
@@ -67,6 +67,7 @@ puts "-- read the schema"
 #include Hashie::Extensions::DeepMerge
 #raw_schema.extend Hashie::Extensions::DeepFind
 
+#def crosschecker 
 schema = {
 "$schema": "http://json-schema.org/draft-04/schema#",
 "type": "object",
@@ -124,7 +125,9 @@ schema = {
 }
 
 
-restriction_file = JSON.parse(File.read('testfile-profile-enforced.json'))
+testresults = {:restricted => [], :enforced => [], :capability => []}
+
+restriction_file = JSON.parse(File.read('testfile-capability.json'))
 if restriction_file["open_trade_transfer_package"].has_key? "profiles"
   # RUN THROUGH THE ENFORCED
   if restriction_file["open_trade_transfer_package"]["profiles"].has_key? "enforced"
@@ -142,7 +145,7 @@ if restriction_file["open_trade_transfer_package"].has_key? "profiles"
                 schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym][:properties][subkey.to_sym] = newhash
               else # This is a normal string - check for commas
                 enum = []
-                subvalue.split(',').each { |enumvalue| enum << enumvalue }
+                subvalue.split(',').each { |enumvalue| enum << enumvalue.strip }
                 schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][key.to_sym][:properties][subkey.to_sym] = eval("{:enum => #{enum}}")
                 schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym][:properties][subkey.to_sym] = eval("{:enum => #{enum}}")
               end
@@ -165,19 +168,51 @@ if restriction_file["open_trade_transfer_package"].has_key? "profiles"
             if subvalue.is_a? String
               if subvalue.match("^(\\d*|\\d*.\\d*)\\.\\.\\.(\\d*|\\d*.\\d*)$") #This is a value range
                 from, too = subvalue.match("^(\\d*|\\d*.\\d*)\\.\\.\\.(\\d*|\\d*.\\d*)$").captures
-                newhash = eval("{:minimum => #{from}, :maximum => #{too}}")
+                newhash = {:not => {:allOf => [{:minimum => from.to_f},{:maximum => too.to_f}]}}
                 schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][key.to_sym][:properties][subkey.to_sym] = newhash
                 schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym][:properties][subkey.to_sym] = newhash
               else # This is a normal string - check for commas
+                newhash = {:not => {:anyOf => [{ :enum => ""}]}}
                 enum = []
-                subvalue.split(',').each { |enumvalue| enum << enumvalue }
-                schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][key.to_sym][:properties][subkey.to_sym] = eval("{:enum => #{enum}}")
-                schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym][:properties][subkey.to_sym] = eval("{:enum => #{enum}}")
+                subvalue.split(',').each { |enumvalue| enum << enumvalue.strip }
+                newhash[:not][:anyOf][0][:enum] = enum
+                schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][key.to_sym][:properties][subkey.to_sym] = newhash
+                schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym][:properties][subkey.to_sym] = newhash
               end
             elsif subvalue.is_a? Numeric # This is a normal string
-              schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][key.to_sym][:properties][subkey.to_sym] = eval("{:enum => [#{subvalue.to_s}]}")
-              schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym][:properties][subkey.to_sym] = eval("{:enum => [#{subvalue.to_s}]}")
+              newhash = {:not => {:allOf => [{:minimum => subvalue.to_f},{:maximum => subvalue.to_f}]}}
+              schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][key.to_sym][:properties][subkey.to_sym] = newhash
+              schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym][:properties][subkey.to_sym] = newhash
             end
+          end
+        end
+      end
+    end
+  end
+end
+# RUN THROUGH THE CAPABILITIES
+if restriction_file["open_trade_transfer_package"].has_key? "capabilities"
+  if restriction_file["open_trade_transfer_package"]["capabilities"].has_key? "printed_circuits_fabrication_data"
+    restriction_file["open_trade_transfer_package"]["capabilities"]["printed_circuits_fabrication_data"].each do |key, value|
+      if restriction_file["open_trade_transfer_package"]["capabilities"]["printed_circuits_fabrication_data"][key].is_a? Hash
+        restriction_file["open_trade_transfer_package"]["capabilities"]["printed_circuits_fabrication_data"][key].each do |subkey, subvalue|
+          schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][key.to_sym] = {:type => "object", :properties => {} } unless schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties].has_key? key.to_sym
+          schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym] = {:type => "object", :properties => {} } unless schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties].has_key? key.to_sym
+          if subvalue.is_a? String
+            if subvalue.match("^(\\d*|\\d*.\\d*)\\.\\.\\.(\\d*|\\d*.\\d*)$") #This is a value range
+              from, too = subvalue.match("^(\\d*|\\d*.\\d*)\\.\\.\\.(\\d*|\\d*.\\d*)$").captures
+              newhash = eval("{:minimum => #{from}, :maximum => #{too}}")
+              schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][key.to_sym][:properties][subkey.to_sym] = newhash
+              schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym][:properties][subkey.to_sym] = newhash
+            else # This is a normal string - check for commas
+              enum = []
+              subvalue.split(',').each { |enumvalue| enum << enumvalue.strip }
+              schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][key.to_sym][:properties][subkey.to_sym] = eval("{:enum => #{enum}}")
+              schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym][:properties][subkey.to_sym] = eval("{:enum => #{enum}}")
+            end
+          elsif subvalue.is_a? Numeric # This is a normal string
+            schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][key.to_sym][:properties][subkey.to_sym] = eval("{:enum => [#{subvalue.to_s}]}")
+            schema[:properties][:open_trade_transfer_package][:properties][:products][:patternProperties][:"^(?!generic$).*"][:properties][:printed_circuits_fabrication_data][:properties][:stackup][:properties][:specified][:properties][key.to_sym][:properties][subkey.to_sym] = eval("{:enum => [#{subvalue.to_s}]}")
           end
         end
       end
@@ -186,4 +221,4 @@ if restriction_file["open_trade_transfer_package"].has_key? "profiles"
 end
 
 
-puts JSON::Validator.fully_validate(schema.to_json, 'testfile-product.json', :validate_schema => true, :errors_as_objects => true)
+puts JSON::Validator.fully_validate(schema.to_json, 'testfile-product.json', :errors_as_objects => true)

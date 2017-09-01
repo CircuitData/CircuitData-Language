@@ -10,10 +10,8 @@
       "printed_circuits_fabrication_data": {
         "version": "0.6",
         "rigid_conductive_layer": {
-          "minimum_external_track_width": 0.14,
-          "minimum_external_spacing_width": 0.14,
-          "external_base_copper_thickness": 17.1,
-          "copper_coverage_average": 12.55
+          "count": "2...20",
+          "minimum_external_track_width": "0.15...4"
         }
       }
     }

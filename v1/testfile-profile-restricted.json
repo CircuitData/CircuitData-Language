@@ -14,10 +14,18 @@
             "heating_operations": "14...20"
           },
           "rigid_conductive_layer": {
-            "count": "2...10",
-            "minimum_external_track_width": 0.14,
-            "minimum_external_spacing_width": 0.14,
-            "external_base_copper_thickness": 17.1
+            "count": "20...30",
+            "minimum_external_track_width": 0.15,
+            "minimum_external_spacing_width": 0.15,
+            "external_base_copper_thickness": 17.2
+          },
+          "legend": {
+            "color": "yellow,grey"
+          },
+          "board": {
+            "size_x": 14.9,
+            "size_y": 5,
+            "thickness": 1.2
           }
         }
       }

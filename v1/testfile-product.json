@@ -75,9 +75,41 @@
             "top": false,
             "bottom": true
           },
+          "board": {
+            "size_x": 14.8,
+            "size_y": 3,
+            "thickness": 1.2
+          },
           "array": {
             "size_y": 4.2,
             "weight": 4
+          },
+          "inner_packaging": {
+            "type_of_bag": "d",
+            "hic": false,
+            "esd": false,
+            "vacuum": true
+          },
+          "mechanical": {
+            "plated_edges": true
+          },
+          "selective_plated_pads": {
+            "present": true,
+            "layers": "false"
+          },
+          "hard_gold_edge_connectors": {
+            "present": true,
+            "layers": "false",
+            "thickness": "1.27",
+            "thickness_other": 1,
+            "area": 2
+          },
+          "markings": {
+            "date_code": "DD-MM-YY",
+            "standards": ["UL","RoHS"],
+            "serial_number": true,
+            "serial_number_format": "1",
+            "serial_number_start": 2
           }
         }
       }

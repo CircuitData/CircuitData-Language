@@ -16,8 +16,15 @@
           "flexible_conductive_layer": {
             "copper_foil_roughness": "L"
           },
+          "board": {
+            "thickness": 1.2
+          },
           "array": {
             "mouse_bites": true
+          },
+          "hard_gold_edge_connectors": {
+            "present": true,
+            "thickness": "1.27"
           }
         }
       }
