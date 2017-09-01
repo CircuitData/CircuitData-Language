@@ -1120,6 +1120,81 @@
                       "aliases": "",
                       "name": "Conflict resolution",
                       "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
+                    },
+                    "holes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "number": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/number"
+                          },
+                          "type": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/type"
+                          },
+                          "plated": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/plated"
+                          },
+                          "size": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/size"
+                          },
+                          "layer_start": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/layer_start"
+                          },
+                          "layer_stop": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/layer_stop"
+                          },
+                          "depth": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/depth"
+                          },
+                          "method": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/method"
+                          },
+                          "minimum_designed_annular_ring": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/minimum_designed_annular_ring"
+                          },
+                          "press_fit": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/press_fit"
+                          },
+                          "copper_filled": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/copper_filled"
+                          },
+                          "staggered": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/staggered"
+                          },
+                          "stacked": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/stacked"
+                          },
+                          "alivh": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/alivh"
+                          }
+                        },
+                        "aliases": "",
+                        "name": "Holes",
+                        "description": "One for each holes process, or at least one that sums up the minimum requirements"
+                      }
+                    },
+                    "allowed_modifications": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "dead_pad_removal": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/allowed_modifications/dead_pad_removal"
+                        },
+                        "add_copper_balancing": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/allowed_modifications/add_copper_balancing"
+                        },
+                        "add_copper_balancing_on_array": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/allowed_modifications/add_copper_balancing_on_array"
+                        },
+                        "add_tear_drops": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/allowed_modifications/add_tear_drops"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Allowed Modifications",
+                      "description": "Changes/fabrication decisions that are allowed to make to the files provided."
                     }
                   }
                 }
@@ -1755,6 +1830,42 @@
                       "aliases": "",
                       "name": "Conflict resolution",
                       "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
+                    },
+                    "holes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "plated": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/plated"
+                          }
+                        },
+                        "aliases": "",
+                        "name": "Holes",
+                        "description": "One for each holes process, or at least one that sums up the minimum requirements"
+                      }
+                    },
+                    "allowed_modifications": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "dead_pad_removal": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/allowed_modifications/dead_pad_removal"
+                        },
+                        "add_copper_balancing": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/allowed_modifications/add_copper_balancing"
+                        },
+                        "add_copper_balancing_on_array": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/allowed_modifications/add_copper_balancing_on_array"
+                        },
+                        "add_tear_drops": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/allowed_modifications/add_tear_drops"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Allowed Modifications",
+                      "description": "Changes/fabrication decisions that are allowed to make to the files provided."
                     }
                   }
                 }
@@ -2917,6 +3028,62 @@
                       "aliases": "",
                       "name": "Country of Origin",
                       "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
+                    },
+                    "holes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "plated": {
+                            "anyOf": [
+                              {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                              {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                              {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                            ]
+                          }
+                        },
+                        "aliases": "",
+                        "name": "Holes",
+                        "description": "One for each holes process, or at least one that sums up the minimum requirements"
+                      }
+                    },
+                    "allowed_modifications": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "dead_pad_removal": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "add_copper_balancing": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "add_copper_balancing_on_array": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "add_tear_drops": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Allowed Modifications",
+                      "description": "Changes/fabrication decisions that are allowed to make to the files provided."
                     }
                   }
                 }
@@ -4149,6 +4316,61 @@
                       "aliases": "",
                       "name": "Conflict resolution",
                       "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
+                    },
+                    "holes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "plated": {
+                            "anyOf": [
+                              {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                              {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                              {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                            ]
+                          }
+                        },
+                        "aliases": "",
+                        "name": "Holes",
+                        "description": "One for each holes process, or at least one that sums up the minimum requirements"                      }
+                    },
+                    "allowed_modifications": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "dead_pad_removal": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "add_copper_balancing": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "add_copper_balancing_on_array": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "add_tear_drops": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Allowed Modifications",
+                      "description": "Changes/fabrication decisions that are allowed to make to the files provided."
                     }
                   }
                 }
@@ -5096,6 +5318,152 @@
                   "aliases": "",
                   "name": "Conflict resolution",
                   "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
+                },
+                "holes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "number": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "type": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "plated": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "size": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "layer_start": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "layer_stop": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "depth": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "method": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "minimum_designed_annular_ring": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "press_fit": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "copper_filled": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "staggered": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "stacked": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      },
+                      "alivh": {
+                        "anyOf": [
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                          {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                        ]
+                      }
+                    },
+                    "aliases": "",
+                    "name": "Holes",
+                    "description": "One for each holes process, or at least one that sums up the minimum requirements"                      }
+                },
+                "allowed_modifications": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "dead_pad_removal": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "add_copper_balancing": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "add_copper_balancing_on_array": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "add_tear_drops": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Allowed Modifications",
+                  "description": "Changes/fabrication decisions that are allowed to make to the files provided."
                 }
               }
             }
