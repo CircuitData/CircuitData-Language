@@ -1042,6 +1042,84 @@
                      "aliases": "",
                      "name": "Standards and Requirements",
                      "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+                    },
+                    "testing": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "netlist": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/netlist"
+                        },
+                        "allow_generate_netlist": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/allow_generate_netlist"
+                        },
+                        "hipot": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/hipot"
+                        },
+                        "4_wire": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/4_wire"
+                        },
+                        "ist": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/ist"
+                        },
+                        "impedance": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/impedance"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Testing",
+                      "description": ""
+                    },
+                    "country_of_origin": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "iso_3166_1_alpha_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/country_of_origin/iso_3166_1_alpha_3"
+                        },
+                        "iso_3166_1_alpha_2": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/country_of_origin/iso_3166_1_alpha_2"
+                        },
+                        "nato_member": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/country_of_origin/nato_member"
+                        },
+                        "eu_member": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/country_of_origin/eu_member"
+                        }
+                      },
+                     "aliases": "",
+                     "name": "Country of Origin",
+                     "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
+                    },
+                    "conflict_resolution": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "order": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/order"
+                        },
+                        "oem_specification_sheet": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/oem_specification_sheet"
+                        },
+                        "assembly_specification_sheet": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/assembly_specification_sheet"
+                        },
+                        "drawing": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/drawing"
+                        },
+                        "ipc2581": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/ipc2581"
+                        },
+                        "odb": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/odb"
+                        },
+                        "gerber": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/gerber"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Conflict resolution",
+                      "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
                     }
                   }
                 }
@@ -1071,11 +1149,7 @@
                       "additionalProperties": false,
                       "properties": {
                         "copper_foil_roughness": {
-                          "oneOf": [
-                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
-                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
-                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
-                          ]
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
                         }
                       }
                     },
@@ -1603,6 +1677,84 @@
                      "aliases": "",
                      "name": "Standards and Requirements",
                      "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+                    },
+                    "testing": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "netlist": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/netlist"
+                        },
+                        "allow_generate_netlist": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/allow_generate_netlist"
+                        },
+                        "hipot": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/hipot"
+                        },
+                        "4_wire": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/4_wire"
+                        },
+                        "ist": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/ist"
+                        },
+                        "impedance": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/impedance"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Testing",
+                      "description": ""
+                    },
+                    "country_of_origin": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "iso_3166_1_alpha_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/country_of_origin/iso_3166_1_alpha_3"
+                        },
+                        "iso_3166_1_alpha_2": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/country_of_origin/iso_3166_1_alpha_2"
+                        },
+                        "nato_member": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/country_of_origin/nato_member"
+                        },
+                        "eu_member": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/country_of_origin/eu_member"
+                        }
+                      },
+                     "aliases": "",
+                     "name": "Country of Origin",
+                     "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
+                    },
+                    "conflict_resolution": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "order": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/order"
+                        },
+                        "oem_specification_sheet": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/oem_specification_sheet"
+                        },
+                        "assembly_specification_sheet": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/assembly_specification_sheet"
+                        },
+                        "drawing": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/drawing"
+                        },
+                        "ipc2581": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/ipc2581"
+                        },
+                        "odb": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/odb"
+                        },
+                        "gerber": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/gerber"
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Conflict resolution",
+                      "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
                     }
                   }
                 }
@@ -2677,6 +2829,94 @@
                      "aliases": "",
                      "name": "Standards and Requirements",
                      "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+                    },
+                    "testing": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "netlist": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "allow_generate_netlist": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "hipot": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "4_wire": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "ist": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "impedance": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Testing",
+                      "description": ""
+                    },
+                    "country_of_origin": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "iso_3166_1_alpha_3": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "iso_3166_1_alpha_2": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "nato_member": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "eu_member": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Country of Origin",
+                      "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
                     }
                   }
                 }
@@ -3763,6 +4003,152 @@
                      "aliases": "",
                      "name": "Standards and Requirements",
                      "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+                    },
+                    "testing": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "netlist": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "allow_generate_netlist": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "hipot": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "4_wire": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "ist": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "impedance": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Testing",
+                      "description": ""
+                    },
+                    "country_of_origin": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "iso_3166_1_alpha_3": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "iso_3166_1_alpha_2": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "nato_member": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "eu_member": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Country of Origin",
+                      "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
+                    },
+                    "conflict_resolution": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "order": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "oem_specification_sheet": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "assembly_specification_sheet": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "drawing": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "ipc2581": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "odb": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        },
+                        "gerber": {
+                          "anyOf": [
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                          ]
+                        }
+                      },
+                      "aliases": "",
+                      "name": "Conflict resolution",
+                      "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
                     }
                   }
                 }
@@ -4564,6 +4950,152 @@
                  "aliases": "",
                  "name": "Standards and Requirements",
                  "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+                },
+                "testing": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "netlist": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "allow_generate_netlist": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "hipot": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "4_wire": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "ist": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "impedance": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Testing",
+                  "description": ""
+                },
+                "country_of_origin": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "iso_3166_1_alpha_3": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "iso_3166_1_alpha_2": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "nato_member": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "eu_member": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Country of Origin",
+                  "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
+                },
+                "conflict_resolution": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "order": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "oem_specification_sheet": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "assembly_specification_sheet": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "drawing": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "ipc2581": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "odb": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    },
+                    "gerber": {
+                      "anyOf": [
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
+                        {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
+                      ]
+                    }
+                  },
+                  "aliases": "",
+                  "name": "Conflict resolution",
+                  "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
                 }
               }
             }

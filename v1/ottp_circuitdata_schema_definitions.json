@@ -938,6 +938,98 @@
           "uom": null,
           "description": "IPC-6018 Microwave End Product Board Inspection and Test."
         }
+      },
+      "testing": {
+        "netlist": {
+          "type": "boolean",
+          "uom": null,
+          "description": "100% Netlist testing according to IPC-D-356, ODB++ or IPC2581."
+        },
+        "allow_generate_netlist": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Allow Netlist to be generated from Gerber or other file format if needed."
+        },
+        "hipot": {
+          "type": "boolean",
+          "uom": null,
+          "description": " HiPot Test (Dielectric Withstanding Voltage Test)."
+        },
+        "4_wire": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Use 4 wired test"
+        },
+        "ist": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Use IST testing."
+        },
+        "impedance": {
+          "type": "string",
+          "enum": ["controlled", "calculated", "follow_stackup"],
+          "uom": null,
+          "description": ""
+        }
+      },
+      "country_of_origin": {
+        "iso_3166_1_alpha_3": {
+          "type": "string",
+          "uom": null,
+          "description": "A three letter string representation of the Country of origin according too ISO 3166-1."
+        },
+        "iso_3166_1_alpha_2": {
+          "type": "string",
+          "uom": null,
+          "description": "A two letter string representation of the Country of origin according too ISO 3166-1."
+        },
+        "nato_member": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates if the COO is a NATO member state"
+        },
+        "eu_member": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates if the COO is a European Union member state."
+        }
+      },
+      "conflict_resolution": {
+        "order": {
+          "type": "integer",
+          "uom": null,
+          "description": "Information provided on order level"
+        },
+        "oem_specification_sheet": {
+          "type": "integer",
+          "uom": null,
+          "description": "Information provided from the OEM in a PDF or other document format"
+        },
+        "assembly_specification_sheet": {
+          "type": "integer",
+          "uom": null,
+          "description": "Information provided from the assembly facility in a PDF or other document format"
+        },
+        "drawing": {
+          "type": "integer",
+          "uom": null,
+          "description": "Information in a drawing (if present)"
+        },
+        "ipc2581": {
+          "type": "integer",
+          "uom": null,
+          "description": "Information in an IPC-2581 file"
+        },
+        "odb": {
+          "type": "integer",
+          "uom": null,
+          "description": " Information in a ODB++ file."
+        },
+        "gerber": {
+          "type": "integer",
+          "uom": null,
+          "description": "Information in a Gerber format file"
+        }
       }
     }
   }
