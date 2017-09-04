@@ -965,7 +965,7 @@
                       "additionalProperties": false,
                       "properties": {
                         "ul": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ul"
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ul"
                         },
                         "c_ul": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/c_ul"
@@ -5493,7 +5493,7 @@
                   "aliases": "",
                   "name": "Additional Requirements",
                   "description": "This section is for all requirements that still has not been adapted to the standard or needs to be stated as a comment. It allows you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom -> additional section. Multiple elements allowed - to be added as a list."
-                }        
+                }
               }
             }
           },
