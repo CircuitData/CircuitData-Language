@@ -5236,12 +5236,12 @@
       "additional_requirements": {
         "aliases": "",
         "name": "Additional Requirements",
-        "description": "This section is for all requirements that still has not been adapted to the standard or needs to be stated as a comment. It allows you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom -> additional section. Multiple elements allowed - to be added as a list.",
+        "description": "This section is for all requirements that still has not been adapted to the standard or needs to be stated as a comment. It allows you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom -> additional_elements section. Multiple elements allowed - to be added as a list.",
         "type": "object",
         "tags": [{
           "tag": "any_name",
           "format": "string",
-          "description": "Must have a similar element in the custom -> additional",
+          "description": "Must have a similar element in the custom -> additional_elements",
           "in_profile_default": {
             "state": "forbidden"
           },

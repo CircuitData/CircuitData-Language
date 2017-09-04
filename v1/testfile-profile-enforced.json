@@ -11,9 +11,7 @@
         "printed_circuits_fabrication_data": {
           "version": "0.6",
           "rigid_conductive_layer": {
-            "count": "10.1...40.3",
-            "copper_foil_roughness": "S,L",
-            "copper_coverage_average": "4...12"
+            "copper_foil_roughness": "S,L"
           },
           "flexible_conductive_layer": {
             "copper_foil_roughness": "S,L"

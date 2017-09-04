@@ -6,7 +6,7 @@ if RUBY_VERSION.to_f < 2.3
 end
 
 
-$jsonschema = 'ottp_circuitdata_schema.json'
+$jsonschema = 'http://schema.circuitdata.org/v1/ottp_circuitdata_schema.json'
 
 def circuitdata_checker( productfile, checksfile=nil, validate_origins=true )
 

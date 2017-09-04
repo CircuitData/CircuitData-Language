@@ -43,7 +43,7 @@ This example shows how to specify how to set a company profile that forbids prod
 ```
 
 ## JSON schema
-JSON schema is available in the versions folder. To link to it, please use the raw link. The schema allows you to validate your OTTP file syntax. An example of how this is done in Ruby with the [json-schema GEM](https://github.com/ruby-json-schema/json-schema) below:
+JSON schema is available in at its [own site (schema.circuitdata.org)](http://schema.circuitdata.org) in version folders. To link to it, please use the raw link. The schema allows you to validate your OTTP file syntax. An example of how this is done in Ruby with the [json-schema GEM](https://github.com/ruby-json-schema/json-schema) below:
 
 ```
 ottp = '{
@@ -66,7 +66,7 @@ ottp = '{
   }
 }'
 
-puts JSON::Validator.validate!('https://raw.githubusercontent.com/elmatica/Open-Trade_Printed_Circuits_Fabrication_Data/master/v1/ottp_circuitdata_schema.json', ottp)
+puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdata_schema.json', ottp)
 ```
 
 ## abbreviations
@@ -211,7 +211,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*heating_operations* | integer | O | O | O | O | O | 
+*heating_operations* | integer | O | O | O | O | O |
 *top* | boolean | O | O | O | O | O | Indicates peelable mask presence/capability at top
 *bottom* | boolean | O | O | O | O | O | Indicates peelable mask presence/capability at bottom
 
