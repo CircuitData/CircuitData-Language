@@ -43,7 +43,7 @@ This example shows how to specify how to set a company profile that forbids prod
 ```
 
 ## JSON schema
-JSON schema is available in at its [own site (schema.circuitdata.org)](http://schema.circuitdata.org) in version folders. To link to it, please use the raw link. The schema allows you to validate your OTTP file syntax. An example of how this is done in Ruby with the [json-schema GEM](https://github.com/ruby-json-schema/json-schema) below:
+JSON schema is available in at its [own site (schema.circuitdata.org)](http://schema.circuitdata.org) in version folders. The schema allows you to validate your OTTP file syntax. An example of how this is done in Ruby with the [json-schema GEM](https://github.com/ruby-json-schema/json-schema) below:
 
 ```
 ottp = '{
@@ -77,17 +77,19 @@ Used in the tables below, they carry the following meaning:
 - "F": Forbidden
 
 ## Possible elements
-The name of the element as it is to be used in the file is included behind the title within the parenthesis, e.g. "soldermask". When a table of possible elements is present, you will find the following headers:
+The name of the element as it is to be used in the file is included behind the title within the parenthesis, e.g. "soldermask". When a table of possible elements is present, you will find the following headers (see above for structure and abbreviations):
 
 - "Data tag": The name of the elements
 - "Format": The format of the element (possible formats listed in the Open Trade Data Package format specification )
-- "P": When used in a Products part of the file (to give a specification) (see above for structure and abbreviations)
-- "PD": When used in a Profiles->Defaults part of the file (see above for structure and abbreviations)
-- "PE": When used in a Profiles->Enforced part of the file (see above for structure and abbreviations)
-- "PR": When used in a Profiles->Restricted part of the file (see above for structure and abbreviations)
-- "C": When used in a Capabilities part of the file (see above for structure and abbreviations)
+- "P": When used in a Products part of the file (to give a specification)
+- "PD": When used in a Profiles->Defaults part of the file, Possible formats are "Range", "Stringlist", "Integer" or "Float".
+- "PE": When used in a Profiles->Enforced part of the file, Possible formats are "Range", "Stringlist", "Integer" or "Float".
+- "PR": When used in a Profiles->Restricted part of the file, Possible formats are "Range", "Stringlist", "Integer" or "Float".
+- "C": When used in a Capabilities part of the file, Possible formats are "Range", "Stringlist", "Integer" or "Float".
 
 If the element have alternative names in everyday use, this is referenced as an "Alias" and stated just below the title.
+
+IMPORTANT: Any data in profiles or capabilities, "PD", "PE", "PR" or "C" must be in the formats "Range", "Stringlist", "Integer" or "Float".
 
 ### Stackup ("stackup")
 Aliases: "stack-up", "buildup", "build-up"
@@ -211,7 +213,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*heating_operations* | integer | O | O | O | O | O |
+*heating_operations* | integer | O | O | O | O | O | 
 *top* | boolean | O | O | O | O | O | Indicates peelable mask presence/capability at top
 *bottom* | boolean | O | O | O | O | O | Indicates peelable mask presence/capability at bottom
 
@@ -430,7 +432,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *type* | list | O | F | F | F | O | The type of holes.<br>Possible values are (string):<br>"through"<br>"blind"<br>"buried"<br>"back_drill"<br>
 *plated* | boolean | O | O | O | O | O | True if the holes are plated.
 *size* | float | O | F | F | F | O | The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list or as a capability.
-*tool_diameter* | boolean | O | F | F | F | O | If false, size indicated the hole diameter, if true the size indicates the tool diameter
+*tool_diameter* | boolean | O | F | F | F | O | If false, size indicates the hole diameter, if true the size indicates the tool diameter
 *layer_start* | integer | O | F | F | F | O | The layer where the hole starts, counted from the top, where top layer is 1.
 *layer_stop* | integer | O | F | F | F | O | The layer where the hole stops, counted from the top, where top layer is 1.
 *depth* | float | O | F | F | F | O | The depth of the hole in micrometer.
@@ -453,11 +455,11 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *add_tear_drops* | boolean | O | O | O | O | O | Adding Tear Drops.
 
 ### Additional Requirements ("additional_requirements")
-This section is for all requirements that still has not been adapted to the standard or needs to be stated as a comment. It allows you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom -> additional section. Multiple elements allowed - to be added as a list.
+This section is for all requirements that still has not been adapted to the standard or needs to be stated as a comment. It allows you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom -> additional_elements section. Multiple elements allowed - to be added as a list.
 
 Data tag | Format | P | PD | PE | PR | C | Description
 ---------|--------|---|----|----|----|---|--------------
-*any_name* | string | O | F | F | F | O | Must have a similar element in the custom -> additional
+*any_name* | string | O | F | F | F | O | Must have a similar element in the custom -> additional_elements
 
 
 ## Custom elements
@@ -472,7 +474,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *value* | string | O | F | F | F | O | If type is hex, the value needs to be a "#" + 6 hexadecimals (e.g. "#FFFFFF"). for "rgb" the format is "rgb(0, 255, 255)", for "cmyk" the format is "cmyk(100%, 0%, 0%, 0%)". The name is just a string.
 
 
-### Materials
+### Materials ("materials")
 #### Soldermasks
 Materials used as soldermask. Must be placed within a "printed_circuits_fabrication_data" element that also contains a version
 
@@ -483,7 +485,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *ipc-sm-840-class* | list | O | O | O | O | O | Soldermask to meet IPC SM 840 Class.
 *link* | string | O | O | O | O | O | The link to some url that gives more information or a reference to the product.
 
-#### Dielectrics
+#### Dielectrics ("dielectrics")
 Materials used as dielectrics/laminates. Must be placed within a "printed_circuits_fabrication_data" element that also contains a version
 
 Data tag | Format | P | PD | PE | PR | C | Description
@@ -508,7 +510,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *link* | string | O | O | O | O | O | The link to some url that gives more information or a reference to the product.
 *accept_equivalent* | boolean | O | O | O | O | O | Equivalent material to the one specified is OK to use as a replacement if true.
 
-#### Stiffeners
+#### Stiffeners ("stiffeners")
 The materials to be used as stiffener. Must be placed within a "printed_circuits_fabrication_data" element that also contains a version
 
 Data tag | Format | P | PD | PE | PR | C | Description
@@ -518,7 +520,7 @@ Data tag | Format | P | PD | PE | PR | C | Description
 *link* | string | O | O | O | O | O | The link to some url that gives more information or a reference to the product.
 
 
-## Additional elements
+## Additional elements ("additional_elements")
 
 Must have a similar element in specification -> additional_requirements
 

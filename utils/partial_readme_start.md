@@ -43,7 +43,7 @@ This example shows how to specify how to set a company profile that forbids prod
 ```
 
 ## JSON schema
-JSON schema is available in at its [own site (schema.circuitdata.org)](http://schema.circuitdata.org) in version folders. To link to it, please use the raw link. The schema allows you to validate your OTTP file syntax. An example of how this is done in Ruby with the [json-schema GEM](https://github.com/ruby-json-schema/json-schema) below:
+JSON schema is available in at its [own site (schema.circuitdata.org)](http://schema.circuitdata.org) in version folders. The schema allows you to validate your OTTP file syntax. An example of how this is done in Ruby with the [json-schema GEM](https://github.com/ruby-json-schema/json-schema) below:
 
 ```
 ottp = '{
@@ -77,14 +77,16 @@ Used in the tables below, they carry the following meaning:
 - "F": Forbidden
 
 ## Possible elements
-The name of the element as it is to be used in the file is included behind the title within the parenthesis, e.g. "soldermask". When a table of possible elements is present, you will find the following headers:
+The name of the element as it is to be used in the file is included behind the title within the parenthesis, e.g. "soldermask". When a table of possible elements is present, you will find the following headers (see above for structure and abbreviations):
 
 - "Data tag": The name of the elements
 - "Format": The format of the element (possible formats listed in the Open Trade Data Package format specification )
-- "P": When used in a Products part of the file (to give a specification) (see above for structure and abbreviations)
-- "PD": When used in a Profiles->Defaults part of the file (see above for structure and abbreviations)
-- "PE": When used in a Profiles->Enforced part of the file (see above for structure and abbreviations)
-- "PR": When used in a Profiles->Restricted part of the file (see above for structure and abbreviations)
-- "C": When used in a Capabilities part of the file (see above for structure and abbreviations)
+- "P": When used in a Products part of the file (to give a specification)
+- "PD": When used in a Profiles->Defaults part of the file, Possible formats are "Range", "Stringlist", "Integer" or "Float".
+- "PE": When used in a Profiles->Enforced part of the file, Possible formats are "Range", "Stringlist", "Integer" or "Float".
+- "PR": When used in a Profiles->Restricted part of the file, Possible formats are "Range", "Stringlist", "Integer" or "Float".
+- "C": When used in a Capabilities part of the file, Possible formats are "Range", "Stringlist", "Integer" or "Float".
 
 If the element have alternative names in everyday use, this is referenced as an "Alias" and stated just below the title.
+
+IMPORTANT: Any data in profiles or capabilities, "PD", "PE", "PR" or "C" must be in the formats "Range", "Stringlist", "Integer" or "Float".

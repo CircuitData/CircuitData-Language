@@ -28,7 +28,7 @@
                   "color": "green",
                   "material": "Standard LPI",
                   "allow_touchups": true,
-                  "layer_order": 1,
+                  "layer_order": 2,
                   "layer_name": "test"
                 }
               ],
@@ -37,14 +37,14 @@
                 "top": true,
                 "bottom": false,
                 "material": "test material",
-                "layer_order": 1,
+                "layer_order": 3,
                 "layer_name": "test"
               },
               "peelable_mask": {
                 "heating_operations": 12,
                 "top": true,
                 "bottom": false,
-                "layer_order": 1,
+                "layer_order": 4,
                 "layer_name": "test"
               }
             }
