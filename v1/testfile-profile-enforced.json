@@ -18,6 +18,9 @@
           },
           "peelable_mask": {
             "heating_operations": "10...20"
+          },
+          "legend": {
+            "color": "yellow"
           }
         }
       }

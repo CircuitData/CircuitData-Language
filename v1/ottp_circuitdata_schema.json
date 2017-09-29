@@ -857,7 +857,7 @@
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_bottom"
                         },
                         "counterboring_top": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ecounterboring_top"
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_top"
                         },
                         "counterboring_bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_bottom"
@@ -1001,7 +1001,7 @@
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/nadcap"
                         },
                         "rw_en45545_2_2013": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/rw_en45545_2_2013"
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_en45545_2_2013"
                         },
                         "rw_nf_f_16_101": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nf_f_16_101"
@@ -1018,8 +1018,8 @@
                         "ipc_6010_compliance_level": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_compliance_level"
                         },
-                        "pc_6010_copper_plating_thickness_level": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/pc_6010_copper_plating_thickness_level"
+                        "ipc_6010_copper_plating_thickness_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_copper_plating_thickness_level"
                         },
                         "ipc_6010_annular_ring_level": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_annular_ring_level"
@@ -1588,7 +1588,7 @@
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_bottom"
                         },
                         "counterboring_top": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ecounterboring_top"
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_top"
                         },
                         "counterboring_bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_bottom"
@@ -1687,7 +1687,7 @@
                       "additionalProperties": false,
                       "properties": {
                         "ul": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ul"
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ul"
                         },
                         "c_ul": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/c_ul"
@@ -1723,7 +1723,7 @@
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/nadcap"
                         },
                         "rw_en45545_2_2013": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/rw_en45545_2_2013"
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_en45545_2_2013"
                         },
                         "rw_nf_f_16_101": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nf_f_16_101"
@@ -1740,8 +1740,8 @@
                         "ipc_6010_compliance_level": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_compliance_level"
                         },
-                        "pc_6010_copper_plating_thickness_level": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/pc_6010_copper_plating_thickness_level"
+                        "ipc_6010_copper_plating_thickness_level": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_copper_plating_thickness_level"
                         },
                         "ipc_6010_annular_ring_level": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_annular_ring_level"
@@ -2900,7 +2900,7 @@
                             {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
                           ]
                         },
-                        "pc_6010_copper_plating_thickness_level": {
+                        "ipc_6010_copper_plating_thickness_level": {
                           "anyOf": [
                             {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
                             {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
@@ -4130,7 +4130,7 @@
                             {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
                           ]
                         },
-                        "pc_6010_copper_plating_thickness_level": {
+                        "ipc_6010_copper_plating_thickness_level": {
                           "anyOf": [
                             {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
                             {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
@@ -4999,7 +4999,7 @@
                       "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/depth_routing_bottom"
                     },
                     "counterboring_top": {
-                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ecounterboring_top"
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_top"
                     },
                     "counterboring_bottom": {
                       "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/counterboring_bottom"
@@ -5038,7 +5038,7 @@
                       "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/selective_plated_pads/present"
                     },
                     "layers": {
-                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/layers"
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/selective_plated_pads/layers"
                     }
                   },
                   "aliases": "selective hard gold",
@@ -5107,7 +5107,7 @@
                   "additionalProperties": false,
                   "properties": {
                     "ul": {
-                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/ul"
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ul"
                     },
                     "c_ul": {
                       "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/c_ul"
@@ -5143,7 +5143,7 @@
                       "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/nadcap"
                     },
                     "rw_en45545_2_2013": {
-                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/rw_en45545_2_2013"
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_en45545_2_2013"
                     },
                     "rw_nf_f_16_101": {
                       "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/rw_nf_f_16_101"
@@ -5160,8 +5160,8 @@
                     "ipc_6010_compliance_level": {
                       "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_compliance_level"
                     },
-                    "pc_6010_copper_plating_thickness_level": {
-                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/pc_6010_copper_plating_thickness_level"
+                    "ipc_6010_copper_plating_thickness_level": {
+                      "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_copper_plating_thickness_level"
                     },
                     "ipc_6010_annular_ring_level": {
                       "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6010_annular_ring_level"
