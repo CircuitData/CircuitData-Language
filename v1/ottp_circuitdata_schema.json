@@ -3123,11 +3123,7 @@
                       "additionalProperties": false,
                       "properties": {
                         "copper_foil_roughness": {
-                          "anyOf": [
-                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/range"},
-                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/number"},
-                            {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/string"}
-                          ]
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
                         }
                       }
                     },

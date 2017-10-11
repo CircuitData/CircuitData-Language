@@ -201,27 +201,32 @@
     "elements": {
       "conductive_layer": {
         "count": {
-          "type": "integer",
+          "type": "number",
           "uom": null,
-          "description": "The number of conductive layers."
+          "description": "The number of conductive layers.",
+          "minimum": 1,
+          "maximum": 100,
+          "multipleOf": 1.0
         },
         "minimum_internal_track_width": {
           "type": "number",
-          "uom": ["um"],
+          "minimum": ,
+          "uom": ["mm"],
           "description": "The minimum nominal width of conductors on internal/unplated layers (minimum track)."
         },
         "minimum_external_track_width": {
           "type": "number",
-          "uom": ["um"],
+          "uom": ["mm"],
           "description": "The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here."
         },
         "minimum_internal_spacing_width": {
           "type": "number",
-          "uom": ["um"],
+          "uom": ["mm"],
           "description": "The minimum gap between two conductors on the internal layers."
         },
         "minimum_external_spacing_width": {
           "type": "number",
+          "uom": ["mm"],
           "description": "The minimum gap between two conductors on the external layers. If only one minimum gap is present, is should be here."
         },
         "external_base_copper_thickness": {
@@ -239,7 +244,7 @@
         "copper_foil_roughness": {
           "type": "string",
           "enum": ["S", "L", "V"],
-          "uom": ["um"],
+          "uom": null,
           "description": "The roughness of the copper foil."
         },
         "copper_coverage_average": {
