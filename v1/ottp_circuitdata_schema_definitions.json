@@ -41,7 +41,7 @@
           }
         },
         "aliases": "",
-        "name": "Soldermasks",
+        "descriptive_name": "Soldermasks",
         "description": "Materials used as soldermask"
       },
       "dielectrics": {
@@ -146,7 +146,7 @@
           }
         },
         "aliases": "",
-        "name": "Dielectrics",
+        "descriptive_name": "Dielectrics",
         "description": "Materials used as dielectrics/laminates"
       },
       "stiffeners": {
@@ -154,7 +154,7 @@
         "additionalProperties": false,
         "required": ["name"],
         "properties": {
-          "name": {
+          "descriptive_name": {
             "type": "string",
             "uom": null,
             "description": "The name of the Soldermask. Use the official name or some name as close to it as possible"
@@ -171,7 +171,7 @@
           }
         },
         "aliases": "",
-        "name": "Stiffener",
+        "descriptive_name": "Stiffener",
         "uom": null,
         "description": "The materials to be used as stiffener"
       }
@@ -274,6 +274,106 @@
           "uom": ["%"],
           "description": "The average copper coverage of the board"
         }
+      },
+      "dielectric": {
+        "name": {
+          "type": "string",
+          "uom": null,
+          "description": "The name of the Laminate. Use the official name or some name as close to it as possible."
+        },
+        "manufacturer": {
+          "type": "string",
+          "uom": null,
+          "description": "The name of the manufacturer"
+        },
+        "ipc_4101_sheet": {
+          "type": "integer",
+          "uom": null,
+          "description": "The reference sheet number of the IPC 4101 Standard."
+        },
+        "ipc_4103_sheet": {
+          "type": "integer",
+          "uom": null,
+          "description": "The reference sheet number of the IPC 4103 Standard."
+        },
+        "ipc_4204_sheet": {
+          "type": "integer",
+          "uom": null,
+          "description": "The reference sheet number of the IPC 4204 Standard."
+        },
+        "tg_min": {
+          "type": "integer",
+          "uom": null,
+          "description": "The minimum Glass Transition Temperature (Tg) required."
+        },
+        "tg_range_from": {
+          "type": "integer",
+          "uom": null,
+          "description": "The Glass Transition Temperature (Tg) range starts at."
+        },
+        "tg_range_to": {
+          "type": "integer",
+          "uom": null,
+          "description": "The Glass Transition Temperature (Tg) range ands at."
+        },
+        "td_min": {
+          "type": "integer",
+          "uom": null,
+          "description": "The minimum required temperature at which a base laminate material experiences an established percentage of weight loss using Thermograv imetric Analysis (TGA)."
+        },
+        "td_range_from": {
+          "type": "integer",
+          "uom": null,
+          "description": "The Td range starts at."
+        },
+        "td_range_to": {
+          "type": "integer",
+          "uom": null,
+          "description": "The Td range stops at."
+        },
+        "halogen_free": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Indicates the material is material free or is required to be"
+        },
+        "rw_en45545_2_2013": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Railway Europe EN45545-2:2013 compatible"
+        },
+        "rw_nf_f_16_101": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Railway France NF F 16-101 compatible"
+        },
+        "rw_uni_cei_11170_3": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Railway Italy UNI CEI 11170-3 compatible."
+        },
+        "rw_nfpa_130": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Railway USA NFPA 130 compatible."
+        },
+        "ul": {
+          "type": "boolean",
+          "uom": null,
+          "description": "UL compatible."
+        },
+        "link": {
+          "type": "string",
+          "uom": null,
+          "description": "The link to some url that gives more information or a reference to the product."
+        },
+        "accept_equivalent": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Equivalent material to the one specified is OK to use as a replacement if true."
+        },
+        "aliases": "",
+        "descriptive_name": "Dielectrics",
+        "description": "Materials used as dielectrics/laminates"
       },
       "final_finish": {
         "finish": {

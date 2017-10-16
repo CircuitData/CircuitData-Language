@@ -567,7 +567,7 @@
                         "required": ["name"],
                         "properties": {
                           "name": {
-                            "type": "string"
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/dielectric/name"
                           }
                         },
                         "aliases": "Laminate",
