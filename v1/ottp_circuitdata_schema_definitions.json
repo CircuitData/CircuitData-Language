@@ -29,7 +29,7 @@
             "description": "The name of the manufacturer"
           },
           "ipc-sm-840-class": {
-            "type": "list",
+            "type": "string",
             "enum": ["T", "H"],
             "uom": null,
             "description": "Soldermask to meet IPC SM 840 Class."
@@ -180,12 +180,30 @@
       "thickness_min_micron": {
         "type": "number",
         "uom": ["um"],
-        "description": "The minimum thickness in micrometer."
+        "description": "The minimum thickness."
       },
       "thickness_max_micron": {
         "type": "number",
         "uom": ["um"],
-        "description": "The maximum thickness in micrometer."
+        "description": "The maximum thickness."
+      },
+      "presence_top_boolean": {
+        "type": "boolean",
+        "uom": null,
+        "description": "Indicates presence/capability on top"
+      },
+      "presence_bottom_boolean": {
+        "type": "boolean",
+        "uom": null,
+        "description": "Indicates presence/capability at bottom"
+      },
+      "numeric_single_or_range": {
+        "type": "string",
+        "pattern": "^[-+]?([0-9]*\\.[0-9]+|[0-9]+)$|^([0-9]*|[0-9].[0-9]*)\\.\\.\\.([0-9]|[0-9].[0-9]*)$"
+      },
+      "boolean_true_false_or_both": {
+        "type": "string",
+        "pattern": "^[t,T][r,R][u,U][e,E]$|^[f,F][a,A][l,L][s,S][e,E]$|^[t,T][r,R][u,U][e,E],.[f,F][a,A][l,L][s,S][e,E]$|^[f,F][a,A][l,L][s,S][e,E],.[t,T][r,R][u,U][e,E]$"
       },
       "range": {
         "type": "string",
@@ -210,7 +228,6 @@
         },
         "minimum_internal_track_width": {
           "type": "number",
-          "minimum": ,
           "uom": ["mm"],
           "description": "The minimum nominal width of conductors on internal/unplated layers (minimum track)."
         },
@@ -233,37 +250,61 @@
           "type": "number",
           "enum": [5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1],
           "uom": ["um"],
-          "description": "Finished base copper thickness following IPC Class on the up to two external layers in micrometer."
+          "description": "Finished base copper thickness following IPC Class on the up to two external layers."
         },
         "internal_base_copper_thickness": {
           "type": "number",
           "enum": [5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1],
           "uom": ["um"],
-          "description": "Finished base copper thickness following IPC Class on the internal layers in micrometer."
+          "description": "Finished base copper thickness following IPC Class on the internal layers."
         },
         "copper_foil_roughness": {
           "type": "string",
           "enum": ["S", "L", "V"],
+          "enum_description": {
+            "S": "Standard profile",
+            "L": "Low profile",
+            "V": "Very low profile"
+          },
           "uom": null,
           "description": "The roughness of the copper foil."
         },
         "copper_coverage_average": {
           "type": "number",
           "uom": ["%"],
-          "description": "The average copper coverage of the board. UoM is percentage"
+          "description": "The average copper coverage of the board"
         }
       },
       "final_finish": {
         "finish": {
           "type": "string",
           "enum": ["none", "c_bare_copper", "isn", "iag", "enig", "enepig", "osp", "ht_osp", "g", "GS", "t_fused", "tlu_unfused", "dig", "gwb-1_ultrasonic", "gwb-2-thermosonic", "s_hasl", "b1_lfhasl"],
+          "enum_description": {
+            "none": "No final finish should be used",
+            "c_bare_copper": "AABUS",
+            "isn": "IPC-4554 Immersion Tin",
+            "iag": "IPC-4553 Immersion Silver",
+            "enig": "IPC-4552 Immersion Gold",
+            "enepig": "IPC-4556 ENEPIG",
+            "osp": "J-STD-003 Organic Solderability Preservative",
+            "ht_osp": "J-STD-003 High Temperature OSP",
+            "g": "ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered",
+            "GS": "J-STD-003 Gold Electroplate on areas to be soldered",
+            "t_fused": "J-STD-003 Electrodeposited Tin-Lead (fused)",
+            "tlu_unfused": "J-STD-003 Electrodeposited Tin-Lead Unfused",
+            "dig": "J-STD-003 Direct Immersion Gold (Solderable Surface)",
+            "gwb-1_ultrasonic": "ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic)",
+            "gwb-2-thermosonic": "ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic)",
+            "s_hasl": "J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL)",
+            "b1_lfhasl": "J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL)"
+          },
           "uom": null,
           "description": "The material/method/surface to be used in the finish."
         },
         "area": {
           "type": "number",
           "uom": ["dm2"],
-          "description": "The area that the finish will cover, in square decimeter."
+          "description": "The area that the finish will cover"
         }
       },
       "soldermask": {
@@ -278,30 +319,10 @@
           "uom": null,
           "description": "The finish of the soldermask."
         },
-        "min_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The minimum thickness of the soldermask."
-        },
-        "max_thickness": {
-          "type": "number",
-          "uom": ["um"],
-          "description": "The maximum thickness of the soldermask."
-        },
         "material": {
           "type": "string",
           "uom": null,
           "description": "The name of a material that appears in the materials section"
-        },
-        "top": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates soldermask presence/capability at top"
-        },
-        "bottom": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates soldermask presence/capability at bottom"
         },
         "allow_touchups": {
           "type": "boolean",
@@ -314,16 +335,6 @@
           "type": "string",
           "uom": null,
           "description": "This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done custom -> colors section."
-          },
-        "top": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates legend presence/capability at top"
-        },
-        "bottom": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates legend presence/capability at bottom"
         }
       },
       "stiffener": {
@@ -355,16 +366,6 @@
           "uom": null,
           "description": "The total thickness of the coverlay"
         },
-        "top": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates coverlay presence/capability at top"
-        },
-        "bottom": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates coverlay presence/capability at bottom"
-        },
         "material": {
           "type": "string",
           "uom": null,
@@ -376,16 +377,6 @@
           "type": "integer",
           "uom": null,
           "description": ""
-        },
-        "top": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates peelable mask presence/capability at top"
-        },
-        "bottom": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates peelable mask presence/capability at bottom"
         }
       },
       "kapton_tape": {
@@ -393,40 +384,6 @@
           "type": "boolean",
           "uom": null,
           "description": "If alternative to DuPont™ Kapton® HN general-purpose film can be used"
-        },
-        "top": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates kapton tape presence/capability at top"
-        },
-        "bottom": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates kapton tape presence/capability at top"
-        }
-      },
-      "conductive_carbon_print": {
-        "top": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates Conductive Carbon Print presence/capability at top"
-        },
-        "bottom": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates Conductive Carbon Print presence/capability at bottom"
-        }
-      },
-      "silver_print": {
-        "top": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates silver print presence/capability at top"
-        },
-        "bottom": {
-          "type": "boolean",
-          "uom": null,
-          "description": "Indicates silver print presence/capability at bottom"
         }
       },
       "inner_packaging": {
@@ -635,34 +592,6 @@
           "description": "The weight of the array measured in grams."
         }
       },
-      "inner_packaging": {
-        "type_of_bag": {
-          "type": "string",
-          "enum": ["a", "b", "c", "d"],
-          "uom": null,
-          "description": "The material of the bag to be used"
-        },
-        "hic": {
-          "type": "boolean",
-          "uom": null,
-          "description": "True to include a Humidity Indicator Card (HIC), False to not"
-        },
-        "esd": {
-          "type": "boolean",
-          "uom": null,
-          "description": "True to indicate that packaging for ESD-sensitive required."
-        },
-        "desiccant": {
-          "type": "boolean",
-          "uom": null,
-          "description": "True to indicate that a desiccant material is required."
-        },
-        "vacuum": {
-          "type": "boolean",
-          "uom": null,
-          "description": "True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed."
-        }
-      },
       "mechanical": {
         "edge_bevelling": {
           "type": "boolean",
@@ -784,6 +713,9 @@
         },
         "standards": {
           "type": "array",
+          "items": {
+            "type": "string"
+          },
           "uom": null,
           "description": "Possible values are the ones listed in the subelement \"standards\" but typical will be \"ul\" and \"rohs\". Separate by comma."
         },
@@ -930,35 +862,35 @@
           "type": "string",
           "enum": ["1", "2", "3", "3A", "3S", "3M"],
           "uom": null,
-          "description": "Requirements according to IPC 6012 class."
+          "description": "Requirements according to IPC 6012 class"
         },
         "ipc_6013_class": {
           "type": "string",
           "enum": ["1", "2", "3"],
           "uom": null,
-          "description": "Requirements according to IPC 6013 for flexible or rigid-flex boards."
+          "description": "Requirements according to IPC 6013 for flexible or rigid-flex boards"
         },
-        "ipc_6018":{
+        "ipc_6018": {
           "type": "boolean",
           "uom": null,
-          "description": "IPC-6018 Microwave End Product Board Inspection and Test."
+          "description": "IPC-6018 Microwave End Product Board Inspection and Test"
         }
       },
       "testing": {
         "netlist": {
           "type": "boolean",
           "uom": null,
-          "description": "100% Netlist testing according to IPC-D-356, ODB++ or IPC2581."
+          "description": "100% Netlist testing according to IPC-D-356, ODB++ or IPC2581"
         },
         "allow_generate_netlist": {
           "type": "boolean",
           "uom": null,
-          "description": "Allow Netlist to be generated from Gerber or other file format if needed."
+          "description": "Allow Netlist to be generated from Gerber or other file format if needed"
         },
         "hipot": {
           "type": "boolean",
           "uom": null,
-          "description": " HiPot Test (Dielectric Withstanding Voltage Test)."
+          "description": "HiPot Test (Dielectric Withstanding Voltage Test)"
         },
         "4_wire": {
           "type": "boolean",

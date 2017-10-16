@@ -68,12 +68,11 @@ ottp = '{
 
 puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdata_schema.json', ottp)
 ```
-
-## Elements and tags
 [stackup](#stackup)
 * specification_level
 * file_name
 * specified
+
 [rigid_conductive_layer](#rigid_conductive_layer)
 * count
 * minimum_internal_track_width
@@ -84,6 +83,7 @@ puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdat
 * internal_base_copper_thickness
 * copper_foil_roughness
 * copper_coverage_average
+
 [flexible_conductive_layer](#flexible_conductive_layer)
 * count
 * minimum_internal_track_width
@@ -94,43 +94,55 @@ puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdat
 * internal_base_copper_thickness
 * copper_foil_roughness
 * copper_coverage_average
+
 [final_finish](#final_finish)
+
 [dielectric](#dielectric)
+
 [soldermask](#soldermask)
+
 [legend](#legend)
 * color
 * top
 * bottom
+
 [stiffener](#stiffener)
 * size
 * placement
 * thickness
 * material
+
 [coverlay](#coverlay)
 * total_thickness
 * top
 * bottom
 * material
+
 [peelable_mask](#peelable_mask)
 * heating_operations
 * top
 * bottom
+
 [kapton_tape](#kapton_tape)
 * accept_equivalent
 * top
 * bottom
+
 [conductive_carbon_print](#conductive_carbon_print)
 * top
 * bottom
+
 [silver_print](#silver_print)
 * top
 * bottom
+
 [inner_packaging](#inner_packaging)
 * type_of_bag
 * hic
 * esd
 * desiccant
 * vacuum
+
 [via_protection](#via_protection)
 * type_1
 * type_2
@@ -141,10 +153,12 @@ puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdat
 * type_6a
 * type_6b
 * type_7
+
 [board](#board)
 * size_x
 * size_y
 * thickness
+
 [array](#array)
 * size_x
 * size_y
@@ -168,6 +182,7 @@ puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdat
 * x_outs_max_percentage_on_array
 * transplant_board_allowed
 * weight
+
 [mechanical](#mechanical)
 * edge_bevelling
 * depth_routing_top
@@ -181,15 +196,18 @@ puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdat
 * plated_slots
 * plated_castellated_holes
 * coin_attachment
+
 [selective_plated_pads](#selective_plated_pads)
 * present
 * layers
+
 [hard_gold_edge_connectors](#hard_gold_edge_connectors)
 * present
 * thickness
 * thickness_other
 * area
 * layers
+
 [markings](#markings)
 * date_code
 * placement
@@ -199,6 +217,7 @@ puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdat
 * serial_number_format
 * serial_number_start
 * serial_number_increase_by
+
 [standards](#standards)
 * ul
 * c_ul
@@ -225,6 +244,7 @@ puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdat
 * ipc_6012_class
 * ipc_6013_class
 * ipc_6018
+
 [testing](#testing)
 * netlist
 * allow_generate_netlist
@@ -232,11 +252,13 @@ puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdat
 * 4_wire
 * ist
 * impedance
+
 [country_of_origin](#country_of_origin)
 * iso_3166_1_alpha_3
 * iso_3166_1_alpha_2
 * nato_member
 * eu_member
+
 [conflict_resolution](#conflict_resolution)
 * order
 * oem_specification_sheet
@@ -245,14 +267,18 @@ puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdat
 * ipc2581
 * odb
 * gerber
+
 [holes](#holes)
+
 [allowed_modifications](#allowed_modifications)
 * dead_pad_removal
 * add_copper_balancing
 * add_copper_balancing_on_array
 * add_tear_drops
+
 [additional_requirements](#additional_requirements)
 * any_name
+
 ### stackup
 Name: Stackup
 Aliases: stack-up, buildup, build-up
