@@ -1,0 +1,39 @@
+{
+  "open_trade_transfer_package": {
+    "version": "1.0",
+    "information": {
+      "company": "Example Company",
+      "created": "2017-10-15T09:49:37+02:00",
+      "updated": "2017-10-15T09:49:37+02:00"
+    },
+    "products": {
+      "testproduct": {
+        "printed_circuits_fabrication_data": {
+          "version": "1.0",
+          "board": {
+            "size_x": 150,
+            "size_y": 100,
+            "thickness": 1.6
+          },
+          "array": {
+            "size_x": 470,
+            "size_y": 320,
+            "boards_x": 3,
+            "boards_y": 3,
+            "border_left": 5,
+            "border_right": 5,
+            "border_top": 5,
+            "border_bottom": 5,
+            "board_spacing_x": 5,
+            "board_spacing_y": 5,
+            "fiducials_number": 3,
+            "fiducials_size": 3,
+            "fiducials_shape": "circle",
+            "breakaway_method": "routing",
+            "mouse_bites": true
+          }
+        }
+      }
+    }
+  }
+}

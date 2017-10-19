@@ -47,16 +47,10 @@
                       "required": ["specification_level"],
                       "properties": {
                         "specification_level": {
-                          "type": "string",
-                          "enum": ["free", "separate_file", "specified"],
-                          "uom": null,
-                          "description": "The stack up of this board"
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stackup/specification_level"
                         },
                         "file_name": {
-                          "type": "string",
-                          "format": "uri",
-                          "uom": null,
-                          "description": "The URI of the file that specifies the stackup. Either as a path witin a project compressed file (ZIP) or as a link"
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stackup/file_name"
                         },
                         "specified": {
                           "type": "object",
@@ -88,6 +82,9 @@
                                 },
                                 "copper_foil_roughness": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                                },
+                                "copper_foil_type": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_type"
                                 },
                                 "copper_coverage_average": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average"
@@ -125,6 +122,9 @@
                                 },
                                 "copper_foil_roughness": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                                },
+                                "copper_foil_type": {
+                                  "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_type"
                                 },
                                 "copper_coverage_average": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average"
@@ -192,10 +192,7 @@
                                   "layer_name": {
                                     "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
                                   }
-                                },
-                                "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
-                                "name": "Final Finish",
-                                "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                                }
                               }
                             },
                             "dielectric": {
@@ -214,10 +211,7 @@
                                   "layer_name": {
                                     "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
                                   }
-                                },
-                                "aliases": "Laminate",
-                                "name": "Dielectric",
-                                "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key. This element is a list and can contain several items"
+                                }
                               }
                             },
                             "soldermask": {
@@ -251,10 +245,7 @@
                                   "layer_name": {
                                     "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
                                   }
-                                },
-                                "aliases": "solder mask, sm, solder resist, green mask",
-                                "name": "Soldermask",
-                                "description": "A list of final soldermasks, can be more than one"
+                                }
                               }
                             },
                             "legend": {
@@ -277,10 +268,7 @@
                                 "layer_name": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
                                 }
-                              },
-                              "aliases": "silk screen, silkscreen, ink, ident",
-                              "name": "Legend",
-                              "description": "The legend to be used on the board"
+                              }
                             },
                             "stiffener": {
                               "type": "object",
@@ -305,10 +293,7 @@
                                 "layer_name": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
                                 }
-                              },
-                              "aliases": "support",
-                              "name": "Stiffener",
-                              "description": "Stiffener in flexible boards"
+                              }
                             },
                             "coverlay": {
                               "type": "object",
@@ -333,10 +318,7 @@
                                 "layer_name": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
                                 }
-                              },
-                              "aliases": "",
-                              "name": "CoverLay",
-                              "description": ""
+                              }
                             },
                             "peelable_mask": {
                               "type": "object",
@@ -358,10 +340,7 @@
                                 "layer_name": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
                                 }
-                              },
-                              "aliases": "",
-                              "name": "Peelable mask",
-                              "description": ""
+                              }
                             },
                             "kapton_tape": {
                               "type": "object",
@@ -383,10 +362,7 @@
                                 "layer_name": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
                                 }
-                              },
-                              "aliases": "",
-                              "name": "Kapton tape",
-                              "description": ""
+                              }
                             },
                             "conductive_carbon_print": {
                               "type": "object",
@@ -405,10 +381,7 @@
                                 "layer_name": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
                                 }
-                              },
-                              "aliases": "",
-                              "name": "Conductive carbon print",
-                              "description": ""
+                              }
                             },
                             "silver_print": {
                               "type": "object",
@@ -427,17 +400,14 @@
                                 "layer_name": {
                                   "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/stackup_specific/layer_name"
                                 }
-                              },
-                              "aliases": "",
-                              "name": "Silver print tape",
-                              "description": ""
+                              }
                             }
                           }
                         }
                       },
                       "aliases": "stack-up, buildup, build-up",
                       "name": "Stackup",
-                      "description": "The stackup of the board: Free stackup (supplier to choose), specified in a separate file or specified in this file. Can also include the stackup itself."
+                      "description": "The stackup of the board. Can also include the stackup itself in the \"specified\" element."
                     },
                     "rigid_conductive_layer": {
                       "type": "object",
@@ -466,6 +436,9 @@
                         },
                         "copper_foil_roughness": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        },
+                        "copper_foil_type": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_type"
                         },
                         "copper_coverage_average": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average"
@@ -499,6 +472,9 @@
                         },
                         "copper_foil_roughness": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        },
+                        "copper_foil_type": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_type"
                         },
                         "copper_coverage_average": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_coverage_average"
@@ -667,9 +643,9 @@
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material"
                         }
                       },
-                      "aliases": "",
+                      "aliases": "coverfilm",
                       "name": "CoverLay",
-                      "description": ""
+                      "description": "The coverlay on flexible boards"
                     },
                     "peelable_mask": {
                       "type": "object",
@@ -685,9 +661,9 @@
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
                       },
-                      "aliases": "",
+                      "aliases": "peelable solder mask, strippable mask, blue-mask",
                       "name": "Peelable mask",
-                      "description": ""
+                      "description": "Peelable solder mask that are removed after processing"
                     },
                     "kapton_tape": {
                       "type": "object",
@@ -705,7 +681,7 @@
                       },
                       "aliases": "",
                       "name": "Kapton tape",
-                      "description": ""
+                      "description": "Kapton (polyimide) tape suitable for fixing, masking and sealing"
                     },
                     "conductive_carbon_print": {
                       "type": "object",
@@ -1086,7 +1062,7 @@
                       },
                       "aliases": "",
                       "name": "Standards and Requirements",
-                      "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+                      "description": "A list of standards that applies to the printed circuit board industry"
                     },
                     "testing": {
                       "type": "object",
@@ -1113,7 +1089,7 @@
                       },
                       "aliases": "",
                       "name": "Testing",
-                      "description": ""
+                      "description": "The tests that are to be performed"
                     },
                     "country_of_origin": {
                       "type": "object",
@@ -1282,6 +1258,9 @@
                       "properties": {
                         "copper_foil_roughness": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        },
+                        "copper_foil_type": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_type"
                         }
                       }
                     },
@@ -1291,6 +1270,9 @@
                       "properties": {
                         "copper_foil_roughness": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        },
+                        "copper_foil_type": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_type"
                         }
                       }
                     },
@@ -1339,26 +1321,54 @@
                           "nickel_thickness_max": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
                           }
-                        },
-                        "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
-                        "name": "Final Finish",
-                        "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                        }
                       }
                     },
                     "dielectric": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "required": ["name"],
-                        "properties": {
-                          "name": {
-                            "type": "string"
-                          }
+                      "type": "object",
+                      "properties": {
+                        "ipc_4101_sheet": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ipc_4101_sheet"
                         },
-                        "aliases": "Laminate",
-                        "name": "Dielectric",
-                        "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key. This element is a list and can contain several items"
+                        "ipc_4103_sheet": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ipc_4103_sheet"
+                        },
+                        "ipc_4204_sheet": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ipc_4204_sheet"
+                        },
+                        "tg_min": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/tg_min"
+                        },
+                        "tg_range_from": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/tg_range_from"
+                        },
+                        "tg_range_to": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/tg_range_to"
+                        },
+                        "td_min": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/td_min"
+                        },
+                        "td_range_from": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/td_range_to"
+                        },
+                        "halogen_free": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/halogen_free"
+                        },
+                        "rw_en45545_2_2013": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/rw_nf_f_16_101"
+                        },
+                        "rw_uni_cei_11170_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/rw_uni_cei_11170_3"
+                        },
+                        "rw_nfpa_130": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/rw_nfpa_130"
+                        },
+                        "ul": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ul"
+                        },
+                        "accept_equivalent": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/accept_equivalent"
+                        }
                       }
                     },
                     "soldermask": {
@@ -1391,10 +1401,7 @@
                           "allow_touchups": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups"
                           }
-                        },
-                        "aliases": "solder mask, sm, solder resist, green mask",
-                        "name": "Soldermask",
-                        "description": "A list of final soldermasks, can be more than one"
+                        }
                       }
                     },
                     "legend": {
@@ -1410,10 +1417,7 @@
                         "bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
-                      },
-                      "aliases": "silk screen, silkscreen, ink, ident",
-                      "name": "Legend",
-                      "description": "The legend to be used on the board"
+                      }
                     },
                     "stiffener": {
                       "type": "object",
@@ -1431,10 +1435,7 @@
                         "material": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material"
                         }
-                      },
-                      "aliases": "support",
-                      "name": "Stiffener",
-                      "description": "Stiffener in flexible boards"
+                      }
                     },
                     "coverlay": {
                       "type": "object",
@@ -1452,10 +1453,7 @@
                         "material": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material"
                         }
-                      },
-                      "aliases": "",
-                      "name": "CoverLay",
-                      "description": ""
+                      }
                     },
                     "peelable_mask": {
                       "type": "object",
@@ -1470,10 +1468,7 @@
                         "bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Peelable mask",
-                      "description": ""
+                      }
                     },
                     "kapton_tape": {
                       "type": "object",
@@ -1488,10 +1483,7 @@
                         "bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Kapton tape",
-                      "description": ""
+                      }
                     },
                     "conductive_carbon_print": {
                       "type": "object",
@@ -1503,10 +1495,7 @@
                         "bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Conductive carbon print",
-                      "description": ""
+                      }
                     },
                     "silver_print": {
                       "type": "object",
@@ -1518,10 +1507,7 @@
                         "bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Silver print tape",
-                      "description": ""
+                      }
                     },
                     "inner_packaging": {
                       "type": "object",
@@ -1542,10 +1528,7 @@
                         "vacuum": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/vacuum"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Inner Packaging",
-                      "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
+                      }
                     },
                     "via_protection": {
                       "type": "object",
@@ -1578,10 +1561,7 @@
                         "type_7": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_7"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Via Protection",
-                      "description": "The via/hole protection according to IPC 4761"
+                      }
                     },
                     "board": {
                       "type": "object",
@@ -1590,10 +1570,7 @@
                         "thickness": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/thickness"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Board",
-                      "description": "The physical description of the board"
+                      }
                     },
                     "array": {
                       "type": "object",
@@ -1689,10 +1666,7 @@
                         "coin_attachment": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/coin_attachment"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Mechanical processes",
-                      "description": "Mechanical processes in the manufacturing"
+                      }
                     },
                     "selective_plated_pads": {
                       "type": "object",
@@ -1701,10 +1675,7 @@
                         "present": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/selective_plated_pads/present"
                         }
-                      },
-                      "aliases": "selective hard gold",
-                      "name": "Selective plated pads",
-                      "description": "Selective plated pads"
+                      }
                     },
                     "hard_gold_edge_connectors": {
                       "type": "object",
@@ -1719,10 +1690,7 @@
                         "thickness_other": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness_other"
                         }
-                      },
-                      "aliases": "gold fingers",
-                      "name": "Hard Gold Edge Connectors",
-                      "description": "Edge connectors made with hard gold"
+                      }
                     },
                     "markings": {
                       "type": "object",
@@ -1752,10 +1720,7 @@
                         "serial_number_increase_by": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_increase_by"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Markings",
-                      "description": "Physical markings on the board"
+                      }
                     },
                     "standards": {
                       "type": "object",
@@ -1836,10 +1801,7 @@
                         "ipc_6018": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6018"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Standards and Requirements",
-                      "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+                      }
                     },
                     "testing": {
                       "type": "object",
@@ -1863,10 +1825,7 @@
                         "impedance": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/impedance"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Testing",
-                      "description": ""
+                      }
                     },
                     "country_of_origin": {
                       "type": "object",
@@ -1884,10 +1843,7 @@
                         "eu_member": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/country_of_origin/eu_member"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Country of Origin",
-                      "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
+                      }
                     },
                     "conflict_resolution": {
                       "type": "object",
@@ -1914,10 +1870,7 @@
                         "gerber": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/gerber"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Conflict resolution",
-                      "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
+                      }
                     },
                     "holes": {
                       "type": "array",
@@ -1928,10 +1881,7 @@
                           "plated": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/plated"
                           }
-                        },
-                        "aliases": "",
-                        "name": "Holes",
-                        "description": "One for each holes process, or at least one that sums up the minimum requirements"
+                        }
                       }
                     },
                     "allowed_modifications": {
@@ -1950,10 +1900,7 @@
                         "add_tear_drops": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/allowed_modifications/add_tear_drops"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Allowed Modifications",
-                      "description": "Changes/fabrication decisions that are allowed to make to the files provided."
+                      }
                     }
                   }
                 }
@@ -1977,68 +1924,64 @@
                       "properties": {
                         "count": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "minimum_internal_track_width": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "minimum_external_track_width": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "minimum_internal_spacing_width": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "minimum_external_spacing_width": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "external_base_copper_thickness": {
                           "type": "array",
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "internal_base_copper_thickness": {
                           "type": "array",
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "copper_foil_roughness": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "uniqueItems": true
+                          }
+                        },
+                        "copper_foil_type": {
                           "type": "array",
                           "items": {
                             "type": "string",
@@ -2053,59 +1996,56 @@
                       "properties": {
                         "minimum_internal_track_width": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "minimum_external_track_width": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "minimum_internal_spacing_width": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "minimum_external_spacing_width": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "external_base_copper_thickness": {
                           "type": "array",
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "internal_base_copper_thickness": {
                           "type": "array",
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "copper_foil_roughness": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "uniqueItems": true
+                          }
+                        },
+                        "copper_foil_type": {
                           "type": "array",
                           "items": {
                             "type": "string",
@@ -2127,30 +2067,110 @@
                               "uniqueItems": true
                             }
                           }
-                        },
-                        "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
-                        "name": "Final Finish",
-                        "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                        }
                       }
                     },
                     "dielectric": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "required": ["name"],
-                        "properties": {
-                          "name": {
-                            "type": "array",
-                            "items": {
-                              "type": "string",
-                              "uniqueItems": true
-                            }
+                      "type": "object",
+                      "properties": {
+                        "ipc_4101_sheet": {
+                          "type": "array",
+                          "items": {
+                            "type": "number",
+                            "uniqueItems": true
                           }
                         },
-                        "aliases": "Laminate",
-                        "name": "Dielectric",
-                        "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key. This element is a list and can contain several items"
+                        "ipc_4103_sheet": {
+                          "type": "array",
+                          "items": {
+                            "type": "number",
+                            "uniqueItems": true
+                          }
+                        },
+                        "ipc_4204_sheet": {
+                          "type": "array",
+                          "items": {
+                            "type": "number",
+                            "uniqueItems": true
+                          }
+                        },
+                        "tg_min": {
+                          "type": "array",
+                          "items": {
+                            "type": "number",
+                            "uniqueItems": true
+                          }
+                        },
+                        "tg_range_from": {
+                          "type": "array",
+                          "items": {
+                            "type": "number",
+                            "uniqueItems": true
+                          }
+                        },
+                        "tg_range_to": {
+                          "type": "array",
+                          "items": {
+                            "type": "number",
+                            "uniqueItems": true
+                          }
+                        },
+                        "td_min": {
+                          "type": "array",
+                          "items": {
+                            "type": "number",
+                            "uniqueItems": true
+                          }
+                        },
+                        "td_range_from": {
+                          "type": "array",
+                          "items": {
+                            "type": "number",
+                            "uniqueItems": true
+                          }
+                        },
+                        "halogen_free": {
+                          "type": "array",
+                          "items": {
+                            "type": "boolean",
+                            "uniqueItems": true
+                          }
+                        },
+                        "rw_en45545_2_2013": {
+                          "type": "array",
+                          "items": {
+                            "type": "boolean",
+                            "uniqueItems": true
+                          }
+                        },
+                        "rw_uni_cei_11170_3": {
+                          "type": "array",
+                          "items": {
+                            "type": "boolean",
+                            "uniqueItems": true
+                          }
+                        },
+                        "rw_nfpa_130": {
+                          "type": "array",
+                          "items": {
+                            "type": "boolean",
+                            "uniqueItems": true
+                          }
+                        },
+                        "ul": {
+                          "type": "array",
+                          "items": {
+                            "type": "boolean",
+                            "uniqueItems": true
+                          }
+                        },
+                        "accept_equivalent": {
+                          "type": "array",
+                          "items": {
+                            "type": "boolean",
+                            "uniqueItems": true
+                          }
+                        }
                       }
                     },
                     "soldermask": {
@@ -2201,10 +2221,7 @@
                               "uniqueItems": true
                             }
                           }
-                        },
-                        "aliases": "solder mask, sm, solder resist, green mask",
-                        "name": "Soldermask",
-                        "description": "A list of final soldermasks, can be more than one"
+                        }
                       }
                     },
                     "legend": {
@@ -2232,10 +2249,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "silk screen, silkscreen, ink, ident",
-                      "name": "Legend",
-                      "description": "The legend to be used on the board"
+                      }
                     },
                     "stiffener": {
                       "type": "object",
@@ -2243,11 +2257,10 @@
                       "properties": {
                         "size": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "placement": {
@@ -2264,10 +2277,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "support",
-                      "name": "Stiffener",
-                      "description": "Stiffener in flexible boards"
+                      }
                     },
                     "coverlay": {
                       "type": "object",
@@ -2275,11 +2285,10 @@
                       "properties": {
                         "total_thickness": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "top": {
@@ -2303,10 +2312,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "CoverLay",
-                      "description": ""
+                      }
                     },
                     "peelable_mask": {
                       "type": "object",
@@ -2314,11 +2320,10 @@
                       "properties": {
                         "heating_operations": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "top": {
@@ -2335,10 +2340,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Peelable mask",
-                      "description": ""
+                      }
                     },
                     "kapton_tape": {
                       "type": "object",
@@ -2365,10 +2367,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Kapton tape",
-                      "description": ""
+                      }
                     },
                     "conductive_carbon_print": {
                       "type": "object",
@@ -2388,10 +2387,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Conductive carbon print",
-                      "description": ""
+                      }
                     },
                     "silver_print": {
                       "type": "object",
@@ -2411,10 +2407,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Silver print tape",
-                      "description": ""
+                      }
                     },
                     "inner_packaging": {
                       "type": "object",
@@ -2455,10 +2448,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Inner Packaging",
-                      "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
+                      }
                     },
                     "via_protection": {
                       "type": "object",
@@ -2527,10 +2517,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Via Protection",
-                      "description": "The via/hole protection according to IPC 4761"
+                      }
                     },
                     "board": {
                       "type": "object",
@@ -2538,35 +2525,29 @@
                       "properties": {
                         "size_x": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "size_y": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "thickness": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Board",
-                      "description": "The physical description of the board"
+                      }
                     },
                     "array": {
                       "type": "object",
@@ -2574,110 +2555,98 @@
                       "properties": {
                         "size_x": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "size_y": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "boards_x": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "boards_y": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "boards_total": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "border_left": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "border_right": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "border_top": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "border_bottom": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "board_spacing_x": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "board_spacing_y": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "fiducials_size": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "fiducials_shape": {
@@ -2703,20 +2672,18 @@
                         },
                         "tooling_holes_number": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "tooling_holes_size": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "x_outs_allowed": {
@@ -2728,11 +2695,10 @@
                         },
                         "x_outs_max_percentage_on_array": {
                           "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
                           "items": {
-                            "type": "number",
-                            "uniqueItems": true,
-                            "minItems": 2,
-                            "maxItems": 2
+                            "type": "number"
                           }
                         },
                         "transplant_board_allowed": {
@@ -2832,10 +2798,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Mechanical processes",
-                      "description": "Mechanical processes in the manufacturing"
+                      }
                     },
                     "selective_plated_pads": {
                       "type": "object",
@@ -2848,10 +2811,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "selective hard gold",
-                      "name": "Selective plated pads",
-                      "description": "Selective plated pads"
+                      }
                     },
                     "hard_gold_edge_connectors": {
                       "type": "object",
@@ -2871,10 +2831,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "gold fingers",
-                      "name": "Hard Gold Edge Connectors",
-                      "description": "Edge connectors made with hard gold"
+                      }
                     },
                     "markings": {
                       "type": "object",
@@ -2907,10 +2864,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Markings",
-                      "description": "Physical markings on the board"
+                      }
                     },
                     "standards": {
                       "type": "object",
@@ -3091,10 +3045,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Standards and Requirements",
-                      "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+                      }
                     },
                     "testing": {
                       "type": "object",
@@ -3142,10 +3093,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Testing",
-                      "description": ""
+                      }
                     },
                     "country_of_origin": {
                       "type": "object",
@@ -3179,10 +3127,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Country of Origin",
-                      "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
+                      }
                     },
                     "holes": {
                       "type": "array",
@@ -3197,10 +3142,7 @@
                               "uniqueItems": true
                             }
                           }
-                        },
-                        "aliases": "",
-                        "name": "Holes",
-                        "description": "One for each holes process, or at least one that sums up the minimum requirements"
+                        }
                       }
                     },
                     "allowed_modifications": {
@@ -3235,10 +3177,7 @@
                             "uniqueItems": true
                           }
                         }
-                      },
-                      "aliases": "",
-                      "name": "Allowed Modifications",
-                      "description": "Changes/fabrication decisions that are allowed to make to the files provided."
+                      }
                     }
                   }
                 }
@@ -3262,6 +3201,9 @@
                       "properties": {
                         "copper_foil_roughness": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        },
+                        "copper_foil_type": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_type"
                         }
                       }
                     },
@@ -3271,6 +3213,9 @@
                       "properties": {
                         "copper_foil_roughness": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_roughness"
+                        },
+                        "copper_foil_type": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conductive_layer/copper_foil_type"
                         }
                       }
                     },
@@ -3319,26 +3264,54 @@
                           "nickel_thickness_max": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/thickness_max_micron"
                           }
-                        },
-                        "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
-                        "name": "Final Finish",
-                        "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                        }
                       }
                     },
                     "dielectric": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "required": ["name"],
-                        "properties": {
-                          "name": {
-                            "type": "string"
-                          }
+                      "type": "object",
+                      "properties": {
+                        "ipc_4101_sheet": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ipc_4101_sheet"
                         },
-                        "aliases": "Laminate",
-                        "name": "Dielectric",
-                        "description": "A list of one of more materials used as dielectric. Every material listed here must have be listed in the materials section with the name of the material as the key. This element is a list and can contain several items"
+                        "ipc_4103_sheet": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ipc_4103_sheet"
+                        },
+                        "ipc_4204_sheet": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ipc_4204_sheet"
+                        },
+                        "tg_min": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/tg_min"
+                        },
+                        "tg_range_from": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/tg_range_from"
+                        },
+                        "tg_range_to": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/tg_range_to"
+                        },
+                        "td_min": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/td_min"
+                        },
+                        "td_range_from": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/td_range_to"
+                        },
+                        "halogen_free": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/halogen_free"
+                        },
+                        "rw_en45545_2_2013": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/rw_nf_f_16_101"
+                        },
+                        "rw_uni_cei_11170_3": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/rw_uni_cei_11170_3"
+                        },
+                        "rw_nfpa_130": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/rw_nfpa_130"
+                        },
+                        "ul": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ul"
+                        },
+                        "accept_equivalent": {
+                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/accept_equivalent"
+                        }
                       }
                     },
                     "soldermask": {
@@ -3371,10 +3344,7 @@
                           "allow_touchups": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/soldermask/allow_touchups"
                           }
-                        },
-                        "aliases": "solder mask, sm, solder resist, green mask",
-                        "name": "Soldermask",
-                        "description": "A list of final soldermasks, can be more than one"
+                        }
                       }
                     },
                     "legend": {
@@ -3390,10 +3360,7 @@
                         "bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
-                      },
-                      "aliases": "silk screen, silkscreen, ink, ident",
-                      "name": "Legend",
-                      "description": "The legend to be used on the board"
+                      }
                     },
                     "stiffener": {
                       "type": "object",
@@ -3411,10 +3378,7 @@
                         "material": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/stiffener/material"
                         }
-                      },
-                      "aliases": "support",
-                      "name": "Stiffener",
-                      "description": "Stiffener in flexible boards"
+                      }
                     },
                     "coverlay": {
                       "type": "object",
@@ -3432,10 +3396,7 @@
                         "material": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/coverlay/material"
                         }
-                      },
-                      "aliases": "",
-                      "name": "CoverLay",
-                      "description": ""
+                      }
                     },
                     "peelable_mask": {
                       "type": "object",
@@ -3450,10 +3411,7 @@
                         "bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Peelable mask",
-                      "description": ""
+                      }
                     },
                     "kapton_tape": {
                       "type": "object",
@@ -3468,10 +3426,7 @@
                         "bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Kapton tape",
-                      "description": ""
+                      }
                     },
                     "conductive_carbon_print": {
                       "type": "object",
@@ -3483,10 +3438,7 @@
                         "bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Conductive carbon print",
-                      "description": ""
+                      }
                     },
                     "silver_print": {
                       "type": "object",
@@ -3498,10 +3450,7 @@
                         "bottom": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/presence_bottom_boolean"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Silver print tape",
-                      "description": ""
+                      }
                     },
                     "inner_packaging": {
                       "type": "object",
@@ -3522,10 +3471,7 @@
                         "vacuum": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/inner_packaging/vacuum"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Inner Packaging",
-                      "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
+                      }
                     },
                     "via_protection": {
                       "type": "object",
@@ -3558,10 +3504,7 @@
                         "type_7": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/via_protection/type_7"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Via Protection",
-                      "description": "The via/hole protection according to IPC 4761"
+                      }
                     },
                     "board": {
                       "type": "object",
@@ -3570,10 +3513,7 @@
                         "thickness": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/board/thickness"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Board",
-                      "description": "The physical description of the board"
+                      }
                     },
                     "array": {
                       "type": "object",
@@ -3669,10 +3609,7 @@
                         "coin_attachment": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/mechanical/coin_attachment"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Mechanical processes",
-                      "description": "Mechanical processes in the manufacturing"
+                      }
                     },
                     "selective_plated_pads": {
                       "type": "object",
@@ -3681,10 +3618,7 @@
                         "present": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/selective_plated_pads/present"
                         }
-                      },
-                      "aliases": "selective hard gold",
-                      "name": "Selective plated pads",
-                      "description": "Selective plated pads"
+                      }
                     },
                     "hard_gold_edge_connectors": {
                       "type": "object",
@@ -3699,10 +3633,7 @@
                         "thickness_other": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/hard_gold_edge_connectors/thickness_other"
                         }
-                      },
-                      "aliases": "gold fingers",
-                      "name": "Hard Gold Edge Connectors",
-                      "description": "Edge connectors made with hard gold"
+                      }
                     },
                     "markings": {
                       "type": "object",
@@ -3732,10 +3663,7 @@
                         "serial_number_increase_by": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/markings/serial_number_increase_by"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Markings",
-                      "description": "Physical markings on the board"
+                      }
                     },
                     "standards": {
                       "type": "object",
@@ -3816,10 +3744,7 @@
                         "ipc_6018": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/standards/ipc_6018"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Standards and Requirements",
-                      "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+                      }
                     },
                     "testing": {
                       "type": "object",
@@ -3843,10 +3768,7 @@
                         "impedance": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/testing/impedance"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Testing",
-                      "description": ""
+                      }
                     },
                     "country_of_origin": {
                       "type": "object",
@@ -3864,10 +3786,7 @@
                         "eu_member": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/country_of_origin/eu_member"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Country of Origin",
-                      "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
+                      }
                     },
                     "conflict_resolution": {
                       "type": "object",
@@ -3894,10 +3813,7 @@
                         "gerber": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/gerber"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Conflict resolution",
-                      "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
+                      }
                     },
                     "holes": {
                       "type": "array",
@@ -3908,10 +3824,7 @@
                           "plated": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/plated"
                           }
-                        },
-                        "aliases": "",
-                        "name": "Holes",
-                        "description": "One for each holes process, or at least one that sums up the minimum requirements"
+                        }
                       }
                     },
                     "allowed_modifications": {
@@ -3930,10 +3843,7 @@
                         "add_tear_drops": {
                           "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/allowed_modifications/add_tear_drops"
                         }
-                      },
-                      "aliases": "",
-                      "name": "Allowed Modifications",
-                      "description": "Changes/fabrication decisions that are allowed to make to the files provided."
+                      }
                     }
                   }
                 }
@@ -3960,65 +3870,54 @@
                   "properties": {
                     "count": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "minimum_internal_track_width": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "minimum_external_track_width": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "minimum_internal_spacing_width": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "minimum_external_spacing_width": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "external_base_copper_thickness": {
                       "type": "array",
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "internal_base_copper_thickness": {
                       "type": "array",
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "copper_foil_roughness": {
@@ -4028,13 +3927,19 @@
                         "uniqueItems": true
                       }
                     },
-                    "copper_coverage_average": {
+                    "copper_foil_type": {
                       "type": "array",
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "string",
+                        "uniqueItems": true
+                      }
+                    },
+                    "copper_coverage_average": {
+                      "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": {
+                        "type": "number"
                       }
                     }
                   }
@@ -4045,65 +3950,54 @@
                   "properties": {
                     "count": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "minimum_internal_track_width": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "minimum_external_track_width": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "minimum_internal_spacing_width": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "minimum_external_spacing_width": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "external_base_copper_thickness": {
                       "type": "array",
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "internal_base_copper_thickness": {
                       "type": "array",
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "copper_foil_roughness": {
@@ -4113,13 +4007,19 @@
                         "uniqueItems": true
                       }
                     },
-                    "copper_coverage_average": {
+                    "copper_foil_type": {
                       "type": "array",
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "string",
+                        "uniqueItems": true
+                      }
+                    },
+                    "copper_coverage_average": {
+                      "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": {
+                        "type": "number"
                       }
                     }
                   }
@@ -4139,188 +4039,246 @@
                       },
                       "thickness_min": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "thickness_max": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "gold_thickness_min": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "gold_thickness_max": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "silver_thickness_min": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "silver_thickness_max": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "paladium_thickness_min": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "paladium_thickness_max": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "tin_thickness_min": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "tin_thickness_max": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "nickel_thickness_min": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "nickel_thickness_max": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       }
+                    }
+                  }
+                },
+                "dielectric": {
+                  "type": "object",
+                  "properties": {
+                    "ipc_4101_sheet": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "uniqueItems": true
+                      }
                     },
-                    "aliases": "Surfacefinish, Surface finish, Coating, finalfinish, Solderable finish, Solderable coating",
-                    "name": "Final Finish",
-                    "description": "A list of final finishes, can be more than one. E.g. selective finish ENIG and OSP."
+                    "ipc_4103_sheet": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "uniqueItems": true
+                      }
+                    },
+                    "ipc_4204_sheet": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "uniqueItems": true
+                      }
+                    },
+                    "tg_range_from": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "uniqueItems": true
+                      }
+                    },
+                    "tg_range_to": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "uniqueItems": true
+                      }
+                    },
+                    "td_range_from": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "uniqueItems": true
+                      }
+                    },
+                    "halogen_free": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean",
+                        "uniqueItems": true
+                      }
+                    },
+                    "rw_en45545_2_2013": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean",
+                        "uniqueItems": true
+                      }
+                    },
+                    "rw_uni_cei_11170_3": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean",
+                        "uniqueItems": true
+                      }
+                    },
+                    "rw_nfpa_130": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean",
+                        "uniqueItems": true
+                      }
+                    },
+                    "ul": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean",
+                        "uniqueItems": true
+                      }
+                    }
                   }
                 },
                 "soldermask": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "color": {
-                        "type": "array",
-                        "items": {
-                          "type": "string",
-                          "uniqueItems": true
-                        }
-                      },
-                      "finish": {
-                        "type": "array",
-                        "items": {
-                          "type": "string",
-                          "uniqueItems": true
-                        }
-                      },
-                      "min_thickness": {
-                        "type": "array",
-                        "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
-                        }
-                      },
-                      "max_thickness": {
-                        "type": "array",
-                        "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
-                        }
-                      },
-                      "material": {
-                        "type": "array",
-                        "items": {
-                          "type": "string",
-                          "uniqueItems": true
-                        }
-                      },
-                      "top": {
-                        "type": "array",
-                        "items": {
-                          "type": "boolean",
-                          "uniqueItems": true
-                        }
-                      },
-                      "bottom": {
-                        "type": "array",
-                        "items": {
-                          "type": "boolean",
-                          "uniqueItems": true
-                        }
-                      },
-                      "allow_touchups": {
-                        "type": "array",
-                        "items": {
-                          "type": "boolean",
-                          "uniqueItems": true
-                        }
+                  "type": "object",
+                  "properties": {
+                    "color": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "uniqueItems": true
                       }
                     },
-                    "aliases": "solder mask, sm, solder resist, green mask",
-                    "name": "Soldermask",
-                    "description": "A list of final soldermasks, can be more than one"
+                    "finish": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "uniqueItems": true
+                      }
+                    },
+                    "min_thickness": {
+                      "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "max_thickness": {
+                      "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "material": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "uniqueItems": true
+                      }
+                    },
+                    "top": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean",
+                        "uniqueItems": true
+                      }
+                    },
+                    "bottom": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean",
+                        "uniqueItems": true
+                      }
+                    },
+                    "allow_touchups": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean",
+                        "uniqueItems": true
+                      }
+                    }
                   }
                 },
                 "legend": {
@@ -4348,10 +4306,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "silk screen, silkscreen, ink, ident",
-                  "name": "Legend",
-                  "description": "The legend to be used on the board"
+                  }
                 },
                 "stiffener": {
                   "type": "object",
@@ -4359,11 +4314,10 @@
                   "properties": {
                     "size": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "placement": {
@@ -4375,11 +4329,10 @@
                     },
                     "thickness": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "material": {
@@ -4389,10 +4342,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "support",
-                  "name": "Stiffener",
-                  "description": "Stiffener in flexible boards"
+                  }
                 },
                 "coverlay": {
                   "type": "object",
@@ -4400,11 +4350,10 @@
                   "properties": {
                     "total_thickness": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "top": {
@@ -4428,10 +4377,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "CoverLay",
-                  "description": ""
+                  }
                 },
                 "peelable_mask": {
                   "type": "object",
@@ -4439,11 +4385,10 @@
                   "properties": {
                     "heating_operations": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "top": {
@@ -4460,10 +4405,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Peelable mask",
-                  "description": ""
+                  }
                 },
                 "kapton_tape": {
                   "type": "object",
@@ -4490,10 +4432,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Kapton tape",
-                  "description": ""
+                  }
                 },
                 "conductive_carbon_print": {
                   "type": "object",
@@ -4513,10 +4452,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Conductive carbon print",
-                  "description": ""
+                  }
                 },
                 "silver_print": {
                   "type": "object",
@@ -4536,10 +4472,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Silver print tape",
-                  "description": ""
+                  }
                 },
                 "inner_packaging": {
                   "type": "object",
@@ -4580,10 +4513,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Inner Packaging",
-                  "description": "This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)"
+                  }
                 },
                 "via_protection": {
                   "type": "object",
@@ -4652,10 +4582,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Via Protection",
-                  "description": "The via/hole protection according to IPC 4761"
+                  }
                 },
                 "board": {
                   "type": "object",
@@ -4663,35 +4590,29 @@
                   "properties": {
                     "size_x": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "size_y": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "thickness": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Board",
-                  "description": "The physical description of the board"
+                  }
                 },
                 "mechanical": {
                   "type": "object",
@@ -4781,10 +4702,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Mechanical processes",
-                  "description": "Mechanical processes in the manufacturing"
+                  }
                 },
                 "selective_plated_pads": {
                   "type": "object",
@@ -4804,10 +4722,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "selective hard gold",
-                  "name": "Selective plated pads",
-                  "description": "Selective plated pads"
+                  }
                 },
                 "hard_gold_edge_connectors": {
                   "type": "object",
@@ -4829,20 +4744,18 @@
                     },
                     "thickness_other": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "area": {
                       "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
                       "items": {
-                        "type": "number",
-                        "uniqueItems": true,
-                        "minItems": 2,
-                        "maxItems": 2
+                        "type": "number"
                       }
                     },
                     "layers": {
@@ -4852,10 +4765,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "gold fingers",
-                  "name": "Hard Gold Edge Connectors",
-                  "description": "Edge connectors made with hard gold"
+                  }
                 },
                 "markings": {
                   "type": "object",
@@ -4895,10 +4805,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Markings",
-                  "description": "Physical markings on the board"
+                  }
                 },
                 "standards": {
                   "type": "object",
@@ -5079,10 +4986,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Standards and Requirements",
-                  "description": "If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)"
+                  }
                 },
                 "testing": {
                   "type": "object",
@@ -5130,10 +5034,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Testing",
-                  "description": ""
+                  }
                 },
                 "country_of_origin": {
                   "type": "object",
@@ -5167,10 +5068,7 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Country of Origin",
-                  "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
+                  }
                 },
                 "holes": {
                   "type": "array",
@@ -5180,11 +5078,10 @@
                     "properties": {
                       "number": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "type": {
@@ -5203,38 +5100,34 @@
                       },
                       "size": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "layer_start": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "layer_stop": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "depth": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "number",
-                          "uniqueItems": true,
-                          "minItems": 2,
-                          "maxItems": 2
+                          "type": "number"
                         }
                       },
                       "method": {
@@ -5246,8 +5139,10 @@
                       },
                       "minimum_designed_annular_ring": {
                         "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
                         "items": {
-                          "type": "string",
+                          "type": "number",
                           "uniqueItems": true
                         }
                       },
@@ -5286,10 +5181,7 @@
                           "uniqueItems": true
                         }
                       }
-                    },
-                    "aliases": "",
-                    "name": "Holes",
-                    "description": "One for each holes process, or at least one that sums up the minimum requirements"
+                    }
                   }
                 },
                 "additional_requirements": {
@@ -5303,15 +5195,12 @@
                         "uniqueItems": true
                       }
                     }
-                  },
-                  "aliases": "",
-                  "name": "Additional Requirements",
-                  "description": "This section is for all requirements that still has not been adapted to the standard or needs to be stated as a comment. It allows you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom -> additional section. Multiple elements allowed - to be added as a list."
+                  }
                 }
               }
             }
           },
-          "description": "This part should take care of all the products. Note that products can have any names"
+          "description": "This part should take care of all the products. Note that products can have any name"
         },
         "custom": {
           "type": "object",
@@ -5357,19 +5246,109 @@
                     "soldermasks": {
                       "type": "array",
                       "items": {
-                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/soldermasks"
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [],
+                        "properties": {
+                          "material": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/soldermasks/properties/material"
+                          },
+                          "manufacturer": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/soldermasks/properties/manufacturer"
+                          },
+                          "ipc_sm_840_class": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/soldermasks/properties/ipc_sm_840_class"
+                          },
+                          "link": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/soldermasks/properties/link"
+                          },
+                          "accept_equivalent": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/soldermasks/properties/accept_equivalent"
+                          }
+                        }
                       }
                     },
                     "dielectrics": {
                       "type": "array",
                       "items": {
-                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics"
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [],
+                        "properties": {
+                          "name": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/name"
+                          },
+                          "manufacturer": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/manufacturer"
+                          },
+                          "ipc_4101_sheet": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ipc_4101_sheet"
+                          },
+                          "ipc_4103_sheet": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ipc_4103_sheet"
+                          },
+                          "ipc_4204_sheet": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ipc_4204_sheet"
+                          },
+                          "tg_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/tg_min"
+                          },
+                          "tg_range_from": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/tg_range_from"
+                          },
+                          "tg_range_to": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/tg_range_to"
+                          },
+                          "td_min": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/td_min"
+                          },
+                          "td_range_from": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/td_range_to"
+                          },
+                          "halogen_free": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/halogen_free"
+                          },
+                          "rw_en45545_2_2013": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/rw_nf_f_16_101"
+                          },
+                          "rw_uni_cei_11170_3": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/rw_uni_cei_11170_3"
+                          },
+                          "rw_nfpa_130": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/rw_nfpa_130"
+                          },
+                          "ul": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/ul"
+                          },
+                          "link": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/link"
+                          },
+                          "accept_equivalent": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/dielectrics/properties/accept_equivalent"
+                          }
+                        }
                       }
                     },
                     "stiffeners": {
                       "type": "array",
                       "items": {
-                        "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/stiffeners"
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [],
+                        "properties": {
+                          "manufacturer": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/stiffeners/properties/manufacturer"
+                          },
+                          "descriptive_name": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/stiffeners/properties/descriptive_name"
+                          },
+                          "link": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/stiffeners/properties/link"
+                          },
+                          "accept_equivalent": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/custom/stiffeners/properties/accept_equivalent"
+                          }
+                        }
                       }
                     }
                   }

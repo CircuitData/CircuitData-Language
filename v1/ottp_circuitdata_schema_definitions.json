@@ -28,7 +28,7 @@
             "uom": null,
             "description": "The name of the manufacturer"
           },
-          "ipc-sm-840-class": {
+          "ipc_sm_840_class": {
             "type": "string",
             "enum": ["T", "H"],
             "uom": null,
@@ -38,6 +38,11 @@
             "type": "string",
             "uom": null,
             "description": "The link to some url that gives more information or a reference to the product."
+          },
+          "accept_equivalent": {
+            "type": "boolean",
+            "uom": null,
+            "description": "Equivalent material to the one specified is OK to use as a replacement if true."
           }
         },
         "aliases": "",
@@ -157,7 +162,7 @@
           "descriptive_name": {
             "type": "string",
             "uom": null,
-            "description": "The name of the Soldermask. Use the official name or some name as close to it as possible"
+            "description": "The name of the stiffener. Use the official name or some name as close to it as possible"
           },
           "manufacturer": {
             "type": "string",
@@ -168,6 +173,11 @@
             "type": "string",
             "uom": null,
             "description": "The link to some url that gives more information or a reference to the product."
+          },
+          "accept_equivalent": {
+            "type": "boolean",
+            "uom": null,
+            "description": "Equivalent material to the one specified is OK to use as a replacement if true."
           }
         },
         "aliases": "",
@@ -217,6 +227,25 @@
       }
     },
     "elements": {
+      "stackup": {
+        "specification_level": {
+          "type": "string",
+          "enum": ["free", "separate_file", "specified"],
+          "enum_description": {
+            "free": "The manufacturer can choose the stackup that matches the rest of the requirements",
+            "separate_file": "A file is supplied with the package that will contain the actual stackup",
+            "specified": "The actual stackup is under the stackup->specified element"
+          },
+          "uom": null,
+          "description": "The stack up of this board"
+        },
+        "file_name": {
+          "type": "string",
+          "format": "uri",
+          "uom": null,
+          "description": "The URI of the file that specifies the stackup. Either as a path witin a project compressed file (ZIP) or as a link"
+        }
+      },
       "conductive_layer": {
         "count": {
           "type": "number",
@@ -250,13 +279,13 @@
           "type": "number",
           "enum": [5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1],
           "uom": ["um"],
-          "description": "Finished base copper thickness following IPC Class on the up to two external layers."
+          "description": "Finished base copper thickness following IPC Class on the up to two external layers"
         },
         "internal_base_copper_thickness": {
           "type": "number",
           "enum": [5.1, 8.5, 12, 17.1, 25.7, 34.3, 68.6, 102.9, 137.2, 171.5, 205.7, 240, 342.9, 480.1],
           "uom": ["um"],
-          "description": "Finished base copper thickness following IPC Class on the internal layers."
+          "description": "Finished base copper thickness following IPC Class on the internal layers"
         },
         "copper_foil_roughness": {
           "type": "string",
@@ -267,7 +296,17 @@
             "V": "Very low profile"
           },
           "uom": null,
-          "description": "The roughness of the copper foil."
+          "description": "The roughness of the copper foil"
+        },
+        "copper_foil_type": {
+          "type": "string",
+          "enum": ["ED", "RA"],
+          "enum_description": {
+            "ED": "Electro Deposited",
+            "RA": "Rolled Annealed Copper"
+          },
+          "uom": null,
+          "description": "The type of copper foil"
         },
         "copper_coverage_average": {
           "type": "number",
@@ -279,7 +318,7 @@
         "name": {
           "type": "string",
           "uom": null,
-          "description": "The name of the Laminate. Use the official name or some name as close to it as possible."
+          "description": "The name of the Laminate. Use the official name or some name as close to it as possible"
         },
         "manufacturer": {
           "type": "string",
@@ -289,47 +328,47 @@
         "ipc_4101_sheet": {
           "type": "integer",
           "uom": null,
-          "description": "The reference sheet number of the IPC 4101 Standard."
+          "description": "The reference sheet number of the IPC 4101 Standard"
         },
         "ipc_4103_sheet": {
           "type": "integer",
           "uom": null,
-          "description": "The reference sheet number of the IPC 4103 Standard."
+          "description": "The reference sheet number of the IPC 4103 Standard"
         },
         "ipc_4204_sheet": {
           "type": "integer",
           "uom": null,
-          "description": "The reference sheet number of the IPC 4204 Standard."
+          "description": "The reference sheet number of the IPC 4204 Standard"
         },
         "tg_min": {
           "type": "integer",
           "uom": null,
-          "description": "The minimum Glass Transition Temperature (Tg) required."
+          "description": "The minimum Glass Transition Temperature (Tg) required"
         },
         "tg_range_from": {
           "type": "integer",
           "uom": null,
-          "description": "The Glass Transition Temperature (Tg) range starts at."
+          "description": "The Glass Transition Temperature (Tg) range starts at"
         },
         "tg_range_to": {
           "type": "integer",
           "uom": null,
-          "description": "The Glass Transition Temperature (Tg) range ands at."
+          "description": "The Glass Transition Temperature (Tg) range ands at"
         },
         "td_min": {
           "type": "integer",
           "uom": null,
-          "description": "The minimum required temperature at which a base laminate material experiences an established percentage of weight loss using Thermograv imetric Analysis (TGA)."
+          "description": "The minimum required temperature at which a base laminate material experiences an established percentage of weight loss using Thermograv imetric Analysis (TGA)"
         },
         "td_range_from": {
           "type": "integer",
           "uom": null,
-          "description": "The Td range starts at."
+          "description": "The Td range starts at"
         },
         "td_range_to": {
           "type": "integer",
           "uom": null,
-          "description": "The Td range stops at."
+          "description": "The Td range stops at"
         },
         "halogen_free": {
           "type": "boolean",
@@ -349,27 +388,27 @@
         "rw_uni_cei_11170_3": {
           "type": "boolean",
           "uom": null,
-          "description": "Railway Italy UNI CEI 11170-3 compatible."
+          "description": "Railway Italy UNI CEI 11170-3 compatible"
         },
         "rw_nfpa_130": {
           "type": "boolean",
           "uom": null,
-          "description": "Railway USA NFPA 130 compatible."
+          "description": "Railway USA NFPA 130 compatible"
         },
         "ul": {
           "type": "boolean",
           "uom": null,
-          "description": "UL compatible."
+          "description": "UL compatible"
         },
         "link": {
           "type": "string",
           "uom": null,
-          "description": "The link to some url that gives more information or a reference to the product."
+          "description": "The link to some url that gives more information or a reference to the product"
         },
         "accept_equivalent": {
           "type": "boolean",
           "uom": null,
-          "description": "Equivalent material to the one specified is OK to use as a replacement if true."
+          "description": "Equivalent material to the one specified is OK to use as a replacement if true"
         },
         "aliases": "",
         "descriptive_name": "Dielectrics",
@@ -399,7 +438,7 @@
             "b1_lfhasl": "J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL)"
           },
           "uom": null,
-          "description": "The material/method/surface to be used in the finish."
+          "description": "The material/method/surface to be used in the finish"
         },
         "area": {
           "type": "number",
@@ -411,13 +450,13 @@
         "color": {
           "type": "string",
           "uom": null,
-          "description": "This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done custom -> colors section."
+          "description": "This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done custom -> colors section"
         },
         "finish": {
           "type": "string",
           "enum": ["matte", "semi-matte", "glossy", "any"],
           "uom": null,
-          "description": "The finish of the soldermask."
+          "description": "The finish of the soldermask"
         },
         "material": {
           "type": "string",
@@ -434,7 +473,7 @@
         "color": {
           "type": "string",
           "uom": null,
-          "description": "This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done custom -> colors section."
+          "description": "This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done custom -> colors section"
         }
       },
       "stiffener": {
@@ -446,8 +485,12 @@
         "placement": {
           "type": "string",
           "enum": ["top", "bottom"],
+          "enum_description": {
+            "top": "The stiffener is on top of the flexible layer(s)",
+            "bottom": "The stiffener is below the flexible layer(s)"
+          },
           "uom": null,
-          "description": "Indicating if the stiffener is on top or bottom of the flexible layer."
+          "description": "Indicating if the stiffener is on top or bottom of the flexible layer"
         },
         "thickness": {
           "type": "number",
@@ -490,6 +533,12 @@
         "type_of_bag": {
           "type": "string",
           "enum": ["a", "b", "c", "d"],
+          "enum_description": {
+            "a": "Nylon/Foil/Polyethylene",
+            "b": "TyvekTM/Foil/Polyethylene",
+            "c": "Aluminized Polyester/Polyethylene",
+            "d": "Plastics/Polymers (non-metallic)"
+          },
           "uom": null,
           "description": "The material of the bag to be used"
         },
@@ -501,148 +550,148 @@
         "esd": {
           "type": "boolean",
           "uom": null,
-          "description": "True to indicate that packaging for ESD-sensitive required."
+          "description": "True to indicate that packaging for ESD-sensitive required"
         },
         "desiccant": {
           "type": "boolean",
           "uom": null,
-          "description": "True to indicate that a desiccant material is required."
+          "description": "True to indicate that a desiccant material is required"
         },
         "vacuum": {
           "type": "boolean",
           "uom": null,
-          "description": "True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed."
+          "description": "True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed"
         }
       },
       "via_protection": {
         "type_1": {
           "type": "boolean",
           "uom": null,
-          "description": "A via with a dry film mask material applied bridging over the via wherein no additional materials are in the hole."
+          "description": "A via with a dry film mask material applied bridging over the via wherein no additional materials are in the hole"
         },
         "type_2": {
           "type": "boolean",
           "uom": null,
-          "description": "A Type I via with a secondary covering of mask material applied over the tented via."
+          "description": "A Type I via with a secondary covering of mask material applied over the tented via"
         },
         "type_3": {
           "type": "boolean",
           "uom": null,
-          "description": "A via with material applied allowing partial penetration into the via. The plug material may be applied from one or both sides."
+          "description": "A via with material applied allowing partial penetration into the via. The plug material may be applied from one or both sides"
         },
         "type_4a": {
           "type": "boolean",
           "uom": null,
-          "description": "A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides."
+          "description": "A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides"
         },
         "type_4b": {
           "type": "boolean",
           "uom": null,
-          "description": "A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides."
+          "description": "A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides"
         },
         "type_5": {
           "type": "boolean",
           "uom": null,
-          "description": "A via with material applied into the via targeting a full penetration and encapsulation of the hole."
+          "description": "A via with material applied into the via targeting a full penetration and encapsulation of the hole"
         },
         "type_6a": {
           "type": "boolean",
           "uom": null,
-          "description": "A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides."
+          "description": "A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides"
         },
         "type_6b": {
           "type": "boolean",
           "uom": null,
-          "description": "A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides."
+          "description": "A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides"
         },
         "type_7": {
           "type": "boolean",
           "uom": null,
-          "description": "A Type V via with a secondary metallized coating covering the via. The metallization is on both sides."
+          "description": "A Type V via with a secondary metallized coating covering the via. The metallization is on both sides"
         }
       },
       "board": {
         "size_x": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the board in the x-asis, measured in millimeters"
+          "description": "The size of the board in the x-asis"
         },
         "size_y": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the board in the y-asis, measured in millimeters"
+          "description": "The size of the board in the y-asis"
         },
         "thickness": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The thickness of the board measured in millimeters"
+          "description": "The thickness of the board"
         }
       },
       "array": {
         "size_x": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the array in the x-asis, measured in millimeters"
+          "description": "The size of the array in the x-asis"
         },
         "size_y": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the array in the y-asis, measured in millimeters"
+          "description": "The size of the array in the y-asis"
         },
         "boards_x": {
           "type": "integer",
           "uom": null,
-          "description": "Number of boards in the panel in the x-direction."
+          "description": "Number of boards in the panel in the x-direction"
         },
         "boards_y": {
           "type": "integer",
           "uom": null,
-          "description": "Number of boards in the panel in the y-direction."
+          "description": "Number of boards in the panel in the y-direction"
         },
         "boards_total": {
           "type": "integer",
           "uom": ["mm"],
-          "description": "Number total number of boards in the panel. This is not the preferred method of stating the number, \"boards_x\" and \"boards_y\" should be used."
+          "description": "Number total number of boards in the panel. This is not the preferred method of stating the number, \"boards_x\" and \"boards_y\" should be used"
         },
         "border_left": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the left side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+          "description": "The size of the left side boarder between the edge and the board"
         },
         "border_right": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the right side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+          "description": "The size of the right side boarder between the edge and the board"
         },
         "border_top": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the top side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+          "description": "The size of the top side boarder between the edge and the board"
         },
         "border_bottom": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the bottom side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder"
+          "description": "The size of the bottom side boarder between the edge and the board"
         },
         "board_spacing_x": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the space between the boards in the x-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space"
+          "description": "The size of the space between the boards in the x-direction"
         },
         "board_spacing_y": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the space between the boards in the y-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space"
+          "description": "The size of the space between the boards in the y-direction"
         },
         "fiducials_number": {
           "type": "integer",
           "uom": null,
-          "description": "The number of fiducials on the array."
+          "description": "The number of fiducials on the array"
         },
         "fiducials_size": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the fiducials measured in millimeters. If used in a Profile, it is the minimum needed size"
+          "description": "The size of the fiducials"
         },
         "fiducials_shape": {
           "type": "string",
@@ -652,7 +701,10 @@
         },
         "breakaway_method": {
           "type": "string",
-          "enum": ["routing", "scoring", "v-cut", "v-grove", "jump_scoring"],
+          "enum": ["routing", "scoring", "jump_scoring"],
+          "enum_description": {
+            "scoring": "alises includes \"v-cut\" and \"v-grove\""
+          },
           "uom": null,
           "description": "The method of creation of the breakaways on the array"
         },
@@ -664,12 +716,12 @@
         "tooling_holes_number": {
           "type": "integer",
           "uom": null,
-          "description": "The number of tooling holes on the array."
+          "description": "The number of tooling holes on the array"
         },
         "tooling_holes_size": {
           "type": "number",
           "uom": ["mm"],
-          "description": "The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size."
+          "description": "The size of the tooling holes."
         },
         "x_outs_allowed": {
           "type": "boolean",
@@ -689,14 +741,14 @@
         "weight": {
           "type": "number",
           "uom": ["g"],
-          "description": "The weight of the array measured in grams."
+          "description": "The weight of the array"
         }
       },
       "mechanical": {
         "edge_bevelling": {
           "type": "boolean",
           "uom": null,
-          "description": "Edge bevelling present."
+          "description": "Edge bevelling present"
         },
         "depth_routing_top": {
           "type": "boolean",
@@ -706,75 +758,80 @@
         "depth_routing_bottom": {
           "type": "boolean",
           "uom": null,
-          "description": "Depth Routing from the bottom present."
+          "description": "Depth Routing from the bottom present"
         },
         "counterboring_top": {
           "type": "boolean",
           "uom": null,
-          "description": "Counterboring from the top present."
+          "description": "Counterboring from the top present"
         },
         "counterboring_bottom": {
           "type": "boolean",
           "uom": null,
-          "description": "Counterboring from the bottom present."
+          "description": "Counterboring from the bottom present"
         },
         "countersink_top": {
           "type": "boolean",
           "uom": null,
-          "description": "Countersink from the top present."
+          "description": "Countersink from the top present"
         },
         "countersink_bottom": {
           "type": "boolean",
           "uom": null,
-          "description": "Countersink from the bottom present."
+          "description": "Countersink from the bottom present"
         },
         "punching": {
           "type": "boolean",
           "uom": null,
-          "description": "Punching process required."
+          "description": "Punching process required"
         },
         "plated_edges": {
           "type": "boolean",
           "uom": null,
-          "description": "Plated Edges process required."
+          "description": "Plated Edges process required"
         },
         "plated_slots": {
           "type": "boolean",
           "uom": null,
-          "description": "Plated Slots process required."
+          "description": "Plated Slots process required"
         },
         "plated_castellated_holes": {
           "type": "boolean",
           "uom": null,
-          "description": "Plated Castellated Holes process required."
+          "description": "Plated Castellated Holes process required"
         },
         "coin_attachment": {
           "type": "boolean",
           "uom": null,
-          "description": "Coin Attachment process required."
+          "description": "Coin Attachment process required"
         }
       },
       "selective_plated_pads": {
         "present": {
           "type": "boolean",
           "uom": null,
-          "description": "Selective plated pads present."
+          "description": "Selective plated pads present"
         },
         "layers": {
           "type": "string",
           "uom": null,
-          "description": "The layers included in the connectors, counter from 1 (top layer)."
+          "description": "The layers included in the connectors, counted from 1 (top layer)"
         }
       },
       "hard_gold_edge_connectors": {
         "present": {
           "type": "boolean",
           "uom": null,
-          "description": "Hard gold edge connectors present."
+          "description": "Hard gold edge connectors present"
         },
         "thickness": {
           "type": "string",
           "enum": ["0.76", "1.27", "other"],
+          "enum_description": {
+            "0.76": "According to IPC Class 2",
+            "1.27": "According to IPC Class 3",
+            "other": "To be specified in the thickness_other tag"
+          },
           "uom": null,
           "description": "The thickness of the connectors"
         },
@@ -786,30 +843,30 @@
         "area": {
           "type": "number",
           "uom": null,
-          "description": "Area covered by the edge connectors in square desimeter."
+          "description": "Area covered by the edge connectors in square desimeter"
         },
         "layers": {
           "type": "string",
           "uom": null,
-          "description": "The layers included in the connectors, counter from 1 (top layer)."
+          "description": "The layers included in the connectors, counter from 1 (top layer)"
         }
       },
       "markings": {
         "date_code": {
           "type": "string",
           "uom": null,
-          "description": "Possible values are \"YY\" for year, \"WW\" for week \"-\" and \"LOT\" (alias \"BATCH\"). E.g. \"YYWW-LOT\" or \"LOT-YYWW\". If no marking, set \"NONE\"."
+          "description": "Possible values are \"YY\" for year, \"WW\" for week \"-\" and \"LOT\" (alias \"BATCH\"). E.g. \"YYWW-LOT\" or \"LOT-YYWW\". If no marking, set \"NONE\""
         },
         "placement": {
           "type": "string",
           "enum": ["copper_top", "copper_bottom", "soldermask_top", "soldermask_bottom", "legend_top", "legend_bottom"],
           "uom": null,
-          "description": "Placement of the markings."
+          "description": "Placement of the markings"
         },
         "manufacturer_identification": {
           "type": "boolean",
           "uom": null,
-          "description": "Manufacturer identification present."
+          "description": "Manufacturer identification present"
         },
         "standards": {
           "type": "array",
@@ -817,120 +874,131 @@
             "type": "string"
           },
           "uom": null,
-          "description": "Possible values are the ones listed in the subelement \"standards\" but typical will be \"ul\" and \"rohs\". Separate by comma."
+          "description": "Possible values are the ones listed in the subelement \"standards\" but typical will be \"ul\" and \"rohs\""
         },
         "serial_number": {
           "type": "boolean",
           "uom": null,
-          "description": "Serial number should be added in the markings."
+          "description": "Serial number should be added in the markings"
         },
         "serial_number_format": {
           "type": "string",
           "uom": null,
-          "description": "Format of the serial number expressed as a \"regular expression\" but needs to have x amount of digits in it."
+          "description": "Format of the serial number expressed as a \"regular expression\" but needs to have x amount of digits in it"
         },
         "serial_number_start": {
           "type": "integer",
           "uom": null,
-          "description": "The number to start the serial number from. Will have to replace the digits from the \"serial_number_format\" above."
+          "description": "The number to start the serial number from. Will have to replace the digits from the \"serial_number_format\" above"
         },
         "serial_number_increase_by": {
           "type": "integer",
           "uom": null,
-          "description": "The increase in number from \"serial_number_start\" with each product."
+          "description": "The increase in number from \"serial_number_start\" with each product"
         }
       },
       "standards": {
         "ul": {
           "type": "boolean",
           "uom": null,
-          "description": "Indicating if UL is required for the board. Can not be used as a capability, as this will be indicated on each material."
+          "description": "Indicating if UL is required for the board. Can not be used as a capability, as this will be indicated on each material"
         },
         "c_ul": {
           "type": "boolean",
           "uom": null,
-          "description": "Indicating if Canadian UL is required for the board. Can not be used as a capability, as this will be indicated on each material."
+          "description": "Indicating if Canadian UL is required for the board. Can not be used as a capability, as this will be indicated on each material"
         },
         "rohs": {
           "type": "boolean",
           "uom": null,
-          "description": "RoHS."
+          "description": "RoHS"
         },
         "ul94": {
           "type": "string",
           "enum": ["hb", "v_0", "v_1", "v_2", "5vb", "5va"],
+          "enum_description": {
+            "hb": "HB - Slow burning on a horizontal specimen; burning rate < 76 mm/min for thickness < 3 mm or burning stops before 100 mm",
+            "v_0": "V-0 - Burning stops within 30 seconds on a vertical specimen; drips of flaming particles are allowed",
+            "v_1": "V-1 - Burning stops within 30 seconds on a vertical specimen; drips of particles allowed as long as they are not inflamed",
+            "v_2": "V-2 - Burning stops within 30 seconds on a vertical specimen; drips of flaming particles are allowed",
+            "5vb": "5VB - Burning stops within 60 seconds on a vertical specimen; no drips allowed; plaque specimens may develop a hole",
+            "5va": "5VA - Burning stops within 60 seconds on a vertical specimen; no drips allowed; plaque specimens may not develop a hole"
+          },
           "uom": null,
           "description": "UL 94 - Standard for Safety of Flammability of Plastic Materials for Parts in Devices and Appliances testing"
         },
         "esa": {
           "type": "boolean",
           "uom": null,
-          "description": "European Space Agency Use."
+          "description": "European Space Agency Use"
         },
         "itar": {
           "type": "boolean",
           "uom": null,
-          "description": "US ITAR."
+          "description": "US ITAR"
         },
         "dfars": {
           "type": "boolean",
           "uom": null,
-          "description": "US DFARS."
+          "description": "US DFARS"
         },
         "mil_prf_55110": {
           "type": "boolean",
           "uom": null,
-          "description": "MIL-PRF-55110."
+          "description": "MIL-PRF-55110"
         },
         "mil_prf_50884": {
           "type": "boolean",
           "uom": null,
-          "description": "MIL-PRF-5884."
+          "description": "MIL-PRF-5884"
         },
         "mil_prf_31032": {
           "type": "boolean",
           "uom": null,
-          "description": "MIL-PRF-31032."
+          "description": "MIL-PRF-31032"
         },
         "as9100": {
           "type": "boolean",
           "uom": null,
-          "description": "AS9100."
+          "description": "AS9100"
         },
         "nadcap": {
           "type": "boolean",
           "uom": null,
-          "description": "NADCAP."
+          "description": "NADCAP"
         },
         "rw_en45545_2_2013": {
           "type": "boolean",
           "uom": null,
-          "description": "Railway Europe EN45545-2:2013."
+          "description": "Railway Europe EN45545-2:2013"
         },
         "rw_nf_f_16_101": {
           "type": "boolean",
           "uom": null,
-          "description": "Railway France NF F 16-101."
+          "description": "Railway France NF F 16-101"
         },
         "rw_uni_cei_11170_3": {
           "type": "boolean",
           "uom": null,
-          "description": "Railway Italy UNI CEI 11170-3."
+          "description": "Railway Italy UNI CEI 11170-3"
         },
         "rw_nfpa_130": {
           "type": "boolean",
           "uom": null,
-          "description": "Railway USA NFPA 130."
+          "description": "Railway USA NFPA 130"
         },
         "ipc_6010_class": {
           "type": "string",
           "enum": ["1", "2", "3"],
           "uom": null,
-          "description": "According to Table 4-2 /4-3."
+          "description": "According to Table 4-2 /4-3"
         },
         "ipc_6010_compliance_level": {
           "type": "string",
           "enum": ["full", "factory_standard", "aabus"],
+          "enum_description": {
+            "aabus": "As Agreed Between User and Supplier"
+          },
           "uom": null,
           "description": ""
         },
@@ -938,29 +1006,34 @@
           "type": "string",
           "enum": ["2", "3"],
           "uom": null,
-          "description": "Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+          "description": "Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2"
         },
         "ipc_6010_annular_ring_level": {
           "type": "string",
           "enum": ["2", "3"],
           "uom": null,
-          "description": "Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+          "description": "Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2"
         },
         "ipc_6010_conductor_spacing_level": {
           "type": "string",
           "enum": ["2", "3"],
           "uom": null,
-          "description": "Used either if ipc_6010_class is set to 2 and you want to add conductor spacing demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+          "description": "Used either if ipc_6010_class is set to 2 and you want to add conductor spacing demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2"
         },
         "ipc_6010_conductor_width_level": {
           "type": "string",
           "enum": ["2", "3"],
           "uom": null,
-          "description": "Used either if ipc_6010_class is set to 2 and you want to add conductor width demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2."
+          "description": "Used either if ipc_6010_class is set to 2 and you want to add conductor width demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2"
         },
         "ipc_6012_class": {
           "type": "string",
           "enum": ["1", "2", "3", "3A", "3S", "3M"],
+          "enum_description": {
+            "3A": "Automotive addendum",
+            "3S": "Space and Military Avionics Addendum",
+            "3M": "Medical Addendum"
+          },
           "uom": null,
           "description": "Requirements according to IPC 6012 class"
         },
@@ -1000,25 +1073,25 @@
         "ist": {
           "type": "boolean",
           "uom": null,
-          "description": "Use IST testing."
+          "description": "Use IST testing"
         },
         "impedance": {
           "type": "string",
           "enum": ["controlled", "calculated", "follow_stackup"],
           "uom": null,
-          "description": ""
+          "description": "How to conduct a impedance test"
         }
       },
       "country_of_origin": {
         "iso_3166_1_alpha_3": {
           "type": "string",
           "uom": null,
-          "description": "A three letter string representation of the Country of origin according too ISO 3166-1."
+          "description": "A three letter string representation of the Country of origin according too ISO 3166-1"
         },
         "iso_3166_1_alpha_2": {
           "type": "string",
           "uom": null,
-          "description": "A two letter string representation of the Country of origin according too ISO 3166-1."
+          "description": "A two letter string representation of the Country of origin according too ISO 3166-1"
         },
         "nato_member": {
           "type": "boolean",
@@ -1028,7 +1101,7 @@
         "eu_member": {
           "type": "boolean",
           "uom": null,
-          "description": "Indicates if the COO is a European Union member state."
+          "description": "Indicates if the COO is a European Union member state"
         }
       },
       "conflict_resolution": {
@@ -1060,7 +1133,7 @@
         "odb": {
           "type": "integer",
           "uom": null,
-          "description": " Information in a ODB++ file."
+          "description": " Information in a ODB++ file"
         },
         "gerber": {
           "type": "integer",
@@ -1072,38 +1145,38 @@
         "number": {
           "type": "integer",
           "uom": null,
-          "description": "The number of holes total or in this process."
+          "description": "The number of holes total or in this process"
         },
         "type": {
           "type": "string",
           "enum": ["through", "blind", "buried", "back_drill"],
           "uom": null,
-          "description": "The type of holes."
+          "description": "The type of holes"
         },
         "plated": {
           "type": "boolean",
           "uom": null,
-          "description": "True if the holes are plated."
+          "description": "True if the holes are plated"
         },
         "size": {
           "type": "number",
           "uom": ["um"],
-          "description": "The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list or as a capability."
+          "description": "The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list or as a capability"
         },
         "layer_start": {
           "type": "integer",
           "uom": null,
-          "description": "The layer where the hole starts, counted from the top, where top layer is 1."
+          "description": "The layer where the hole starts, counted from the top, where top layer is 1"
         },
         "layer_stop": {
           "type": "integer",
           "uom": null,
-          "description": "The layer where the hole stops, counted from the top, where top layer is 1."
+          "description": "The layer where the hole stops, counted from the top, where top layer is 1"
         },
         "depth": {
           "type": "number",
           "uom": ["um"],
-          "description": "The depth of the hole in micrometer."
+          "description": "The depth of the hole"
         },
         "method": {
           "type": "string",
@@ -1113,55 +1186,55 @@
         },
         "minimum_designed_annular_ring": {
           "type": "number",
-          "uom": null,
-          "description": "The minimum designed annular ring in micrometers."
+          "uom": ["um"],
+          "description": "The minimum designed annular ring"
         },
         "press_fit": {
           "type": "boolean",
           "uom": null,
-          "description": "Press Fit holes."
+          "description": "Press Fit holes"
         },
         "copper_filled": {
           "type": "boolean",
           "uom": null,
-          "description": "Copper filled holes."
+          "description": "Copper filled holes"
         },
         "staggered": {
           "type": "boolean",
           "uom": null,
-          "description": "Staggered holes."
+          "description": "Staggered holes"
         },
         "stacked": {
           "type": "boolean",
           "uom": null,
-          "description": "Stacked holes."
+          "description": "Stacked holes"
         },
         "alivh": {
           "type": "boolean",
           "uom": null,
-          "description": "ALIVH holes."
+          "description": "ALIVH holes"
         }
       },
       "allowed_modifications": {
         "dead_pad_removal": {
           "type": "boolean",
           "uom": null,
-          "description": "Non Functioning Pad removal."
+          "description": "Allowed to remove Non Functioning Pads"
         },
         "add_copper_balancing": {
           "type": "boolean",
           "uom": null,
-          "description": "Adding copper balancing pattern"
+          "description": "Adding copper balancing pattern allowed"
         },
         "add_copper_balancing_on_array": {
           "type": "boolean",
           "uom": null,
-          "description": "Adding copper balancing pattern on array/panel frame."
+          "description": "Adding copper balancing pattern on array/panel frame allowed"
         },
         "add_tear_drops": {
           "type": "boolean",
           "uom": null,
-          "description": "Adding Tear Drops."
+          "description": "Adding Tear Drops allowed"
         }
       },
       "additional_requirements": {
