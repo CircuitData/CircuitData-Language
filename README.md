@@ -1,4 +1,5 @@
 # CircuitData Language
+======================
 An open language for communicating information needed for PCB fabrication. Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
 ## Based on the Open Trade Transfer Package format (OTTP)
@@ -161,7 +162,12 @@ Materials in CircuitData is devided into three different kinds: `dielectrics`, `
 ### Additional requirements
 This section is for all items that are not are not part of the CircuitData language yet.
 
+## Contributing to the project
+We really appreciate all involvement. If you feel that there are additions needed to the language, please start out by raising the issue in the [CircuitData Forum](https://www.circuitdata.org/). Then clone this repo and branch out before you make your changes. Please use a branch name that explains what you want to add. When you are done and have tested it, make a Pull Request in this GitHub project. It is the board of CircuitData that decided when code is to merged with the master and thus become part of the language.
+
 ## Elements and tags
+====================
+
 ### stackup [link](#stackup)
 * specification_level
 * file_name
@@ -176,7 +182,6 @@ This section is for all items that are not are not part of the CircuitData langu
 * external_base_copper_thickness
 * internal_base_copper_thickness
 * copper_foil_roughness
-* copper_foil_type
 * copper_coverage_average
 
 ### flexible_conductive_layer [link](#flexible_conductive_layer)
@@ -188,7 +193,6 @@ This section is for all items that are not are not part of the CircuitData langu
 * external_base_copper_thickness
 * internal_base_copper_thickness
 * copper_foil_roughness
-* copper_foil_type
 * copper_coverage_average
 
 ### final_finish [link](#final_finish)
@@ -209,22 +213,6 @@ This section is for all items that are not are not part of the CircuitData langu
 
 ### dielectric [link](#dielectric)
 * name
-* ipc_4101_sheet
-* ipc_4103_sheet
-* ipc_4204_sheet
-* tg_min
-* tg_range_from
-* tg_range_to
-* td_min
-* td_range_from
-* halogen_free
-* rw_en45545_2_2013
-* rw_uni_cei_11170_3
-* rw_nfpa_130
-* ul
-* accept_equivalent
-* manufacturer
-* link
 
 ### soldermask [link](#soldermask)
 * color
@@ -235,10 +223,6 @@ This section is for all items that are not are not part of the CircuitData langu
 * top
 * bottom
 * allow_touchups
-* manufacturer
-* ipc_sm_840_class
-* link
-* accept_equivalent
 
 ### legend [link](#legend)
 * color
@@ -250,10 +234,6 @@ This section is for all items that are not are not part of the CircuitData langu
 * placement
 * thickness
 * material
-* manufacturer
-* descriptive_name
-* link
-* accept_equivalent
 
 ### coverlay [link](#coverlay)
 * total_thickness
@@ -435,99 +415,84 @@ This section is for all items that are not are not part of the CircuitData langu
 
 ### additional_requirements [link](#additional_requirements)
 * any_name
-* printed_circuits_fabrication_data
-
-### colors [link](#colors)
-* name
-* type
-* value
 
 ### stackup
 Aliases: stack-up, buildup, build-up
 
-The stackup of the board. Can also include the stackup itself in the "specified" element.
+The stackup of the board: Free stackup (supplier to choose), specified in a separate file or specified in this file. Can also include the stackup itself.
 
 #### specification_level
-The stack up of this board
-
-Use one of these values:
-* free (The manufacturer can choose the stackup that matches the rest of the requirements)
-* separate_file (A file is supplied with the package that will contain the actual stackup)
-* specified (The actual stackup is under the stackup->specified element)
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** |  |  |  |  | Array of s | Array of s |
 
 #### file_name
-The URI of the file that specifies the stackup. Either as a path witin a project compressed file (ZIP) or as a link
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** |  |  |  |  | Array of s | Array of s |
 
 #### specified
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** |  |  |  |  | Array of s | Array of s | Array of s |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** |  |  |  |  | Array of s | Array of s |
 
 ### rigid_conductive_layer
 
 #### count
 The number of conductive layers.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
-|**Min value:** | 1 | 1 | 1 | 1 | Each item: 1 | Each item: 1 | Each item: 1 |
-|**Max value:** | 100 | 100 | 100 | 100 | Each item  : 100 | Each item: 100 | Each item: 100 |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
+|**Min value:** | 1 | 1 | 1 | 1 | Each item: 1 | Each item: 1 |
+|**Max value:** | 100 | 100 | 100 | 100 | Each item  : 100 | Each item: 100 |
 
 #### minimum_internal_track_width
 The minimum nominal width of conductors on internal/unplated layers (minimum track).
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### minimum_external_track_width
 The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here.
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### minimum_internal_spacing_width
 The minimum gap between two conductors on the internal layers.
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### minimum_external_spacing_width
 The minimum gap between two conductors on the external layers. If only one minimum gap is present, is should be here.
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### external_base_copper_thickness
-Finished base copper thickness following IPC Class on the up to two external layers
+Finished base copper thickness following IPC Class on the up to two external layers.
 
 Unit of Measure: um
 
@@ -547,13 +512,13 @@ Use one of these values:
 * 342.9
 * 480.1
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### internal_base_copper_thickness
-Finished base copper thickness following IPC Class on the internal layers
+Finished base copper thickness following IPC Class on the internal layers.
 
 Unit of Measure: um
 
@@ -573,100 +538,88 @@ Use one of these values:
 * 342.9
 * 480.1
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### copper_foil_roughness
-The roughness of the copper foil
+The roughness of the copper foil.
 
 Use one of these values:
-* S (Standard profile)
-* L (Low profile)
-* V (Very low profile)
+* S
+* L
+* V
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### copper_foil_type
-The type of copper foil
-
-Use one of these values:
-* ED (Electro Deposited)
-* RA (Rolled Annealed Copper)
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### copper_coverage_average
 The average copper coverage of the board
 
 Unit of Measure: %
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 ### flexible_conductive_layer
 
 #### count
 The number of conductive layers.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
-|**Min value:** | 1 | 1 | 1 | 1 | Each item: 1 | Each item: 1 | Each item: 1 |
-|**Max value:** | 100 | 100 | 100 | 100 | Each item  : 100 | Each item: 100 | Each item: 100 |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
+|**Min value:** | 1 | 1 | 1 | 1 | Each item: 1 | Each item: 1 |
+|**Max value:** | 100 | 100 | 100 | 100 | Each item  : 100 | Each item: 100 |
 
 #### minimum_internal_track_width
 The minimum nominal width of conductors on internal/unplated layers (minimum track).
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### minimum_external_track_width
 The minimum nominal width of conductors on external/plated layers (minimum track). If only only one minimum track is present, is should be here.
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### minimum_internal_spacing_width
 The minimum gap between two conductors on the internal layers.
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### minimum_external_spacing_width
 The minimum gap between two conductors on the external layers. If only one minimum gap is present, is should be here.
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### external_base_copper_thickness
-Finished base copper thickness following IPC Class on the up to two external layers
+Finished base copper thickness following IPC Class on the up to two external layers.
 
 Unit of Measure: um
 
@@ -686,13 +639,13 @@ Use one of these values:
 * 342.9
 * 480.1
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### internal_base_copper_thickness
-Finished base copper thickness following IPC Class on the internal layers
+Finished base copper thickness following IPC Class on the internal layers.
 
 Unit of Measure: um
 
@@ -712,361 +665,221 @@ Use one of these values:
 * 342.9
 * 480.1
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### copper_foil_roughness
-The roughness of the copper foil
+The roughness of the copper foil.
 
 Use one of these values:
-* S (Standard profile)
-* L (Low profile)
-* V (Very low profile)
+* S
+* L
+* V
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### copper_foil_type
-The type of copper foil
-
-Use one of these values:
-* ED (Electro Deposited)
-* RA (Rolled Annealed Copper)
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### copper_coverage_average
 The average copper coverage of the board
 
 Unit of Measure: %
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 ### final_finish
 
-**You must specify this as en array when used in a generic product description or a stackup, but as a object when used in any of the other parts. Read more [here](#elements-that-are-both-arrays-and-objects)**
+**You must specify this as en array when used in a generic product description or a stackup, but as a single object when used in any of the other parts.**
 
 #### finish
-The material/method/surface to be used in the finish
+The material/method/surface to be used in the finish.
 
 Use one of these values:
-* none (No final finish should be used)
-* c_bare_copper (AABUS)
-* isn (IPC-4554 Immersion Tin)
-* iag (IPC-4553 Immersion Silver)
-* enig (IPC-4552 Immersion Gold)
-* enepig (IPC-4556 ENEPIG)
-* osp (J-STD-003 Organic Solderability Preservative)
-* ht_osp (J-STD-003 High Temperature OSP)
-* g (ASTM-B-488 Gold for edge printed board connectors and areas not to be soldered)
-* GS (J-STD-003 Gold Electroplate on areas to be soldered)
-* t_fused (J-STD-003 Electrodeposited Tin-Lead (fused))
-* tlu_unfused (J-STD-003 Electrodeposited Tin-Lead Unfused)
-* dig (J-STD-003 Direct Immersion Gold (Solderable Surface))
-* gwb-1_ultrasonic (ASTM-B-488 Gold Electroplate for areas to be wire bonded (ultrasonic))
-* gwb-2-thermosonic (ASTM-B-488 Gold Electroplate for areas to be wire bonded (thermosonic))
-* s_hasl (J-STD-003_J-STD-006 Solder Coating over Bare Copper (HASL))
-* b1_lfhasl (J-STD-003_J-STD-006 Lead-Free Solder Coating over Bare Copper (Lead-Free HASL, Lead free HASL))
+* none
+* c_bare_copper
+* isn
+* iag
+* enig
+* enepig
+* osp
+* ht_osp
+* g
+* GS
+* t_fused
+* tlu_unfused
+* dig
+* gwb-1_ultrasonic
+* gwb-2-thermosonic
+* s_hasl
+* b1_lfhasl
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### area
 The area that the finish will cover
 
 Unit of Measure: dm2
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### thickness_min
 The minimum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### thickness_max
 The maximum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### gold_thickness_min
 The minimum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### gold_thickness_max
 The maximum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### silver_thickness_min
 The minimum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### silver_thickness_max
 The maximum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### paladium_thickness_min
 The maximum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### paladium_thickness_max
 The maximum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### tin_thickness_min
 The maximum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### tin_thickness_max
 The maximum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### nickel_thickness_min
 The maximum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### nickel_thickness_max
 The maximum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 ### dielectric
 
-**You must specify this as en array when used in a generic product description or a stackup, but as a object when used in any of the other parts. Read more [here](#elements-that-are-both-arrays-and-objects)**
+**You must specify this as en array when used in a generic product description or a stackup, but as a single object when used in any of the other parts.**
 
 #### name
-The name of the Laminate. Use the official name or some name as close to it as possible
+The name of the Laminate. Use the official name or some name as close to it as possible.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### ipc_4101_sheet
-The reference sheet number of the IPC 4101 Standard.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
-
-#### ipc_4103_sheet
-The reference sheet number of the IPC 4103 Standard.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
-
-#### ipc_4204_sheet
-The reference sheet number of the IPC 4204 Standard.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
-
-#### tg_min
-The minimum Glass Transition Temperature (Tg) required.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Allowed |
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
-
-#### tg_range_from
-The Glass Transition Temperature (Tg) range starts at.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
-
-#### tg_range_to
-The Glass Transition Temperature (Tg) range ands at.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
-
-#### td_min
-The minimum required temperature at which a base laminate material experiences an established percentage of weight loss using Thermograv imetric Analysis (TGA).
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Allowed |
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
-
-#### td_range_from
-The Td range stops at.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
-
-#### halogen_free
-Indicates the material is material free or is required to be
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
-
-#### rw_en45545_2_2013
-Railway France NF F 16-101 compatible
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
-
-#### rw_uni_cei_11170_3
-Railway Italy UNI CEI 11170-3 compatible.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
-
-#### rw_nfpa_130
-Railway USA NFPA 130 compatible.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
-
-#### ul
-UL compatible.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
-
-#### accept_equivalent
-Equivalent material to the one specified is OK to use as a replacement if true.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Allowed |
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
-
-#### manufacturer
-The name of the manufacturer
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### link
-The link to some url that gives more information or a reference to the product.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 ### soldermask
 
-**You must specify this as en array when used in a generic product description or a stackup, but as a object when used in any of the other parts. Read more [here](#elements-that-are-both-arrays-and-objects)**
+**You must specify this as en array when used in a generic product description or a stackup, but as a single object when used in any of the other parts.**
 
 #### color
-This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done custom -> colors section
+This describes the color based on the name of the color; green, black, blue, red, white, yellow. If a specific color needs to be defined, this can be done custom -> colors section.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### finish
-The finish of the soldermask
+The finish of the soldermask.
 
 Use one of these values:
 * matte
@@ -1074,98 +887,62 @@ Use one of these values:
 * glossy
 * any
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### min_thickness
 The minimum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### max_thickness
 The maximum thickness.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### material
 The name of a material that appears in the materials section
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Allowed |
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### top
 Indicates presence/capability on top
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### bottom
 Indicates presence/capability at bottom
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### allow_touchups
 The manufacturer is allowed to do touchups on the soldermask if true
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
-
-#### manufacturer
-The name of the manufacturer
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### ipc_sm_840_class
-Soldermask to meet IPC SM 840 Class.
-
-Use one of these values:
-* T
-* H
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### link
-The link to some url that gives more information or a reference to the product.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### accept_equivalent
-Equivalent material to the one specified is OK to use as a replacement if true.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### legend
 Aliases: silk screen, silkscreen, ink, ident
@@ -1173,28 +950,28 @@ Aliases: silk screen, silkscreen, ink, ident
 The legend to be used on the board
 
 #### color
-This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done custom -> colors section
+This describes the color based on the name of the color; white, yellow. If a specific color needs to be defined, this can be done custom -> colors section.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### top
 Indicates presence/capability on top
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### bottom
 Indicates presence/capability at bottom
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### stiffener
 Aliases: support
@@ -1206,165 +983,129 @@ The size of the stiffener should be specified in drawing
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### placement
-Indicating if the stiffener is on top or bottom of the flexible layer
+Indicating if the stiffener is on top or bottom of the flexible layer.
 
 Use one of these values:
-* top (The stiffener is on top of the flexible layer(s))
-* bottom (The stiffener is below the flexible layer(s))
+* top
+* bottom
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### thickness
 The thickness of the stiffener
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### material
 The name of a material that appears in the materials section
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### manufacturer
-The name of the manufacturer
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### descriptive_name
-The name of the stiffener. Use the official name or some name as close to it as possible
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### link
-The link to some url that gives more information or a reference to the product.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
-
-#### accept_equivalent
-Equivalent material to the one specified is OK to use as a replacement if true.
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 ### coverlay
-Aliases: coverfilm
 
-The coverlay on flexible boards
 
 #### total_thickness
 The total thickness of the coverlay
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### top
 Indicates presence/capability on top
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### bottom
 Indicates presence/capability at bottom
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### material
 The name of a material that appears in the materials -> soldermask section
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 ### peelable_mask
-Aliases: peelable solder mask, strippable mask, blue-mask
 
-Peelable solder mask that are removed after processing
 
 #### heating_operations
 
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### top
 Indicates presence/capability on top
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### bottom
 Indicates presence/capability at bottom
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### kapton_tape
-Kapton (polyimide) tape suitable for fixing, masking and sealing
+
 
 #### accept_equivalent
 If alternative to DuPont™ Kapton® HN general-purpose film can be used
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### top
 Indicates presence/capability on top
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### bottom
 Indicates presence/capability at bottom
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### conductive_carbon_print
 
@@ -1372,18 +1113,18 @@ Indicates presence/capability at bottom
 #### top
 Indicates presence/capability on top
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### bottom
 Indicates presence/capability on top
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### silver_print
 
@@ -1391,18 +1132,18 @@ Indicates presence/capability on top
 #### top
 Indicates presence/capability on top
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### bottom
 Indicates presence/capability at bottom
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### inner_packaging
 This describes how boards are packed together to be shipped. Part of IPC 1601 (4.2.2)
@@ -1411,281 +1152,281 @@ This describes how boards are packed together to be shipped. Part of IPC 1601 (4
 The material of the bag to be used
 
 Use one of these values:
-* a (Nylon/Foil/Polyethylene)
-* b (TyvekTM/Foil/Polyethylene)
-* c (Aluminized Polyester/Polyethylene)
-* d (Plastics/Polymers (non-metallic))
+* a
+* b
+* c
+* d
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### hic
 True to include a Humidity Indicator Card (HIC), False to not
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### esd
-True to indicate that packaging for ESD-sensitive required
+True to indicate that packaging for ESD-sensitive required.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### desiccant
-True to indicate that a desiccant material is required
+True to indicate that a desiccant material is required.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### vacuum
-True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed
+True to indicate that vacuum is needed for shrinkage - no heat rap or shrink rap allowed.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### via_protection
 The via/hole protection according to IPC 4761
 
 #### type_1
-A via with a dry film mask material applied bridging over the via wherein no additional materials are in the hole
+A via with a dry film mask material applied bridging over the via wherein no additional materials are in the hole.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### type_2
-A Type I via with a secondary covering of mask material applied over the tented via
+A Type I via with a secondary covering of mask material applied over the tented via.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### type_3
-A via with material applied allowing partial penetration into the via. The plug material may be applied from one or both sides
+A via with material applied allowing partial penetration into the via. The plug material may be applied from one or both sides.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### type_4a
-A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides
+A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### type_4b
-A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides
+A Type III via with a secondary covering of material applied over the via. The plug material may be applied from one or both sides.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### type_5
-A via with material applied into the via targeting a full penetration and encapsulation of the hole
+A via with material applied into the via targeting a full penetration and encapsulation of the hole.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### type_6a
-A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides
+A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### type_6b
-A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides
+A Type V via with a secondary covering of material (liquid or dry film soldermask) applied over the via. The plug material may be applied from one or both sides.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### type_7
-A Type V via with a secondary metallized coating covering the via. The metallization is on both sides
+A Type V via with a secondary metallized coating covering the via. The metallization is on both sides.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### board
 The physical description of the board
 
 #### size_x
-The size of the board in the x-asis
+The size of the board in the x-asis, measured in millimeters
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### size_y
-The size of the board in the y-asis
+The size of the board in the y-asis, measured in millimeters
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### thickness
-The thickness of the board
+The thickness of the board measured in millimeters
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 ### array
 
 #### size_x
-The size of the array in the x-asis
+The size of the array in the x-asis, measured in millimeters
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### size_y
-The size of the array in the y-asis
+The size of the array in the y-asis, measured in millimeters
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### boards_x
-Number of boards in the panel in the x-direction
+Number of boards in the panel in the x-direction.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### boards_y
-Number of boards in the panel in the y-direction
+Number of boards in the panel in the y-direction.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### boards_total
-Number total number of boards in the panel. This is not the preferred method of stating the number, "boards_x" and "boards_y" should be used
+Number total number of boards in the panel. This is not the preferred method of stating the number, "boards_x" and "boards_y" should be used.
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### border_left
-The size of the left side boarder between the edge and the board
+The size of the left side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### border_right
-The size of the right side boarder between the edge and the board
+The size of the right side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### border_top
-The size of the top side boarder between the edge and the board
+The size of the top side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### border_bottom
-The size of the bottom side boarder between the edge and the board
+The size of the bottom side boarder between the edge and the board measured in millimeters. When used in a Profile or Capability, it must specify minimum needed boarder
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### board_spacing_x
-The size of the space between the boards in the x-direction
+The size of the space between the boards in the x-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### board_spacing_y
-The size of the space between the boards in the y-direction
+The size of the space between the boards in the y-direction measured in millimeters. When used in a Profile or Capability, it must specify the minimum needed space
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### fiducials_number
-The number of fiducials on the array
+The number of fiducials on the array.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers | Array of integers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers |
 
 #### fiducials_size
-The size of the fiducials
+The size of the fiducials measured in millimeters. If used in a Profile, it is the minimum needed size
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### fiducials_shape
 The shape of the fiducials.
@@ -1696,184 +1437,186 @@ Use one of these values:
 * plus
 * diamond
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### breakaway_method
 The method of creation of the breakaways on the array
 
 Use one of these values:
 * routing
-* scoring (alises includes "v-cut" and "v-grove")
+* scoring
+* v-cut
+* v-grove
 * jump_scoring
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### mouse_bites
 Indicates if there should be "mouse bites" to allow easy break away of the boards
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### tooling_holes_number
-The number of tooling holes on the array
+The number of tooling holes on the array.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### tooling_holes_size
-The size of the tooling holes.
+The size of the tooling holes measured in millimeters. If used in a Profile, it is the minimum needed size.
 
 Unit of Measure: mm
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### x_outs_allowed
 Manufacturer can deliver arrays with defect boards as long as these are clearly marked as defect (X'ed out).
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### x_outs_max_percentage_on_array
 The maximum number of defective and clearly marked as such boards that are allowed on on panel, stated in percentage
 
 Unit of Measure: percentage
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### transplant_board_allowed
 The maximum number of defective and clearly marked as such boards that are allowed on on panel, stated in percentage.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### weight
-The weight of the array
+The weight of the array measured in grams.
 
 Unit of Measure: g
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 ### mechanical
 Mechanical processes in the manufacturing
 
 #### edge_bevelling
-Edge bevelling present
+Edge bevelling present.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### depth_routing_top
 Depth Routing from the top present
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### depth_routing_bottom
-Depth Routing from the bottom present
+Depth Routing from the bottom present.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### counterboring_top
-Counterboring from the top present
+Counterboring from the top present.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### counterboring_bottom
-Counterboring from the bottom present
+Counterboring from the bottom present.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### countersink_top
-Countersink from the top present
+Countersink from the top present.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### countersink_bottom
-Countersink from the bottom present
+Countersink from the bottom present.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### punching
-Punching process required
+Punching process required.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### plated_edges
-Plated Edges process required
+Plated Edges process required.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### plated_slots
-Plated Slots process required
+Plated Slots process required.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### plated_castellated_holes
-Plated Castellated Holes process required
+Plated Castellated Holes process required.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### coin_attachment
-Coin Attachment process required
+Coin Attachment process required.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### selective_plated_pads
 Aliases: selective hard gold
@@ -1881,20 +1624,20 @@ Aliases: selective hard gold
 Selective plated pads
 
 #### present
-Selective plated pads present
+Selective plated pads present.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### layers
-The layers included in the connectors, counted from 1 (top layer)
+The layers included in the connectors, counter from 1 (top layer).
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 ### hard_gold_edge_connectors
 Aliases: gold fingers
@@ -1902,63 +1645,63 @@ Aliases: gold fingers
 Edge connectors made with hard gold
 
 #### present
-Hard gold edge connectors present
+Hard gold edge connectors present.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### thickness
 The thickness of the connectors
 
 Use one of these values:
-* 0.76 (According to IPC Class 2)
-* 1.27 (According to IPC Class 3)
-* other (To be specified in the thickness_other tag)
+* 0.76
+* 1.27
+* other
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### thickness_other
 Thickness if it is not "0.76" or "1.27".
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### area
-Area covered by the edge connectors in square desimeter
+Area covered by the edge connectors in square desimeter.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### layers
-The layers included in the connectors, counter from 1 (top layer)
+The layers included in the connectors, counter from 1 (top layer).
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 ### markings
 Physical markings on the board
 
 #### date_code
-Possible values are "YY" for year, "WW" for week "-" and "LOT" (alias "BATCH"). E.g. "YYWW-LOT" or "LOT-YYWW". If no marking, set "NONE"
+Possible values are "YY" for year, "WW" for week "-" and "LOT" (alias "BATCH"). E.g. "YYWW-LOT" or "LOT-YYWW". If no marking, set "NONE".
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### placement
-Placement of the markings
+Placement of the markings.
 
 Use one of these values:
 * copper_top
@@ -1968,210 +1711,210 @@ Use one of these values:
 * legend_top
 * legend_bottom
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### manufacturer_identification
-Manufacturer identification present
+Manufacturer identification present.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### standards
-Possible values are the ones listed in the subelement "standards" but typical will be "ul" and "rohs"
+Possible values are the ones listed in the subelement "standards" but typical will be "ul" and "rohs". Separate by comma.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | array | array | array | array | Array of arrays | Array of arrays | Array of arrays |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | array | array | array | array | Array of arrays | Array of arrays |
 
 #### serial_number
-Serial number should be added in the markings
+Serial number should be added in the markings.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### serial_number_format
-Format of the serial number expressed as a "regular expression" but needs to have x amount of digits in it
+Format of the serial number expressed as a "regular expression" but needs to have x amount of digits in it.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### serial_number_start
-The number to start the serial number from. Will have to replace the digits from the "serial_number_format" above
+The number to start the serial number from. Will have to replace the digits from the "serial_number_format" above.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers | Array of integers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers |
 
 #### serial_number_increase_by
-The increase in number from "serial_number_start" with each product
+The increase in number from "serial_number_start" with each product.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers | Array of integers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers |
 
 ### standards
-A list of standards that applies to the printed circuit board industry
+If the format is boolean and nothing is stated other than the name of the standard in the Decription column, it should be understood as follows: Are to be met (if Specification), required (in Profile) or possible (in Capability)
 
 #### ul
-Indicating if UL is required for the board. Can not be used as a capability, as this will be indicated on each material
+Indicating if UL is required for the board. Can not be used as a capability, as this will be indicated on each material.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### c_ul
-Indicating if Canadian UL is required for the board. Can not be used as a capability, as this will be indicated on each material
+Indicating if Canadian UL is required for the board. Can not be used as a capability, as this will be indicated on each material.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### rohs
-RoHS
+RoHS.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### ul94
 UL 94 - Standard for Safety of Flammability of Plastic Materials for Parts in Devices and Appliances testing
 
 Use one of these values:
-* hb (HB - Slow burning on a horizontal specimen; burning rate < 76 mm/min for thickness < 3 mm or burning stops before 100 mm)
-* v_0 (V-0 - Burning stops within 30 seconds on a vertical specimen; drips of flaming particles are allowed)
-* v_1 (V-1 - Burning stops within 30 seconds on a vertical specimen; drips of particles allowed as long as they are not inflamed)
-* v_2 (V-2 - Burning stops within 30 seconds on a vertical specimen; drips of flaming particles are allowed)
-* 5vb (5VB - Burning stops within 60 seconds on a vertical specimen; no drips allowed; plaque specimens may develop a hole)
-* 5va (5VA - Burning stops within 60 seconds on a vertical specimen; no drips allowed; plaque specimens may not develop a hole)
+* hb
+* v_0
+* v_1
+* v_2
+* 5vb
+* 5va
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### esa
-European Space Agency Use
+European Space Agency Use.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### itar
-US ITAR
+US ITAR.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### dfars
-US DFARS
+US DFARS.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### mil_prf_55110
-MIL-PRF-55110
+MIL-PRF-55110.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### mil_prf_50884
-MIL-PRF-5884
+MIL-PRF-5884.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### mil_prf_31032
-MIL-PRF-31032
+MIL-PRF-31032.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### as9100
-AS9100
+AS9100.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### nadcap
-NADCAP
+NADCAP.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### rw_en45545_2_2013
-Railway Europe EN45545-2:2013
+Railway Europe EN45545-2:2013.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### rw_nf_f_16_101
-Railway France NF F 16-101
+Railway France NF F 16-101.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### rw_uni_cei_11170_3
-Railway Italy UNI CEI 11170-3
+Railway Italy UNI CEI 11170-3.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### rw_nfpa_130
-Railway USA NFPA 130
+Railway USA NFPA 130.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### ipc_6010_class
-According to Table 4-2 /4-3
+According to Table 4-2 /4-3.
 
 Use one of these values:
 * 1
 * 2
 * 3
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### ipc_6010_compliance_level
 
@@ -2179,60 +1922,60 @@ Use one of these values:
 Use one of these values:
 * full
 * factory_standard
-* aabus (As Agreed Between User and Supplier)
+* aabus
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### ipc_6010_copper_plating_thickness_level
-Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2
+Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.
 
 Use one of these values:
 * 2
 * 3
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### ipc_6010_annular_ring_level
-Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2
+Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.
 
 Use one of these values:
 * 2
 * 3
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### ipc_6010_conductor_spacing_level
-Used either if ipc_6010_class is set to 2 and you want to add conductor spacing demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2
+Used either if ipc_6010_class is set to 2 and you want to add conductor spacing demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.
 
 Use one of these values:
 * 2
 * 3
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### ipc_6010_conductor_width_level
-Used either if ipc_6010_class is set to 2 and you want to add conductor width demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2
+Used either if ipc_6010_class is set to 2 and you want to add conductor width demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2.
 
 Use one of these values:
 * 2
 * 3
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### ipc_6012_class
 Requirements according to IPC 6012 class
@@ -2241,14 +1984,14 @@ Use one of these values:
 * 1
 * 2
 * 3
-* 3A (Automotive addendum)
-* 3S (Space and Military Avionics Addendum)
-* 3M (Medical Addendum)
+* 3A
+* 3S
+* 3M
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### ipc_6013_class
 Requirements according to IPC 6013 for flexible or rigid-flex boards
@@ -2258,109 +2001,109 @@ Use one of these values:
 * 2
 * 3
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### ipc_6018
 IPC-6018 Microwave End Product Board Inspection and Test
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### testing
-The tests that are to be performed
+
 
 #### netlist
 100% Netlist testing according to IPC-D-356, ODB++ or IPC2581
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### allow_generate_netlist
 Allow Netlist to be generated from Gerber or other file format if needed
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### hipot
 HiPot Test (Dielectric Withstanding Voltage Test)
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### 4_wire
 Use 4 wired test
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### ist
-Use IST testing
+Use IST testing.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### impedance
-How to conduct a impedance test
+
 
 Use one of these values:
 * controlled
 * calculated
 * follow_stackup
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 ### country_of_origin
 Country of Origin is the country where the Printed Circuit Board is manufactured.
 
 #### iso_3166_1_alpha_3
-A three letter string representation of the Country of origin according too ISO 3166-1
+A three letter string representation of the Country of origin according too ISO 3166-1.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### iso_3166_1_alpha_2
-A two letter string representation of the Country of origin according too ISO 3166-1
+A two letter string representation of the Country of origin according too ISO 3166-1.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### nato_member
 Indicates if the COO is a NATO member state
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### eu_member
-Indicates if the COO is a European Union member state
+Indicates if the COO is a European Union member state.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### conflict_resolution
 If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice.
@@ -2368,73 +2111,73 @@ If several sources of data is present, this hierarchy is to set how to solve con
 #### order
 Information provided on order level
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers | Array of integers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers |
 
 #### oem_specification_sheet
 Information provided from the OEM in a PDF or other document format
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers | Array of integers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers |
 
 #### assembly_specification_sheet
 Information provided from the assembly facility in a PDF or other document format
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers | Array of integers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers |
 
 #### drawing
 Information in a drawing (if present)
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers | Array of integers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers |
 
 #### ipc2581
 Information in an IPC-2581 file
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers | Array of integers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers |
 
 #### odb
- Information in a ODB++ file
+ Information in a ODB++ file.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers | Array of integers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers |
 
 #### gerber
 Information in a Gerber format file
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Disallowed | Disallowed | Disallowed | 
-|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers | Array of integers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | integer | integer | integer | integer | Array of integers | Array of integers |
 
 ### holes
 
-**You must specify this as en array when used in a generic product description or a stackup, but as a object when used in any of the other parts. Read more [here](#elements-that-are-both-arrays-and-objects)**
+**You must specify this as en array when used in a generic product description or a stackup, but as a single object when used in any of the other parts.**
 
 #### number
-The number of holes total or in this process
+The number of holes total or in this process.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### type
-The type of holes
+The type of holes.
 
 Use one of these values:
 * through
@@ -2442,54 +2185,54 @@ Use one of these values:
 * buried
 * back_drill
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### plated
-True if the holes are plated
+True if the holes are plated.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### size
-The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list or as a capability
+The size of the hole in micrometers. Can be considered the minimum hole size if only one holes element present in the list or as a capability.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### layer_start
-The layer where the hole starts, counted from the top, where top layer is 1
+The layer where the hole starts, counted from the top, where top layer is 1.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### layer_stop
-The layer where the hole stops, counted from the top, where top layer is 1
+The layer where the hole stops, counted from the top, where top layer is 1.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### depth
-The depth of the hole
+The depth of the hole in micrometer.
 
 Unit of Measure: um
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### method
 Can be either "routing" or "drilling", where drilling is default
@@ -2499,95 +2242,93 @@ Use one of these values:
 * drilling
 * laser
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
 #### minimum_designed_annular_ring
-The minimum designed annular ring
+The minimum designed annular ring in micrometers.
 
-Unit of Measure: um
-
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | number | number | number | number | Array of numbers | Array of numbers | Array of numbers |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | number | number | number | number | Array of numbers | Array of numbers |
 
 #### press_fit
-Press Fit holes
+Press Fit holes.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### copper_filled
-Copper filled holes
+Copper filled holes.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### staggered
-Staggered holes
+Staggered holes.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### stacked
-Stacked holes
+Stacked holes.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### alivh
-ALIVH holes
+ALIVH holes.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### allowed_modifications
 Changes/fabrication decisions that are allowed to make to the files provided.
 
 #### dead_pad_removal
-Allowed to remove Non Functioning Pads
+Non Functioning Pad removal.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### add_copper_balancing
-Adding copper balancing pattern allowed
+Adding copper balancing pattern
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### add_copper_balancing_on_array
-Adding copper balancing pattern on array/panel frame allowed
+Adding copper balancing pattern on array/panel frame.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 #### add_tear_drops
-Adding Tear Drops allowed
+Adding Tear Drops.
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Allowed | Allowed | Allowed | Disallowed | Disallowed | 
-|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans | Array of booleans |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | boolean | boolean | boolean | boolean | Array of booleans | Array of booleans |
 
 ### additional_requirements
 This section is for all requirements that still has not been adapted to the standard or needs to be stated as a comment. It allows you to specify custom elements that should be considered as part of the specification. You specify the value here and then need to create a separate element for it in the custom -> additional section. Multiple elements allowed - to be added as a list.
@@ -2595,35 +2336,8 @@ This section is for all requirements that still has not been adapted to the stan
 #### any_name
 Must have a similar element in the custom -> additional
 
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Allowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed | Disallowed | 
-|**Format:** | string | string | string | string | Array of strings | Array of strings | Array of strings |
+|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities |
+|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
+| **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
+|**Format:** | string | string | string | string | Array of strings | Array of strings |
 
-#### printed_circuits_fabrication_data
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** |  |  |  |  | Array of s | Array of s | Array of s |
-
-### colors
-
-**You must specify this as en array when used in a generic product description or a stackup, but as a object when used in any of the other parts. Read more [here](#elements-that-are-both-arrays-and-objects)**
-
-#### name
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** |  |  |  |  | Array of s | Array of s | Array of s |
-
-#### type
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** |  |  |  |  | Array of s | Array of s | Array of s |
-
-#### value
-|  | Generic product | Stackup | Profile defaults | Profile enforced | Profile restricted | Capabilities | Custom |
-|-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|:------:|
-| **Use in:** | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Disallowed | Allowed |
-|**Format:** |  |  |  |  | Array of s | Array of s | Array of s |
