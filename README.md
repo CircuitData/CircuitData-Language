@@ -1,5 +1,4 @@
 # CircuitData Language
-======================
 An open language for communicating information needed for PCB fabrication. Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
 ## Based on the Open Trade Transfer Package format (OTTP)
@@ -163,7 +162,7 @@ Materials in CircuitData is devided into three different kinds: `dielectrics`, `
 This section is for all items that are not are not part of the CircuitData language yet.
 
 ## Contributing to the project
-We really appreciate all involvement. If you feel that there are additions needed to the language, please start out by raising the issue in the [CircuitData Forum](https://www.circuitdata.org/). Then clone this repo and branch out before you make your changes. Please use a branch name that explains what you want to add. When you are done and have tested it, make a Pull Request in this GitHub project. It is the board of CircuitData that decided when code is to merged with the master and thus become part of the language.
+We really appreciate all involvement. If you feel that there are additions or changes needed to the language, please start out by raising the issue in the [CircuitData Forum](https://www.circuitdata.org/). Then clone this repo and branch out before you make your changes. Please use a branch name that explains what you want to add. When you are done and have tested it, make a Pull Request in this GitHub project. It is the board of CircuitData that decided when code is to merged with the master and thus become part of the language.
 
 ## Elements and tags
 ====================
