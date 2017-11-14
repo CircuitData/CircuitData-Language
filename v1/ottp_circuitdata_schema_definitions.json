@@ -1,8 +1,9 @@
 {
   "definitions": {
     "version": {
-      "type": "string",
-      "pattern": "^0.6$"
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
     },
     "stackup_specific": {
       "layer_order": {

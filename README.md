@@ -25,7 +25,7 @@ This example shows how to specify how to set a company profile that forbids prod
 ```
 {
   "open_trade_transfer_package": {
-    "version": "0.1",
+    "version": 0.1,
     "information": {
       "company_name": "Elmatica as",
       "date": "2017-04-03T08:00CET"
@@ -33,7 +33,7 @@ This example shows how to specify how to set a company profile that forbids prod
     "profiles": {
       "restricted": {
         "printed_circuits_fabrication_data": {
-          "version": "0.1",
+          "version": 0.1,
           "country_of_origin": {
             "nato_member": false
           }
@@ -50,7 +50,7 @@ JSON schema is available in at its [own site (schema.circuitdata.org)](http://sc
 ```
 ottp = '{
   "open_trade_transfer_package": {
-    "version": "1.0",
+    "version": 1.0,
     "information": {
       "company": "Elmatica as",
       "created": "2017-04-03T08:00:00Z"
@@ -58,7 +58,7 @@ ottp = '{
     "profiles": {
       "restricted": {
         "generic": {
-          "version": "1.0",
+          "version": 1.0,
           "country_of_origin": {
             "nato_member": false
           }
