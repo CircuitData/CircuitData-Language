@@ -190,11 +190,13 @@
       "thickness_min_micron": {
         "type": "number",
         "uom": ["um"],
+        "minimum": 1,
         "description": "The minimum thickness."
       },
       "thickness_max_micron": {
         "type": "number",
         "uom": ["um"],
+        "minimum": 1,
         "description": "The maximum thickness."
       },
       "presence_top_boolean": {
@@ -248,12 +250,10 @@
       },
       "conductive_layer": {
         "count": {
-          "type": "number",
+          "type": "integer",
           "uom": null,
           "description": "The number of conductive layers.",
-          "minimum": 1,
-          "maximum": 100,
-          "multipleOf": 1.0
+          "minimum": 1
         },
         "minimum_internal_track_width": {
           "type": "number",

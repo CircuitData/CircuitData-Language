@@ -1927,7 +1927,7 @@
                           "minItems": 2,
                           "maxItems": 2,
                           "items": {
-                            "type": "number"
+                            "type": "integer"
                           }
                         },
                         "minimum_internal_track_width": {
@@ -1999,7 +1999,7 @@
                           "minItems": 2,
                           "maxItems": 2,
                           "items": {
-                            "type": "number"
+                            "type": "integer"
                           }
                         },
                         "minimum_external_track_width": {
@@ -2076,56 +2076,56 @@
                         "ipc_4101_sheet": {
                           "type": "array",
                           "items": {
-                            "type": "number",
+                            "type": "integer",
                             "uniqueItems": true
                           }
                         },
                         "ipc_4103_sheet": {
                           "type": "array",
                           "items": {
-                            "type": "number",
+                            "type": "integer",
                             "uniqueItems": true
                           }
                         },
                         "ipc_4204_sheet": {
                           "type": "array",
                           "items": {
-                            "type": "number",
+                            "type": "integer",
                             "uniqueItems": true
                           }
                         },
                         "tg_min": {
                           "type": "array",
                           "items": {
-                            "type": "number",
+                            "type": "integer",
                             "uniqueItems": true
                           }
                         },
                         "tg_range_from": {
                           "type": "array",
                           "items": {
-                            "type": "number",
+                            "type": "integer",
                             "uniqueItems": true
                           }
                         },
                         "tg_range_to": {
                           "type": "array",
                           "items": {
-                            "type": "number",
+                            "type": "integer",
                             "uniqueItems": true
                           }
                         },
                         "td_min": {
                           "type": "array",
                           "items": {
-                            "type": "number",
+                            "type": "integer",
                             "uniqueItems": true
                           }
                         },
                         "td_range_from": {
                           "type": "array",
                           "items": {
-                            "type": "number",
+                            "type": "integer",
                             "uniqueItems": true
                           }
                         },
@@ -2323,7 +2323,7 @@
                           "minItems": 2,
                           "maxItems": 2,
                           "items": {
-                            "type": "number"
+                            "type": "integer"
                           }
                         },
                         "top": {
@@ -2574,7 +2574,7 @@
                           "minItems": 2,
                           "maxItems": 2,
                           "items": {
-                            "type": "number"
+                            "type": "integer"
                           }
                         },
                         "boards_y": {
@@ -2582,7 +2582,7 @@
                           "minItems": 2,
                           "maxItems": 2,
                           "items": {
-                            "type": "number"
+                            "type": "integer"
                           }
                         },
                         "boards_total": {
@@ -2590,7 +2590,7 @@
                           "minItems": 2,
                           "maxItems": 2,
                           "items": {
-                            "type": "number"
+                            "type": "integer"
                           }
                         },
                         "border_left": {
@@ -2675,7 +2675,7 @@
                           "minItems": 2,
                           "maxItems": 2,
                           "items": {
-                            "type": "number"
+                            "type": "integer"
                           }
                         },
                         "tooling_holes_size": {
@@ -2854,7 +2854,7 @@
                         "standards": {
                           "type": "array",
                           "items": {
-                            "type": "number"
+                            "type": "string"
                           }
                         },
                         "serial_number": {
@@ -3873,7 +3873,7 @@
                       "minItems": 2,
                       "maxItems": 2,
                       "items": {
-                        "type": "number"
+                        "type": "integer"
                       }
                     },
                     "minimum_internal_track_width": {
@@ -3953,7 +3953,7 @@
                       "minItems": 2,
                       "maxItems": 2,
                       "items": {
-                        "type": "number"
+                        "type": "integer"
                       }
                     },
                     "minimum_internal_track_width": {
@@ -4142,42 +4142,42 @@
                     "ipc_4101_sheet": {
                       "type": "array",
                       "items": {
-                        "type": "number",
+                        "type": "integer",
                         "uniqueItems": true
                       }
                     },
                     "ipc_4103_sheet": {
                       "type": "array",
                       "items": {
-                        "type": "number",
+                        "type": "integer",
                         "uniqueItems": true
                       }
                     },
                     "ipc_4204_sheet": {
                       "type": "array",
                       "items": {
-                        "type": "number",
+                        "type": "integer",
                         "uniqueItems": true
                       }
                     },
                     "tg_range_from": {
                       "type": "array",
                       "items": {
-                        "type": "number",
+                        "type": "integer",
                         "uniqueItems": true
                       }
                     },
                     "tg_range_to": {
                       "type": "array",
                       "items": {
-                        "type": "number",
+                        "type": "integer",
                         "uniqueItems": true
                       }
                     },
                     "td_range_from": {
                       "type": "array",
                       "items": {
-                        "type": "number",
+                        "type": "integer",
                         "uniqueItems": true
                       }
                     },
@@ -4388,7 +4388,7 @@
                       "minItems": 2,
                       "maxItems": 2,
                       "items": {
-                        "type": "number"
+                        "type": "integer"
                       }
                     },
                     "top": {
@@ -5081,7 +5081,7 @@
                         "minItems": 2,
                         "maxItems": 2,
                         "items": {
-                          "type": "number"
+                          "type": "integer"
                         }
                       },
                       "type": {
@@ -5111,7 +5111,7 @@
                         "minItems": 2,
                         "maxItems": 2,
                         "items": {
-                          "type": "number"
+                          "type": "integer"
                         }
                       },
                       "layer_stop": {
@@ -5119,7 +5119,7 @@
                         "minItems": 2,
                         "maxItems": 2,
                         "items": {
-                          "type": "number"
+                          "type": "integer"
                         }
                       },
                       "depth": {
