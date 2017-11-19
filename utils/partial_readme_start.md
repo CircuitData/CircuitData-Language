@@ -2,7 +2,7 @@
 An open language for communicating information needed for PCB fabrication. Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
 ## Based on the Open Trade Transfer Package format (OTTP)
-[Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) defines a structure on how the information is to be passed in either JSON or XML format. Printed Circuit data should be placed within an element called "printed_circuits_fabrication_data" and also contain a version. Printed Circuit data can be placed within the following subelements:
+[Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) defines a structure on how the information is to be passed. Example exchange of data can be as a JSON file or in a stream such as through a RESTful API. Printed Circuit data should be placed within an element called "printed_circuits_fabrication_data" and also contain a version. Printed Circuit data can be placed within the following subelements:
 
 - products
 - profiles
@@ -91,7 +91,7 @@ All elements in a restrictive profile are to be understood as values that are no
 * **string** - can be any string, and would restrict that value. If a `enum/possible values` are set, only these values can be part of the array of strings
 
 ## Elements that are both arrays and objects
-Some elememts, such as `dielectric`, `soldermask` and `final_finish` can be both specified in an array or as an object depending on where they are used. If used in a stackup or generic product description, they will be arrays, as there can be several of them listed. When used here, there must be a counterpart in the `custom->materials` section with the same name that describes the material. For all products and capabilities it will be an object. The object can contain all the tags that would be used in the `custom->materials` section and should be compared against each of them to set or control values.
+Some elements, such as `dielectric`, `soldermask` and `final_finish` can be both specified in an array or as an object depending on where they are used. If used in a stackup or generic product description, they will be arrays, as there can be several of them listed. When used here, there must be a counterpart in the `custom->materials` section with the same name that describes the material. For all products and capabilities it will be an object. The object can contain all the tags that would be used in the `custom->materials` section and should be compared against each of them to set or control values.
 
 **Example of a dielectric in a generic product section:**
 ```
@@ -142,7 +142,7 @@ Describing colors is part of the OTTP project, and needs no `printed_circuits_fa
 ...
 ```
 ### Materials
-Materials in CircuitData is devided into three different kinds: `dielectrics`, `soldermasks` and `stiffeners`. As they are part of the CircuitData they need to be wrapped in an `printed_circuits_fabrication_data` element.
+Materials in CircuitData is divided into three different kinds: `dielectrics`, `soldermasks` and `stiffeners`. As they are part of the CircuitData they need to be wrapped in an `printed_circuits_fabrication_data` element.
 **Example:**
 ```
 ...
@@ -162,4 +162,4 @@ Materials in CircuitData is devided into three different kinds: `dielectrics`, `
 This section is for all items that are not are not part of the CircuitData language yet.
 
 ## Contributing to the project
-We really appreciate all involvement. If you feel that there are additions or changes needed to the language, please start out by raising the issue in the [CircuitData Forum](https://www.circuitdata.org/). Then clone this repo and branch out before you make your changes. Please use a branch name that explains what you want to add. When you are done and have tested it, make a Pull Request in this GitHub project. It is the board of CircuitData that decided when code is to merged with the master and thus become part of the language.
+We really appreciate all involvement. If you feel that there are additions or changes needed to the language, please start out by raising the issue in the [CircuitData Forum](https://www.circuitdata.org/). If you are up to doing the change yourself, you can ask to be added as a contributor in the GitHub repository. If you are, then clone this repo and branch out before you make your changes. Please use a branch name that explains what you want to add. When you are done and have tested it, make a Pull Request in this GitHub project. It is the board of CircuitData that decides if and when code is to be merged with the master and thus become part of the language.
