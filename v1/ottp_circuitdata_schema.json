@@ -1195,6 +1195,9 @@
                           },
                           "alivh": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/alivh"
+                          },
+                          "positive_etchback": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/positive_etchback"
                           }
                         },
                         "aliases": "",
@@ -1895,6 +1898,9 @@
                         "properties": {
                           "plated": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/plated"
+                          },
+                          "positive_etchback": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/positive_etchback"
                           }
                         }
                       }
@@ -3156,6 +3162,13 @@
                               "type": "boolean",
                               "uniqueItems": true
                             }
+                          },
+                          "positive_etchback": {
+                            "type": "array",
+                            "items": {
+                              "type": "boolean",
+                              "uniqueItems": true
+                            }
                           }
                         }
                       }
@@ -3847,6 +3860,9 @@
                         "properties": {
                           "plated": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/plated"
+                          },
+                          "positive_etchback": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/positive_etchback"
                           }
                         }
                       }
@@ -5199,6 +5215,13 @@
                         }
                       },
                       "alivh": {
+                        "type": "array",
+                        "items": {
+                          "type": "boolean",
+                          "uniqueItems": true
+                        }
+                      },
+                      "positive_etchback": {
                         "type": "array",
                         "items": {
                           "type": "boolean",

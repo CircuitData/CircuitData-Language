@@ -1184,6 +1184,11 @@
           "type": "boolean",
           "uom": null,
           "description": "ALIVH holes"
+        },
+        "positive_etchback": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Positive etchback"
         }
       },
       "allowed_modifications": {
