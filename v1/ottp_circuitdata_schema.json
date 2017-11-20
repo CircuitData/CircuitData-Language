@@ -1112,35 +1112,41 @@
                       "name": "Country of Origin",
                       "description": "Country of Origin is the country where the Printed Circuit Board is manufactured."
                     },
-                    "conflict_resolution": {
+                    "precedence_production_files": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "order": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/order"
-                        },
-                        "oem_specification_sheet": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/oem_specification_sheet"
-                        },
-                        "assembly_specification_sheet": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/assembly_specification_sheet"
-                        },
-                        "drawing": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/drawing"
-                        },
-                        "ipc2581": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/ipc2581"
-                        },
-                        "odb": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/odb"
-                        },
-                        "gerber": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/gerber"
-                        }
+                        "ipc2581": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "odb++": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "gerber": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"}
                       },
                       "aliases": "",
-                      "name": "Conflict resolution",
-                      "description": "If several sources of data is present, this hierarchy is to set how to solve conflicts. Please specify a number to indicate priority and avoid setting the same number twice."
+                      "name": "Precedence of production files",
+                      "description": "If several production files are present within one request, such as both ODB++ and Gerbers, which is preferred."
+                    },
+                    "precedence_drawings": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "master": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "drill": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "panel": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"}
+                      },
+                      "aliases": "",
+                      "name": "Precedence of drawings",
+                      "description": "If several drawings are present within one request, which is preferred if a conflict is found."
+                    },
+                    "precedence_general": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "specification": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "production_file": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "drawing": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"}
+                      },
+                      "aliases": "",
+                      "name": "Precedence of supplied files",
+                      "description": "If several sources of information are present within one request, such as both ODB++ and Gerbers, which is preferred."
                     },
                     "holes": {
                       "type": "array",
@@ -1845,32 +1851,41 @@
                         }
                       }
                     },
-                    "conflict_resolution": {
+                    "precedence_production_files": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "order": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/order"
-                        },
-                        "oem_specification_sheet": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/oem_specification_sheet"
-                        },
-                        "assembly_specification_sheet": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/assembly_specification_sheet"
-                        },
-                        "drawing": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/drawing"
-                        },
-                        "ipc2581": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/ipc2581"
-                        },
-                        "odb": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/odb"
-                        },
-                        "gerber": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/gerber"
-                        }
-                      }
+                        "ipc2581": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "odb++": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "gerber": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"}
+                      },
+                      "aliases": "",
+                      "name": "Precedence of production files",
+                      "description": "If several production files are present within one request, such as both ODB++ and Gerbers, which is preferred."
+                    },
+                    "precedence_drawings": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "master": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "drill": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "panel": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"}
+                      },
+                      "aliases": "",
+                      "name": "Precedence of drawings",
+                      "description": "If several drawings are present within one request, which is preferred if a conflict is found."
+                    },
+                    "precedence_general": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "specification": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "production_file": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "drawing": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"}
+                      },
+                      "aliases": "",
+                      "name": "Precedence of supplied files",
+                      "description": "If several sources of information are present within one request, such as both ODB++ and Gerbers, which is preferred."
                     },
                     "holes": {
                       "type": "array",
@@ -3788,32 +3803,41 @@
                         }
                       }
                     },
-                    "conflict_resolution": {
+                    "precedence_production_files": {
                       "type": "object",
                       "additionalProperties": false,
                       "properties": {
-                        "order": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/order"
-                        },
-                        "oem_specification_sheet": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/oem_specification_sheet"
-                        },
-                        "assembly_specification_sheet": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/assembly_specification_sheet"
-                        },
-                        "drawing": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/drawing"
-                        },
-                        "ipc2581": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/ipc2581"
-                        },
-                        "odb": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/odb"
-                        },
-                        "gerber": {
-                          "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/conflict_resolution/gerber"
-                        }
-                      }
+                        "ipc2581": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "odb++": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "gerber": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"}
+                      },
+                      "aliases": "",
+                      "name": "Precedence of production files",
+                      "description": "If several production files are present within one request, such as both ODB++ and Gerbers, which is preferred."
+                    },
+                    "precedence_drawings": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "master": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "drill": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "panel": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"}
+                      },
+                      "aliases": "",
+                      "name": "Precedence of drawings",
+                      "description": "If several drawings are present within one request, which is preferred if a conflict is found."
+                    },
+                    "precedence_general": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "specification": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "production_file": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"},
+                        "drawing": {"$ref": "ottp_circuitdata_schema_definitions.json#/definitions/generics/integer_from_one_to_three"}
+                      },
+                      "aliases": "",
+                      "name": "Precedence of supplied files",
+                      "description": "If several sources of information are present within one request, such as both ODB++ and Gerbers, which is preferred."
                     },
                     "holes": {
                       "type": "array",

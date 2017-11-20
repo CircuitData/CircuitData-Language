@@ -222,6 +222,14 @@
       "number": {
         "type": "number"
       },
+      "integer": {
+        "type": "integer"
+      },
+      "integer_from_one_to_three": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 3
+      },
       "string": {
         "type": "string"
       }
@@ -1102,43 +1110,6 @@
           "type": "boolean",
           "uom": null,
           "description": "Indicates if the COO is a European Union member state"
-        }
-      },
-      "conflict_resolution": {
-        "order": {
-          "type": "integer",
-          "uom": null,
-          "description": "Information provided on order level"
-        },
-        "oem_specification_sheet": {
-          "type": "integer",
-          "uom": null,
-          "description": "Information provided from the OEM in a PDF or other document format"
-        },
-        "assembly_specification_sheet": {
-          "type": "integer",
-          "uom": null,
-          "description": "Information provided from the assembly facility in a PDF or other document format"
-        },
-        "drawing": {
-          "type": "integer",
-          "uom": null,
-          "description": "Information in a drawing (if present)"
-        },
-        "ipc2581": {
-          "type": "integer",
-          "uom": null,
-          "description": "Information in an IPC-2581 file"
-        },
-        "odb": {
-          "type": "integer",
-          "uom": null,
-          "description": " Information in a ODB++ file"
-        },
-        "gerber": {
-          "type": "integer",
-          "uom": null,
-          "description": "Information in a Gerber format file"
         }
       },
       "holes": {
