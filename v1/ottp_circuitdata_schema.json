@@ -10,8 +10,9 @@
       "additionalProperties": false,
       "properties": {
         "version": {
-          "type": "string",
-          "pattern": "^1.0$"
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
         },
         "information": {
           "$ref": "https://raw.githubusercontent.com/elmatica/Open-Trade-Transfer-Package/master/v1/ottp_schema_definitions.json#/definitions/information"
