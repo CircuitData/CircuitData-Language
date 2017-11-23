@@ -1211,6 +1211,11 @@
           "type": "boolean",
           "uom": null,
           "description": "Adding Tear Drops allowed"
+        },
+        "resize_legend": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Resizing the legend to fit is allowed"
         }
       },
       "additional_requirements": {
