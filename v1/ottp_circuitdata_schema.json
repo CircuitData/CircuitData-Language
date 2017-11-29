@@ -1182,6 +1182,12 @@
                           "minimum_designed_annular_ring": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/minimum_designed_annular_ring"
                           },
+                          "minimum_acceptable_annular_ring": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/minimum_acceptable_annular_ring"
+                          },
+                          "modify_via_diameter_allowed": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/modify_via_diameter_allowed"
+                          },
                           "press_fit": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/press_fit"
                           },
@@ -1905,6 +1911,9 @@
                           },
                           "positive_etchback": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/positive_etchback"
+                          },
+                          "modify_via_diameter_allowed": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/modify_via_diameter_allowed"
                           }
                         }
                       }
@@ -3176,6 +3185,13 @@
                               "type": "boolean",
                               "uniqueItems": true
                             }
+                          },
+                          "modify_via_diameter_allowed": {
+                            "type": "array",
+                            "items": {
+                              "type": "boolean",
+                              "uniqueItems": true
+                            }
                           }
                         }
                       }
@@ -3877,6 +3893,9 @@
                           },
                           "positive_etchback": {
                             "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/positive_etchback"
+                          },
+                          "modify_via_diameter_allowed": {
+                            "$ref": "ottp_circuitdata_schema_definitions.json#/definitions/elements/holes/modify_via_diameter_allowed"
                           }
                         }
                       }
@@ -5200,6 +5219,22 @@
                         "maxItems": 2,
                         "items": {
                           "type": "number",
+                          "uniqueItems": true
+                        }
+                      },
+                      "minimum_acceptable_annular_ring": {
+                        "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "items": {
+                          "type": "number",
+                          "uniqueItems": true
+                        }
+                      },
+                      "modify_via_diameter_allowed": {
+                        "type": "array",
+                        "items": {
+                          "type": "boolean",
                           "uniqueItems": true
                         }
                       },
