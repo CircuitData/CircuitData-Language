@@ -1161,6 +1161,16 @@
           "uom": ["um"],
           "description": "The minimum designed annular ring"
         },
+        "minimum_acceptable_annular_ring": {
+          "type": "number",
+          "uom": ["um"],
+          "description": "The minimum acceptable annular ring"
+        },
+        "modify_via_diameter_allowed": {
+          "type": "boolean",
+          "uom": null,
+          "description": "Changes to the diameter of the via is allowed to meet the minimum annular ring requirement"
+        },
         "press_fit": {
           "type": "boolean",
           "uom": null,
