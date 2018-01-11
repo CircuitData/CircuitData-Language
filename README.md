@@ -162,6 +162,63 @@ Some materials, such as an ENIG final finish are made up from two or more materi
   }
 ]
 ```
+### Processes
+Processes include everything which is done to one or more layers. An example of one via (hole) process could be:
+```
+"processes": [
+  {
+    "function": "via",
+    "attributes": {
+      "number_of_vias": 60,
+      "type": through,
+      "plated": false,
+      "size": 0.15,
+      "layer_start": "conductive_layer_1",
+      "layer_stop": "conductive_layer_4",
+      "protection": "type4a"
+    }
+  }
+]
+```
+#### How to describe processes
+Potential tags are:
+
+| Tags          | Description           | [Type](#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:
+| function      | The function of process. [See the list of potential processes below](#process-functions-and-their-attributes) | integer | None | Yes |
+| layer_attributes | A object containing attributes to further describe the layer. See potential attributes under each [layer type](#layer-functions-and-their-attributes) | object | None | No |
+
+#### Process functions and their attributes
+Potential values are:
+* edge_bevelling
+* depth_routing
+* counterboring
+* countersink
+* punching
+* plating
+* plated_edges
+* plated_slots
+* plated_castellated_holes
+* coin_attachment
+* via
+  * Potential attributes:
+    * number_of_vias ( type is "integer". Describes the number of holes/vias in the process )
+    * type ( type is "string". Describes the type of via. Choices are "through", "blind", "buried", "back_drill")
+    * plated ( type is "boolean". True to indicate plated vias )
+    * size ( type is "number". The size of the vias in micrometers )
+    * layer_start ( type is "string". Must refer to the name of a layer in the layers section )
+    * layer_stop ( type is "string". Must refer to the name of a layer in the layers section )
+    * depth ( type is "number". Indicates the depth of the via in micrometers )
+    * method ( type is "string". How the via is made. Can be either "routing, "drilling" or "laser", where default is "drilling" )
+    * minimum_designed_annular_ring ( type is "number". The minimum designed annular ring in micrometers )
+    * press_fit ( type is "boolean". True if the via is for press fit )
+    * copper_filled ( type is "boolean". True if the via is to be copper filled )
+    * staggered ( type is "boolean". True if the vias are staggered )
+    * stacked ( type is "boolean". True if the vias are staggered )
+    * alivh ( type is "boolean". True if ALIVH vias )
+
+
+
 
 ## About types and how to use them
 Under each element and subelement, you'll find the type that is expected there. These are to be understood as this:

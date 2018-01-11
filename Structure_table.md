@@ -6,11 +6,6 @@
 | | circuitdata | | | | | | | | |
 | | | products | | | | | | | |
 | | | | *Product_X* | | | | | |
-| | | | | stackup | | | | | |
-| | | | | | locked | | | | |
-| | | | | | ordered_outer_layers | | | | |
-| | | | | | ordered_inner_layers | | | | |
-| | | | | | file_name | | | | | |
 | | | | | sections | | | | | | |
 | | | | | | name | | | | | |
 | | | | | | in_x | | | | | |
@@ -54,7 +49,6 @@
 | | | | | | | minimum_designed_annular_ring | | | | |
 | | | | | | | press_fit | | | | |
 | | | | | | | copper_filled | | | | |
-| | | | | | | staggered | | | | |
 | | | | | | | stacked | | | | |
 | | | | | | | staggered | | | | |
 | | | | | | | alivh | | | | |
@@ -109,3 +103,8 @@
 | | | | | | | type_6a | | | | |
 | | | | | | | type_6b | | | | |
 | | | | | | | type_7 | | | | |
+| | | | | | stackup | | | | |
+| | | | | | | locked | | | |
+| | | | | | | ordered_outer_layers | | | |
+| | | | | | | ordered_inner_layers | | | |
+| | | | | | | file_name | | | | |
