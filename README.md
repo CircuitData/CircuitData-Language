@@ -4,7 +4,7 @@ An open language for communicating specifications on a printed circuit (mainly P
 This is the main documentation. You can find documents describing the structures below and use the [howto](/Howto.md) to find information on how to specify different technologies.
 
 ## Based on the Open Trade Transfer Package format (OTTP)
-[Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) defines a structure on how the information is to be passed in either JSON or XML format. Printed Circuit data should be placed within an element called "circuitdata" and also contain a version. "circuitdata" objects can be placed within the following sub-objects:
+[Open Trade Transfer Package](https://elmatica.github.io/Open-Trade-Transfer-Package/) defines a structure on how the information is to be passed in either JSON or XML format. Printed Circuit data should be placed within an element called "circuitdata" and also contain a version. "circuitdata" objects can be placed within the following sub-objects:
 
 - products
 - profiles
