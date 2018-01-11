@@ -48,7 +48,7 @@ ottp = '{
 puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdata_schema.json', ottp)
 ```
 
-## Basic structure example for specifications
+## Structure for specifications
 We divide the specifications into a few major groups:
 * Sections
 * Layers (also including stackup information)
@@ -117,11 +117,12 @@ Potential values are:
 * adhesive
 * thermal
 * legend
+* Potential attributes:
+  * color ( type is "string". Se the color section for more information )
 * final_finish
-* kapton_tape
+* peelable_tape
 * peelable_mask
-* conductive_carbon_print
-* silver_print
+
 
 #### Thickess of individual components
 
