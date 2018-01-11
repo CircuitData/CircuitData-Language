@@ -1,5 +1,5 @@
 # CircuitData Language
-An open language for communicating information needed for PCB fabrication. Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
+An open language for communicating specifications on a printed circuit (mainly Printed Circuit Boards - PCB). Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
 ## Based on the Open Trade Transfer Package format (OTTP)
 [Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) defines a structure on how the information is to be passed in either JSON or XML format. Printed Circuit data should be placed within an element called "printed_circuits_fabrication_data" and also contain a version. Printed Circuit data can be placed within the following subelements:
@@ -18,31 +18,8 @@ An open language for communicating information needed for PCB fabrication. Can b
   - additional_requirements
 
 ## Version
-Current version is 0.7. This should stated in every section directly below the "printed_circuits_fabrication_data" element in an element called "version".
+Current version is 1.0. This should stated in every section directly below the "printed_circuits_fabrication_data" element in an element called "version".
 
-## Basic example
-This example shows how to specify how to set a company profile that forbids production of printed circuit boards in countries that are not NATO members. More examples can be found in the examples folder.
-```
-{
-  "open_trade_transfer_package": {
-    "version": 0.1,
-    "information": {
-      "company_name": "Elmatica as",
-      "date": "2017-04-03T08:00CET"
-    },
-    "profiles": {
-      "restricted": {
-        "printed_circuits_fabrication_data": {
-          "version": 0.1,
-          "country_of_origin": {
-            "nato_member": false
-          }
-        }
-      }
-    }
-  }
-}
-```
 
 ## JSON schema
 JSON schema is available in at its [own site (schema.circuitdata.org)](http://schema.circuitdata.org) in version folders. The schema allows you to validate your OTTP file syntax. An example of how this is done in Ruby with the [json-schema GEM](https://github.com/ruby-json-schema/json-schema) below:
@@ -70,6 +47,88 @@ ottp = '{
 
 puts JSON::Validator.validate!('http://schema.circuitdata.org/v1/ottp_circuitdata_schema.json', ottp)
 ```
+
+## Basic structure example for specifications
+We divide the specifications into a few major groups:
+* Sections
+* Layers (also including stackup information)
+* Processes
+* Tolerances
+* Logistics
+* Administrative
+
+### Layers
+Layers include everything which is part of the finished product (could be a PCB). It is not limited by the traditional convention of a "stack up" but will also contain layers like a peelable mask. An example of one conductive layer in the structure would be:
+```
+"layers": [
+  {
+    "order": 1,
+    "name": "conductive_layer_1",
+    "function": "conductive",
+    "flexible": false,
+    "materials": ["copper"],
+    "sections": ["main_rigid"],
+    "thickness": 34.8,
+    "tolerance_minus": 0.1,
+    "tolerance_pluss": 0.1,
+    "coverage": 34,
+    "attributes": {
+      "minimum_track_width": 0.135,
+      "minimum_spacing_width": 0.15,
+      "function": "signal",
+      "polarity": "positive"
+    }
+  }
+]
+```
+#### How to describe layers
+Potential tags are:
+
+| Tags          | Description           | [Type](#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| order         | Order of the layer as seen in a cross section and counted from above | integer | None | Yes |
+| name          | A given name for the layer. Must be unique amongst the layers. Can be any string without spaces | string | None | Yes |
+| function      | The function of layer. [See the list of potential functions below](#layer-functions-and-their-attributes) | integer | None | Yes |
+| flexible      | True or false to indicate if this layer is flexible or not | boolean | None | No - default is "False" |
+| materials     | An array of materials that appear in the materials element. There can be more than one | Array of String | None | Yes |
+| sections      | An array of the sections where the layer appears (use the name of the section) | Array of strings | None | Yes |
+| thickness     | The thickness of the layer in micrometers | number | micrometers | No |
+| tolerance_minus | Allowed deviation of thickness on the minus side | number | micrometers | No |
+| tolerance_plus | Allowed deviation of thickness on the plus side | number | micrometers | No |
+| sub_material_thickness | Thickness of individual components in a multicomponent layer. Read more [here](#thickness-of-individual-components) | object | None | No |
+| coverage      | How many percent of the section is covered by the layer (related to the mm2 value) | number | percent | No - default is 100 |
+| layer_attributes | A object containing attributes to further describe the layer. See potential attributes under each [layer type](#layer-functions-and-their-attributes) | object | None | No |
+
+#### Layer functions and their attributes
+Potential values are:
+* none
+* conductive
+  * Potensial attributes:
+    * minimum_track_width ( type is "number". Sets the minimum track. UoM is "micrometers" )
+    * minimum_spacing_width ( type is "number". Sets the minimum gap. UoM is "micrometers")
+    * conductive_function ( type is "string". Select either "signal", "plane" or "mixed" )
+    * polarity ( type is "string". Select either "positive" or "negative" )    
+* dielectric
+* soldermask
+  * Potential attributes:
+    * color ( type is "string". Se the color section for more information )
+* stiffener
+* plating
+* adhesive
+* thermal
+* legend
+* final_finish
+* kapton_tape
+* peelable_mask
+* conductive_carbon_print
+* silver_print
+
+#### Thickess of individual components
+
+
+
+
+
 ## About types and how to use them
 Under each element and subelement, you'll find the type that is expected there. These are to be understood as this:
 * **object** - the element will contain other elements
@@ -2339,4 +2398,3 @@ Must have a similar element in the custom -> additional
 |-:|:---------------:|:-------:|:----------------:|:----------------:|:------------------:|:------------:|
 | **Use in:** | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | 
 |**Format:** | string | string | string | string | Array of strings | Array of strings |
-
