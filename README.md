@@ -59,6 +59,20 @@ We divide the specifications into a few major groups:
 * Logistics
 * Administrative
 
+### Sections
+To understand sections, you should read [this document](https://www.circuitdata.org/t/18phm5).
+The sections part allows you to divide the product you are describing into several sections and then allow the layers to appear in one or more of them. A single section product needs to contain at least one section. Liek this example:
+```
+"sections": [
+  {
+       "name": "rigid1",
+       "in_x": [1],
+       "in_y": [1],
+       "mm2": 400
+   }
+]
+```
+
 ### Layers
 Layers include everything which is part of the finished product (could be a PCB). It is not limited by the traditional convention of a "stack up" but will also contain layers like a peelable mask. An example of one conductive layer in the structure would be:
 ```
@@ -129,10 +143,25 @@ Potential values are:
 
 
 #### Thickess of individual components
-
-
-
-
+Some materials, such as an ENIG final finish are made up from two or more material. In such cases, it can be useful to be able to specify the individual materials minimum and/or maximum thickness. You can do this in CircuitData by adding an object under the "sub_material_thickness" object. The name of the object should represent the material itself, e.g. "gold" and then you can place a "minimum" and or "maximum" object there with the type of "number" and UoM of micrometers. Example:
+```
+"layers": [
+  {
+    "order": 1,
+    "name": "top_final_finish",
+    "function": "final_finish",
+    "flexible": false,
+    "materials": ["ENIG"],
+    "sections": ["main_rigid"],
+    "coverage": 100,
+    "sub_material_thickness": {
+      "gold": {
+        "minimum": 1.5
+      }
+    }
+  }
+]
+```
 
 ## About types and how to use them
 Under each element and subelement, you'll find the type that is expected there. These are to be understood as this:

@@ -29,11 +29,67 @@
 | | | | | | tolerance_minus| | | | | |
 | | | | | | tolerance_plus | | | | | |
 | | | | | | sub_material_thickness | | | | | |
-| | | | | | | * material* | | | | |
+| | | | | | | *material* | | | | |
 | | | | | | | | min_thickness | | | |
 | | | | | | | | max_thickness | | | |
 | | | | | | coverage | | | | | |
+| | | | | | layer_attributes | | | | | |
+| | | | | | | minimum_track_width | | | | |
+| | | | | | | minimum_spacing_width | | | | |
+| | | | | | | conductive_function | | | | |
+| | | | | | | polarity | | | | |
+| | | | | | | color | | | | |
+| | | | | | | heating_operations | | | | |
 | | | | | | | | | | | |
+| | | | | processes | | | | | | |
 | | | | | | | | | | | |
+| | | | | metrics | | | | | | |
+| | | | | | board | | | | | |
+| | | | | | | size_x | | | | |
+| | | | | | | size_y | | | | |
+| | | | | | | thickness | | | | |
+| | | | | | array | | | | | |
+| | | | | | | size_x | | | | |
+| | | | | | | size_y | | | | |
+| | | | | | | boards_x | | | | |
+| | | | | | | boards_y | | | | |
+| | | | | | | boards_total | | | | |
+| | | | | | | border_left | | | | |
+| | | | | | | border_right | | | | |
+| | | | | | | border_top | | | | |
+| | | | | | | border_bottom | | | | |
+| | | | | | | board_spacing_x | | | | |
+| | | | | | | board_spacing_y | | | | |
+| | | | | | | fiducials_number | | | | |
+| | | | | | | fiducials_size | | | | |
+| | | | | | | fiducials_shape | | | | |
+| | | | | | | breakaway_method | | | | |
+| | | | | | | mouse_bites | | | | |
+| | | | | | | tooling_holes_number | | | | |
+| | | | | | | tooling_holes_size | | | | |
+| | | | | | | x_outs_allowed | | | | |
+| | | | | | | x_outs_max_percentage_on_array | | | | |
+| | | | | | | transplant_board_allowed | | | | |
+| | | | | | | weight | | | | |
+| | | | | logistical | | | | | | |
+| | | | | | inner_packaging | | | | | |
+| | | | | | | type_of_bag | | | | |
+| | | | | | | hic | | | | |
+| | | | | | | esd | | | | |
+| | | | | | | desiccant | | | | |
+| | | | | | | vacuum | | | | |
+| | | | | configurations | | | | | | |
+| | | | | | tolerances | | | | | |
 | | | | | | | | | | | |
+| | | | | | impedance | | | | | |
 | | | | | | | | | | | |
+| | | | | | via_protection | | | | | |
+| | | | | | | type_1 | | | | |
+| | | | | | | type_2 | | | | |
+| | | | | | | type_3 | | | | |
+| | | | | | | type_4a | | | | |
+| | | | | | | type_4b | | | | |
+| | | | | | | type_5 | | | | |
+| | | | | | | type_6a | | | | |
+| | | | | | | type_6b | | | | |
+| | | | | | | type_7 | | | | |
