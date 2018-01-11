@@ -83,26 +83,17 @@
 | | | | | | | weight | | | | | |
 | | | | | logistical | | | | | | |
 | | | | | | inner_packaging | | | | | |
-| | | | | | | type_of_bag | | | | |
+| | | | | | | ipc_1601_section_4_2_2_type | | | | |
 | | | | | | | hic | | | | |
 | | | | | | | esd | | | | |
 | | | | | | | desiccant | | | | |
 | | | | | | | vacuum | | | | |
-| | | | | configurations | | | | | | |
+| | | | | | | maximum_number_of_arrays | | | | |
+| | | | | configuration | | | | | | |
 | | | | | | tolerances | | | | | |
 | | | | | | | | | | | |
 | | | | | | impedance | | | | | |
 | | | | | | | | | | | |
-| | | | | | via_protection | | | | | |
-| | | | | | | type_1 | | | | |
-| | | | | | | type_2 | | | | |
-| | | | | | | type_3 | | | | |
-| | | | | | | type_4a | | | | |
-| | | | | | | type_4b | | | | |
-| | | | | | | type_5 | | | | |
-| | | | | | | type_6a | | | | |
-| | | | | | | type_6b | | | | |
-| | | | | | | type_7 | | | | |
 | | | | | | stackup | | | | |
 | | | | | | | locked | | | |
 | | | | | | | ordered_outer_layers | | | |

@@ -4,8 +4,8 @@ We divide the specifications into a few major groups:
 * Layers (also including stackup information)
 * Processes
 * Tolerances
-* Logistics
-* Administrative
+* Logistical
+* Configuration
 
 ## Sections
 To understand sections, you should read [this document](https://www.circuitdata.org/t/18phm5).
@@ -164,3 +164,30 @@ Potential values are:
     * staggered ( type is "boolean". True if the vias are staggered )
     * stacked ( type is "boolean". True if the vias are staggered )
     * alivh ( type is "boolean". True if ALIVH vias )
+
+## Metrics
+### Board
+
+### Array
+
+## Logistical
+### Inner packaging
+In describing the inner packaging of several products together before they are put in an outer package and shipped, there are several options to be set. They are all wrapped into a "inner_packing" object. Potential tags are:
+
+* ipc_1601_section_4_2_2_type ( type is "string". Choices are "a", "b", "c" or "d". Please refer to the IPC document for description )
+* hic ( type is "boolean". True to include a HIC (Humidity Indicator Card) in the inner packaging )
+* esd ( type is "boolean". True to force the use of electrostatic discharge compatible material )
+* dessicant ( type is "boolean". True if a dessicant should be included )
+* vacuum ( type is "boolean". True to indicate if vacuum is required. Default is shrink wrap )
+* maximum_number_of_arrays ( type is "integer". The maximum number of arrays/panels that can be packed together in one inner package )
+
+## Configuration
+### Tolerances
+### Impedance
+### Stackup
+When describing the stackup configuration, you can use the following tags:
+
+* locked ( type is "boolean". True if the stackup is locked and cannot be altered by the manufacturer. Default is False )
+* ordered_outer_layers ( type is "boolean". True if the outer layers listed are in exact order. Default is True )
+* ordered_inner_layers ( type is "boolean". True if the inner layers listed are in exact order. Default is True )
+* file_name ( type is "string". The name of the file that describes the stackup in furter detail )

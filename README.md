@@ -20,7 +20,7 @@ This is the main documentation. You can find a document presenting the structure
   - additional_requirements
 
 ## Version
-Current version is 1.0. This should stated in every section directly below the "printed_circuits_fabrication_data" element in an element called "version".
+Current version is 1.0. This should stated in every section directly below the "circuitdata" element in an element called "version".
 
 ## Documentation on the various subelements
 ### Products
