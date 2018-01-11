@@ -1,6 +1,8 @@
 # CircuitData Language
 An open language for communicating specifications on a printed circuit (mainly Printed Circuit Boards - PCB). Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
+This is the main documentation. You can find a document presenting the structure [here](/Structure_table.md) and a how to on different technologies [here](/Howto.md).
+
 ## Based on the Open Trade Transfer Package format (OTTP)
 [Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) defines a structure on how the information is to be passed in either JSON or XML format. Printed Circuit data should be placed within an element called "printed_circuits_fabrication_data" and also contain a version. Printed Circuit data can be placed within the following subelements:
 
@@ -103,7 +105,7 @@ Potential tags are:
 Potential values are:
 * none
 * conductive
-  * Potensial attributes:
+  * Potential attributes:
     * minimum_track_width ( type is "number". Sets the minimum track. UoM is "micrometers" )
     * minimum_spacing_width ( type is "number". Sets the minimum gap. UoM is "micrometers")
     * conductive_function ( type is "string". Select either "signal", "plane" or "mixed" )
@@ -117,11 +119,13 @@ Potential values are:
 * adhesive
 * thermal
 * legend
-* Potential attributes:
-  * color ( type is "string". Se the color section for more information )
+  * Potential attributes:
+    * color ( type is "string". Ses the color section for more information )
 * final_finish
 * peelable_tape
 * peelable_mask
+  * Potential attributes:
+    * heating_operations ( type is "integer". Describes the minimum number of heating operations that the mask must withstand )
 
 
 #### Thickess of individual components
