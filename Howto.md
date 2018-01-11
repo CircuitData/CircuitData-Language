@@ -15,6 +15,22 @@
 * [Conductive carbon print](#conductive-carbon-print)
 * [Silver print](#silver-print)
 * [Inner packaging](#inner-packaging)
+* [Board thickness and size](#board-thickness-and-size)
+* [Customer panel](#customer-panel)
+* [Depth routing](#depth-routing)
+* [Counterboring](#counterboring)
+* [Countersink](#countersink)
+* [Punching](#punching)
+* [Plated edges](#plated-edges)
+* [Plated slots](#plated-slots)
+* [Plated castallated holes](#plated-castallated-holes)
+* [Coin attachment](#coin-attachment)
+* [Selective plated pads](#selective-plated-pads)
+* [Hard gold edge connectors](#hard-gold-edge-connectors)
+* [Markings](#markings)
+* [](#)
+* [](#)
+* [](#)
 
 
 ## Describe stackups
@@ -82,3 +98,67 @@ Conductive carbon print is defined as a [conductive layer](#conductive-layers-su
 Aliases:
 ### as a specification
 All requirements for the inner packaging of the finished products can be defined in the ["logistical"](/Products.md#logistical) object under the ["inner_packaging"](/Products.md#inner-packaging) object.
+
+## Board thickness and size
+Aliases: "PCB"
+### as a specification
+The size and thickness of the board/PCB is set under the ["metrics"](/Products.md#metrics) object in the ["board"](/Products.md#board) object.
+
+## Customer panel
+Aliases: "array", "panel", "circuit board"
+### as a specification
+All attributes and processes of/on the array/custom panel is set under the ["metrics"](/Products.md#metrics) object in the ["array"](/Products.md#array) object.
+
+## Depth routing
+Aliases:
+### as a specification
+Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "depth_routing".
+
+## Counterboring
+Aliases:
+### as a specification
+Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "counterboring".
+
+## Countersink
+Aliases:
+### as a specification
+Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "countersink".
+
+## Punching
+Aliases:
+### as a specification
+Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "punching".
+
+## Plated edges
+Aliases:
+### as a specification
+Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "plated_edges".
+
+## Plated slots
+Aliases:
+### as a specification
+Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "plated_slots".
+
+## Plated castallated holes
+Aliases:
+### as a specification
+Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "plated_castellated_holes".
+
+## Coin attachment
+Aliases:
+### as a specification
+Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "coin_attachment".
+
+## Selective plated pads
+Aliases:
+### as a specification
+Defined as a [layer](/Products.md#layer-functions-and-their-attributes) with the function set to "hard_gold" and a placement attribute of "selective_pads"
+
+## Hard gold edge connectors
+Aliases:
+### as a specification
+Defined as a [layer](/Products.md#layer-functions-and-their-attributes) with the function set to "hard_gold" and a placement attribute of "edge_connectors"
+
+## Markings
+Aliases: "lot-code", "lot number", "datecode", "serial number"
+### as a specification

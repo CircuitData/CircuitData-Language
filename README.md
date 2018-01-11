@@ -1,10 +1,10 @@
 # CircuitData Language
 An open language for communicating specifications on a printed circuit (mainly Printed Circuit Boards - PCB). Can be used to interchange information on the specification (fabrication data only), a profile (requirements and default values when exchanging data) and capabilities (the production facility capabilities of a supplier). It can also be used to exchange a material list or other needed related data.
 
-This is the main documentation. You can find a document presenting the structure below and use the [howto](/Howto.md) to find information on how to specify different technologies.
+This is the main documentation. You can find documents describing the structures below and use the [howto](/Howto.md) to find information on how to specify different technologies.
 
 ## Based on the Open Trade Transfer Package format (OTTP)
-[Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) defines a structure on how the information is to be passed in either JSON or XML format. Printed Circuit data should be placed within an element called "printed_circuits_fabrication_data" and also contain a version. Printed Circuit data can be placed within the following subelements:
+[Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) defines a structure on how the information is to be passed in either JSON or XML format. Printed Circuit data should be placed within an element called "circuitdata" and also contain a version. "circuitdata" objects can be placed within the following sub-objects:
 
 - products
 - profiles
@@ -41,10 +41,12 @@ ottp = '{
     },
     "profiles": {
       "restricted": {
-        "generic": {
-          "version": 1.0,
-          "country_of_origin": {
-            "nato_member": false
+        "circuitdata": {
+          "generic": {
+            "version": 1.0,
+            "country_of_origin": {
+              "nato_member": false
+            }
           }
         }
       }
@@ -75,38 +77,6 @@ All elements in a restrictive profile are to be understood as values that are no
 * **boolean** - can be either `[true]` - true is not allowed, `[false]` - false is not allowed, `[true, false]` - neither value is allowed.
 * **string** - can be any string, and would restrict that value. If a `enum/possible values` are set, only these values can be part of the array of strings
 
-## Elements that are both arrays and objects
-Some elememts, such as `dielectric`, `soldermask` and `final_finish` can be both specified in an array or as an object depending on where they are used. If used in a stackup or generic product description, they will be arrays, as there can be several of them listed. When used here, there must be a counterpart in the `custom->materials` section with the same name that describes the material. For all products and capabilities it will be an object. The object can contain all the tags that would be used in the `custom->materials` section and should be compared against each of them to set or control values.
-
-**Example of a dielectric in a generic product section:**
-```
-...
-   "dielectric": ["FR4", "FR4-high-Tg"],
-...
-  "custom": {
-    "materials": {
-      "dielectrics": {
-        "FR4": {
-          "tg_min": 140,
-          "ul": true
-        },
-        "FR4-high-Tg": {
-          "tg_min": 150,
-          "ul": true
-        }
-      }
-    }
-  }
-```
-**Example of a dielectric in a enforced profile section:**
-```
-...
-   "dielectric": {
-     "tg_min": 140,
-     "ul": true
-    }
-...
-```
 ## The custom elements
 As described in the [Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) project, a file can contain an element called `custom`. This element is where you place description of colors, materials or additional elements. Custom objects are always listed in an array.
 

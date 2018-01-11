@@ -22,7 +22,7 @@ The sections part allows you to divide the product you are describing into sever
 ```
 
 ## Layers
-Layers include everything which is part of the finished product (could be a PCB). It is not limited by the traditional convention of a "stack up" but will also contain layers like a peelable mask. An example of one conductive layer in the structure would be:
+The "layers" element type is an "array". Layers include everything which is part of the finished product (could be a PCB). It is not limited by the traditional convention of a "stack up" but will also contain layers like a peelable mask. An example of one conductive layer in the structure would be:
 ```
 "layers": [
   {
@@ -88,6 +88,9 @@ Potential values are:
 * peelable_mask
   * Potential attributes:
     * heating_operations ( type is "integer". Describes the minimum number of heating operations that the mask must withstand )
+* hard_gold
+  * Potential attributes
+    * placement ( type is "string". Either "selective_pads" or "edge_connectors" )
 
 
 ### Thickess of individual components
@@ -111,7 +114,7 @@ Some materials, such as an ENIG final finish are made up from two or more materi
 ]
 ```
 ## Processes
-Processes include everything which is done to one or more layers. An example of one via (hole) process could be:
+The "processes" element type is an "array". Processes include everything which is done to one or more layers. An example of one via (hole) process could be:
 ```
 "processes": [
   {
@@ -166,28 +169,68 @@ Potential values are:
     * alivh ( type is "boolean". True if ALIVH vias )
 
 ## Metrics
+The "metrics" element type is an "object" and can have the following sub-objects:
 ### Board
+Boards are one PCB. The following potential tags are available:
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| size_x | The size of the board in the X-axis | Number | millimeters | Yes |
+| size_y | The size of the board in the Y-axis | Number | millimeters | Yes |
+| thickness | The finished thickness of the board | Number | millimeters | Yes |
 
 ### Array
+Array (or custom panel) describes the panel that contains several boards. The following potential tags are available:
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| size_x | The size of the array in the X-axis | Number | millimeters | Yes |
+| size_y | The size of the array in the Y-axis | Number | millimeters | Yes |
+| boards_x | The number of boards in the array in the X-axis | Integer | None | No |
+| boards_y | The number of boards in the array in the Y-axis | Integer | None | No |
+| boards_total | Total number of boards in the panel. This is not the preferred method of stating the number, "boards_x" and "boards_y" should be used | Integer | None | No |
+| border_left | The size of the left side boarder between the edge and the board  | Number | millimeters | No |
+| border_right | The size of the right side boarder between the edge and the board  | Number | millimeters | No |
+| border_top | The size of the top side boarder between the edge and the board  | Number | millimeters | No |
+| border_bottom | The size of the bottom side boarder between the edge and the board  | Number | millimeters | No |
+| board_spacing_x | The size of the space between the boards in the x-direction | Number | millimeters | No |
+| board_spacing_y | The size of the space between the boards in the y-direction | Number | millimeters | No |
+| fiducials_number | The number of fiducials on the array | Integer | None | No |
+| fiducials_size | The size of the fiducials | Number | millimeters | No |
+| fiducials_shape | The shape of the fiducials. Potential values are "donut", "circle", "plus" and "diamond" | String | None | No |
+| breakaway_method | The method of creation of the breakaways on the array. Potential values are "routing", "scoring", "v-cut", "v-grove", "jump_scoring" | String | None | No |
+| mouse_bites | True if there should be "mouse bites" to allow easy break away of the boards | Boolean | None | No |
+| tooling_holes_number | The number of tooling holes on the array | Integer | None | No |
+| tooling_holes_size | The size of the tooling holes | Number | millimeters | No |
+| x_outs_allowed | Manufacturer can deliver arrays with defect boards as long as these are clearly marked as defect (X'ed out) | Boolean | None | No |
+| x_outs_max_percentage_on_array | The maximum number of defective and clearly marked as such boards that are allowed on on panel | Number | percentage | No |
+| transplant_board_allowed | Inserting boards from one panel to another to remove x-outs allowed | Boolean | None | No |
+| weight | The weight of the array | Number | grams | No |
 
 ## Logistical
+The "logistical" element type is an "object" and can have the following sub-objects:
 ### Inner packaging
 In describing the inner packaging of several products together before they are put in an outer package and shipped, there are several options to be set. They are all wrapped into a "inner_packing" object. Potential tags are:
 
-* ipc_1601_section_4_2_2_type ( type is "string". Choices are "a", "b", "c" or "d". Please refer to the IPC document for description )
-* hic ( type is "boolean". True to include a HIC (Humidity Indicator Card) in the inner packaging )
-* esd ( type is "boolean". True to force the use of electrostatic discharge compatible material )
-* dessicant ( type is "boolean". True if a dessicant should be included )
-* vacuum ( type is "boolean". True to indicate if vacuum is required. Default is shrink wrap )
-* maximum_number_of_arrays ( type is "integer". The maximum number of arrays/panels that can be packed together in one inner package )
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| ipc_1601_section_4_2_2_type | Choices are "a", "b", "c" or "d". Please refer to the IPC document for description | String | millimeters | No |
+| hic | True to include a HIC (Humidity Indicator Card) in the inner packaging | Boolean | None | No |
+| esd | True to force the use of electrostatic discharge compatible material | Boolean | None | No |
+| dessicant | True if a dessicant should be included | Boolean | None | No |
+| vacuum | True to indicate if vacuum is required. Default is shrink wrap | Boolean | None | No |
+| maximum_number_of_arrays | The maximum number of arrays/panels that can be packed together in one inner package | Integer | None | No |
 
 ## Configuration
+The "configuration" element type is an "object" and can have the following sub-objects:
 ### Tolerances
 ### Impedance
 ### Stackup
 When describing the stackup configuration, you can use the following tags:
 
-* locked ( type is "boolean". True if the stackup is locked and cannot be altered by the manufacturer. Default is False )
-* ordered_outer_layers ( type is "boolean". True if the outer layers listed are in exact order. Default is True )
-* ordered_inner_layers ( type is "boolean". True if the inner layers listed are in exact order. Default is True )
-* file_name ( type is "string". The name of the file that describes the stackup in furter detail )
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| locked | True if the stackup is locked and cannot be altered by the manufacturer. Default is False | Boolean | None | No |
+| ordered_outer_layers | True if the outer layers listed are in exact order. Default is True | Boolean | None | No |
+| ordered_inner_layers | True if the inner layers listed are in exact order. Default is True | Boolean | None | No |
+| file_name | The name of the file that describes the stackup in furter detail | String | None | No |

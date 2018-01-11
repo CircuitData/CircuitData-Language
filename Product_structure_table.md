@@ -1,4 +1,4 @@
-# CircuitData structure
+# CircuitData structure for products
 
 | L1 | L2 | L3 | L4 | L5 | L6 | L7 | L8 | L9 | L10 |
 |----|----|----|----|----|----|----|----|----|-----|
@@ -99,3 +99,12 @@
 | | | | | | | ordered_outer_layers | | | |
 | | | | | | | ordered_inner_layers | | | |
 | | | | | | | file_name | | | | |
+| | | | | | markings | | | | |
+| | | | | | | date_code | | | |
+| | | | | | | layers | | | |
+| | | | | | | manufacurer_identification | | | |
+| | | | | | | standards | | | | |
+| | | | | | | serial_number | | | | |
+| | | | | | | serial_number_format | | | | |
+| | | | | | | serial_number_start | | | | |
+| | | | | | | serial_number_increase_by | | | | |
