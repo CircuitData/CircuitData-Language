@@ -40,9 +40,26 @@
 | | | | | | | polarity | | | | |
 | | | | | | | color | | | | |
 | | | | | | | heating_operations | | | | |
-| | | | | | | | | | | |
 | | | | | processes | | | | | | |
-| | | | | | | | | | | |
+| | | | | | name | | | | | |
+| | | | | | | function | | | | |
+| | | | | | | process_attributes | | | | |
+| | | | | | | | number_of_vias | | | |
+| | | | | | | | type | | | |
+| | | | | | | | plated | | | |
+| | | | | | | | size | | | |
+| | | | | | | | layer_start | | | |
+| | | | | | | | layer_stop | | | |
+| | | | | | | | depth | | | |
+| | | | | | | | method | | | |
+| | | | | | | | minimum_designed_annular_ring | | | |
+| | | | | | | | press_fit | | | |
+| | | | | | | | copper_filled | | | |
+| | | | | | | | staggered | | | |
+| | | | | | | | stacked | | | |
+| | | | | | | | staggered | | | |
+| | | | | | | | alivh | | | |
+| | | | | | | | protection | | | |
 | | | | | metrics | | | | | | |
 | | | | | | board | | | | | |
 | | | | | | | size_x | | | | |
