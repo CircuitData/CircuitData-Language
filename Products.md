@@ -238,6 +238,7 @@ When describing the stackup configuration, you can use the following tags:
 | file_name | The name of the file that describes the stackup in furter detail | String | None | No |
 ### Markings
 Markings on the board can happen on several layers, including legends and soldermasks. This section allows you to sum up these markings and attach them to layers.
+
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
 | layers | List one or more layers by name that includes markings | Array of strings | None | No |
@@ -250,6 +251,7 @@ Markings on the board can happen on several layers, including legends and solder
 | serial_number_increase_by | The increase in number from "serial_number_start" with each product | Integer | None | No |
 ### Standards
 All standards that the finished product needs to be compliant with must be defined here.
+
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
 | comply_with | List one or more standards that the product must comply with. Choices are "ul", "c_ul", "rohs", "ul94", "esa", "itar", "dfars", "mil_prf_55110", "mil_prf_50884", "mil_prf_31032", "as9100", "nadcap", "rw_en45545_2_2013", "rw_nf_f_16_101", "rw_uni_cei_11170_3", "rw_nfpa_130" | Array of strings | None | No |
