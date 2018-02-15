@@ -275,3 +275,12 @@ Describe the requirements for testing of the finished board.
 | 4_wire | Use 4 wired test | Boolean | None | No |
 | ist | Use IST testing | Boolean | None | No |
 | impedance | Choices are "controlled", "calculated", "follow_stackup" | String | None | No |
+### Country Of Origin
+Country of Origin is the country where the Printed Circuit Board is/can be manufactured.
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| iso_3166_1_alpha_3 | A three letter string representation of the Country of origin according too ISO 3166-1. | String | None | No |
+| iso_3166_1_alpha_2 | A two letter string representation of the Country of origin according too ISO 3166-1. | String | None | No |
+| nato_member | Indicates if the COO is a NATO member state | Boolean | None | No |
+| eu_member | Indicates if the COO is a European Union member state. | Boolean | None | No |

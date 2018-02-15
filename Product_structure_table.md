@@ -128,3 +128,8 @@
 | | | | | | | 4_wire | | | | |
 | | | | | | | ist | | | | |
 | | | | | | | impedance | | | | |
+| | | | | | country_of_origin | | | | |
+| | | | | | | iso_3166_1_alpha_3 | | | | |
+| | | | | | | iso_3166_1_alpha_2 | | | | |
+| | | | | | | nato_member | | | | |
+| | | | | | | eu_member | | | | |
