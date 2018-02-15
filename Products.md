@@ -264,3 +264,14 @@ All standards that the finished product needs to be compliant with must be defin
 | ipc_6012_class | Requirements according to IPC 6012 class. Choices are "1", "2", "3", "3A" (Class 3 Autmotive addendum), "3M" (Class 3 Medical addendum), "3S" | String | None | No |
 | ipc_6013_class | Requirements according to IPC 6013 for flexible or rigid-flex boards. Choices are "1", "2", "3" | String | None | No |
 | ipc_6018 | IPC-6018 Microwave End Product Board Inspection and Test | Boolean | None | No |
+### Testing
+Describe the requirements for testing of the finished board.
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| netlist | 100% Netlist testing according to IPC-D-356, ODB++ or IPC2581 | Boolean | None | No |
+| allow_generate_netlist | Allow Netlist to be generated from Gerber or other file format if needed | Boolean | None | No |
+| hipot | HiPot Test (Dielectric Withstanding Voltage Test) | Boolean | None | No |
+| 4_wire | Use 4 wired test | Boolean | None | No |
+| ist | Use IST testing | Boolean | None | No |
+| impedance | Choices are "controlled", "calculated", "follow_stackup" | String | None | No |

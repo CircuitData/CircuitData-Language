@@ -121,3 +121,10 @@
 | | | | | | | ipc_6012_class | | | | |
 | | | | | | | ipc_6013_class | | | | |
 | | | | | | | ipc_6018 | | | | |
+| | | | | | testing | | | | |
+| | | | | | | netlist | | | | |
+| | | | | | | allow_generate_netlist | | | | |
+| | | | | | | hipot | | | | |
+| | | | | | | 4_wire | | | | |
+| | | | | | | ist | | | | |
+| | | | | | | impedance | | | | |
