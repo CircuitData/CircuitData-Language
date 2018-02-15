@@ -168,6 +168,7 @@ Potential values are:
     * stacked ( type is "boolean". True if the holes are staggered )
     * alivh ( type is "boolean". True if ALIVH holes )
     * castellated ( type is "boolean". True if plated half holes )
+    * protection ( type is "string". According to IPC-4761. Choices are "1", "2", "3", "4a", "4b", "5", "6a", "6b")
 
 ## Metrics
 The "metrics" element type is an "object" and can have the following sub-objects:
@@ -247,3 +248,17 @@ Markings on the board can happen on several layers, including legends and solder
 | serial_number_format | Format of the serial number expressed as a "regular expression" but needs to have x amount of digits in it. | String | None | No |
 | serial_number_start | The number to start the serial number from. Will have to replace the digits from the "serial_number_format" above | Integer | None | No |
 | serial_number_increase_by | The increase in number from "serial_number_start" with each product | Integer | None | No |
+### Standards
+All standards that the finished product needs to be compliant with must be defined here.
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| comply_with | List one or more standards that the product must comply with. Choices are "ul", "c_ul", "rohs", "ul94", "esa", "itar", "dfars", "mil_prf_55110", "mil_prf_50884", "mil_prf_31032", "as9100", "nadcap", "rw_en45545_2_2013", "rw_nf_f_16_101", "rw_uni_cei_11170_3", "rw_nfpa_130" | Array of strings | None | No |
+| ipc_6010_class | According to Table 4-2 /4-3. Choices are "1", "2", "3" | Integer | None | No |
+| ipc_6010_compliance_level | Choices are "full", "factory_standard", "aabus" | String | None | No |
+| ipc_6010_copper_plating_thickness_level | Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Integer | None | No |
+| ipc_6010_annular_ring_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Integer | None | No |
+| ipc_6010_conductor_spacing_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Integer | None | No |
+| ipc_6010_conductor_width_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Integer | None | No |
+| ipc_6012_class | Requirements according to IPC 6012 class. Choices are "1", "2", "3", "3A" (Class 3 Autmotive addendum), "3M" (Class 3 Medical addendum), "3S" | String | None | No |
+| ipc_6013_class | Requirements according to IPC 6013 for flexible or rigid-flex boards. Choices are "1", "2", "3" | String | None | No |
+| ipc_6018 | IPC-6018 Microwave End Product Board Inspection and Test | Boolean | None | No |

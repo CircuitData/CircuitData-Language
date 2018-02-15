@@ -167,3 +167,4 @@ Placed in the "configuration" part, this describes the markings needed. Generall
 ## Standards
 Aliases:
 ### as a specification
+Placed in the "configuration" part, this describes the standards that the finished product needs to be comply with. Check out [this](/Products.md#standards) for potential standards.
