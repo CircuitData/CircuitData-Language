@@ -23,12 +23,12 @@
 * [Punching](#punching)
 * [Plated edges](#plated-edges)
 * [Plated slots](#plated-slots)
-* [Plated castallated holes](#plated-castallated-holes)
+* [Plated castellated holes](#plated-castellated-holes)
 * [Coin attachment](#coin-attachment)
 * [Selective plated pads](#selective-plated-pads)
 * [Hard gold edge connectors](#hard-gold-edge-connectors)
 * [Markings](#markings)
-* [](#)
+* [Standards](#standards)
 * [](#)
 * [](#)
 
@@ -55,7 +55,7 @@ Aliases: "laminates", "dielectricum"
 Dielectrics are defined as layers. It is very important that you also define a material and refer to that in the layers. Make sure that you read the [documentation](/Products.md#layer-functions-and-their-attributes).
 
 ## Soldermask
-Aliases: "solder mask"
+Aliases: "solder mask", "solder resist"
 ### as a specification
 Soldermasks are defined as layers. It is very important that you also define a material and refer to that in the layers. Make sure that you read the [documentation](/Products.md#layer-functions-and-their-attributes). To just define a top or bottom soldermask, or e.g. two on top, make sure that you place the order number of the layer inn accordance with the conductive layers.
 
@@ -92,7 +92,7 @@ Conductive carbon print is defined as a [conductive layer](#conductive-layers-su
 ## Silver print
 Aliases:
 ### as a specification
-Conductive carbon print is defined as a [conductive layer](#conductive-layers-such-as-copper-or-silver) with a material set to "silver".
+Silver print is defined as a [conductive layer](#conductive-layers-such-as-copper-or-silver) with a material set to "silver".
 
 ## Inner packaging
 Aliases:
@@ -139,10 +139,10 @@ Aliases:
 ### as a specification
 Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "plated_slots".
 
-## Plated castallated holes
+## Plated castellated holes
 Aliases:
 ### as a specification
-Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "plated_castellated_holes".
+Defined as a [process](/Products.md#process-functions-and-their-attributes) with the function set to "hole" and "castellated" set to true.
 
 ## Coin attachment
 Aliases:
@@ -161,4 +161,9 @@ Defined as a [layer](/Products.md#layer-functions-and-their-attributes) with the
 
 ## Markings
 Aliases: "lot-code", "lot number", "datecode", "serial number"
+### as a specification
+Placed in the "configuration" part, this describes the markings needed. Generally you will find LOT/Batch codes here and also serial numbers. Markings are tied up to [layers](/Products.md#layer-functions-and-their-attributes) by the name of the layer.
+
+## Standards
+Aliases:
 ### as a specification

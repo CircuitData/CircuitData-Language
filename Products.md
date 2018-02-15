@@ -9,7 +9,7 @@ We divide the specifications into a few major groups:
 
 ## Sections
 To understand sections, you should read [this document](https://www.circuitdata.org/t/18phm5).
-The sections part allows you to divide the product you are describing into several sections and then allow the layers to appear in one or more of them. A single section product needs to contain at least one section. Liek this example:
+The sections part allows you to divide the product you are describing into several sections and then allow the layers to appear in one or more of them. A single section product needs to contain at least one section. Like this example:
 ```
 "sections": [
   {
@@ -114,13 +114,13 @@ Some materials, such as an ENIG final finish are made up from two or more materi
 ]
 ```
 ## Processes
-The "processes" element type is an "array". Processes include everything which is done to one or more layers. An example of one via (hole) process could be:
+The "processes" element type is an "array". Processes include everything which is done to one or more layers. An example of one hole process could be:
 ```
 "processes": [
   {
-    "function": "via",
+    "function": "hole",
     "attributes": {
-      "number_of_vias": 60,
+      "number_of_holes": 60,
       "type": through,
       "plated": false,
       "size": 0.15,
@@ -149,24 +149,25 @@ Potential values are:
 * plating
 * plated_edges
 * plated_slots
-* plated_castellated_holes
 * coin_attachment
-* via
+* holes
   * Potential attributes:
-    * number_of_vias ( type is "integer". Describes the number of holes/vias in the process )
-    * type ( type is "string". Describes the type of via. Choices are "through", "blind", "buried", "back_drill")
-    * plated ( type is "boolean". True to indicate plated vias )
-    * size ( type is "number". The size of the vias in micrometers )
+    * number_of_holes ( type is "integer". Describes the number of holes in the process )
+    * type ( type is "string". Describes the type of hole. Choices are "through", "blind", "buried", "back_drill", "via")
+    * plated ( type is "boolean". True to indicate plated holes )
+    * finished_size ( type is "number". The finished size of the holes in micrometers )
+    * tool_size ( type is "number". The size of the tool to be used in micrometers )
     * layer_start ( type is "string". Must refer to the name of a layer in the layers section )
     * layer_stop ( type is "string". Must refer to the name of a layer in the layers section )
-    * depth ( type is "number". Indicates the depth of the via in micrometers )
+    * depth ( type is "number". Indicates the depth of the holes in micrometers )
     * method ( type is "string". How the via is made. Can be either "routing, "drilling" or "laser", where default is "drilling" )
     * minimum_designed_annular_ring ( type is "number". The minimum designed annular ring in micrometers )
-    * press_fit ( type is "boolean". True if the via is for press fit )
-    * copper_filled ( type is "boolean". True if the via is to be copper filled )
-    * staggered ( type is "boolean". True if the vias are staggered )
-    * stacked ( type is "boolean". True if the vias are staggered )
-    * alivh ( type is "boolean". True if ALIVH vias )
+    * press_fit ( type is "boolean". True if the holes are for press fit )
+    * copper_filled ( type is "boolean". True if the holes are to be copper filled )
+    * staggered ( type is "boolean". True if the holes are staggered )
+    * stacked ( type is "boolean". True if the holes are staggered )
+    * alivh ( type is "boolean". True if ALIVH holes )
+    * castellated ( type is "boolean". True if plated half holes )
 
 ## Metrics
 The "metrics" element type is an "object" and can have the following sub-objects:
@@ -234,3 +235,15 @@ When describing the stackup configuration, you can use the following tags:
 | ordered_outer_layers | True if the outer layers listed are in exact order. Default is True | Boolean | None | No |
 | ordered_inner_layers | True if the inner layers listed are in exact order. Default is True | Boolean | None | No |
 | file_name | The name of the file that describes the stackup in furter detail | String | None | No |
+### Markings
+Markings on the board can happen on several layers, including legends and soldermasks. This section allows you to sum up these markings and attach them to layers.
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| layers | List one or more layers by name that includes markings | Array of strings | None | No |
+| date_code | Possible values are "YY" for year, "WW" for week "-" and "LOT" (alias "BATCH"). E.g. "YYWW-LOT" or "LOT-YYWW". If no marking, set "NONE" | String | None | No |
+| manufacturer_identification | Manufacturer identification | Boolean | None | No |
+| standards | Possible values are the ones listed in the subelement [standards](#standards) but typical will be "ul" and "rohs" | Array of strings | None | No |
+| serial_number | Serial number should be added in the markings. Default is false | Boolean | None | No |
+| serial_number_format | Format of the serial number expressed as a "regular expression" but needs to have x amount of digits in it. | String | None | No |
+| serial_number_start | The number to start the serial number from. Will have to replace the digits from the "serial_number_format" above | Integer | None | No |
+| serial_number_increase_by | The increase in number from "serial_number_start" with each product | Integer | None | No |

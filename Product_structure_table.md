@@ -38,10 +38,11 @@
 | | | | | processes | | | | | | |
 | | | | | | function | | | | | |
 | | | | | | process_attributes | | | | | |
-| | | | | | | number_of_vias | | | | |
+| | | | | | | number_of_holes | | | | |
 | | | | | | | type | | | | |
 | | | | | | | plated | | | | |
-| | | | | | | size | | | | |
+| | | | | | | finished_size | | | | |
+| | | | | | | tool_size | | | | |
 | | | | | | | layer_start | | | | |
 | | | | | | | layer_stop | | | | |
 | | | | | | | depth | | | | |
@@ -52,6 +53,7 @@
 | | | | | | | stacked | | | | |
 | | | | | | | staggered | | | | |
 | | | | | | | alivh | | | | |
+| | | | | | | castellated | | | | |
 | | | | | | | protection | | | | |
 | | | | | metrics | | | | | | | |
 | | | | | | board | | | | | | |
@@ -100,11 +102,35 @@
 | | | | | | | ordered_inner_layers | | | |
 | | | | | | | file_name | | | | |
 | | | | | | markings | | | | |
-| | | | | | | date_code | | | |
 | | | | | | | layers | | | |
-| | | | | | | manufacurer_identification | | | |
+| | | | | | | date_code | | | |
+| | | | | | | manufacturer_identification | | | |
 | | | | | | | standards | | | | |
 | | | | | | | serial_number | | | | |
 | | | | | | | serial_number_format | | | | |
 | | | | | | | serial_number_start | | | | |
+| | | | | | | serial_number_increase_by | | | | |
+| | | | | | standards | | | | |
+| | | | | | | ul | | | | |
+| | | | | | | c_ul | | | | |
+| | | | | | | rohs | | | | |
+| | | | | | | ul94 | | | | |
+| | | | | | | esa | | | | |
+| | | | | | | itar | | | | |
+| | | | | | | dfars | | | | |
+| | | | | | | mil_prf_55110 | | | | |
+| | | | | | | mil_prf_50884 | | | | |
+| | | | | | | mil_prf_31032 | | | | |
+| | | | | | | as9100 | | | | |
+| | | | | | | nadcap | | | | |
+| | | | | | | rw_en45545_2_2013 | | | | |
+| | | | | | | rw_nf_f_16_101 | | | | |
+| | | | | | | serial_number_increase_by | | | | |
+| | | | | | | serial_number_increase_by | | | | |
+| | | | | | | serial_number_increase_by | | | | |
+| | | | | | | serial_number_increase_by | | | | |
+| | | | | | | serial_number_increase_by | | | | |
+| | | | | | | serial_number_increase_by | | | | |
+| | | | | | | serial_number_increase_by | | | | |
+| | | | | | | serial_number_increase_by | | | | |
 | | | | | | | serial_number_increase_by | | | | |
