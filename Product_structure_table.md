@@ -133,3 +133,9 @@
 | | | | | | | iso_3166_1_alpha_2 | | | | |
 | | | | | | | nato_member | | | | |
 | | | | | | | eu_member | | | | |
+| | | | | | allowed_modifications | | | | |
+| | | | | | | dead_pad_removal | | | | |
+| | | | | | | add_copper_balancing | | | | |
+| | | | | | | add_copper_balancing_on_array | | | | |
+| | | | | | | add_tear_drops | | | | |
+| | | | | | | hole_resizing | | | | |

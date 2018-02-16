@@ -284,3 +284,13 @@ Country of Origin is the country where the Printed Circuit Board is/can be manuf
 | iso_3166_1_alpha_2 | A two letter string representation of the Country of origin according too ISO 3166-1. | String | None | No |
 | nato_member | Indicates if the COO is a NATO member state | Boolean | None | No |
 | eu_member | Indicates if the COO is a European Union member state. | Boolean | None | No |
+
+### allowed_modifications
+Changes/fabrication decisions that are allowed to make to the files provided.
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| dead_pad_removal | Non Functioning Pad removal. | Boolean | None | No |
+| add_copper_balancing | Adding copper balancing pattern. | Boolean | None | No |
+| add_copper_balancing_on_array | Adding copper balancing pattern on array/panel frame. | Boolean | None | No |
+| add_tear_drops | Adding Tear Drops. | Boolean | None | No |
