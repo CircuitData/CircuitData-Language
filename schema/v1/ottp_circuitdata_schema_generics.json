@@ -1,0 +1,7 @@
+{
+  "version": {
+    "type": "number",
+    "minimum": 1,
+    "maximum": 2
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "open_trade_transfer_package": {
+    "version": 1.0,
+    "information": {
+      "company": "CircuitData Board of Directors",
+      "created": "2018-02-15T09:49:37+02:00",
+      "updated": "2017-02-15T09:49:37+02:00"
+    },
+    "products": {
+      "ProductX_v1": {
+        "circuitdata": {
+          "version": 1.0,
+          "sections": [{
+            "name": "rigid1",
+            "in_x": [1],
+            "in_y": [1],
+            "mm2": 400
+          }],
+          "layers": [
+            {
+              "order": 1,
+              "function": "final_finish",
+              "name": "final_finish_top",
+              "sections": ["rigid1"],
+              "materials": ["osp"],
+              "sub_material_thickness": {
+                "gold": {
+                  "minimum_thickness": 0.5,
+                  "maximum_thickness": 0.6
+                }
+              }
+
+            }
+          ]
+        }
+      }
+    }
+  }
+}

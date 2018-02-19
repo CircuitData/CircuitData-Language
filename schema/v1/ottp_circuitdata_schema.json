@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["open_trade_transfer_package"],
+  "properties": {
+    "open_trade_transfer_package": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 2
+        },
+        "information": {
+          "$ref": "https://raw.githubusercontent.com/elmatica/Open-Trade-Transfer-Package/master/v1/ottp_schema_definitions.json#/definitions/information"
+        },
+        "products": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "generic": {
+              "type": "object",
+              "properties": {},
+              "id": "generic",
+              "description": "this should validate any element under generic to be valid"
+            }
+          },
+          "patternProperties": {
+            "^(?!generic$).*": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["circuitdata"],
+              "properties": {
+                "circuitdata": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["version"],
+                  "properties": {
+                    "version": {
+                      "$ref": "ottp_circuitdata_schema_generics.json#/version"
+                    },
+                    "sections": {
+                      "$ref": "ottp_circuitdata_schema_products.json#/sections"
+                    },
+                    "layers": {
+                      "$ref": "ottp_circuitdata_schema_products.json#/layers"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "materials": {
+          "$ref": "ottp_circuitdata_schema_materials.json#/materials"
+        }
+      }
+    }
+  }
+}

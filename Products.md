@@ -93,7 +93,7 @@ Potential values are:
     * placement ( type is "string". Either "selective_pads" or "edge_connectors" )
 
 
-### Thickess of individual components
+### Thickness of individual components
 Some materials, such as an ENIG final finish are made up from two or more material. In such cases, it can be useful to be able to specify the individual materials minimum and/or maximum thickness. You can do this in CircuitData by adding an object under the "sub_material_thickness" object. The name of the object should represent the material itself, e.g. "gold" and then you can place a "minimum" and or "maximum" object there with the type of "number" and UoM of micrometers. Example:
 ```
 "layers": [
@@ -107,7 +107,7 @@ Some materials, such as an ENIG final finish are made up from two or more materi
     "coverage": 100,
     "sub_material_thickness": {
       "gold": {
-        "minimum": 1.5
+        "minimum_thickness": 1.5
       }
     }
   }
@@ -121,7 +121,7 @@ The "processes" element type is an "array". Processes include everything which i
     "function": "hole",
     "attributes": {
       "number_of_holes": 60,
-      "type": through,
+      "hole_type": through,
       "plated": false,
       "size": 0.15,
       "layer_start": "conductive_layer_1",
@@ -153,7 +153,7 @@ Potential values are:
 * holes
   * Potential attributes:
     * number_of_holes ( type is "integer". Describes the number of holes in the process )
-    * type ( type is "string". Describes the type of hole. Choices are "through", "blind", "buried", "back_drill", "via")
+    * hole_type ( type is "string". Describes the type of hole. Choices are "through", "blind", "buried", "back_drill", "via")
     * plated ( type is "boolean". True to indicate plated holes )
     * finished_size ( type is "number". The finished size of the holes in micrometers )
     * tool_size ( type is "number". The size of the tool to be used in micrometers )
@@ -179,6 +179,7 @@ Boards are one PCB. The following potential tags are available:
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
 | size_x | The size of the board in the X-axis | Number | millimeters | Yes |
 | size_y | The size of the board in the Y-axis | Number | millimeters | Yes |
+| breakaway_method | The method of creation of the breakaways Use only if delivered without an array. Potential values are "routing", "punching" | String | None | No |
 | thickness | The finished thickness of the board | Number | millimeters | Yes |
 
 ### Array
@@ -200,7 +201,7 @@ Array (or custom panel) describes the panel that contains several boards. The fo
 | fiducials_number | The number of fiducials on the array | Integer | None | No |
 | fiducials_size | The size of the fiducials | Number | millimeters | No |
 | fiducials_shape | The shape of the fiducials. Potential values are "donut", "circle", "plus" and "diamond" | String | None | No |
-| breakaway_method | The method of creation of the breakaways on the array. Potential values are "routing", "scoring", "v-cut", "v-grove", "jump_scoring" | String | None | No |
+| breakaway_method | One or more methods of creation of the breakaways on the array. Potential values are "routing", "scoring", "punching", "v_cut", "v_grove", "jump_scoring" | Array of string | None | No |
 | mouse_bites | True if there should be "mouse bites" to allow easy break away of the boards | Boolean | None | No |
 | tooling_holes_number | The number of tooling holes on the array | Integer | None | No |
 | tooling_holes_size | The size of the tooling holes | Number | millimeters | No |
@@ -284,7 +285,6 @@ Country of Origin is the country where the Printed Circuit Board is/can be manuf
 | iso_3166_1_alpha_2 | A two letter string representation of the Country of origin according too ISO 3166-1. | String | None | No |
 | nato_member | Indicates if the COO is a NATO member state | Boolean | None | No |
 | eu_member | Indicates if the COO is a European Union member state. | Boolean | None | No |
-
 ### allowed_modifications
 Changes/fabrication decisions that are allowed to make to the files provided.
 
@@ -294,3 +294,4 @@ Changes/fabrication decisions that are allowed to make to the files provided.
 | add_copper_balancing | Adding copper balancing pattern. | Boolean | None | No |
 | add_copper_balancing_on_array | Adding copper balancing pattern on array/panel frame. | Boolean | None | No |
 | add_tear_drops | Adding Tear Drops. | Boolean | None | No |
+| resize_vias | Allow the manufacturer to resize vias to e.g. accomplish a required standard | Boolean | None | No |
