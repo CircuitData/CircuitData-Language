@@ -62,7 +62,6 @@
             "^.*": {
               "type": "object",
               "additionalProperties": false,
-
               "properties": {
                 "minimum_thickness": { "type": "number" },
                 "maximum_thickness": { "type": "number" }
@@ -335,7 +334,7 @@
           "add_copper_balancing": { "type": "boolean" },
           "add_copper_balancing_on_array": { "type": "boolean" },
           "add_tear_drops": { "type": "boolean" },
-          "resize_vias": { "type": "boolean" },
+          "resize_vias": { "type": "boolean" }
         }
       }
     }

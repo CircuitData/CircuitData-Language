@@ -29,9 +29,19 @@
                   "maximum_thickness": 0.6
                 }
               }
-
             }
           ]
+        }
+      }
+    },
+    "custom": {
+      "materials": {
+        "circuitdata": {
+          "version": 1.0,
+          "osp": {
+            "function": "final_finish",
+            "group": "osp"
+          }
         }
       }
     }

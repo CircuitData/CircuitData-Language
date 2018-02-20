@@ -23,8 +23,8 @@ This is the main documentation. You can find documents describing the structures
 Current version is 1.0. This should stated in every section directly below the "circuitdata" element in an element called "version".
 
 ## Documentation on the various subelements
-### Products
 * Specifying products are documented [here](/Products.md)
+* Specifying materials are documented [here](/Materials.md)
 * A table of the structure of all objects, items and tags is [here](/Product_structure_table.md)
 
 
