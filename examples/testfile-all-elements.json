@@ -37,8 +37,8 @@
     "custom": {
       "materials": {
         "circuitdata": {
-          "version": 1.0,
           "osp": {
+            "version": 1.0,
             "function": "final_finish",
             "group": "osp"
           }

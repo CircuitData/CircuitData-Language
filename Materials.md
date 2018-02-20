@@ -21,6 +21,8 @@ The following main tags are available:
 
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| version | The version of CircuitData language | number | None | Yes |
+| circuitdata_material_db_id | Reference to the official CircuitData Material Database ID of the material | string | None | No |
 | function | The function of the material. Choices are: "conductive", "dielectric", "soldermask", "stiffener", "final_finish" | string | None | Yes |
 | group | The group will list the main choice of materials. The choices are different based on the function. The the list [below](#groups) | string | None | Yes |
 | manufacturer | The brand that manufacture the material | string | None | No |
