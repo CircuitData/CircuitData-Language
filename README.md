@@ -65,23 +65,11 @@ Under each element and subelement, you'll find the type that is expected there. 
 * **string** - any set of characters, e.g. `"white"`.
 * **boolean** - either `true` or `false`
 
-## Restrictions on values
-The following restrictions can inflict on the values, and will be stated under each element.
-* **minimum** - a minimum value that a numeric type can meet
-* **maximum** - a maximum value that a numeric type can meet
-* **enum/possible values** - a list of values that a string can match. Any value that does not match will be rejected by the schema.
-
-## arrays in restrictive profiles
-All elements in a restrictive profile are to be understood as values that are not allowed in products. The exception is a numeric, which is the opposite as long as there are no *enum/possible values* present.
-* **number** - always two values, to represent the minimum and maximum ALLOWED number that the element in a product must meet. E.g. a `rigid_conductive_layer->count` represented as `[2, 4]` would be understood that anything outside a count of 2 too 4 layers would be restricted. If the element has *enum/possible values* it is to be treated as a normal array, and each value represents a forbidden value.
-* **boolean** - can be either `[true]` - true is not allowed, `[false]` - false is not allowed, `[true, false]` - neither value is allowed.
-* **string** - can be any string, and would restrict that value. If a `enum/possible values` are set, only these values can be part of the array of strings
-
 ## The custom elements
 As described in the [Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) project, a file can contain an element called `custom`. This element is where you place description of colors, materials or additional elements. Custom objects are always listed in an array.
 
 ### Colors
-Describing colors is part of the OTTP project, and needs no `printed_circuits_fabrication_data` element.
+Describing colors is part of the OTTP project, and needs no `circuitdata` element.
 **Example:**
 ```
 ...
@@ -96,25 +84,6 @@ Describing colors is part of the OTTP project, and needs no `printed_circuits_fa
   }
 ...
 ```
-### Materials
-Materials in CircuitData is devided into three different kinds: `dielectrics`, `soldermasks` and `stiffeners`. As they are part of the CircuitData they need to be wrapped in an `printed_circuits_fabrication_data` element.
-**Example:**
-```
-...
-  "custom": {
-    "materials": {
-      "soldermasks": [
-        {
-          "name": "FR-4 Lead Free",
-          "ul": true
-        }      
-      ]
-    }
-  }
-...
-```
-### Additional requirements
-This section is for all items that are not are not part of the CircuitData language yet.
 
 ## Contributing to the project
 We really appreciate all involvement. If you feel that there are additions or changes needed to the language, please start out by raising the issue in the [CircuitData Forum](https://www.circuitdata.org/). Then clone this repo and branch out before you make your changes. Please use a branch name that explains what you want to add. When you are done and have tested it, make a Pull Request in this GitHub project. It is the board of CircuitData that decided when code is to merged with the master and thus become part of the language.

@@ -91,7 +91,7 @@ For "conductive":
 * gold_platinum
 * platinum
 
-## Tags
+## Attributes
 The following attributes are available:
 For "dielectric":
 
