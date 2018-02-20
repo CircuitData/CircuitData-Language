@@ -94,6 +94,7 @@ For "conductive":
 ## Tags
 The following attributes are available:
 For "dielectric":
+
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
 | ipc_slash_sheet |  | Array of Integers | None | No |
@@ -125,6 +126,7 @@ For "dielectric":
 | foil_roughness | Choices are "S", "L", "V" | string | None | No |
 
 For "soldermask":
+
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
 | ipc_sm_840_class | Choices are "T", "H", "TF", "HF" | string | None | No |
