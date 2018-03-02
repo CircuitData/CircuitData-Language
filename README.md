@@ -69,7 +69,7 @@ Under each element and subelement, you'll find the type that is expected there. 
 As described in the [Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package) project, a file can contain an element called `custom`. This element is where you place description of colors, materials or additional elements. Custom objects are always listed in an array.
 
 ### Colors
-Describing colors is part of the OTTP project, and needs no `circuitdata` element.
+Describing colors is part of the OTTP project, and needs no `circuitdata` element. Read more at [Open Trade Transfer Package](https://github.com/elmatica/Open-Trade-Transfer-Package#colors)
 **Example:**
 ```
 ...
@@ -77,7 +77,7 @@ Describing colors is part of the OTTP project, and needs no `circuitdata` elemen
     "colors": [
       {
         "name": "orange",
-        "type": "hex",
+        "value_type": "hex",
         "value": "#f4ad42"
       }
     ]

@@ -53,6 +53,35 @@
             }
           }
         },
+        "profiles": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "defaults": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["circuitdata"],
+              "properties": {
+                "circuitdata": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["version"],
+                  "properties": {
+                    "version": {
+                      "$ref": "ottp_circuitdata_schema_generics.json#/version"
+                    },
+                    "sections": {
+                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/sections"
+                    },
+                    "layers": {
+                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/layers"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
         "custom": {
           "type": "object",
           "additionalProperties": false,
@@ -80,6 +109,9 @@
                   }
                 }
               }
+            },
+            "colors": {
+              "$ref": "https://raw.githubusercontent.com/elmatica/Open-Trade-Transfer-Package/master/v1/ottp_schema_definitions.json#/definitions/custom/properties/colors"
             }
           }
         }

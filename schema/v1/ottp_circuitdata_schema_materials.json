@@ -4,6 +4,9 @@
     "additionalProperties": false,
     "properties": {
       "version": { "$ref": "ottp_circuitdata_schema_generics.json#/version" },
+      "circuitdata_material_db_id": {
+        "type": "string"
+      },
       "function": {
         "type": "string",
         "enum": ["conductive", "dielectric", "soldermask", "stiffener", "final_finish"]

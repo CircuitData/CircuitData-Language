@@ -3,7 +3,7 @@ This section allows you to specify materials that are being referenced in the ot
 
 ## Structure
 Placed in the "open_trade_transfer_package -> custom -> materials -> circuitdata" subelement, you can list one or more materials. Each element should be named and must should contain a tag with the version number of the CircuitData language being used.
-### Examle
+### Example
 ```
 "materials": {
   "circuitdata": {

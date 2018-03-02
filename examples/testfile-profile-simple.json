@@ -1,0 +1,51 @@
+{
+  "open_trade_transfer_package": {
+    "version": 1.0,
+    "information": {
+      "company": "CircuitData Board of Directors",
+      "created": "2018-02-15T09:49:37+02:00",
+      "updated": "2017-02-15T09:49:37+02:00"
+    },
+    "profiles": {
+      "defaults": {
+        "circuitdata": {
+          "version": 1.0,
+          "sections": {
+            "count": 1,
+            "mm2": 400
+          },
+          "layers": {
+            "soldermask": {
+              "flexible": {
+                "true": {
+                  "material": {
+                    "any": {
+                      "count": 2,
+                      "thickness": {
+                        "reverse": false,
+                        "value_type": "range_of_numbers",
+                        "value": "8..40"
+                      }
+                    }
+                  }
+                },
+                "false": {
+                  "material": {
+                    "any": {
+                      "count": 2,
+                      "thickness": {
+                        "reverse": false,
+                        "value_type": "range_of_numbers",
+                        "value": "20..50"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

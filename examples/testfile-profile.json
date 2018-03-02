@@ -1,0 +1,62 @@
+{
+  "open_trade_transfer_package": {
+    "version": 1.0,
+    "information": {
+      "company": "CircuitData Board of Directors",
+      "created": "2018-02-15T09:49:37+02:00",
+      "updated": "2017-02-15T09:49:37+02:00"
+    },
+    "profiles": {
+      "enforced": {
+        "circuitdata": {
+          "version": 1.0,
+          "layers": {
+            "dielectric": {
+              "flexible": {
+                "method": "boolean",
+                "meet_condition": true,
+                "allow_others": true,
+                "values": [
+                  {
+                    "value": "false",
+                    "materials": ["isola_FR406BC"],
+                    "attributes": {
+                      "minimum_track_width": {
+                        "method": "range",
+                        "meet_condition": true,
+                        "allow_others": false,
+                        "values": [
+                          {"value": "0.15..0.18"}
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "value": "true",
+                    "materials": ["dupont_LF", "dupont_FR", "taiflex_FHK"]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "custom": {
+      "materials": {
+        "circuitdata": {
+          "osp": {
+            "version": 1.0,
+            "function": "final_finish",
+            "group": "osp"
+          }
+        }
+      },
+      "colors": [
+        {
+          "name": "green"
+        }
+      ]
+    }
+  }
+}
