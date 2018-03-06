@@ -59,7 +59,6 @@
                     "configuration": {
                       "$ref": "ottp_circuitdata_schema_products.json#/configuration"
                     }
-
                   }
                 }
               }
@@ -98,6 +97,15 @@
                     },
                     "processes": {
                       "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/processes"
+                    },
+                    "metrics": {
+                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/metrics"
+                    },
+                    "logistical": {
+                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/logistical"
+                    },
+                    "configuration": {
+                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/configuration"
                     }
                   }
                 }

@@ -178,3 +178,120 @@ The process part in the "Products" section contains one or more objects in an ar
   }
 }
 ```
+
+## Metrics
+The "metrics" element type is an "object" and can have the following sub-objects:
+### Board
+In specifications, Boards are one PCB. In capabilities and profiles, you can set choices that will be matched agains the specification. The following potential tags are available:
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| size_x | Minimum/maximum size of the board in the X-axis | Number range | millimeters | Yes |
+| size_y | Minimum/maximum size of the board in the Y-axis | Number range | millimeters | Yes |
+| breakaway_method | The method of creation of the breakaways Use only if delivered without an array. Potential values are "routing", "punching" | Array of strings | None | No |
+| thickness | Minimum/maximum finished thickness of the board | Number range | millimeters | Yes |
+
+### Array
+Array (or custom panel) describes the panel that contains several boards. The following potential tags are available:
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| size_x | Minimum/maximum size of the array in the X-axis | Number range | millimeters | Yes |
+| size_y | Minimum/maximum size of the array in the Y-axis | Number range | millimeters | Yes |
+| boards_x | Minimum/maximum number of boards in the array in the X-axis | Integer range | None | No |
+| boards_y | Minimum/maximum number of boards in the array in the Y-axis | Integer range | None | No |
+| boards_total | Maximum number of boards in the panel. This is not the preferred method of stating the number, "boards_x" and "boards_y" should be used | Integer | None | No |
+| border_left | Minimum/maximum size of the left side boarder between the edge and the board  | Number range | millimeters | No |
+| border_right | Minimum/maximum size of the right side boarder between the edge and the board  | Number range | millimeters | No |
+| border_top | Minimum/maximum size of the top side boarder between the edge and the board  | Number range | millimeters | No |
+| border_bottom | Minimum/maximum size of the bottom side boarder between the edge and the board range | Number | millimeters | No |
+| board_spacing_x | Minimum/maximum size of the space between the boards in the x-direction | Number range | millimeters | No |
+| board_spacing_y | Minimum/maximum size of the space between the boards in the y-direction | Number range | millimeters | No |
+| fiducials_number | Minimum/maximum number of fiducials on the array | Integer range | None | No |
+| fiducials_size | Minimum/maximum size of the fiducials | Number range | millimeters | No |
+| fiducials_shape | The shape of the fiducials. Potential values are "donut", "circle", "plus" and "diamond" | Array of string | None | No |
+| breakaway_method | One or more methods of creation of the breakaways on the array. Potential values are "routing", "scoring", "punching", "v_cut", "v_grove", "jump_scoring" | Array of string | None | No |
+| mouse_bites | True if there should be "mouse bites" to allow easy break away of the boards | Boolean | None | No |
+| tooling_holes_number | Minimum/maximum number of tooling holes on the array | Integer range | None | No |
+| tooling_holes_size | Minimum/maximum size of the tooling holes | Number range | millimeters | No |
+| x_outs_allowed | Manufacturer can deliver arrays with defect boards as long as these are clearly marked as defect (X'ed out) | Boolean | None | No |
+| x_outs_max_percentage_on_array | The maximum number of defective and clearly marked as such boards that are allowed on on panel | Number | percentage | No |
+| transplant_board_allowed | Inserting boards from one panel to another to remove x-outs allowed | Boolean | None | No |
+
+## Logistical
+The "logistical" element type is an "object" and can have the following sub-objects:
+### Inner packaging
+In describing the inner packaging of several products together before they are put in an outer package and shipped, there are several options to be set. They are all wrapped into a "inner_packing" object. Potential tags are:
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| ipc_1601_section_4_2_2_type | Choices are "a", "b", "c" or "d". Please refer to the IPC document for description | Aray of strings | millimeters | No |
+| hic | True to include a HIC (Humidity Indicator Card) in the inner packaging | Boolean | None | No |
+| esd | True to force the use of electrostatic discharge compatible material | Boolean | None | No |
+| dessicant | True if a dessicant should be included | Boolean | None | No |
+| vacuum | True to indicate if vacuum is required. Default is shrink wrap | Boolean | None | No |
+| maximum_number_of_arrays | Minimum/maximum number of arrays/panels that can be packed together in one inner package | Integer range | None | No |
+
+## Configuration
+The "configuration" element type is an "object" and can have the following sub-objects:
+
+### Markings
+Markings on the board can happen on several layers, including legends and soldermasks. This section allows you to sum up these markings and attach them to layers.
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| layers | List one or more layers by name that includes markings | Array of strings | None | No |
+| date_code | Possible values are "YY" for year, "WW" for week "-" and "LOT" (alias "BATCH"). E.g. "YYWW-LOT" or "LOT-YYWW". If no marking, set "NONE" | String | None | No |
+| manufacturer_identification | Manufacturer identification | Boolean | None | No |
+| standards | Possible values are the ones listed in the subelement [standards](#standards) but typical will be "ul" and "rohs" | Array of strings | None | No |
+| serial_number | Serial number should be added in the markings. Default is false | Boolean | None | No |
+| serial_number_format | Format of the serial number expressed as a "regular expression" but needs to have x amount of digits in it. | String | None | No |
+| serial_number_start | The number to start the serial number from. Will have to replace the digits from the "serial_number_format" above | Integer | None | No |
+| serial_number_increase_by | The increase in number from "serial_number_start" with each product | Integer | None | No |
+### Standards
+All standards that the finished product needs to be compliant with must be defined here.
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| comply_with | List one or more standards that the product must comply with. Choices are "ul", "c_ul", "rohs", "ul94", "esa", "itar", "dfars", "mil_prf_55110", "mil_prf_50884", "mil_prf_31032", "as9100", "nadcap", "rw_en45545_2_2013", "rw_nf_f_16_101", "rw_uni_cei_11170_3", "rw_nfpa_130" | Array of strings | None | No |
+| ipc_6010_class | According to Table 4-2 /4-3. Choices are "1", "2", "3" | Array of integers | None | No |
+| ipc_6010_compliance_level | Choices are "full", "factory_standard", "aabus" | Array of strings | None | No |
+| ipc_6010_copper_plating_thickness_level | Used either if ipc_6010_class is set to 2 and you want to add copper plating thickness demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Array of integer | None | No |
+| ipc_6010_annular_ring_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Array of integers | None | No |
+| ipc_6010_conductor_spacing_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | array of integers | None | No |
+| ipc_6010_conductor_width_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Array of integers | None | No |
+| ipc_6012_class | Requirements according to IPC 6012 class. Choices are "1", "2", "3", "3A" (Class 3 Autmotive addendum), "3M" (Class 3 Medical addendum), "3S" | Array of string | None | No |
+| ipc_6013_class | Requirements according to IPC 6013 for flexible or rigid-flex boards. Choices are "1", "2", "3" | Array of string | None | No |
+| ipc_6018 | IPC-6018 Microwave End Product Board Inspection and Test | Boolean | None | No |
+
+### Testing
+Describe the requirements for testing of the finished board.
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| netlist | 100% Netlist testing according to IPC-D-356, ODB++ or IPC2581 | Boolean | None | No |
+| allow_generate_netlist | Allow Netlist to be generated from Gerber or other file format if needed | Boolean | None | No |
+| hipot | HiPot Test (Dielectric Withstanding Voltage Test) | Boolean | None | No |
+| 4_wire | Use 4 wired test | Boolean | None | No |
+| ist | Use IST testing | Boolean | None | No |
+| impedance | Choices are "controlled", "calculated", "follow_stackup" | Array of strings | None | No |
+### Country Of Origin
+Country of Origin is the country where the Printed Circuit Board is/can be manufactured.
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| iso_3166_1_alpha_3 | A three letter string representation of the Country of origin according too ISO 3166-1. | Array of strings | None | No |
+| iso_3166_1_alpha_2 | A two letter string representation of the Country of origin according too ISO 3166-1. | Array of strings | None | No |
+| nato_member | Indicates if the COO is a NATO member state | Boolean | None | No |
+| eu_member | Indicates if the COO is a European Union member state. | Boolean | None | No |
+
+### allowed_modifications
+Changes/fabrication decisions that are allowed to make to the files provided.
+
+| Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
+|:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| dead_pad_removal | Non Functioning Pad removal. | Boolean | None | No |
+| add_copper_balancing | Adding copper balancing pattern. | Boolean | None | No |
+| add_copper_balancing_on_array | Adding copper balancing pattern on array/panel frame. | Boolean | None | No |
+| add_tear_drops | Adding Tear Drops. | Boolean | None | No |
+| resize_vias | Allow the manufacturer to resize vias to e.g. accomplish a required standard | Boolean | None | No |
