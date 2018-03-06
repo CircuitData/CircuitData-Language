@@ -109,7 +109,7 @@ The layers part in the "Products" section contains one or more objects in an arr
 
 Please note that the "additional_attributes" are placed directly under the material section, not under an additional "additional_attributes".
 
-###Example:
+### Example
 ```
 "layers": {
   "soldermask": {
@@ -142,7 +142,7 @@ Please note that the "additional_attributes" are placed directly under the mater
   }
 }
 ```
-##Processes
+## Processes
 The process part in the "Products" section contains one or more objects in an array. In profiles and Capabilities, we have to treat this very differently, as each individual process in the products should be compared to what could possibly be a single object in a profile or capability. Thus, we have this structure:
 
 * process
@@ -161,3 +161,20 @@ The process part in the "Products" section contains one or more objects in an ar
         * alivh ( type is "boolean". True if ALIVH holes )
         * castellated ( type is "boolean". True if plated half holes )
         * protection ( type is "array of strings". According to IPC-4761. Choices are "1", "2", "3", "4a", "4b", "5", "6a", "6b")
+
+### Example
+```
+"processes": {
+  "holes": {
+    "hole_type": {
+      "via": {
+        "stacked": {
+          "reverse": false,
+          "value_type": "boolean",
+          "value": "true"
+        }
+      }
+    }
+  }
+}
+```
