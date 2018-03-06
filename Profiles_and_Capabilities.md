@@ -23,16 +23,24 @@ Capabilities also contains a "materials" subsection where any capability on mate
       "version": 1.0,
       "layers": {
         "soldermask": {
-          "count": 2
+          "flexible": {
+            "false": {
+              "material": {
+                "any": {
+                  "count": 2
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 }
 ```
-The example above would force Soldermask to present two times (top and bottom) in any product it is matched against.
+The example above would force Soldermask to be present two times (top and bottom) in any non-flexible product it is matched against.
 
-### Example of a profile
+### Example of a capability
 ```
 "capabilities": {
   "summary"
@@ -80,7 +88,7 @@ Like this example:
 ```
 
 ## Layers
-The sections part in the "Products" section contains one or more objects in an array. In profiles and Capabilities, we have to treat this very differently, as each individual layer in the products should be compared to what could possibly be a single object in a profile or capability. Thus, we have this structure:
+The layers part in the "Products" section contains one or more objects in an array. In profiles and Capabilities, we have to treat this very differently, as each individual layer in the products should be compared to what could possibly be a single object in a profile or capability. Thus, we have this structure:
 * layers
   * function
     * flexible
@@ -98,3 +106,58 @@ The sections part in the "Products" section contains one or more objects in an a
             * color
             * heating_operations
             * placement
+
+Please note that the "additional_attributes" are placed directly under the material section, not under an additional "additional_attributes".
+
+###Example:
+```
+"layers": {
+  "soldermask": {
+    "flexible": {
+      "true": {
+        "material": {
+          "any": {
+            "count": 2,
+            "thickness": {
+              "reverse": false,
+              "value_type": "range_of_numbers",
+              "value": "8..40"
+            }
+          }
+        }
+      },
+      "false": {
+        "material": {
+          "any": {
+            "count": 2,
+            "thickness": {
+              "reverse": false,
+              "value_type": "range_of_numbers",
+              "value": "20..50"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+##Processes
+The process part in the "Products" section contains one or more objects in an array. In profiles and Capabilities, we have to treat this very differently, as each individual process in the products should be compared to what could possibly be a single object in a profile or capability. Thus, we have this structure:
+
+* process
+  * function
+    * hole_type ( type is "string". Describes the type of hole. Choices are "through", "blind", "buried", "back_drill", "via")
+      * "through"/"blind"/"buried"/"back_drill"/"via"
+        * plated ( type is "boolean". True to indicate plated holes )
+        * tool_size ( type is "range of numbers". The size of the tool to be used in micrometers )
+        * depth ( type is "range of numbers". Indicates the depth of the holes in micrometers )
+        * method ( type is "array of strings". How the via is made. Can be either "routing, "drilling" or "laser", where default is "drilling" )
+        * minimum_designed_annular_ring ( type is "number". The minimum designed annular ring in micrometers )
+        * press_fit ( type is "boolean". True if the holes are for press fit )
+        * copper_filled ( type is "boolean". True if the holes are to be copper filled )
+        * staggered ( type is "boolean". True if the holes are staggered )
+        * stacked ( type is "boolean". True if the holes are staggered )
+        * alivh ( type is "boolean". True if ALIVH holes )
+        * castellated ( type is "boolean". True if plated half holes )
+        * protection ( type is "array of strings". According to IPC-4761. Choices are "1", "2", "3", "4a", "4b", "5", "6a", "6b")

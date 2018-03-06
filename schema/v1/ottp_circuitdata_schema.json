@@ -46,7 +46,20 @@
                     },
                     "layers": {
                       "$ref": "ottp_circuitdata_schema_products.json#/layers"
+                    },
+                    "processes": {
+                      "$ref": "ottp_circuitdata_schema_products.json#/processes"
+                    },
+                    "metrics": {
+                      "$ref": "ottp_circuitdata_schema_products.json#/metrics"
+                    },
+                    "logistical": {
+                      "$ref": "ottp_circuitdata_schema_products.json#/logistical"
+                    },
+                    "configuration": {
+                      "$ref": "ottp_circuitdata_schema_products.json#/configuration"
                     }
+
                   }
                 }
               }
@@ -57,7 +70,14 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "defaults": {
+            "typeofprofile": {
+              "type": "object",
+              "properties": {},
+              "id": "typeofprofile"
+            }
+          },
+          "patternProperties": {
+            "^(?!typeofprofile$).*": {
               "type": "object",
               "additionalProperties": false,
               "required": ["circuitdata"],
@@ -75,6 +95,9 @@
                     },
                     "layers": {
                       "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/layers"
+                    },
+                    "processes": {
+                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/processes"
                     }
                   }
                 }

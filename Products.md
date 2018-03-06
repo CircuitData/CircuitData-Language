@@ -137,7 +137,7 @@ Potential tags are:
 | Tags          | Description           | [Type](#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:
 | function      | The function of process. [See the list of potential processes below](#process-functions-and-their-attributes) | integer | None | Yes |
-| layer_attributes | A object containing attributes to further describe the layer. See potential attributes under each [layer type](#layer-functions-and-their-attributes) | object | None | No |
+| process_attributes | A object containing attributes to further describe the layer. See potential attributes under each [layer type](#layer-functions-and-their-attributes) | object | None | No |
 
 ### Process functions and their attributes
 Potential values are:
