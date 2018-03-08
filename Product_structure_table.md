@@ -34,6 +34,7 @@
 | | | | | | | conductive_function | | | | |
 | | | | | | | polarity | | | | |
 | | | | | | | color | | | | |
+| | | | | | | allow_touchups | | | | |
 | | | | | | | heating_operations | | | | |
 | | | | | processes | | | | | | |
 | | | | | | function | | | | | |

@@ -82,6 +82,7 @@
              "enum": ["positive", "negative"]
           },
           "color": { "type": "string" },
+          "allow_touchups": { "type": "boolean" },
           "placement": {
              "type": "string",
              "enum": ["selective_pads", "edge_connectors"]

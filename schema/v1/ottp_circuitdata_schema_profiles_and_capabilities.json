@@ -65,6 +65,7 @@
                           "function": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                           "polarity": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                           "color": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+                          "allow_touchups": { "type": "boolean" },
                           "heating_operations": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                           "placement": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" }
                         }

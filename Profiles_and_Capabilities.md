@@ -104,6 +104,7 @@ The layers part in the "Products" section contains one or more objects in an arr
             * function (when the layer function is "conductive")
             * polarity
             * color
+            * allow_touchups
             * heating_operations
             * placement
 
