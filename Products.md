@@ -76,6 +76,7 @@ Potential values are:
 * soldermask
   * Potential attributes:
     * color ( type is "string". Se the color section for more information )
+    * allow_touchups ( type is "boolean". Indicates if correcting errors in the soldermask is allowed manually )
 * stiffener
 * plating
 * adhesive

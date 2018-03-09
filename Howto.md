@@ -167,4 +167,4 @@ Placed in the "configuration" part, this describes the markings needed. Generall
 ## Standards
 Aliases:
 ### as a specification
-Placed in the "configuration" part, this describes the standards that the finished product needs to be comply with. Check out [this](/Products.md#standards) for potential standards.
+Placed in the "configuration" part, this describes the standards that the finished product needs to be comply with. Check out [this](/Products.md#standards) for potential standards. Please note that if you want to have Halogen Free material, you can add "iec_61249-2-21" to the required standard
