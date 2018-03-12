@@ -206,7 +206,7 @@
           },
           "hic": { "type": "boolean" },
           "esd": { "type": "boolean" },
-          "dessicant": { "type": "boolean" },
+          "desiccant": { "type": "boolean" },
           "vacuum": { "type": "boolean" },
           "maximum_number_of_arrays": { "type": "integer" }
         }

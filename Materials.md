@@ -100,9 +100,9 @@ For "dielectric":
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
 | ipc_slash_sheet |  | Array of Integers | None | No |
-| tg_min |  | integer | Celcius | No |
-| td_min |  | integer | Celcius | No |
-| resin | Choises are: "epoxy", "bt", "cyanate_ester", "phenolic", "polyester", "polyimide", "ppe", "hydrocarbon", "ptfe", "thermoplastic" | string | None | No |
+| tg_min |  | integer | Celsius | No |
+| td_min |  | integer | Celsius | No |
+| resin | Choices are: "epoxy", "bt", "cyanate_ester", "phenolic", "polyester", "polyimide", "ppe", "hydrocarbon", "ptfe", "thermoplastic" | string | None | No |
 | resin_content |  | number | Percent | No |
 | flame_retardent | Choices are: "phosphor", "red_phosphor", "bromine", "chlorine", "antimony_oxide", "rohs_compliant_bromine" | String | None | No |
 | woven_reinforcement |  | Boolean | None | No |
@@ -116,7 +116,7 @@ For "dielectric":
 | t260 |  | number | Minutes | No |
 | t280 |  | number | Minutes | No |
 | t300 |  | number | Minutes | No |
-| mot |  | number | Celcius | No |
+| mot |  | number | Celsius | No |
 | z_cte |  | number | Percent | No |
 | z_cte_before_tg |  | number | Percent | No |
 | z_cte_after_tg |  | number | Percent | No |

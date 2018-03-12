@@ -52,7 +52,7 @@ Potential tags are:
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
 | order         | Order of the layer as seen in a cross section and counted from above | integer | None | Yes |
 | name          | A given name for the layer. Must be unique amongst the layers. Can be any string without spaces | string | None | Yes |
-| function      | The function of layer. [See the list of potential functions below](#layer-functions-and-their-attributes) | integer | None | Yes |
+| function      | The function of layer. [See the list of potential functions below](#layer-functions-and-their-attributes) | string | None | Yes |
 | flexible      | True or false to indicate if this layer is flexible or not | boolean | None | No - default is "False" |
 | materials     | An array of materials that appear in the materials element. There can be more than one | Array of String | None | Yes |
 | sections      | An array of the sections where the layer appears (use the name of the section) | Array of strings | None | Yes |
@@ -75,7 +75,7 @@ Potential values are:
 * dielectric
 * soldermask
   * Potential attributes:
-    * color ( type is "string". Se the color section for more information )
+    * color ( type is "string". See the color section for more information )
     * allow_touchups ( type is "boolean". Indicates if correcting errors in the soldermask is allowed manually )
 * stiffener
 * plating
@@ -83,7 +83,7 @@ Potential values are:
 * thermal
 * legend
   * Potential attributes:
-    * color ( type is "string". Ses the color section for more information )
+    * color ( type is "string". See the color section for more information )
 * final_finish
 * peelable_tape
 * peelable_mask
@@ -221,7 +221,7 @@ In describing the inner packaging of several products together before they are p
 | ipc_1601_section_4_2_2_type | Choices are "a", "b", "c" or "d". Please refer to the IPC document for description | String | millimeters | No |
 | hic | True to include a HIC (Humidity Indicator Card) in the inner packaging | Boolean | None | No |
 | esd | True to force the use of electrostatic discharge compatible material | Boolean | None | No |
-| dessicant | True if a dessicant should be included | Boolean | None | No |
+| desiccant | True if a desiccant should be included | Boolean | None | No |
 | vacuum | True to indicate if vacuum is required. Default is shrink wrap | Boolean | None | No |
 | maximum_number_of_arrays | The maximum number of arrays/panels that can be packed together in one inner package | Integer | None | No |
 
