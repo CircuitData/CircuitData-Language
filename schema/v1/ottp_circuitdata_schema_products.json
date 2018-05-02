@@ -110,7 +110,6 @@
               "type": "string",
               "enum": ["through", "blind", "buried", "back_drill", "via"]
             },
-            "plated": { "type": "boolean" },
             "finished_size": { "type": "number"},
             "finished_size": { "type": "number"},
             "layer_start": { "type": "string" },
@@ -122,15 +121,17 @@
             },
             "minimum_designed_annular_ring": { "type": "number"},
             "press_fit": { "type": "boolean" },
-            "copper_filled": { "type": "boolean" },
+            "plated": { "type": "boolean" },
+            "capped": { "type": "boolean" },
+            "filled": {
+              "type": "string",
+              "enum": ["copper", "resin", "soldermask"]
+            },
+            "covered": { "type": "boolean" },
             "staggered": { "type": "boolean" },
             "stacked": { "type": "boolean" },
             "alivh": { "type": "boolean" },
-            "castellated": { "type": "boolean" },
-            "protection": {
-              "type": "string",
-              "enum": ["1", "2", "3", "4a", "4b", "5", "6a", "6b"]
-            }
+            "castellated": { "type": "boolean" }
           }
         }
       }

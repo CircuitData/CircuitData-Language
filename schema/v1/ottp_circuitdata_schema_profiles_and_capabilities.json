@@ -112,18 +112,19 @@
                 "additionalProperties": false,
                 "required": [],
                 "properties": {
-                  "plated": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                   "tool_size": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                   "depth": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                   "method": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                   "minimum_designed_annular_ring": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                   "press_fit": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                  "copper_filled": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+                  "plated": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+                  "capped": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+                  "filled": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+                  "covered": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                   "staggered": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                   "stacked": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
                   "alivh": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                  "castellated": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                  "protection": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" }
+                  "castellated": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" }
                 }
               }
             }

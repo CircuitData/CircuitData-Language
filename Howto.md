@@ -29,7 +29,7 @@
 * [Hard gold edge connectors](#hard-gold-edge-connectors)
 * [Markings](#markings)
 * [Standards](#standards)
-* [](#)
+* [IPC 4761](#ipc-4761)
 * [](#)
 
 
@@ -168,3 +168,14 @@ Placed in the "configuration" part, this describes the markings needed. Generall
 Aliases:
 ### as a specification
 Placed in the "configuration" part, this describes the standards that the finished product needs to be comply with. Check out [this](/Products.md#standards) for potential standards. Please note that if you want to have Halogen Free material, you can add "iec_61249-2-21" to the required standard
+
+## IPC 4761
+Aliases: "via protection"
+### as a specification
+Type I: "Tended single or double sided". Soldermask material is dryfilm. Hole "filled" must be with "soldermask".
+Type II: "Tended and covered single or double sided". Soldermask material is dryfilm. Hole "filled" must be with "soldermask". Hole "covered" is true
+Type III: "Plugged single or double sided". Hole "filled" must with be with "soldermask".
+Type IV: "Plugged and covered single or double sided". Hole "filled" must with be with "soldermask". Hole "covered" is true
+Type V: "Filled (fully plugged)". Hole "filled" must with be with "soldermask".
+Type VI: "Filled and covered single or double sided". Hole "filled" must with be with "resin". Hole "covered" is true
+Type VII: "Filled and capped". Hole "filled" must with be with "resin". Hole "covered" is true. Hole "capped" is true.

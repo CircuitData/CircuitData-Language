@@ -33,21 +33,22 @@
 | | | | | process_attributes | | | | | |
 | | | | | | number_of_holes | | | | |
 | | | | | | type | | | | |
-| | | | | | plated | | | | |
 | | | | | | finished_size | | | | |
 | | | | | | tool_size | | | | |
 | | | | | | layer_start | | | | |
 | | | | | | layer_stop | | | | |
 | | | | | | depth | | | | |
 | | | | | | method | | | | |
-| | | | | | | minimum_designed_annular_ring | | | | |
-| | | | | | | press_fit | | | | |
-| | | | | | | copper_filled | | | | |
-| | | | | | | stacked | | | | |
-| | | | | | | staggered | | | | |
-| | | | | | | alivh | | | | |
-| | | | | | | castellated | | | | |
-| | | | | | | protection | | | | |
+| | | | | | minimum_designed_annular_ring | | | | |
+| | | | | | press_fit | | | | |
+| | | | | | plated | | | | |
+| | | | | | capped | | | | |
+| | | | | | filled | | | | |
+| | | | | | covered | | | | |
+| | | | | | stacked | | | | |
+| | | | | | staggered | | | | |
+| | | | | | alivh | | | | |
+| | | | | | castellated | | | | |
 | | | | metrics | | | | | | | |
 | | | | | board | | | | | | |
 | | | | | | size_x | | | | | |

@@ -155,7 +155,6 @@ Potential values are:
   * Potential attributes:
     * number_of_holes ( type is "integer". Describes the number of holes in the process )
     * hole_type ( type is "string". Describes the type of hole. Choices are "through", "blind", "buried", "back_drill", "via")
-    * plated ( type is "boolean". True to indicate plated holes )
     * finished_size ( type is "number". The finished size of the holes in micrometers )
     * tool_size ( type is "number". The size of the tool to be used in micrometers )
     * layer_start ( type is "string". Must refer to the name of a layer in the layers section )
@@ -164,12 +163,14 @@ Potential values are:
     * method ( type is "string". How the via is made. Can be either "routing, "drilling" or "laser", where default is "drilling" )
     * minimum_designed_annular_ring ( type is "number". The minimum designed annular ring in micrometers )
     * press_fit ( type is "boolean". True if the holes are for press fit )
-    * copper_filled ( type is "boolean". True if the holes are to be copper filled )
+    * plated ( type is "boolean". True to indicate plated holes )
+    * capped ( type is "boolean". True to indicate capped / overplated holes )
+    * filled ( type is "string", potential values are "copper", "resin", "soldermask")
+    * covered (type is "boolean". True to indicate that the hole is to be covered with soldermask )
     * staggered ( type is "boolean". True if the holes are staggered )
     * stacked ( type is "boolean". True if the holes are staggered )
     * alivh ( type is "boolean". True if ALIVH holes )
     * castellated ( type is "boolean". True if plated half holes )
-    * protection ( type is "string". According to IPC-4761. Choices are "1", "2", "3", "4a", "4b", "5", "6a", "6b")
 
 ## Metrics
 The "metrics" element type is an "object" and can have the following sub-objects:
