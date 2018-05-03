@@ -71,21 +71,25 @@
         },
         "coverage": { "type": "number" },
         "layer_attributes": {
-          "minimum_track_width": { "type": "number" },
-          "minimum_spacing_width": { "type": "number" },
-          "conductive_function": {
-            "type": "string",
-            "enum": ["signal", "plane", "mixed"]
-          },
-          "polarity": {
-             "type": "string",
-             "enum": ["positive", "negative"]
-          },
-          "color": { "type": "string" },
-          "allow_touchups": { "type": "boolean" },
-          "placement": {
-             "type": "string",
-             "enum": ["selective_pads", "edge_connectors"]
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "minimum_track_width": { "type": "number" },
+            "minimum_spacing_width": { "type": "number" },
+            "conductive_function": {
+              "type": "string",
+              "enum": ["signal", "plane", "mixed"]
+            },
+            "polarity": {
+              "type": "string",
+              "enum": ["positive", "negative"]
+            },
+            "color": { "type": "string" },
+            "allow_touchups": { "type": "boolean" },
+            "placement": {
+              "type": "string",
+              "enum": ["selective_pads", "edge_connectors"]
+            }
           }
         }
       }
