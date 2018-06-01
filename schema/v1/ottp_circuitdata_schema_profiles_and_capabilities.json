@@ -291,15 +291,8 @@
     "properties": {
       "material": {
         "type": "object",
-        "properties": {
-          "anymaterial": {
-            "type": "object",
-            "properties": {},
-            "id": "anymaterial"
-          }
-        },
         "patternProperties": {
-          "^(?!anymaterial$).*": {
+          ".*": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
