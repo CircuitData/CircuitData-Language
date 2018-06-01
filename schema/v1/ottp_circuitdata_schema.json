@@ -19,16 +19,8 @@
         "products": {
           "type": "object",
           "additionalProperties": false,
-          "properties": {
-            "generic": {
-              "type": "object",
-              "properties": {},
-              "id": "generic",
-              "description": "this should validate any element under generic to be valid"
-            }
-          },
           "patternProperties": {
-            "^(?!generic$).*": {
+            ".*": {
               "type": "object",
               "additionalProperties": false,
               "required": ["circuitdata"],
@@ -69,47 +61,14 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "typeofprofile": {
-              "type": "object",
-              "properties": {},
-              "id": "typeofprofile"
-            }
-          },
-          "patternProperties": {
-            "^(?!typeofprofile$).*": {
-              "type": "object",
-              "additionalProperties": false,
-              "required": ["circuitdata"],
-              "properties": {
-                "circuitdata": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": ["version"],
-                  "properties": {
-                    "version": {
-                      "$ref": "ottp_circuitdata_schema_generics.json#/version"
-                    },
-                    "sections": {
-                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/sections"
-                    },
-                    "layers": {
-                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/layers"
-                    },
-                    "processes": {
-                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/processes"
-                    },
-                    "metrics": {
-                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/metrics"
-                    },
-                    "logistical": {
-                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/logistical"
-                    },
-                    "configuration": {
-                      "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/configuration"
-                    }
-                  }
-                }
-              }
+            "enforced": {
+              "$ref": "#/definitions/profile_data"
+            },
+            "restricted": {
+              "$ref": "#/definitions/profile_data"
+            },
+            "default": {
+              "$ref": "#/definitions/profile_data"
             }
           }
         },
@@ -125,16 +84,8 @@
                 "circuitdata": {
                   "type": "object",
                   "additionalProperties": false,
-                  "properties": {
-                    "genericmaterial": {
-                      "type": "object",
-                      "properties": {},
-                      "id": "genericmaterial",
-                      "description": "this should validate any element under generic to be valid"
-                    }
-                  },
                   "patternProperties": {
-                    "^(?!genericmaterial$).*": {
+                    ".*": {
                       "$ref": "ottp_circuitdata_schema_materials.json#/materials"
                     }
                   }
@@ -143,6 +94,43 @@
             },
             "colors": {
               "$ref": "https://raw.githubusercontent.com/elmatica/Open-Trade-Transfer-Package/master/v1/ottp_schema_definitions.json#/definitions/custom/properties/colors"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "profile_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["circuitdata"],
+      "properties": {
+        "circuitdata": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["version"],
+          "properties": {
+            "version": {
+              "$ref": "ottp_circuitdata_schema_generics.json#/version"
+            },
+            "sections": {
+              "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/sections"
+            },
+            "layers": {
+              "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/layers"
+            },
+            "processes": {
+              "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/processes"
+            },
+            "metrics": {
+              "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/metrics"
+            },
+            "logistical": {
+              "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/logistical"
+            },
+            "configuration": {
+              "$ref": "ottp_circuitdata_schema_profiles_and_capabilities.json#/configuration"
             }
           }
         }
