@@ -228,6 +228,7 @@
     "properties": {
       "flexible": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "true": {
             "$ref": "#/layer_flexibility"
@@ -288,9 +289,11 @@
   "layer_flexibility": {
     "type": "object",
     "required": ["material"],
+    "additionalProperties": false,
     "properties": {
       "material": {
         "type": "object",
+        "additionalProperties": false,
         "patternProperties": {
           ".*": {
             "type": "object",
