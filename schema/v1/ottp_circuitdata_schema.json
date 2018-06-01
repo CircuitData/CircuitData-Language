@@ -19,16 +19,8 @@
         "products": {
           "type": "object",
           "additionalProperties": false,
-          "properties": {
-            "generic": {
-              "type": "object",
-              "properties": {},
-              "id": "generic",
-              "description": "this should validate any element under generic to be valid"
-            }
-          },
           "patternProperties": {
-            "^(?!generic$).*": {
+            ".*": {
               "type": "object",
               "additionalProperties": false,
               "required": ["circuitdata"],
