@@ -229,49 +229,11 @@
       "flexible": {
         "type": "object",
         "properties": {
-          "anyflexibility": {
-            "type": "object",
-            "properties": {},
-            "id": "anyflexibility",
-            "description": "this should validate any element under anyflexibility to be valid"
-          }
-        },
-        "patternProperties": {
-          "^(?!anyflexibility$).*": {
-            "type": "object",
-            "required": ["material"],
-            "properties": {
-              "material": {
-                "type": "object",
-                "properties": {
-                  "anymaterial": {
-                    "type": "object",
-                    "properties": {},
-                    "id": "anymaterial"
-                  }
-                },
-                "patternProperties": {
-                  "^(?!anymaterial$).*": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "count": { "type": "integer" },
-                      "thickness": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                      "tolerance_minus": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                      "tolerance_pluss": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                      "minimum_track_width": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                      "minimum_spacing_width": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                      "function": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                      "polarity": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                      "color": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                      "allow_touchups": { "type": "boolean" },
-                      "heating_operations": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-                      "placement": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" }
-                    }
-                  }
-                }
-              }
-            }
+          "true": {
+            "$ref": "#/layer_flexibility"
+          },
+          "false": {
+            "$ref": "#/layer_flexibility"
           }
         }
       }
@@ -321,6 +283,42 @@
       "stacked": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
       "alivh": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
       "castellated": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" }
+    }
+  },
+  "layer_flexibility": {
+    "type": "object",
+    "required": ["material"],
+    "properties": {
+      "material": {
+        "type": "object",
+        "properties": {
+          "anymaterial": {
+            "type": "object",
+            "properties": {},
+            "id": "anymaterial"
+          }
+        },
+        "patternProperties": {
+          "^(?!anymaterial$).*": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "count": { "type": "integer" },
+              "thickness": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+              "tolerance_minus": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+              "tolerance_pluss": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+              "minimum_track_width": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+              "minimum_spacing_width": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+              "function": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+              "polarity": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+              "color": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+              "allow_touchups": { "type": "boolean" },
+              "heating_operations": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+              "placement": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" }
+            }
+          }
+        }
+      }
     }
   }
 }
