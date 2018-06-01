@@ -284,36 +284,43 @@
       "hole_type": {
         "type": "object",
         "properties": {
-          "anyholetype": {
-            "type": "object",
-            "properties": {},
-            "id": "anyholetype",
-            "description": "this should validate any element under anyholetype to be valid"
-          }
-        },
-        "patternProperties": {
-          "^(?!anyholetype$).*": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [],
-            "properties": {
-              "tool_size": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "depth": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "method": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "minimum_designed_annular_ring": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "press_fit": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "plated": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "capped": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "filled": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "covered": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "staggered": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "stacked": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "alivh": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "castellated": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" }
-            }
+          "through": {
+            "$ref": "#/hole_type"
+          },
+          "blind": {
+            "$ref": "#/hole_type"
+          },
+          "buried": {
+            "$ref": "#/hole_type"
+          },
+          "back_drill": {
+            "$ref": "#/hole_type"
+          },
+          "via": {
+            "$ref": "#/hole_type"
           }
         }
       }
+    }
+  },
+  "hole_type": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [],
+    "properties": {
+      "tool_size": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "depth": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "method": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "minimum_designed_annular_ring": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "press_fit": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "plated": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "capped": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "filled": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "covered": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "staggered": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "stacked": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "alivh": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+      "castellated": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" }
     }
   }
 }
