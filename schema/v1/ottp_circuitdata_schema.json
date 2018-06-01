@@ -84,16 +84,8 @@
                 "circuitdata": {
                   "type": "object",
                   "additionalProperties": false,
-                  "properties": {
-                    "genericmaterial": {
-                      "type": "object",
-                      "properties": {},
-                      "id": "genericmaterial",
-                      "description": "this should validate any element under generic to be valid"
-                    }
-                  },
                   "patternProperties": {
-                    "^(?!genericmaterial$).*": {
+                    ".*": {
                       "$ref": "ottp_circuitdata_schema_materials.json#/materials"
                     }
                   }
