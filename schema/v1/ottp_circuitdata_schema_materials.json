@@ -20,6 +20,8 @@
       "flexible": { "type": "boolean" },
       "link": { "type": "string" },
       "remark": { "type": "string" },
+      "additional": { "type": "string" },
+      "verified": { "type": "boolean" },
       "accept_equivalent": { "type": "boolean" },
       "ul94": {
         "type": "string",
@@ -29,7 +31,15 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "ipc_slash_sheet": { "type": "integer" },
+          "ipc_standard": {
+            "type": "integer"
+          },
+          "ipc_slash_sheet": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
           "tg_min": { "type": "integer" },
           "td_min": { "type": "integer" },
           "resin": {
