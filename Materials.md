@@ -31,6 +31,7 @@ The following main tags are available:
 | link | A link to a datasheet or webpage giving more information | string | None | No |
 | remark | A piece of text giving further information on the material | string | None | No |
 | additional | More text to describe the material | string | None | No |
+| verified | To indicate if the information has been verified by its manufacturer | boolean | None | No |
 | accept_equivalent | If used in profiles or products, a "true" here indicates that equivalent material is accepted | boolean | None | No |
 | ul94 | The UL94 flame retardant capablities. Choices are "v-0", "v-1", "hb" | string | None | No |
 | attributes | Holds additional attributes. Read more [here](#attributes) | object | None | No |
@@ -99,6 +100,7 @@ For "dielectric":
 
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
+| ipc_standard | Which standard from IPC the material is in compliance with, 4101 or 4204 | String | None | No |
 | ipc_slash_sheet |  | Array of Integers | None | No |
 | tg_min |  | integer | Celsius | No |
 | td_min |  | integer | Celsius | No |
