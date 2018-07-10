@@ -219,7 +219,7 @@ In describing the inner packaging of several products together before they are p
 
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
-| ipc_1601_section_4_2_2_type | Choices are "a", "b", "c" or "d". Please refer to the IPC document for description | String | millimeters | No |
+| ipc_1601_section_4_2_2_type | Choices are "a", "b", "c" or "d". Where "a" is "Nylon/Foil/Polyethylene", "b" is "Tyvek™/Foil/Polyethylene", "c" is "Aluminized Polyester/Polyethylene" and "d" is "Clear Plastics/Polymers (non-metallic)" | String | None | No |
 | hic | True to include a HIC (Humidity Indicator Card) in the inner packaging | Boolean | None | No |
 | esd | True to force the use of electrostatic discharge compatible material | Boolean | None | No |
 | desiccant | True if a desiccant should be included | Boolean | None | No |
