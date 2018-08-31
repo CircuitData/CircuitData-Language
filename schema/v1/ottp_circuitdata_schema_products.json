@@ -33,6 +33,7 @@
       "additionalProperties": false,
       "properties": {
         "order": { "type": "integer" },
+        "uuid": { "type": "string" },
         "name": { "type": "string" },
         "function" : {
           "type": "string",
