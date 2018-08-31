@@ -53,6 +53,9 @@
       },
       "hard_gold": {
         "$ref": "#/layer_function"
+      },
+      "paste": {
+        "$ref": "#/layer_function"
       }
     }
   },
