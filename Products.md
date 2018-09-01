@@ -72,7 +72,7 @@ Potential values are:
     * minimum_track_width ( type is "number". Sets the minimum track. UoM is "micrometers" )
     * minimum_spacing_width ( type is "number". Sets the minimum gap. UoM is "micrometers")
     * conductive_function ( type is "string". Select either "signal", "plane" or "mixed" )
-    * polarity ( type is "string". Select either "positive" or "negative" )    
+    * polarity ( type is "string". Select either "positive" or "negative" )
 * dielectric
 * soldermask
   * Potential attributes:
@@ -138,6 +138,7 @@ Potential tags are:
 
 | Tags          | Description           | [Type](#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:
+| uuid          | An unique identifier for the process | string | None | No |
 | function      | The function of process. [See the list of potential processes below](#process-functions-and-their-attributes) | integer | None | Yes |
 | process_attributes | A object containing attributes to further describe the layer. See potential attributes under each [layer type](#layer-functions-and-their-attributes) | object | None | No |
 

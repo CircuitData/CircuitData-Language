@@ -102,6 +102,7 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "uuid": { "type": "string" },
         "function": {
           "type": "string",
           "enum": ["edge_bevelling", "depth_routing", "counterboring", "countersink", "punching", "plating", "plated_edges", "plated_slots", "coin_attachment", "holes"]
