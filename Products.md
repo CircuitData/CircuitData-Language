@@ -92,7 +92,7 @@ Potential values are:
 * hard_gold
   * Potential attributes
     * placement ( type is "string". Either "selective_pads" or "edge_connectors" )
-* paste
+* solder_paste
 
 
 ### Thickness of individual components
