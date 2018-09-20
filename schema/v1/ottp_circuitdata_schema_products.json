@@ -37,7 +37,7 @@
         "name": { "type": "string" },
         "function" : {
           "type": "string",
-          "enum": ["none", "conductive", "dielectric", "soldermask", "stiffener", "plating", "adhesive", "thermal", "legend", "final_finish", "peelable_tape", "peelable_mask", "hard_gold"]
+          "enum": ["none", "conductive", "dielectric", "soldermask", "stiffener", "plating", "adhesive", "thermal", "legend", "final_finish", "peelable_tape", "peelable_mask", "hard_gold", "solder_paste"]
         },
         "flexible": { "type": "boolean" },
         "sections": {
