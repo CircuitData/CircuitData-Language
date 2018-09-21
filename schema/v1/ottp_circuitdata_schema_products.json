@@ -403,6 +403,30 @@
               }
             }
           }
+        },
+        {
+          "type": "object",
+          "required": [
+            "order",
+            "name",
+            "function",
+            "sections",
+            "materials"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "order": { "type": "integer" },
+            "uuid": { "type": "string" },
+            "name": { "type": "string" },
+            "function": { "type": "string", "enum": ["solder_paste"] },
+            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+            "flexible": { "type": "boolean" },
+            "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+            "thickness": { "type": "number" },
+            "tolerance_minus": { "type": "number" },
+            "tolerance_plus": { "type": "number" },
+            "coverage": { "type": "number" }
+          }
         }
       ]
     }
