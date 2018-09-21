@@ -35,8 +35,7 @@
             "order",
             "name",
             "function",
-            "sections",
-            "materials"
+            "sections"
           ],
           "additionalProperties": false,
           "properties": {
@@ -44,13 +43,7 @@
             "uuid": { "type": "string" },
             "name": { "type": "string" },
             "function": { "type": "string", "enum": ["none"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
-            "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
-            "coverage": { "type": "number" }
+            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } }
           }
         },
         {
@@ -165,7 +158,6 @@
             "name": { "type": "string" },
             "function": { "type": "string", "enum": ["stiffener"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "thickness": { "type": "number" },
             "tolerance_minus": { "type": "number" },
@@ -213,7 +205,6 @@
             "name": { "type": "string" },
             "function": { "type": "string", "enum": ["adhesive"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "thickness": { "type": "number" },
             "tolerance_minus": { "type": "number" },
@@ -237,7 +228,6 @@
             "name": { "type": "string" },
             "function": { "type": "string", "enum": ["thermal"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "thickness": { "type": "number" },
             "tolerance_minus": { "type": "number" },
@@ -329,7 +319,6 @@
             "name": { "type": "string" },
             "function": { "type": "string", "enum": ["peelable_tape"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "thickness": { "type": "number" },
             "tolerance_minus": { "type": "number" },
@@ -353,7 +342,6 @@
             "name": { "type": "string" },
             "function": { "type": "string", "enum": ["peelable_mask"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "thickness": { "type": "number" },
             "tolerance_minus": { "type": "number" },
