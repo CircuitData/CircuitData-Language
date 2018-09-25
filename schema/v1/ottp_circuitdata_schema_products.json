@@ -403,6 +403,23 @@
               }
             }
           }
+        },
+        {
+          "type": "object",
+          "required": [
+            "order",
+            "name",
+            "function",
+            "materials"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "order": { "type": "integer" },
+            "uuid": { "type": "string" },
+            "name": { "type": "string" },
+            "function": { "type": "string", "enum": ["solder_paste"] },
+            "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } }
+          }
         }
       ]
     }
