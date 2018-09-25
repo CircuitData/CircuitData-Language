@@ -410,7 +410,6 @@
             "order",
             "name",
             "function",
-            "sections",
             "materials"
           ],
           "additionalProperties": false,
@@ -419,7 +418,6 @@
             "uuid": { "type": "string" },
             "name": { "type": "string" },
             "function": { "type": "string", "enum": ["solder_paste"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } }
           }
         }
