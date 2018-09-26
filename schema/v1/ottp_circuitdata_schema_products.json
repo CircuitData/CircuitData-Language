@@ -20,6 +20,7 @@
           }
         },
         "mm2": {
+          "uom": "mm2",
           "type": "number"
         }
       }
@@ -64,16 +65,16 @@
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" },
             "layer_attributes": {
               "type": "object",
               "additionalProperties": false,
               "properties": {
-                "minimum_track_width": { "type": "number" },
-                "minimum_spacing_width": { "type": "number" },
+                "minimum_track_width": { "type": "number", "uom": "μm" },
+                "minimum_spacing_width": { "type": "number", "uom": "μm" },
                 "conductive_function": {
                   "type": "string",
                   "enum": ["signal", "plane", "mixed"]
@@ -104,9 +105,9 @@
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" }
           }
         },
@@ -128,9 +129,9 @@
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" },
             "layer_attributes": {
               "type": "object",
@@ -159,9 +160,9 @@
             "function": { "type": "string", "enum": ["stiffener"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" }
           }
         },
@@ -183,9 +184,9 @@
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" }
           }
         },
@@ -206,9 +207,9 @@
             "function": { "type": "string", "enum": ["adhesive"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" }
           }
         },
@@ -229,9 +230,9 @@
             "function": { "type": "string", "enum": ["thermal"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" }
           }
         },
@@ -253,9 +254,9 @@
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" },
             "layer_attributes": {
               "type": "object",
@@ -284,9 +285,9 @@
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" },
             "sub_material_thickness": {
               "type": "object",
@@ -320,9 +321,9 @@
             "function": { "type": "string", "enum": ["peelable_tape"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" }
           }
         },
@@ -343,9 +344,9 @@
             "function": { "type": "string", "enum": ["peelable_mask"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" },
             "layer_attributes": {
               "type": "object",
@@ -375,9 +376,9 @@
             "function": { "type": "string", "enum": ["hard_gold"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number" },
-            "tolerance_minus": { "type": "number" },
-            "tolerance_plus": { "type": "number" },
+            "thickness": { "type": "number", "uom": "μm" },
+            "tolerance_minus": { "type": "number", "uom": "μm" },
+            "tolerance_plus": { "type": "number", "uom": "μm" },
             "coverage": { "type": "number" },
             "layer_attributes": {
               "type": "object",
@@ -521,16 +522,15 @@
                   "type": "string",
                   "enum": ["through", "blind", "buried", "back_drill", "via"]
                 },
-                "finished_size": { "type": "number"},
-                "finished_size": { "type": "number"},
+                "finished_size": { "type": "number", "uom": "μm"},
                 "layer_start": { "type": "string" },
                 "layer_stop": { "type": "string" },
-                "depth": { "type": "number"},
+                "depth": { "type": "number", "uom": "μm"},
                 "method": {
                   "type": "string",
                   "enum": ["routing", "drilling", "laser"]
                 },
-                "minimum_designed_annular_ring": { "type": "number"},
+                "minimum_designed_annular_ring": { "type": "number", "uom": "μm"},
                 "press_fit": { "type": "boolean" },
                 "plated": { "type": "boolean" },
                 "capped": { "type": "boolean" },
@@ -558,32 +558,32 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "size_x": { "type": "number" },
-          "size_y": { "type": "number" },
+          "size_x": { "type": "number", "uom": "mm" },
+          "size_y": { "type": "number", "uom": "mm" },
           "breakaway_method": {
             "type": "string",
             "enum": ["routing", "punching"]
           },
-          "thickness": { "type": "number" }
+          "thickness": { "type": "number", "uom": "mm" }
         }
       },
       "array": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "size_x": { "type": "number" },
-          "size_y": { "type": "number" },
+          "size_x": { "type": "number", "uom": "mm" },
+          "size_y": { "type": "number", "uom": "mm" },
           "boards_x": { "type": "integer" },
           "boards_y": { "type": "integer" },
           "boards_total": { "type": "integer" },
-          "border_left": { "type": "number" },
-          "border_right": { "type": "number" },
-          "border_top": { "type": "number" },
-          "border_bottom": { "type": "number" },
-          "board_spacing_x": { "type": "number" },
-          "board_spacing_y": { "type": "number" },
+          "border_left": { "type": "number", "uom": "mm" },
+          "border_right": { "type": "number", "uom": "mm" },
+          "border_top": { "type": "number", "uom": "mm" },
+          "border_bottom": { "type": "number", "uom": "mm" },
+          "board_spacing_x": { "type": "number", "uom": "mm" },
+          "board_spacing_y": { "type": "number", "uom": "mm" },
           "fiducials_number": { "type": "integer" },
-          "fiducials_size": { "type": "number" },
+          "fiducials_size": { "type": "number", "uom": "mm" },
           "fiducials_shape": {
             "type": "string",
             "enum": ["donut", "circle", "plus", "diamond"]
@@ -597,11 +597,11 @@
           },
           "mouse_bites": { "type": "boolean" },
           "tooling_holes_number": { "type": "integer" },
-          "tooling_holes_size": { "type": "number" },
+          "tooling_holes_size": { "type": "number", "uom": "mm" },
           "x_outs_allowed": { "type": "boolean" },
           "x_outs_max_percentage_on_array": { "type": "number" },
           "transplant_board_allowed": { "type": "boolean" },
-          "weight": { "type": "number" }
+          "weight": { "type": "number", "uom": "g" }
         }
       }
     }
