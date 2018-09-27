@@ -47,7 +47,7 @@
             "enum": ["epoxy", "bt", "cyanate_ester", "phenolic", "polyester", "polyimide", "ppe", "hydrocarbon", "ptfe", "thermoplastic"]
           },
           "resin_content": { "type": "number" },
-          "flame_retardent": {
+          "flame_retardant": {
             "type": "string",
             "enum": ["phosphor", "red_phosphor", "bromine", "chlorine", "antimony_oxide", "rohs_compliant_bromine"]
           },

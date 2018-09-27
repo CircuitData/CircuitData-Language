@@ -34,7 +34,7 @@ The "layers" element type is an "array". Layers include everything which is part
     "sections": ["main_rigid"],
     "thickness": 34.8,
     "tolerance_minus": 0.1,
-    "tolerance_pluss": 0.1,
+    "tolerance_plus": 0.1,
     "coverage": 34,
     "attributes": {
       "minimum_track_width": 0.135,
@@ -241,7 +241,7 @@ When describing the stackup configuration, you can use the following tags:
 | locked | True if the stackup is locked and cannot be altered by the manufacturer. Default is False | Boolean | None | No |
 | ordered_outer_layers | True if the outer layers listed are in exact order. Default is True | Boolean | None | No |
 | ordered_inner_layers | True if the inner layers listed are in exact order. Default is True | Boolean | None | No |
-| file_name | The name of the file that describes the stackup in furter detail | String | None | No |
+| file_name | The name of the file that describes the stackup in further detail | String | None | No |
 
 ### Markings
 Markings on the board can happen on several layers, including legends and soldermasks. This section allows you to sum up these markings and attach them to layers.
@@ -269,7 +269,7 @@ All standards that the finished product needs to be compliant with must be defin
 | ipc_6010_annular_ring_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Integer | None | No |
 | ipc_6010_conductor_spacing_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Integer | None | No |
 | ipc_6010_conductor_width_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Integer | None | No |
-| ipc_6012_class | Requirements according to IPC 6012 class. Choices are "1", "2", "3", "3A" (Class 3 Autmotive addendum), "3M" (Class 3 Medical addendum), "3S" | String | None | No |
+| ipc_6012_class | Requirements according to IPC 6012 class. Choices are "1", "2", "3", "3A" (Class 3 Automotive addendum), "3M" (Class 3 Medical addendum), "3S" | String | None | No |
 | ipc_6013_class | Requirements according to IPC 6013 for flexible or rigid-flex boards. Choices are "1", "2", "3" | String | None | No |
 | ipc_6018 | IPC-6018 Microwave End Product Board Inspection and Test | Boolean | None | No |
 

@@ -33,7 +33,7 @@ The following main tags are available:
 | additional | More text to describe the material | string | None | No |
 | verified | To indicate if the information has been verified by its manufacturer | boolean | None | No |
 | accept_equivalent | If used in profiles or products, a "true" here indicates that equivalent material is accepted | boolean | None | No |
-| ul94 | The UL94 flame retardant capablities. Choices are "v-0", "v-1", "hb" | string | None | No |
+| ul94 | The UL94 flame retardant capabilities. Choices are "v-0", "v-1", "hb" | string | None | No |
 | attributes | Holds additional attributes. Read more [here](#attributes) | object | None | No |
 
 ## Groups
@@ -106,7 +106,7 @@ For "dielectric":
 | td_min |  | integer | Celsius | No |
 | resin | Choices are: "epoxy", "bt", "cyanate_ester", "phenolic", "polyester", "polyimide", "ppe", "hydrocarbon", "ptfe", "thermoplastic" | string | None | No |
 | resin_content |  | number | Percent | No |
-| flame_retardent | Choices are: "phosphor", "red_phosphor", "bromine", "chlorine", "antimony_oxide", "rohs_compliant_bromine" | String | None | No |
+| flame_retardant | Choices are: "phosphor", "red_phosphor", "bromine", "chlorine", "antimony_oxide", "rohs_compliant_bromine" | String | None | No |
 | woven_reinforcement |  | Boolean | None | No |
 | filler | Could be several. Choices are: "ceramic", "kaolin", "organic", "inorganic", "glass" | Array of strings | None | No |
 | reinforcement | Choices are "e-glass", "s-glass", "ne-glass", "l-glass", "quartz", "aramid", "paper" | String | None | No |

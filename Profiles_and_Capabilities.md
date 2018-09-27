@@ -98,7 +98,7 @@ The layers part in the "Products" section contains one or more objects in an arr
             * count
             * thickness
             * tolerance_minus
-            * tolerance_pluss
+            * tolerance_plus
             * minimum_track_width
             * minimum_spacing_width
             * function (when the layer function is "conductive")
@@ -229,7 +229,7 @@ In describing the inner packaging of several products together before they are p
 | ipc_1601_section_4_2_2_type | Choices are "a", "b", "c" or "d". Please refer to the IPC document for description | Aray of strings | millimeters | No |
 | hic | True to include a HIC (Humidity Indicator Card) in the inner packaging | Boolean | None | No |
 | esd | True to force the use of electrostatic discharge compatible material | Boolean | None | No |
-| dessicant | True if a dessicant should be included | Boolean | None | No |
+| desiccant | True if a desiccant should be included | Boolean | None | No |
 | vacuum | True to indicate if vacuum is required. Default is shrink wrap | Boolean | None | No |
 | maximum_number_of_arrays | Minimum/maximum number of arrays/panels that can be packed together in one inner package | Integer range | None | No |
 
@@ -261,7 +261,7 @@ All standards that the finished product needs to be compliant with must be defin
 | ipc_6010_annular_ring_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Array of integers | None | No |
 | ipc_6010_conductor_spacing_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | array of integers | None | No |
 | ipc_6010_conductor_width_level | Used either if ipc_6010_class is set to 2 and you want to add annular ring demands from class 3, or the other way round - class 3 is set but you can accept demands from class 2. Choices are "2", "3" | Array of integers | None | No |
-| ipc_6012_class | Requirements according to IPC 6012 class. Choices are "1", "2", "3", "3A" (Class 3 Autmotive addendum), "3M" (Class 3 Medical addendum), "3S" | Array of string | None | No |
+| ipc_6012_class | Requirements according to IPC 6012 class. Choices are "1", "2", "3", "3A" (Class 3 Automotive addendum), "3M" (Class 3 Medical addendum), "3S" | Array of string | None | No |
 | ipc_6013_class | Requirements according to IPC 6013 for flexible or rigid-flex boards. Choices are "1", "2", "3" | Array of string | None | No |
 | ipc_6018 | IPC-6018 Microwave End Product Board Inspection and Test | Boolean | None | No |
 
