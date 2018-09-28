@@ -374,7 +374,6 @@
             "name": { "type": "string" },
             "function": { "type": "string", "enum": ["hard_gold"] },
             "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
             "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
             "thickness": { "type": "number" },
             "tolerance_minus": { "type": "number" },
