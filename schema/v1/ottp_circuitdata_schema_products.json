@@ -523,8 +523,8 @@
                   "enum": ["through", "blind", "buried", "back_drill", "via"]
                 },
                 "finished_size": { "type": "number", "uom": "μm"},
-                "layer_start": { "type": "string" },
-                "layer_stop": { "type": "string" },
+                "layer_start": { "$ref": "#/definitions/uuid" },
+                "layer_stop": { "$ref": "#/definitions/uuid" },
                 "depth": { "type": "number", "uom": "μm"},
                 "method": {
                   "type": "string",
@@ -648,7 +648,7 @@
           "layers": {
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "#/definitions/uuid"
             }
           },
           "date_code": { "type": "string" },
