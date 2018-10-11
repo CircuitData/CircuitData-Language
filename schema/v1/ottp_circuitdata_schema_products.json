@@ -35,6 +35,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections"
           ],
@@ -52,6 +53,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -92,6 +94,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -116,6 +119,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -148,6 +152,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -171,6 +176,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -195,6 +201,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -218,6 +225,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -241,6 +249,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -272,6 +281,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -309,6 +319,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -332,6 +343,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -364,6 +376,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "sections",
             "materials"
@@ -397,6 +410,7 @@
           "required": [
             "order",
             "name",
+            "uuid",
             "function",
             "materials"
           ],

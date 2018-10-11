@@ -51,7 +51,7 @@ Potential tags are:
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
 | order         | Order of the layer as seen in a cross section and counted from above | integer | None | Yes |
-| uuid          | An unique identifier for the layer | string | None | No |
+| uuid          | An unique identifier for the layer | string | None | Yes |
 | name          | A given name for the layer. Must be unique amongst the layers. Can be any string without spaces | string | None | Yes |
 | function      | The function of layer. [See the list of potential functions below](#layer-functions-and-their-attributes) | string | None | Yes |
 | flexible      | True or false to indicate if this layer is flexible or not | boolean | None | No - default is "False" |
