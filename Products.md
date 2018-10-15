@@ -51,7 +51,7 @@ Potential tags are:
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
 | order         | Order of the layer as seen in a cross section and counted from above | integer | None | Yes |
-| uuid          | An unique identifier for the layer | string | None | No |
+| uuid          | An unique identifier for the layer | string | None | Yes |
 | name          | A given name for the layer. Must be unique amongst the layers. Can be any string without spaces | string | None | Yes |
 | function      | The function of layer. [See the list of potential functions below](#layer-functions-and-their-attributes) | string | None | Yes |
 | flexible      | True or false to indicate if this layer is flexible or not | boolean | None | No - default is "False" |
@@ -127,8 +127,8 @@ The "processes" element type is an "array". Processes include everything which i
       "hole_type": through,
       "plated": false,
       "size": 0.15,
-      "layer_start": "conductive_layer_1",
-      "layer_stop": "conductive_layer_4",
+      "layer_start": "04c09da8-f6f1-4308-8822-b77363d34f9d",
+      "layer_stop": "05c10da8-f6f1-4308-8822-b77363d34f9d",
       "protection": "type4a"
     }
   }
@@ -160,8 +160,8 @@ Potential values are:
     * hole_type ( type is "string". Describes the type of hole. Choices are "through", "blind", "buried", "back_drill", "via")
     * finished_size ( type is "number". The finished size of the holes in micrometers )
     * tool_size ( type is "number". The size of the tool to be used in micrometers )
-    * layer_start ( type is "string". Must refer to the name of a layer in the layers section )
-    * layer_stop ( type is "string". Must refer to the name of a layer in the layers section )
+    * layer_start ( type is "string". Must refer to the uuid of a layer in the layers section )
+    * layer_stop ( type is "string". Must refer to the uuid of a layer in the layers section )
     * depth ( type is "number". Indicates the depth of the holes in micrometers )
     * method ( type is "string". How the via is made. Can be either "routing, "drilling" or "laser", where default is "drilling" )
     * minimum_designed_annular_ring ( type is "number". The minimum designed annular ring in micrometers )
@@ -248,7 +248,7 @@ Markings on the board can happen on several layers, including legends and solder
 
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
-| layers | List one or more layers by name that includes markings | Array of strings | None | No |
+| layers | List one or more layers by UUID that includes markings | Array of UUIDs | None | No |
 | date_code | Possible values are "YY" for year, "WW" for week "-" and "LOT" (alias "BATCH"). E.g. "YYWW-LOT" or "LOT-YYWW". If no marking, set "NONE" | String | None | No |
 | manufacturer_identification | Manufacturer identification | Boolean | None | No |
 | standards | Possible values are the ones listed in the subelement [standards](#standards) but typical will be "ul" and "rohs" | Array of strings | None | No |
