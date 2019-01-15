@@ -574,6 +574,7 @@
         "properties": {
           "size_x": { "type": "number", "uom": "mm" },
           "size_y": { "type": "number", "uom": "mm" },
+          "area": { "type": "number", "uom": "mm" },
           "breakaway_method": {
             "type": "string",
             "enum": ["routing", "punching"]
