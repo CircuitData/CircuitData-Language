@@ -1,0 +1,240 @@
+{
+  "open_trade_transfer_package": {
+    "version": 1.0,
+    "products": {
+      "two_conductive_layers": {
+        "circuitdata": {
+          "layers": [
+            {
+              "function": "legend",
+              "uuid": "cd42a19a-482d-411b-912f-d7f01e4853aa",
+              "name": "legend-1",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+
+              ],
+              "order": 0
+            },
+            {
+              "function": "soldermask",
+              "uuid": "fce0f1a4-7f5b-485e-a769-eaca700ec68f",
+              "name": "soldermask-1",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "LPISM"
+              ],
+              "order": 1
+            },
+            {
+              "function": "final_finish",
+              "uuid": "a739bdaf-1bd9-4360-abba-5ae0649bee6c",
+              "name": "final_finish-1",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "ENIG"
+              ],
+              "order": 2
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal",
+                "minimum_track_width": 200.0,
+                "minimum_spacing_width": 220.0
+              },
+              "uuid": "40b3dd72-a717-43dd-a628-7f0655075066",
+              "name": "conductive-1",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 79.2,
+              "order": 3
+            },
+            {
+              "function": "dielectric",
+              "uuid": "356d7193-7eac-4637-97d6-e6ebb2d11a52",
+              "name": "dielectric-1",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "FR4 min Tg140"
+              ],
+              "order": 4
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal",
+                "minimum_track_width": 200.0,
+                "minimum_spacing_width": 275.0
+              },
+              "uuid": "d13eac98-5521-4074-9454-9c200431073c",
+              "name": "conductive-2",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 89.3,
+              "order": 5
+            },
+            {
+              "function": "final_finish",
+              "uuid": "8028ba55-c30f-42fb-a462-8d1f65c283b9",
+              "name": "final_finish-2",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "ENIG"
+              ],
+              "order": 6
+            },
+            {
+              "function": "soldermask",
+              "uuid": "12b883c6-ec1e-4753-b822-10f57bcc0cdd",
+              "name": "soldermask-2",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "LPISM"
+              ],
+              "order": 7
+            },
+            {
+              "function": "legend",
+              "uuid": "a739e6d8-2186-492a-a006-65ccdd93bd36",
+              "name": "legend-2",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+
+              ],
+              "order": 8
+            }
+          ],
+          "sections": [
+            {
+              "name": "rigid1",
+              "in_x": [
+                1
+              ],
+              "in_y": [
+                1
+              ],
+              "mm2": 1670.0
+            }
+          ],
+          "processes": [
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 106,
+                "plated": true,
+                "finished_size": 305.0,
+                "layer_start": "40b3dd72-a717-43dd-a628-7f0655075066",
+                "layer_stop": "d13eac98-5521-4074-9454-9c200431073c",
+                "minimum_designed_annular_ring": 48.0,
+                "hole_type": "through",
+                "covered": true
+              },
+              "uuid": "418f0089-8ac4-430e-8fb7-d20bf1c11da4"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 4,
+                "plated": true,
+                "finished_size": 2007.0,
+                "layer_start": "40b3dd72-a717-43dd-a628-7f0655075066",
+                "layer_stop": "d13eac98-5521-4074-9454-9c200431073c",
+                "hole_type": "through",
+                "covered": true
+              },
+              "uuid": "7e4b6489-ba24-4105-85ec-b5a55c7f5662"
+            }
+          ],
+          "metrics": {
+            "board": {
+              "size_x": 50.003,
+              "size_y": 33.413,
+              "thickness": 1.6,
+              "area": 1670.0
+            }
+          },
+          "version": 1.0
+        }
+      }
+    },
+    "custom": {
+      "materials": {
+        "circuitdata": {
+          "LPISM": {
+            "circuitdata_material_db_id": "4fe0f844-1a3d-4d47-8e7c-d0bdf585a0b0",
+            "name": "LPISM",
+            "link": "http://www.piclaminate.com.cn/3-FL150_E.pdf",
+            "remark": "R-F705T",
+            "flexible": false,
+            "version": 1.0,
+            "function": "soldermask",
+            "group": "LPISM",
+            "manufacturer": "PIC",
+            "attributes": {
+            }
+          },
+          "FR4 min Tg140": {
+            "circuitdata_material_db_id": "b8f3241b-390f-4752-8cde-2f208302f700",
+            "name": "FR4 min Tg140",
+            "link": "http://www.rogerscorp.com/documents/728/acm/TMM-Thermoset-laminate-data-sheet-TMM3-TMM4-TMM6-TMM10-TMM10i.aspx",
+            "flexible": false,
+            "version": 1.0,
+            "function": "dielectric",
+            "group": "FR4",
+            "manufacturer": "Rogers",
+            "attributes": {
+              "tg_min": 140
+            },
+            "remark": "no site",
+            "ul94": "v-0"
+          },
+          "Copper": {
+            "circuitdata_material_db_id": "1587901d-254c-47a1-9294-ea16c653b14d",
+            "name": "Copper",
+            "link": "https://industrial.panasonic.com/content/data/EM/PDF/ipcdatasheet_1511_R-1755V.pdf",
+            "remark": "no data",
+            "flexible": false,
+            "version": 1.0,
+            "function": "conductive",
+            "group": "copper",
+            "manufacturer": "Panasonic",
+            "attributes": {
+            }
+          },
+          "ENIG": {
+            "circuitdata_material_db_id": "8cdb35f3-dfc3-46b0-b691-301691bd1d20",
+            "name": "ENIG",
+            "function": "final_finish",
+            "group": "enig",
+            "attributes": {
+            }
+          }
+        }
+      }
+    }
+  }
+}

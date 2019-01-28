@@ -1,0 +1,640 @@
+{
+  "open_trade_transfer_package": {
+    "version": 1.0,
+    "products": {
+      "ten_layer_1": {
+        "circuitdata": {
+          "layers": [
+            {
+              "function": "solder_paste",
+              "uuid": "361fa7c0-701f-4eb5-8a3d-e1eb52943ee4",
+              "name": "solder_paste-1",
+              "materials": [
+
+              ],
+              "order": 0
+            },
+            {
+              "function": "legend",
+              "uuid": "79d0e458-c1c9-42e0-b7b8-bfef0c48fabe",
+              "name": "legend-1",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+
+              ],
+              "order": 1
+            },
+            {
+              "function": "soldermask",
+              "uuid": "e3381d27-53ae-4c4b-b3e7-f05277c63a42",
+              "name": "soldermask-1",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "LPISM"
+              ],
+              "order": 2
+            },
+            {
+              "function": "final_finish",
+              "uuid": "913d1e68-4877-45f6-b7d3-99b4c679cbd2",
+              "name": "final_finish-1",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "HASL"
+              ],
+              "order": 3
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal"
+              },
+              "uuid": "25afeb37-84e2-4e5b-8f63-ad0175c5baf6",
+              "name": "conductive-1",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 67.1,
+              "order": 4
+            },
+            {
+              "function": "dielectric",
+              "uuid": "1b7e93a8-7bad-44df-8200-b55b9baf2766",
+              "name": "dielectric-1",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "FR4 min Tg140"
+              ],
+              "order": 5
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal"
+              },
+              "uuid": "78b9c8c6-27ea-4357-8fe8-07dfca5ed62b",
+              "name": "conductive-2",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 87.1,
+              "order": 6
+            },
+            {
+              "function": "dielectric",
+              "uuid": "ab04ebb4-553d-4b1a-9418-41c3eb9a0ee8",
+              "name": "dielectric-2",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "FR4 min Tg140"
+              ],
+              "order": 7
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal"
+              },
+              "uuid": "b470a445-847c-442c-afe1-31e5a81a87b5",
+              "name": "conductive-3",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 9.5,
+              "order": 8
+            },
+            {
+              "function": "dielectric",
+              "uuid": "7216521c-b904-4a89-8100-df9c77f5bb83",
+              "name": "dielectric-3",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "FR4 min Tg140"
+              ],
+              "order": 9
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal"
+              },
+              "uuid": "404b6b92-3ee8-4a1e-9026-7fcbbd60cb93",
+              "name": "conductive-4",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 9.5,
+              "order": 10
+            },
+            {
+              "function": "dielectric",
+              "uuid": "491013e2-f69e-4088-8728-63715efa0b89",
+              "name": "dielectric-4",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "FR4 min Tg140"
+              ],
+              "order": 11
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal"
+              },
+              "uuid": "a77ebb5d-99ee-48c5-9fb1-6bf4816e5d28",
+              "name": "conductive-5",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 87.1,
+              "order": 12
+            },
+            {
+              "function": "dielectric",
+              "uuid": "79b60650-82c4-47da-ab4c-99c9a0d8ec49",
+              "name": "dielectric-5",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "FR4 min Tg140"
+              ],
+              "order": 13
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal"
+              },
+              "uuid": "11965382-6d4e-49f9-b24d-f07bf86f43d8",
+              "name": "conductive-6",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 87.1,
+              "order": 14
+            },
+            {
+              "function": "dielectric",
+              "uuid": "d692cc4b-a2c0-4e5f-8a11-a9e35b1f2231",
+              "name": "dielectric-6",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "FR4 min Tg140"
+              ],
+              "order": 15
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal"
+              },
+              "uuid": "a8f38576-d00c-4b6c-8dce-1eff93dfdb4f",
+              "name": "conductive-7",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 9.5,
+              "order": 16
+            },
+            {
+              "function": "dielectric",
+              "uuid": "813d5de4-ef20-4bdc-8fad-1327dcea2f0d",
+              "name": "dielectric-7",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "FR4 min Tg140"
+              ],
+              "order": 17
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal"
+              },
+              "uuid": "16e2afd3-0892-40ac-b4ea-815cdecce63c",
+              "name": "conductive-8",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 9.5,
+              "order": 18
+            },
+            {
+              "function": "dielectric",
+              "uuid": "9f364f41-4a2d-42b5-aa88-c0ff52dcf896",
+              "name": "dielectric-8",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "FR4 min Tg140"
+              ],
+              "order": 19
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal"
+              },
+              "uuid": "a9bda142-1e10-40cd-80b1-7af90a606cc6",
+              "name": "conductive-9",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 87.1,
+              "order": 20
+            },
+            {
+              "function": "dielectric",
+              "uuid": "95ae0f97-8235-4f56-863a-c7a8d43c8948",
+              "name": "dielectric-9",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "FR4 min Tg140"
+              ],
+              "order": 21
+            },
+            {
+              "function": "conductive",
+              "layer_attributes": {
+                "polarity": "positive",
+                "conductive_function": "signal"
+              },
+              "uuid": "009b5282-d383-4ed4-8a40-3fa26b0eeea4",
+              "name": "conductive-10",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "Copper"
+              ],
+              "coverage": 66.3,
+              "order": 22
+            },
+            {
+              "function": "final_finish",
+              "uuid": "6db6c8a9-bd9a-4dad-a44a-00222a08a631",
+              "name": "final_finish-2",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "HASL"
+              ],
+              "order": 23
+            },
+            {
+              "function": "soldermask",
+              "uuid": "f908ec0b-0780-4fb0-b584-410d36861bfa",
+              "name": "soldermask-2",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+                "LPISM"
+              ],
+              "order": 24
+            },
+            {
+              "function": "legend",
+              "uuid": "66adbbef-3354-44da-b189-1a24a4b23341",
+              "name": "legend-2",
+              "sections": [
+                "rigid1"
+              ],
+              "materials": [
+
+              ],
+              "order": 25
+            },
+            {
+              "function": "solder_paste",
+              "uuid": "2be99da5-d3b5-4409-81e0-69becd73e84d",
+              "name": "solder_paste-2",
+              "materials": [
+
+              ],
+              "order": 26
+            }
+          ],
+          "sections": [
+            {
+              "name": "rigid1",
+              "in_x": [
+                1
+              ],
+              "in_y": [
+                1
+              ],
+              "mm2": 23040.0
+            }
+          ],
+          "processes": [
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 488,
+                "plated": true,
+                "finished_size": 299.0,
+                "layer_start": "25afeb37-84e2-4e5b-8f63-ad0175c5baf6",
+                "layer_stop": "009b5282-d383-4ed4-8a40-3fa26b0eeea4",
+                "hole_type": "through",
+                "covered": false
+              },
+              "uuid": "61b87cdb-d5f1-4922-abf5-f978dc4d171f"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 52,
+                "plated": true,
+                "finished_size": 300.0,
+                "layer_start": "25afeb37-84e2-4e5b-8f63-ad0175c5baf6",
+                "layer_stop": "009b5282-d383-4ed4-8a40-3fa26b0eeea4",
+                "hole_type": "through",
+                "covered": false
+              },
+              "uuid": "09023189-c975-486f-90b4-47d3973408a7"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 32,
+                "plated": true,
+                "finished_size": 900.0,
+                "layer_start": "25afeb37-84e2-4e5b-8f63-ad0175c5baf6",
+                "layer_stop": "009b5282-d383-4ed4-8a40-3fa26b0eeea4",
+                "hole_type": "through",
+                "covered": false
+              },
+              "uuid": "a1ea114a-98df-4446-a7b4-72dff8e07837"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 4,
+                "plated": true,
+                "finished_size": 1600.0,
+                "layer_start": "25afeb37-84e2-4e5b-8f63-ad0175c5baf6",
+                "layer_stop": "009b5282-d383-4ed4-8a40-3fa26b0eeea4",
+                "hole_type": "through",
+                "covered": false
+              },
+              "uuid": "a2b8ada3-01f2-4f91-af3c-255f51648b45"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 8,
+                "plated": true,
+                "finished_size": 2300.0,
+                "layer_start": "25afeb37-84e2-4e5b-8f63-ad0175c5baf6",
+                "layer_stop": "009b5282-d383-4ed4-8a40-3fa26b0eeea4",
+                "hole_type": "through",
+                "covered": false
+              },
+              "uuid": "d123616d-c1df-4a3a-be9f-006bf0fff3c7"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 5888,
+                "plated": true,
+                "finished_size": 100.0,
+                "layer_start": "25afeb37-84e2-4e5b-8f63-ad0175c5baf6",
+                "layer_stop": "78b9c8c6-27ea-4357-8fe8-07dfca5ed62b",
+                "hole_type": "blind",
+                "covered": false
+              },
+              "uuid": "9ee73738-4c80-4a84-8dca-df654d1cc180"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 5888,
+                "plated": true,
+                "finished_size": 100.0,
+                "layer_start": "78b9c8c6-27ea-4357-8fe8-07dfca5ed62b",
+                "layer_stop": "b470a445-847c-442c-afe1-31e5a81a87b5",
+                "hole_type": "buried",
+                "covered": false
+              },
+              "uuid": "60e99242-e6fd-41a4-9ed3-24a2c2b4cb29"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 5888,
+                "plated": true,
+                "finished_size": 100.0,
+                "layer_start": "b470a445-847c-442c-afe1-31e5a81a87b5",
+                "layer_stop": "404b6b92-3ee8-4a1e-9026-7fcbbd60cb93",
+                "hole_type": "buried",
+                "covered": false
+              },
+              "uuid": "820643ad-f867-4858-a3c0-7132f94459a0"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 5888,
+                "plated": true,
+                "finished_size": 150.0,
+                "layer_start": "404b6b92-3ee8-4a1e-9026-7fcbbd60cb93",
+                "layer_stop": "a8f38576-d00c-4b6c-8dce-1eff93dfdb4f",
+                "hole_type": "buried",
+                "covered": false
+              },
+              "uuid": "ab49017f-2f83-41fc-a407-709162c6bf68"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 5888,
+                "plated": true,
+                "finished_size": 100.0,
+                "layer_start": "a8f38576-d00c-4b6c-8dce-1eff93dfdb4f",
+                "layer_stop": "16e2afd3-0892-40ac-b4ea-815cdecce63c",
+                "hole_type": "buried",
+                "covered": false
+              },
+              "uuid": "ab2a2136-9e9c-47b5-b379-602629264f0c"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 5888,
+                "plated": true,
+                "finished_size": 100.0,
+                "layer_start": "16e2afd3-0892-40ac-b4ea-815cdecce63c",
+                "layer_stop": "a9bda142-1e10-40cd-80b1-7af90a606cc6",
+                "hole_type": "buried",
+                "covered": false
+              },
+              "uuid": "9bf27a43-99e7-494a-9328-0cdd539c01aa"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 5888,
+                "plated": true,
+                "finished_size": 100.0,
+                "layer_start": "a9bda142-1e10-40cd-80b1-7af90a606cc6",
+                "layer_stop": "009b5282-d383-4ed4-8a40-3fa26b0eeea4",
+                "hole_type": "blind",
+                "covered": false
+              },
+              "uuid": "b53040b7-d6f9-460d-b403-55880fe058cc"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 5,
+                "plated": false,
+                "finished_size": 1000.0,
+                "layer_start": "25afeb37-84e2-4e5b-8f63-ad0175c5baf6",
+                "layer_stop": "009b5282-d383-4ed4-8a40-3fa26b0eeea4",
+                "hole_type": "through",
+                "covered": false
+              },
+              "uuid": "2bc8f46b-5872-4a8e-8db4-e085ff564595"
+            },
+            {
+              "function": "holes",
+              "function_attributes": {
+                "number_of_holes": 4,
+                "plated": false,
+                "finished_size": 3200.0,
+                "layer_start": "25afeb37-84e2-4e5b-8f63-ad0175c5baf6",
+                "layer_stop": "009b5282-d383-4ed4-8a40-3fa26b0eeea4",
+                "hole_type": "through",
+                "covered": false
+              },
+              "uuid": "d5a4b664-68c1-4830-921c-58d874be8332"
+            }
+          ],
+          "metrics": {
+            "board": {
+              "size_x": 120.0,
+              "size_y": 192.0,
+              "area": 23040.0
+            }
+          },
+          "version": 1.0
+        }
+      }
+    },
+    "custom": {
+      "materials": {
+        "circuitdata": {
+          "LPISM": {
+            "circuitdata_material_db_id": "4fe0f844-1a3d-4d47-8e7c-d0bdf585a0b0",
+            "name": "LPISM",
+            "link": "http://www.piclaminate.com.cn/3-FL150_E.pdf",
+            "remark": "R-F705T",
+            "flexible": false,
+            "version": 1.0,
+            "function": "soldermask",
+            "group": "LPISM",
+            "manufacturer": "PIC",
+            "attributes": {
+            }
+          },
+          "FR4 min Tg140": {
+            "circuitdata_material_db_id": "b8f3241b-390f-4752-8cde-2f208302f700",
+            "name": "FR4 min Tg140",
+            "link": "http://www.rogerscorp.com/documents/728/acm/TMM-Thermoset-laminate-data-sheet-TMM3-TMM4-TMM6-TMM10-TMM10i.aspx",
+            "flexible": false,
+            "version": 1.0,
+            "function": "dielectric",
+            "group": "FR4",
+            "manufacturer": "Rogers",
+            "attributes": {
+              "tg_min": 140
+            },
+            "remark": "no site",
+            "ul94": "v-0"
+          },
+          "Copper": {
+            "circuitdata_material_db_id": "1587901d-254c-47a1-9294-ea16c653b14d",
+            "name": "Copper",
+            "link": "https://industrial.panasonic.com/content/data/EM/PDF/ipcdatasheet_1511_R-1755V.pdf",
+            "remark": "no data",
+            "flexible": false,
+            "version": 1.0,
+            "function": "conductive",
+            "group": "copper",
+            "manufacturer": "Panasonic",
+            "attributes": {
+            }
+          },
+          "HASL": {
+            "circuitdata_material_db_id": "432ece89-ef3a-44d2-abb4-2d07c89260c3",
+            "name": "HASL",
+            "function": "final_finish",
+            "group": "s_hasl",
+            "attributes": {
+            }
+          }
+        }
+      }
+    }
+  }
+}

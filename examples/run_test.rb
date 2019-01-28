@@ -1,15 +1,23 @@
 require "json-schema"
-#require "circuitdata"
 
+schema_path = File.join(__dir__, "../schema/v1/ottp_circuitdata_schema.json")
 
-# Test the Product
-puts "Testing the \"All elements\" file"
-puts JSON::Validator.fully_validate('../schema/v1/ottp_circuitdata_schema.json', 'testfile-all-elements.json', :errors_as_objects => true)
+Dir[File.join(__dir__, "**.json")].each do |file_name|
+  local_name = file_name.sub(__dir__, "")
 
-# Test the simple profile
-puts "Testing the \"Simple Profile\" file"
-puts JSON::Validator.fully_validate('../schema/v1/ottp_circuitdata_schema.json', 'testfile-profile-simple.json', :errors_as_objects => true)
+  print "Testing: #{local_name}"
 
-# Test the complex profile
-#puts "Testing the \"Complex Profile\" file"
-#puts JSON::Validator.fully_validate('../schema/v1/ottp_circuitdata_schema.json', 'testfile-profile.json', :errors_as_objects => true)
+  result = JSON::Validator.fully_validate(
+    schema_path,
+    file_name,
+    errors_as_objects: true,
+  )
+
+  if result.empty?
+    puts " ✅"
+  else
+    puts "  ⚠ FAILED!"
+    puts JSON.pretty_generate(result)
+    exit 1
+  end
+end

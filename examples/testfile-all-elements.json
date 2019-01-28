@@ -19,6 +19,7 @@
           "layers": [
             {
               "order": 1,
+              "uuid": "13d76bb3-e754-4651-b2e8-e891c879873f",
               "function": "final_finish",
               "name": "final_finish_top",
               "sections": ["rigid1"],
