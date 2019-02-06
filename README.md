@@ -23,7 +23,7 @@ The next version of the language is maintained on the master branch of this repo
 1. Bump the version number in this readme.
 1. Create a PR to make the change.
 1. Have the PR approved and merged.
-1. Tagging the merge commit from above so that it appears in the [releases](/releases) section.
+1. Tagging the merge commit from above so that it appears in the [releases](https://github.com/CircuitData/CircuitData-Language/releases) section.
 
 All releases are accompanied by a post to [CircuitData Forum](https://www.circuitdata.org/). See:
 - [1.0](https://www.circuitdata.org/t/x1gkmg/v1-released)
