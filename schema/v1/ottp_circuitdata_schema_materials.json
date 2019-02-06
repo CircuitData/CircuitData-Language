@@ -1,0 +1,89 @@
+{
+  "materials": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "version": { "$ref": "ottp_circuitdata_schema_generics.json#/version" },
+      "circuitdata_material_db_id": {
+        "type": "string"
+      },
+      "function": {
+        "type": "string",
+        "enum": ["conductive", "dielectric", "soldermask", "stiffener", "final_finish"]
+      },
+      "group": {
+        "type": "string",
+        "enum": ["FR1", "FR2", "FR3", "FR4", "FR5", "G-10", "G-11", "CEM-1", "CEM-2", "CEM-3", "CEM-4", "CEM-5", "ceramic", "polyimide", "aramid", "acrylic", "LCP", "PEN", "PET", "LPISM", "DFISM", "LDISM", "stainless_steel", "copper", "aluminum", "silver", "gold", "carbon", "silver_platinum", "silver_paladium", "gold_platinum", "platinum", "c_bare_copper", "isn", "iag", "enig", "enepig", "osp", "ht_osp", "g", "GS", "t_fused", "tlu_unfused", "dig", "gwb-1_ultrasonic", "gwb-2-thermosonic", "s_hasl", "b1_lfhasl"]
+      },
+      "manufacturer": { "type": "string" },
+      "name": { "type": "string" },
+      "flexible": { "type": "boolean" },
+      "link": { "type": "string" },
+      "remark": { "type": "string" },
+      "accept_equivalent": { "type": "boolean" },
+      "ul94": {
+        "type": "string",
+        "enum": ["v-0", "v-1", "hb"]
+      },
+      "attributes": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ipc_slash_sheet": { "type": "integer" },
+          "tg_min": { "type": "integer" },
+          "td_min": { "type": "integer" },
+          "resin": {
+            "type": "string",
+            "enum": ["epoxy", "bt", "cyanate_ester", "phenolic", "polyester", "polyimide", "ppe", "hydrocarbon", "ptfe", "thermoplastic"]
+          },
+          "resin_content": { "type": "number" },
+          "flame_retardent": {
+            "type": "string",
+            "enum": ["phosphor", "red_phosphor", "bromine", "chlorine", "antimony_oxide", "rohs_compliant_bromine"]
+          },
+          "woven_reinforcement": { "type": "boolean" },
+          "filler": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["ceramic", "kaolin", "organic", "inorganic", "glass"]
+            }
+          },
+          "reinforcement": {
+            "type": "string",
+            "enum": ["e-glass", "s-glass", "ne-glass", "l-glass", "quartz", "aramid", "paper"]
+          },
+          "thickness": { "type": "number" },
+          "dk": { "type": "number" },
+          "cti": { "type": "number" },
+          "frequency": { "type": "number" },
+          "df": { "type": "number" },
+          "t260": { "type": "number" },
+          "t280": { "type": "number" },
+          "t300": { "type": "number" },
+          "mot": { "type": "number" },
+          "z_cte": { "type": "number" },
+          "z_cte_before_tg": { "type": "number" },
+          "z_cte_after_tg": { "type": "number" },
+          "dielectric_breakdown": { "type": "number" },
+          "water_absorption": { "type": "number" },
+          "thermal_conductivity": { "type": "number" },
+          "volume_resistivity": { "type": "number" },
+          "electric_strength": { "type": "number" },
+          "foil_roughness": {
+            "type": "string",
+            "enum": ["L", "S", "V"]
+          },
+          "ipc_sm_840_class": {
+            "type": "string",
+            "enum": ["T", "H", "TF", "HF"]
+          },
+          "finish": {
+            "type": "string",
+            "enum": ["matte", "glossy", "semi_glossy"]
+          }
+        }
+      }
+    }
+  }
+}

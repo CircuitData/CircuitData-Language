@@ -1,0 +1,23 @@
+{
+  "version": {
+    "type": "number",
+    "minimum": 1,
+    "maximum": 2
+  },
+  "profile_capability_layer_subelement": {
+    "type": "object",
+    "required": ["value_type", "value"],
+    "properties": {
+      "reverse": {
+        "type": "boolean"
+      },
+      "value_type": {
+        "type": "string",
+        "enum": ["boolean", "range_of_integers", "range_of_numbers", "list_of_strings", "string"]
+      },
+      "value": {
+        "type": "string"
+      }
+    }
+  }
+}

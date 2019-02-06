@@ -1,0 +1,348 @@
+{
+  "sections": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "required": ["name", "in_x", "in_y", "mm2"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "in_x": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "in_y": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "mm2": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "layers": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "required": ["order", "name", "function", "sections", "materials"],
+      "additionalProperties": false,
+      "properties": {
+        "order": { "type": "integer" },
+        "name": { "type": "string" },
+        "function" : {
+          "type": "string",
+          "enum": ["none", "conductive", "dielectric", "soldermask", "stiffener", "plating", "adhesive", "thermal", "legend", "final_finish", "peelable_tape", "peelable_mask", "hard_gold"]
+        },
+        "flexible": { "type": "boolean" },
+        "sections": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "materials": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "thickness": { "type": "number" },
+        "tolerance_minus": { "type": "number" },
+        "tolerance_plus": { "type": "number" },
+        "sub_material_thickness": {
+          "type": "object",
+          "patternProperties": {
+            "^.*": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "minimum_thickness": { "type": "number" },
+                "maximum_thickness": { "type": "number" }
+              }
+            }
+          }
+        },
+        "coverage": { "type": "number" },
+        "layer_attributes": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "minimum_track_width": { "type": "number" },
+            "minimum_spacing_width": { "type": "number" },
+            "conductive_function": {
+              "type": "string",
+              "enum": ["signal", "plane", "mixed"]
+            },
+            "polarity": {
+              "type": "string",
+              "enum": ["positive", "negative"]
+            },
+            "color": { "type": "string" },
+            "allow_touchups": { "type": "boolean" },
+            "placement": {
+              "type": "string",
+              "enum": ["selective_pads", "edge_connectors"]
+            }
+          }
+        }
+      }
+    }
+  },
+  "processes": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": ["edge_bevelling", "depth_routing", "counterboring", "countersink", "punching", "plating", "plated_edges", "plated_slots", "coin_attachment", "holes"]
+        },
+        "function_attributes": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "number_of_holes": { "type": "integer" },
+            "hole_type": {
+              "type": "string",
+              "enum": ["through", "blind", "buried", "back_drill", "via"]
+            },
+            "finished_size": { "type": "number"},
+            "finished_size": { "type": "number"},
+            "layer_start": { "type": "string" },
+            "layer_stop": { "type": "string" },
+            "depth": { "type": "number"},
+            "method": {
+              "type": "string",
+              "enum": ["routing", "drilling", "laser"]
+            },
+            "minimum_designed_annular_ring": { "type": "number"},
+            "press_fit": { "type": "boolean" },
+            "plated": { "type": "boolean" },
+            "capped": { "type": "boolean" },
+            "filled": {
+              "type": "string",
+              "enum": ["copper", "resin", "soldermask"]
+            },
+            "covered": { "type": "boolean" },
+            "staggered": { "type": "boolean" },
+            "stacked": { "type": "boolean" },
+            "alivh": { "type": "boolean" },
+            "castellated": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  },
+  "metrics": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "board": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "size_x": { "type": "number" },
+          "size_y": { "type": "number" },
+          "breakaway_method": {
+            "type": "string",
+            "enum": ["routing", "punching"]
+          },
+          "thickness": { "type": "number" }
+        }
+      },
+      "array": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "size_x": { "type": "number" },
+          "size_y": { "type": "number" },
+          "boards_x": { "type": "integer" },
+          "boards_y": { "type": "integer" },
+          "boards_total": { "type": "integer" },
+          "border_left": { "type": "number" },
+          "border_right": { "type": "number" },
+          "border_top": { "type": "number" },
+          "border_bottom": { "type": "number" },
+          "board_spacing_x": { "type": "number" },
+          "board_spacing_y": { "type": "number" },
+          "fiducials_number": { "type": "integer" },
+          "fiducials_size": { "type": "number" },
+          "fiducials_shape": {
+            "type": "string",
+            "enum": ["donut", "circle", "plus", "diamond"]
+          },
+          "breakaway_method": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["routing", "scoring", "punching", "v_cut", "v_grove", "jump_scoring"]
+            }
+          },
+          "mouse_bites": { "type": "boolean" },
+          "tooling_holes_number": { "type": "integer" },
+          "tooling_holes_size": { "type": "number" },
+          "x_outs_allowed": { "type": "boolean" },
+          "x_outs_max_percentage_on_array": { "type": "number" },
+          "transplant_board_allowed": { "type": "boolean" },
+          "weight": { "type": "number" }
+        }
+      }
+    }
+  },
+  "logistical": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "inner_packaging": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ipc_1601_section_4_2_2_type": {
+            "type": "string",
+            "enum": ["a", "b", "c", "d"]
+          },
+          "hic": { "type": "boolean" },
+          "esd": { "type": "boolean" },
+          "desiccant": { "type": "boolean" },
+          "vacuum": { "type": "boolean" },
+          "maximum_number_of_arrays": { "type": "integer" }
+        }
+      }
+    }
+  },
+  "configuration": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "stackup": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "locked": { "type": "boolean" },
+          "ordered_outer_layers": { "type": "boolean" },
+          "ordered_inner_layers": { "type": "boolean" },
+          "file_name": { "type": "string" }
+        }
+      },
+      "markings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "layers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "date_code": { "type": "string" },
+          "manufacturer_identification": { "type": "boolean" },
+          "standards": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "serial_number": { "type": "boolean" },
+          "serial_number_format": { "type": "string" },
+          "serial_number_start": { "type": "integer" },
+          "serial_number_increase_by": { "type": "integer" }
+        }
+      },
+      "standards": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "comply_with": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["ul", "c_ul", "rohs", "ul94", "iec_61249-2-21", "esa", "itar", "dfars", "mil_prf_55110", "mil_prf_50884", "mil_prf_31032", "as9100", "nadcap", "rw_en45545_2_2013", "rw_nf_f_16_101", "rw_uni_cei_11170_3", "rw_nfpa_130"]
+            }
+          },
+          "ipc_6010_class": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "ipc_6010_compliance_level": {
+            "type": "string",
+            "enum": ["full", "factory_standard", "aabus"]
+          },
+          "ipc_6010_copper_plating_thickness_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
+          "ipc_6010_annular_ring_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
+          "ipc_6010_conductor_spacing_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
+          "ipc_6010_conductor_width_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
+          "ipc_6012_class": {
+            "type": "string",
+            "enum": ["1", "2", "3", "3A", "3M", "3S"]
+          },
+          "ipc_6013_class": {
+            "type": "string",
+            "enum": ["1", "2", "3"]
+          },
+          "ipc_6018": { "type": "boolean" }
+        }
+      },
+      "testing": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "netlist": { "type": "boolean" },
+          "allow_generate_netlist": { "type": "boolean" },
+          "hipot": { "type": "boolean" },
+          "4_wire": { "type": "boolean" },
+          "ist": { "type": "boolean" },
+          "impedance": {
+            "type": "string",
+            "enum": ["controlled", "calculated", "follow_stackup"]
+          }
+        }
+      },
+      "country_of_origin": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "iso_3166_1_alpha_3": { "type": "string" },
+          "iso_3166_1_alpha_2": { "type": "string" },
+          "nato_member": { "type": "boolean" },
+          "eu_member": { "type": "boolean" }
+        }
+      },
+      "allowed_modifications": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dead_pad_removal": { "type": "boolean" },
+          "add_copper_balancing": { "type": "boolean" },
+          "add_copper_balancing_on_array": { "type": "boolean" },
+          "add_tear_drops": { "type": "boolean" },
+          "resize_vias": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}
