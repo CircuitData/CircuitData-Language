@@ -11,6 +11,23 @@ An open language for communicating specifications on a printed circuit (mainly P
 ## Version
 Current version is 1.0. This should stated in every section directly below the "circuitdata" element in an element called "version".
 
+### Versioning
+CircuitData Language uses [semver](https://semver.org/). This means that we try our best to ensure that breaking changes mean a change in version number of the first component of the version.
+
+For example a change from `1.0` to `2.0` means that there have been breaking changes to the structure or allowed values in the language. If the version is changed by only the secondary component then it is a non breaking change. This means tooling compatible with the previous version should also be compatible with the next version. For example `1.1` to `1.2` is a non breaking change.
+
+### Releases of new versions
+
+The next version of the language is maintained on the master branch of this repository within the `schema/next` folder. Versions are created through the following process:
+1. Copy the files from `schema/next` to `schema/[version number]`.
+1. Bump the version number in this readme.
+1. Create a PR to make the change.
+1. Have the PR approved and merged.
+1. Tagging the merge commit from above so that it appears in the [releases](https://github.com/CircuitData/CircuitData-Language/releases) section.
+
+All releases are accompanied by a post to [CircuitData Forum](https://www.circuitdata.org/). See:
+- [1.0](https://www.circuitdata.org/t/x1gkmg/v1-released)
+
 ## Based on the Open Trade Transfer Package format (OTTP)
 [Open Trade Transfer Package](https://elmatica.github.io/Open-Trade-Transfer-Package/) defines a structure on how the information is to be passed in either JSON or XML format. Printed Circuit data should be placed within an element called "circuitdata" and also contain a version. "circuitdata" objects can be placed within the following sub-objects:
 

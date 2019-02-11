@@ -53,6 +53,9 @@
       },
       "hard_gold": {
         "$ref": "#/layer_function"
+      },
+      "solder_paste": {
+        "$ref": "#/layer_function"
       }
     }
   },
@@ -149,7 +152,7 @@
           "ipc_1601_section_4_2_2_type": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
           "hic": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
           "esd": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-          "dessicant": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+          "desiccant": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
           "vacuum": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
           "maximum_number_of_arrays": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" }
         }
@@ -302,7 +305,7 @@
               "count": { "type": "integer" },
               "thickness": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
               "tolerance_minus": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
-              "tolerance_pluss": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+              "tolerance_plus": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
               "minimum_track_width": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
               "minimum_spacing_width": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
               "function": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },

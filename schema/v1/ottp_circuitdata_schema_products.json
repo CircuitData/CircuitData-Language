@@ -20,7 +20,6 @@
           }
         },
         "mm2": {
-          "uom": "mm2",
           "type": "number"
         }
       }
@@ -29,539 +28,117 @@
   "layers": {
     "type": "array",
     "items": {
-      "oneOf": [
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["none"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } }
+      "type": "object",
+      "required": ["order", "name", "function", "sections", "materials"],
+      "additionalProperties": false,
+      "properties": {
+        "order": { "type": "integer" },
+        "name": { "type": "string" },
+        "function" : {
+          "type": "string",
+          "enum": ["none", "conductive", "dielectric", "soldermask", "stiffener", "plating", "adhesive", "thermal", "legend", "final_finish", "peelable_tape", "peelable_mask", "hard_gold"]
+        },
+        "flexible": { "type": "boolean" },
+        "sections": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
           }
         },
-        {
+        "materials": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "thickness": { "type": "number" },
+        "tolerance_minus": { "type": "number" },
+        "tolerance_plus": { "type": "number" },
+        "sub_material_thickness": {
           "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["conductive"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" },
-            "layer_attributes": {
+          "patternProperties": {
+            "^.*": {
               "type": "object",
               "additionalProperties": false,
               "properties": {
-                "minimum_track_width": { "type": "number", "uom": "μm" },
-                "minimum_spacing_width": { "type": "number", "uom": "μm" },
-                "conductive_function": {
-                  "type": "string",
-                  "enum": ["signal", "plane", "mixed"]
-                },
-                "polarity": {
-                  "type": "string",
-                  "enum": ["positive", "negative"]
-                }
+                "minimum_thickness": { "type": "number" },
+                "maximum_thickness": { "type": "number" }
               }
             }
           }
         },
-        {
+        "coverage": { "type": "number" },
+        "layer_attributes": {
           "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
           "additionalProperties": false,
           "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["dielectric"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["soldermask"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" },
-            "layer_attributes": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "color": { "type": "string" },
-                "allow_touchups": { "type": "boolean" }
-              }
+            "minimum_track_width": { "type": "number" },
+            "minimum_spacing_width": { "type": "number" },
+            "conductive_function": {
+              "type": "string",
+              "enum": ["signal", "plane", "mixed"]
+            },
+            "polarity": {
+              "type": "string",
+              "enum": ["positive", "negative"]
+            },
+            "color": { "type": "string" },
+            "allow_touchups": { "type": "boolean" },
+            "placement": {
+              "type": "string",
+              "enum": ["selective_pads", "edge_connectors"]
             }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["stiffener"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["plating"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["adhesive"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["thermal"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["legend"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" },
-            "layer_attributes": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "color": { "type": "string" }
-              }
-            }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["final_finish"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "flexible": { "type": "boolean" },
-            "materials": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" },
-            "sub_material_thickness": {
-              "type": "object",
-              "patternProperties": {
-                "^.*": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "properties": {
-                    "minimum_thickness": { "type": "number" },
-                    "maximum_thickness": { "type": "number" }
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["peelable_tape"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["peelable_mask"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" },
-            "layer_attributes": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "heating_operations": {
-                  "type": "integer"
-                }
-              }
-            }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "sections",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["hard_gold"] },
-            "sections": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } },
-            "thickness": { "type": "number", "uom": "μm" },
-            "tolerance_minus": { "type": "number", "uom": "μm" },
-            "tolerance_plus": { "type": "number", "uom": "μm" },
-            "coverage": { "type": "number" },
-            "layer_attributes": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "placement": {
-                  "type": "string",
-                  "enum": ["selective_pads", "edge_connectors"]
-                }
-              }
-            }
-          }
-        },
-        {
-          "type": "object",
-          "required": [
-            "order",
-            "name",
-            "uuid",
-            "function",
-            "materials"
-          ],
-          "additionalProperties": false,
-          "properties": {
-            "order": { "type": "integer" },
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "name": { "type": "string" },
-            "function": { "type": "string", "enum": ["solder_paste"] },
-            "materials": { "type": "array", "uniqueItems": true, "maxItems": 1, "items": { "type": "string" } }
           }
         }
-      ]
+      }
     }
   },
   "processes": {
     "type": "array",
     "items": {
-      "oneOf": [
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "function": {
-              "type": "string",
-              "enum": ["edge_bevelling"]
-            }
-          }
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": ["edge_bevelling", "depth_routing", "counterboring", "countersink", "punching", "plating", "plated_edges", "plated_slots", "coin_attachment", "holes"]
         },
-        {
+        "function_attributes": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "function": {
+            "number_of_holes": { "type": "integer" },
+            "hole_type": {
               "type": "string",
-              "enum": ["depth_routing"]
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "function": {
-              "type": "string",
-              "enum": ["counterboring"]
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "function": {
-              "type": "string",
-              "enum": ["countersink"]
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "function": {
-              "type": "string",
-              "enum": ["punching"]
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "function": {
-              "type": "string",
-              "enum": ["plating"]
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "function": {
-              "type": "string",
-              "enum": ["plated_edges"]
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "function": {
-              "type": "string",
-              "enum": ["coin_attachment"]
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "uuid": { "$ref": "#/definitions/uuid" },
-            "function": {
-              "type": "string",
-              "enum": ["holes"]
+              "enum": ["through", "blind", "buried", "back_drill", "via"]
             },
-            "function_attributes": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "number_of_holes": { "type": "integer" },
-                "hole_type": {
-                  "type": "string",
-                  "enum": ["through", "blind", "buried", "back_drill", "via"]
-                },
-                "finished_size": { "type": "number", "uom": "μm"},
-                "layer_start": { "$ref": "#/definitions/uuid" },
-                "layer_stop": { "$ref": "#/definitions/uuid" },
-                "depth": { "type": "number", "uom": "μm"},
-                "method": {
-                  "type": "string",
-                  "enum": ["routing", "drilling", "laser"]
-                },
-                "minimum_designed_annular_ring": { "type": "number", "uom": "μm"},
-                "press_fit": { "type": "boolean" },
-                "plated": { "type": "boolean" },
-                "capped": { "type": "boolean" },
-                "filled": {
-                  "type": "string",
-                  "enum": ["copper", "resin", "soldermask"]
-                },
-                "covered": { "type": "boolean" },
-                "staggered": { "type": "boolean" },
-                "stacked": { "type": "boolean" },
-                "alivh": { "type": "boolean" },
-                "castellated": { "type": "boolean" }
-              }
-            }
+            "finished_size": { "type": "number"},
+            "finished_size": { "type": "number"},
+            "layer_start": { "type": "string" },
+            "layer_stop": { "type": "string" },
+            "depth": { "type": "number"},
+            "method": {
+              "type": "string",
+              "enum": ["routing", "drilling", "laser"]
+            },
+            "minimum_designed_annular_ring": { "type": "number"},
+            "press_fit": { "type": "boolean" },
+            "plated": { "type": "boolean" },
+            "capped": { "type": "boolean" },
+            "filled": {
+              "type": "string",
+              "enum": ["copper", "resin", "soldermask"]
+            },
+            "covered": { "type": "boolean" },
+            "staggered": { "type": "boolean" },
+            "stacked": { "type": "boolean" },
+            "alivh": { "type": "boolean" },
+            "castellated": { "type": "boolean" }
           }
         }
-      ]
+      }
     }
   },
   "metrics": {
@@ -572,33 +149,32 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "size_x": { "type": "number", "uom": "mm" },
-          "size_y": { "type": "number", "uom": "mm" },
-          "area": { "type": "number", "uom": "mm2" },
+          "size_x": { "type": "number" },
+          "size_y": { "type": "number" },
           "breakaway_method": {
             "type": "string",
             "enum": ["routing", "punching"]
           },
-          "thickness": { "type": "number", "uom": "mm" }
+          "thickness": { "type": "number" }
         }
       },
       "array": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "size_x": { "type": "number", "uom": "mm" },
-          "size_y": { "type": "number", "uom": "mm" },
+          "size_x": { "type": "number" },
+          "size_y": { "type": "number" },
           "boards_x": { "type": "integer" },
           "boards_y": { "type": "integer" },
           "boards_total": { "type": "integer" },
-          "border_left": { "type": "number", "uom": "mm" },
-          "border_right": { "type": "number", "uom": "mm" },
-          "border_top": { "type": "number", "uom": "mm" },
-          "border_bottom": { "type": "number", "uom": "mm" },
-          "board_spacing_x": { "type": "number", "uom": "mm" },
-          "board_spacing_y": { "type": "number", "uom": "mm" },
+          "border_left": { "type": "number" },
+          "border_right": { "type": "number" },
+          "border_top": { "type": "number" },
+          "border_bottom": { "type": "number" },
+          "board_spacing_x": { "type": "number" },
+          "board_spacing_y": { "type": "number" },
           "fiducials_number": { "type": "integer" },
-          "fiducials_size": { "type": "number", "uom": "mm" },
+          "fiducials_size": { "type": "number" },
           "fiducials_shape": {
             "type": "string",
             "enum": ["donut", "circle", "plus", "diamond"]
@@ -612,11 +188,11 @@
           },
           "mouse_bites": { "type": "boolean" },
           "tooling_holes_number": { "type": "integer" },
-          "tooling_holes_size": { "type": "number", "uom": "mm" },
+          "tooling_holes_size": { "type": "number" },
           "x_outs_allowed": { "type": "boolean" },
           "x_outs_max_percentage_on_array": { "type": "number" },
           "transplant_board_allowed": { "type": "boolean" },
-          "weight": { "type": "number", "uom": "g" }
+          "weight": { "type": "number" }
         }
       }
     }
@@ -663,7 +239,7 @@
           "layers": {
             "type": "array",
             "items": {
-              "$ref": "#/definitions/uuid"
+              "type": "string"
             }
           },
           "date_code": { "type": "string" },
@@ -767,13 +343,6 @@
           "resize_vias": { "type": "boolean" }
         }
       }
-    }
-  },
-  "definitions": {
-    "uuid": {
-      "type": "string",
-      "format": "uuid",
-      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
     }
   }
 }
