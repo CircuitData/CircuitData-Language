@@ -40,5 +40,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unneeded attributes from layers and processes.
 - Duplicate standard `ul`. This is the same as `ul94` and makes it consistent with how UL is named for materials.
 - Breakaway method from board. This is present and only makes sense in the array section where it describes how boards within an array are separated from each other and the array itself.
+- `v_cut` and `v_groove` from breakaway_method for array. These have the same meaning as `scoring` which is already present.
 
 ## [1.0.0] - 2018-03-12
