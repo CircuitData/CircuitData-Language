@@ -603,7 +603,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": ["routing", "scoring", "punching", "v_cut", "v_grove", "jump_scoring"]
+              "enum": ["routing", "scoring", "punching", "jump_scoring"]
             }
           },
           "mouse_bites": { "type": "boolean" },
