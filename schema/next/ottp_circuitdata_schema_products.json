@@ -688,7 +688,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": ["ul", "c_ul", "rohs", "ul94", "iec_61249-2-21", "esa", "itar", "dfars", "mil_prf_55110", "mil_prf_50884", "mil_prf_31032", "as9100", "nadcap", "rw_en45545_2_2013", "rw_nf_f_16_101", "rw_uni_cei_11170_3", "rw_nfpa_130"]
+              "enum": ["ul94", "c_ul", "rohs", "iec_61249-2-21", "esa", "itar", "dfars", "mil_prf_55110", "mil_prf_50884", "mil_prf_31032", "as9100", "nadcap", "rw_en45545_2_2013", "rw_nf_f_16_101", "rw_uni_cei_11170_3", "rw_nfpa_130"]
             }
           },
           "ipc_6010_class": {
