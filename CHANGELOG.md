@@ -38,5 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Unneeded attributes from layers and processes.
+- Duplicate standard `ul`. This is the same as `ul94` and makes it consistent with how UL is named for materials.
 
 ## [1.0.0] - 2018-03-12
