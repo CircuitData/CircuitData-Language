@@ -724,7 +724,11 @@
             "type": "string",
             "enum": ["1", "2", "3"]
           },
-          "ipc_6018": { "type": "boolean" }
+          "ipc_6018": { "type": "boolean" },
+          "ipc_a600_class": {
+            "type": "string",
+            "enum": ["1", "2", "3"]
+          }
         }
       },
       "testing": {
