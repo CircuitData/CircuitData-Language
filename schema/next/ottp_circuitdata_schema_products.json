@@ -691,57 +691,49 @@
             "type": "string",
             "enum": ["1", "2", "3", "3A", "3M", "3S"]
           },
-          "ipc_6012_compliance_level": {
+          "ipc_6012_compliance_class": {
             "type": "string",
             "enum": ["full", "factory_standard", "aabus"]
           },
-          "ipc_6012_copper_plating_thickness_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
+          "ipc_6012_copper_plating_thickness_class": {
+            "type": "string",
+            "enum": ["2", "3"]
           },
-          "ipc_6012_annular_ring_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
+          "ipc_6012_annular_ring_class": {
+            "type": "string",
+            "enum": ["2", "3"]
           },
-          "ipc_6012_conductor_spacing_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
+          "ipc_6012_conductor_spacing_class": {
+            "type": "string",
+            "enum": ["2", "3"]
           },
-          "ipc_6012_conductor_width_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
+          "ipc_6012_conductor_width_class": {
+            "type": "string",
+            "enum": ["2", "3"]
           },
           "ipc_6013_class": {
             "type": "string",
             "enum": ["1", "2", "3"]
           },
-          "ipc_6013_compliance_level": {
+          "ipc_6013_compliance_class": {
             "type": "string",
             "enum": ["full", "factory_standard", "aabus"]
           },
-          "ipc_6013_copper_plating_thickness_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
+          "ipc_6013_copper_plating_thickness_class": {
+            "type": "string",
+            "enum": ["2", "3"]
           },
-          "ipc_6013_annular_ring_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
+          "ipc_6013_annular_ring_class": {
+            "type": "string",
+            "enum": ["2", "3"]
           },
-          "ipc_6013_conductor_spacing_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
+          "ipc_6013_conductor_spacing_class": {
+            "type": "string",
+            "enum": ["2", "3"]
           },
-          "ipc_6013_conductor_width_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
+          "ipc_6013_conductor_width_class": {
+            "type": "string",
+            "enum": ["2", "3"]
           },
           "ipc_6018": { "type": "boolean" },
           "ipc_a600_class": {
