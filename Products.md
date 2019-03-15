@@ -300,7 +300,7 @@ Changes/fabrication decisions that are allowed to make to the files provided.
 
 | Tags          | Description           | [Type](/README.md#about-types-and-how-to-use-them) | Uom | Required |
 |:------------- |:----------------------|:----------------------------------------:|:---:|:--------:|
-| dead_pad_removal | Non Functioning Pad removal. | Boolean | None | No |
+| non_functional_pad_removal | Non Functioning Pad removal. | String | None | No |
 | add_copper_balancing | Adding copper balancing pattern. | Boolean | None | No |
 | add_copper_balancing_on_array | Adding copper balancing pattern on array/panel frame. | Boolean | None | No |
 | add_tear_drops | Adding Tear Drops. | Boolean | None | No |

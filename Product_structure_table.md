@@ -135,7 +135,7 @@
 | | | | | | | nato_member | | | | |
 | | | | | | | eu_member | | | | |
 | | | | | | allowed_modifications | | | | |
-| | | | | | | dead_pad_removal | | | | |
+| | | | | | | non_functional_pad_removal | | | | |
 | | | | | | | add_copper_balancing | | | | |
 | | | | | | | add_copper_balancing_on_array | | | | |
 | | | | | | | add_tear_drops | | | | |

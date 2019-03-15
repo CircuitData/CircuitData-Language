@@ -216,7 +216,7 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "dead_pad_removal": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
+          "non_functional_pad_removal": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
           "add_copper_balancing": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
           "add_copper_balancing_on_array": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },
           "add_tear_drops": { "$ref": "ottp_circuitdata_schema_generics.json#/profile_capability_layer_subelement" },

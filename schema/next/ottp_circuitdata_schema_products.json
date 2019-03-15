@@ -760,7 +760,7 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "dead_pad_removal": { "type": "boolean" },
+          "non_functional_pad_removal": { "type": "string", "enum": ["all", "via_only"] },
           "add_copper_balancing": { "type": "boolean" },
           "add_copper_balancing_on_array": { "type": "boolean" },
           "add_tear_drops": { "type": "boolean" },
