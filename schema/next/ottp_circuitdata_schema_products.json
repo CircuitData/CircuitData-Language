@@ -687,42 +687,61 @@
               "enum": ["ul94", "c_ul", "rohs", "iec_61249-2-21", "esa", "itar", "dfars", "mil_prf_55110", "mil_prf_50884", "mil_prf_31032", "as9100", "nadcap", "rw_en45545_2_2013", "rw_nf_f_16_101", "rw_uni_cei_11170_3", "rw_nfpa_130"]
             }
           },
-          "ipc_6010_class": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 3
-          },
-          "ipc_6010_compliance_level": {
-            "type": "string",
-            "enum": ["full", "factory_standard", "aabus"]
-          },
-          "ipc_6010_copper_plating_thickness_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
-          },
-          "ipc_6010_annular_ring_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
-          },
-          "ipc_6010_conductor_spacing_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
-          },
-          "ipc_6010_conductor_width_level": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 3
-          },
           "ipc_6012_class": {
             "type": "string",
             "enum": ["1", "2", "3", "3A", "3M", "3S"]
           },
+          "ipc_6012_compliance_level": {
+            "type": "string",
+            "enum": ["full", "factory_standard", "aabus"]
+          },
+          "ipc_6012_copper_plating_thickness_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
+          "ipc_6012_annular_ring_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
+          "ipc_6012_conductor_spacing_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
+          "ipc_6012_conductor_width_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
           "ipc_6013_class": {
             "type": "string",
             "enum": ["1", "2", "3"]
+          },
+          "ipc_6013_compliance_level": {
+            "type": "string",
+            "enum": ["full", "factory_standard", "aabus"]
+          },
+          "ipc_6013_copper_plating_thickness_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
+          "ipc_6013_annular_ring_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
+          "ipc_6013_conductor_spacing_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
+          },
+          "ipc_6013_conductor_width_level": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 3
           },
           "ipc_6018": { "type": "boolean" },
           "ipc_a600_class": {
