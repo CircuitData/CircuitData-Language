@@ -23,12 +23,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Internal references to layers to use UUDs instead of names.
+- Internal references to layers to use UUIDs instead of names.
 - Limit number of materials to one except for final_finish layers.
 - `ipc_slash_sheet` for materials to allow for multiple slash sheets.
 - `copper_filled` to `filled` for hole processes.
 - Renamed `dead_pad_removal` to `non_functional_pad_removal`.
 - Changed `non_functional_pad_removal` from a boolean to a string enum.
+- Generic IPC 6010 series properties into specific 6012 and 6013 properties.
+- Renamed IPC 6012 and 6013 properties with `_level` suffix to `_class`.
+- Changed data type for IPC 6012 and 6013 properties to string enum from integer.
 
 ### Deprecated
 
