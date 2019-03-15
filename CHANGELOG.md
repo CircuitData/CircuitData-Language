@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Limit number of materials to one except for final_finish layers.
 - `ipc_slash_sheet` for materials to allow for multiple slash sheets.
 - `copper_filled` to `filled` for hole processes.
+- Renamed `dead_pad_removal` to `non_functional_pad_removal`.
+- Changed `non_functional_pad_removal` from a boolean to a string enum.
 
 ### Deprecated
 
