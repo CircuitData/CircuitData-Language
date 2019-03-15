@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `additional`, `verified` and `ipc_standard` attributes to materials.
 - `capped` and `covered` to hole processes.
 - `ipc_a600_class` to standards section.
+- `none` option to impedance testing.
 
 ### Changed
 

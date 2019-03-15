@@ -742,7 +742,7 @@
           "ist": { "type": "boolean" },
           "impedance": {
             "type": "string",
-            "enum": ["controlled", "calculated", "follow_stackup"]
+            "enum": ["controlled", "calculated", "follow_stackup", "none"]
           }
         }
       },
