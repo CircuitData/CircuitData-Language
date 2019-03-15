@@ -687,6 +687,10 @@
               "enum": ["ul94", "c_ul", "rohs", "iec_61249-2-21", "esa", "itar", "dfars", "mil_prf_55110", "mil_prf_50884", "mil_prf_31032", "as9100", "nadcap", "rw_en45545_2_2013", "rw_nf_f_16_101", "rw_uni_cei_11170_3", "rw_nfpa_130"]
             }
           },
+          "ipc_a600_class": {
+            "type": "string",
+            "enum": ["1", "2", "3"]
+          },
           "ipc_6012_class": {
             "type": "string",
             "enum": ["1", "2", "3", "3A", "3M", "3S"]
@@ -735,11 +739,7 @@
             "type": "string",
             "enum": ["2", "3"]
           },
-          "ipc_6018": { "type": "boolean" },
-          "ipc_a600_class": {
-            "type": "string",
-            "enum": ["1", "2", "3"]
-          }
+          "ipc_6018": { "type": "boolean" }
         }
       },
       "testing": {
