@@ -1,6 +1,6 @@
 {
   "open_trade_transfer_package": {
-    "version": 1.0,
+    "version": 2.0,
     "products": {
       "two_conductive_layers": {
         "circuitdata": {
@@ -177,7 +177,7 @@
               "area": 1670.0
             }
           },
-          "version": 1.0
+          "version": 2.0
         }
       }
     },
@@ -190,7 +190,7 @@
             "link": "http://www.piclaminate.com.cn/3-FL150_E.pdf",
             "remark": "R-F705T",
             "flexible": false,
-            "version": 1.0,
+            "version": 2.0,
             "function": "soldermask",
             "group": "LPISM",
             "manufacturer": "PIC",
@@ -202,7 +202,7 @@
             "name": "FR4 min Tg140",
             "link": "http://www.rogerscorp.com/documents/728/acm/TMM-Thermoset-laminate-data-sheet-TMM3-TMM4-TMM6-TMM10-TMM10i.aspx",
             "flexible": false,
-            "version": 1.0,
+            "version": 2.0,
             "function": "dielectric",
             "group": "FR4",
             "manufacturer": "Rogers",
@@ -218,7 +218,7 @@
             "link": "https://industrial.panasonic.com/content/data/EM/PDF/ipcdatasheet_1511_R-1755V.pdf",
             "remark": "no data",
             "flexible": false,
-            "version": 1.0,
+            "version": 2.0,
             "function": "conductive",
             "group": "copper",
             "manufacturer": "Panasonic",
