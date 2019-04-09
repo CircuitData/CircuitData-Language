@@ -9,7 +9,7 @@ An open language for communicating specifications on a printed circuit (mainly P
 * A table of the structure of all objects, items and tags is [here](/Product_structure_table.md)
 
 ## Version
-Current version is 1.0. This should stated in every section directly below the "circuitdata" element in an element called "version".
+Current version is 2.0. This should stated in every section directly below the "circuitdata" element in an element called "version".
 
 ### Versioning
 CircuitData Language uses [semver](https://semver.org/). This means that we try our best to ensure that breaking changes mean a change in version number of the first component of the version.
@@ -50,7 +50,7 @@ JSON schema is available in at its [own site (schema.circuitdata.org)](http://sc
 ```
 ottp = '{
   "open_trade_transfer_package": {
-    "version": 1.0,
+    "version": 2.0,
     "information": {
       "company": "Elmatica as",
       "created": "2017-04-03T08:00:00Z"
@@ -59,7 +59,7 @@ ottp = '{
       "restricted": {
         "circuitdata": {
           "generic": {
-            "version": 1.0,
+            "version": 2.0,
             "country_of_origin": {
               "nato_member": false
             }
