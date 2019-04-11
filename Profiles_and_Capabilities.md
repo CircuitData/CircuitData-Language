@@ -20,7 +20,7 @@ Capabilities also contains a "materials" subsection where any capability on mate
 "profiles": {
   "enforced"
     "circuitdata": {
-      "version": 1.0,
+      "version": 2.0,
       "layers": {
         "soldermask": {
           "flexible": {
@@ -45,7 +45,7 @@ The example above would force Soldermask to be present two times (top and bottom
 "capabilities": {
   "summary"
     "circuitdata": {
-      "version": 1.0,
+      "version": 2.0,
       "layers": {
         "soldermask": {
           "count": 2

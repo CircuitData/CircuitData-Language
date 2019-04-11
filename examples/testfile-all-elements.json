@@ -1,6 +1,6 @@
 {
   "open_trade_transfer_package": {
-    "version": 1.0,
+    "version": 2.0,
     "information": {
       "company": "CircuitData Board of Directors",
       "created": "2018-02-15T09:49:37+02:00",
@@ -9,7 +9,7 @@
     "products": {
       "ProductX_v1": {
         "circuitdata": {
-          "version": 1.0,
+          "version": 2.0,
           "sections": [{
             "name": "rigid1",
             "in_x": [1],
@@ -39,7 +39,7 @@
       "materials": {
         "circuitdata": {
           "osp": {
-            "version": 1.0,
+            "version": 2.0,
             "function": "final_finish",
             "group": "osp"
           }

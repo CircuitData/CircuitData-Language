@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Fixed
+
+### Removed
+
+## [2.0.0] - 2019-04-08
+
+### Added
+
 - Document Versioning approach.
 - Realistic example files.
 - Board area to metrics section.

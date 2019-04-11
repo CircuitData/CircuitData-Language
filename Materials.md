@@ -9,7 +9,7 @@ Placed in the "open_trade_transfer_package -> custom -> materials -> circuitdata
   "circuitdata": {
     "osp": {
       "function": "final_finish",
-      "version": 1.0,
+      "version": 2.0,
       "group": "osp"
     }
   }
