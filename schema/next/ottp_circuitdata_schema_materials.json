@@ -64,10 +64,10 @@
             "enum": ["e-glass", "s-glass", "ne-glass", "l-glass", "quartz", "aramid", "paper"]
           },
           "thickness": { "type": "number" },
-          "dk": { "type": "number" },
+          "dk": { "type": "number", "description": "@ 1GHz" },
           "cti": { "type": "integer", "min": 0, "max": 6 },
           "frequency": { "type": "number" },
-          "df": { "type": "number" },
+          "df": { "type": "number", "description": "@ 1GHz" },
           "t260": { "type": "number", "uom": "min" },
           "t280": { "type": "number", "uom": "min" },
           "t300": { "type": "number", "uom": "min" },
