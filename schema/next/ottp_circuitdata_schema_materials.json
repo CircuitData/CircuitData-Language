@@ -90,7 +90,7 @@
           },
           "finish": {
             "type": "string",
-            "enum": ["matte", "glossy", "semi_glossy"]
+            "enum": ["matte", "glossy", "semi_matte"]
           }
         }
       }
