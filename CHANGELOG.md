@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Units of Measure to material schema.
 
 ### Changed
+- Renamed soldermask finish option `semi_glossy` to `semi_matte`.
 
 ### Deprecated
 
