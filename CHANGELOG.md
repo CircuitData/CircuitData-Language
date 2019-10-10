@@ -8,12 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-
 - Units of Measure to material schema.
-- Standards from IPC 4103 for laminates ("PTFE/None", "PTFE/Ceramic", "Hydrocarbon/None", "Hydrocarbon/Ceramic").
 
 ### Changed
-
 - Renamed soldermask finish option `semi_glossy` to `semi_matte`.
 
 ### Deprecated
