@@ -68,7 +68,11 @@
           "gwb-2-thermosonic",
           "s_hasl",
           "b1_lfhasl",
-          "IMS"
+          "IMS",
+          "PTFE/None",
+          "PTFE/Ceramic",
+          "Hydrocarbon/None",
+          "Hydrocarbon/Ceramic"
         ]
       },
       "manufacturer": { "type": "string" },
