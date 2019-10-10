@@ -9,11 +9,71 @@
       },
       "function": {
         "type": "string",
-        "enum": ["conductive", "dielectric", "soldermask", "stiffener", "final_finish"]
+        "enum": [
+          "conductive",
+          "dielectric",
+          "soldermask",
+          "stiffener",
+          "final_finish"
+        ]
       },
       "group": {
         "type": "string",
-        "enum": ["FR1", "FR2", "FR3", "FR4", "FR5", "G-10", "G-11", "CEM-1", "CEM-2", "CEM-3", "CEM-4", "CEM-5", "ceramic", "polyimide", "aramid", "acrylic", "LCP", "PEN", "PET", "LPISM", "DFISM", "LDISM", "stainless_steel", "copper", "aluminum", "silver", "gold", "carbon", "silver_platinum", "silver_paladium", "gold_platinum", "platinum", "c_bare_copper", "isn", "iag", "enig", "enepig", "osp", "ht_osp", "g", "GS", "t_fused", "tlu_unfused", "dig", "gwb-1_ultrasonic", "gwb-2-thermosonic", "s_hasl", "b1_lfhasl", "IMS"]
+        "enum": [
+          "FR1",
+          "FR2",
+          "FR3",
+          "FR4",
+          "FR5",
+          "G-10",
+          "G-11",
+          "CEM-1",
+          "CEM-2",
+          "CEM-3",
+          "CEM-4",
+          "CEM-5",
+          "ceramic",
+          "polyimide",
+          "aramid",
+          "acrylic",
+          "LCP",
+          "PEN",
+          "PET",
+          "LPISM",
+          "DFISM",
+          "LDISM",
+          "stainless_steel",
+          "copper",
+          "aluminum",
+          "silver",
+          "gold",
+          "carbon",
+          "silver_platinum",
+          "silver_paladium",
+          "gold_platinum",
+          "platinum",
+          "c_bare_copper",
+          "isn",
+          "iag",
+          "enig",
+          "enepig",
+          "osp",
+          "ht_osp",
+          "g",
+          "GS",
+          "t_fused",
+          "tlu_unfused",
+          "dig",
+          "gwb-1_ultrasonic",
+          "gwb-2-thermosonic",
+          "s_hasl",
+          "b1_lfhasl",
+          "IMS",
+          "PTFE/None",
+          "PTFE/Ceramic",
+          "Hydrocarbon/None",
+          "Hydrocarbon/Ceramic"
+        ]
       },
       "manufacturer": { "type": "string" },
       "name": { "type": "string" },
@@ -44,12 +104,30 @@
           "td_min": { "type": "integer" },
           "resin": {
             "type": "string",
-            "enum": ["epoxy", "bt", "cyanate_ester", "phenolic", "polyester", "polyimide", "ppe", "hydrocarbon", "ptfe", "thermoplastic"]
+            "enum": [
+              "epoxy",
+              "bt",
+              "cyanate_ester",
+              "phenolic",
+              "polyester",
+              "polyimide",
+              "ppe",
+              "hydrocarbon",
+              "ptfe",
+              "thermoplastic"
+            ]
           },
           "resin_content": { "type": "number" },
           "flame_retardant": {
             "type": "string",
-            "enum": ["phosphor", "red_phosphor", "bromine", "chlorine", "antimony_oxide", "rohs_compliant_bromine"]
+            "enum": [
+              "phosphor",
+              "red_phosphor",
+              "bromine",
+              "chlorine",
+              "antimony_oxide",
+              "rohs_compliant_bromine"
+            ]
           },
           "woven_reinforcement": { "type": "boolean" },
           "filler": {
@@ -61,7 +139,15 @@
           },
           "reinforcement": {
             "type": "string",
-            "enum": ["e-glass", "s-glass", "ne-glass", "l-glass", "quartz", "aramid", "paper"]
+            "enum": [
+              "e-glass",
+              "s-glass",
+              "ne-glass",
+              "l-glass",
+              "quartz",
+              "aramid",
+              "paper"
+            ]
           },
           "thickness": { "type": "number" },
           "dk": { "type": "number" },
