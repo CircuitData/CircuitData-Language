@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Units of Measure to material schema.
 - Standards from IPC 4103 for laminates ("PTFE/None", "PTFE/Ceramic", "Hydrocarbon/None", "Hydrocarbon/Ceramic").
+- Ability to define materials as having the peelable_mask function.
 
 ### Changed
 

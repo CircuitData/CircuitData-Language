@@ -14,7 +14,8 @@
           "dielectric",
           "soldermask",
           "stiffener",
-          "final_finish"
+          "final_finish",
+          "peelable_mask"
         ]
       },
       "group": {
