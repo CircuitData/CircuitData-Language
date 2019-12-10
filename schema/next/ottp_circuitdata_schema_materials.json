@@ -72,7 +72,8 @@
           "PTFE/None",
           "PTFE/Ceramic",
           "Hydrocarbon/None",
-          "Hydrocarbon/Ceramic"
+          "Hydrocarbon/Ceramic",
+          "peelable"
         ]
       },
       "manufacturer": { "type": "string" },
